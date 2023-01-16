@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/86a86566-a833-4d2a-a4cf-867ad6c9f68a/deploy-status)](https://app.netlify.com/sites/eq-runner-prototypes/deploys)
+
 # eQ runner prototype kit
 
 This repo was created from the ONS Design System prototype kit template [prototype-kit](https://github.com/ONSdigital/prototype-kit).
