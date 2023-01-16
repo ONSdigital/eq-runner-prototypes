@@ -1,10 +1,16 @@
-# prototype-kit-template
+# eQ runner prototype kit
 
-This is a template for a [prototype-kit](https://github.com/ONSdigital/prototype-kit) project which can be used as a starting point when creating new prototypes. This provides access to the ONS design system to render page layouts and components.
+This repo was created from the ONS Design System prototype kit template [prototype-kit](https://github.com/ONSdigital/prototype-kit).
 
-## Getting setup with this template
+## Getting setup
 
-Install the latest version of the ONS design system:
+Install the dependencies run:
+
+```bash
+yarn
+```
+
+To install the latest version of the ONS design system run:
 
 ```bash
 yarn add @ons/design-system
