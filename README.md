@@ -28,6 +28,12 @@ This project comes with the following commands:
 
 - `yarn build` - Builds prototype content as a static website to a 'build' directory inside this project. The output of this command could be used by a CI process to deploy the prototype website.
 
+## How do the build commands work?
+
+This project uses [gulp](https://gulpjs.com/) to automate the above commands. The [prototype kit]({{PROTOTYPE_KIT_HOMEPAGE}}) provides default gulp tasks which are used by this repository which are inherited in the `./gulpfile.js` script.
+
+Additional gulp tasks can be added to this project's `gulpfile.js` in the usual way. Refer to the gulp documentation for information on how to do this.
+
 ## Getting started
 
 1. Create a directory alongside the 'example' prototype directory and then populate with files using 'example' as a starting point.
@@ -35,12 +41,6 @@ This project comes with the following commands:
 2. Create prototype by editing the prototype entry points (`index.njk`, `index.js` and `index.scss`).
 
 3. Preview the prototype by running `yarn start`.
-
-## How do the build commands work?
-
-This project uses [gulp](https://gulpjs.com/) to automate the above commands. The [prototype kit]({{PROTOTYPE_KIT_HOMEPAGE}}) provides default gulp tasks which are used by this repository which are inherited in the `./gulpfile.js` script.
-
-Additional gulp tasks can be added to this project's `gulpfile.js` in the usual way. Refer to the gulp documentation for information on how to do this.
 
 ## Using a specific version of the design system
 
