@@ -6,7 +6,7 @@ This repo was created from the ONS Design System prototype kit template [prototy
 
 ## Getting setup
 
-Install the dependencies run:
+To install the dependencies run:
 
 ```bash
 yarn
