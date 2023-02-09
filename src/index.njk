@@ -1,7 +1,7 @@
 {% from "components/lists/_macro.njk" import onsList %}
 
 {% set pageConfig = { 
-    "title": "ONS Prototypes",
+    "title": "eQ Prototypes",
     "footer": {
         "OGLLink": {
             "pre": 'All content is available under the',
@@ -11,18 +11,23 @@
         }
     }
 } %}
+
 {% block main %}
-    {% set groups = helpers.navigationHelper({ 
-        "pages": prototypeListing,
-        "ignorePaths": ["/"]
-    }) %}
-    {% for group in groups %}
-    <div class="ons-container">
-      <div class="ons-grid">
-        <div class="ons-grid__col ons-col-8@m ">
-          <div class="ons-pl-grid-col">
+  <div class="ons-grid">
+      <div class="ons-grid__col ons-col-8@m ">
+        <div class="ons-pl-grid-col">
+          <h1>List of prototypes</h1>
+          <p>These are specific prototypes for testing design and interaction hypotheses with end users.</p>
+          <p>Can also be shared with developers to confirm best practice for a particular issue relating to user flow / interaction.</p>
+
+
+          {% set groups = helpers.navigationHelper({ 
+              "pages": prototypeListing,
+              "ignorePaths": ["/"]
+          }) %}
+          {% for group in groups %}
             <section>
-              <h1 class="u-fs-m">{{ group.title }}</h1>
+              <h2 class="u-fs-m">{{ group.title }}</h1>
                 {{
                   onsList({
                       "classes": "ons-list--bare",
@@ -30,9 +35,40 @@
                   })
                 }}
             </section>
-          </div>
+          {% endfor %}
+
         </div>
       </div>
-    </div>    
-    {% endfor %}
+      <div class="ons-grid__col ons-col-4@m ons-push-1@m">
+        <div class="ons-pl-grid-col">
+          
+          {% from "components/related-content/_macro.njk" import onsRelatedContent %}
+
+          {{ onsRelatedContent({
+              "ariaLabel": 'Related content',
+              "rows": [
+                  {
+                      "id": 'related-content',
+                      "title": 'Related content',
+                      "itemsList": [
+                          {
+                              "text": 'Trello board',
+                              "url": '#0'
+                          },
+                          {
+                              "text": 'Confluence wiki',
+                              "url": '#0'
+                          },
+                          {
+                              "text": 'Design History',
+                              "url": '#0'
+                          }
+                      ]
+                  }
+              ]
+          }) }}
+
+        </div>
+      </div>
+  </div>
 {% endblock %}
