@@ -17,14 +17,22 @@
         "ignorePaths": ["/"]
     }) %}
     {% for group in groups %}
-        <section>
-            <h1 class="u-fs-m">{{ group.title }}</h1>
-            {{
-                onsList({
-                    "classes": "ons-list--bare",
-                    "itemsList": group.items
-                })
-            }}
-        </section>
+    <div class="ons-container">
+      <div class="ons-grid">
+        <div class="ons-grid__col ons-col-8@m ">
+          <div class="ons-pl-grid-col">
+            <section>
+              <h1 class="u-fs-m">{{ group.title }}</h1>
+                {{
+                  onsList({
+                      "classes": "ons-list--bare",
+                      "itemsList": group.items
+                  })
+                }}
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>    
     {% endfor %}
 {% endblock %}
