@@ -2,6 +2,10 @@
 
 {% set pageConfig = { 
     "title": "eQ Prototypes",
+    "asideCol": {
+        "position": "after",
+        "colClasses": "ons-u-mt-l ons-u-mb-l"
+    },
     "footer": {
         "OGLLink": {
             "pre": 'All content is available under the',
@@ -13,36 +17,29 @@
 } %}
 
 {% block main %}
-  <div class="ons-grid">
-      <div class="ons-grid__col ons-col-8@m ">
-        <div class="ons-pl-grid-col">
-          <h1>List of prototypes</h1>
-          <p>These are specific prototypes for testing design and interaction hypotheses with end users.</p>
-          <p>Can also be shared with developers to confirm best practice for a particular issue relating to user flow / interaction.</p>
+  <h1>List of prototypes</h1>
+    <p>These are specific prototypes for testing design and interaction hypotheses with end users.</p>
+    <p>Can also be shared with developers to confirm best practice for a particular issue relating to user flow / interaction.</p>
 
 
-          {% set groups = helpers.navigationHelper({ 
-              "pages": prototypeListing,
-              "ignorePaths": ["/"]
-          }) %}
-          {% for group in groups %}
-            <section>
-              <h2 class="u-fs-m">{{ group.title }}</h1>
-                {{
-                  onsList({
-                      "classes": "ons-list--bare",
-                      "itemsList": group.items
-                  })
-                }}
-            </section>
-          {% endfor %}
-
-        </div>
-      </div>
-      <div class="ons-grid__col ons-col-4@m ons-push-1@m">
-        <div class="ons-pl-grid-col">
-          
-          {% from "components/related-content/_macro.njk" import onsRelatedContent %}
+    {% set groups = helpers.navigationHelper({ 
+        "pages": prototypeListing,
+        "ignorePaths": ["/"]
+    }) %}
+    {% for group in groups %}
+      <section>
+        <h2 class="u-fs-m">{{ group.title }}</h1>
+          {{
+            onsList({
+                "classes": "ons-list--bare",
+                "itemsList": group.items
+            })
+          }}
+      </section>
+    {% endfor %}
+{% endblock %}
+{% block aside %}
+  {% from "components/related-content/_macro.njk" import onsRelatedContent %}
 
           {{ onsRelatedContent({
               "ariaLabel": 'Related content',
@@ -67,8 +64,4 @@
                   }
               ]
           }) }}
-
-        </div>
-      </div>
-  </div>
 {% endblock %}
