@@ -1,0 +1,80 @@
+---
+group: Journeys
+title: Monthly Buisness Survey
+layout: mbs/views/_master
+---
+
+{% block main %}
+<h1>You are completing this for ESSENTIAL ENTERPRISE LTD. (ESSENTIAL ENTERPRISE LTD.)</h1>
+
+<p>If the company details or structure have changed contact us on <a href="tel:03001234931">0300 1234 931</a> or email <a href="mailto:surveys@ons.gov.uk?subject=Change%20of%20details%2012346789012A">surveys@ons.gov.uk</a></p>
+
+<ul>
+  <li>Data should relate to all sites in England, Scotland and Wales unless otherwise stated.</li>
+  <li>You can provide informed estimates if actual figures are not available.</li>
+  <li>We will treat your data securely and confidentially.</li>
+</ul>
+
+<p><strong>If you have closed for all, or some, of the period</strong>: select &#39;yes, you can provide figures&#39; and enter turnover, even if this is &#39;0&#39;.</p>
+
+<h2>Your response is legally required</h2>
+<p class="ons-u-mb-m">Notice is given under section 1 of the Statistics of Trade Act 1947</p>
+
+{% from "components/button/_macro.njk" import onsButton %}
+{{
+    onsButton({
+        "text": "Start survey",
+        "url": "q1"
+    })
+}}
+
+<h2 class="ons-u-mt-m">Information you need</h2>
+<p><a href="https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/monthlybusinesssurveyproductionandservices" target="_blank" rel="noopener noreferrer">View the survey information and questions before you start the survey (this link opens in a new tab)</a></p>
+<p>You can select the dates of the period you are reporting for, if the given dates are not appropriate.</p>
+<p>Explain figures in the comments section to minimise us contacting you and to help us tell an industry story.</p>
+
+
+<div id="accordion" class="ons-accordion">
+  <button type="button" class="ons-btn ons-js-accordion-all ons-u-mb-s ons-u-d-no ons-btn--secondary ons-btn--small" data-close-all="Hide all" data-group="accordion">
+    <span class="ons-btn__inner ons-js-accordion-all-inner"><span class="ons-btn__text">Show all</span>
+    </span>
+  </button>
+  <details id="accordion-1" class="ons-details ons-js-details ons-details--accordion" data-group="accordion">
+    <summary class="ons-details__heading ons-js-details-heading">
+      <h2 class="ons-details__title">Total turnover</h2>
+      <span class="ons-details__icon">
+        <svg class="ons-svg-icon" viewBox="0 0 8 13" xmlns="http://www.w3.org/2000/svg" focusable="false" fill="currentColor">
+          <path d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z" transform="translate(-5.02 -1.59)" />
+        </svg>
+      </span>
+    </summary>
+    <div id="accordion-1-content" class="ons-details__content ons-js-details-content">
+      <p><strong>Include:</strong></p>
+      <ul>
+        <li>exports</li>
+        <li>payments for work in progress</li>
+        <li>costs incurred and passed on to customers</li>
+        <li>income from sub-contracted activities</li>
+        <li>commission</li>
+        <li>sales of goods purchased for resale</li>
+        <li>revenue earned from other parts of the business not named, please supply at fair value</li>
+      </ul>
+      <p><strong>Exclude:</strong></p>
+      <ul>
+        <li>VAT</li>
+        <li>excise duties</li>
+        <li>income form the sale of fixed capital assets</li>
+        <li>grants and subsides</li>
+        <li>insurance claims</li>
+        <li>interest received</li>
+      </ul>
+    </div>
+  </details>
+</div>
+
+<h2>How we use your data</h2>
+<ul>
+  <li>You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.</li>
+  <li>The information you provide contributes to <a href="https://www.ons.gov.uk/economy/grossdomesticproductgdp" target="_blank" rel="noopener noreferrer">Gross Domestic Product (this link opens in a new tab)</a></li>
+</ul> 
+{% endblock %}

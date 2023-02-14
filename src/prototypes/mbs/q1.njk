@@ -1,0 +1,48 @@
+---
+group: Journeys
+title: Monthly Buisness Survey
+layout: mbs/views/_questions
+---
+
+{% block main %}
+
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/question/_macro.njk" import onsQuestion %}
+
+{% call onsQuestion({
+    "title": "Are you able to report for the period from 1 May 2016 to 31 May 2016?",
+    "classes": "ons-u-mt-no",
+    "legendIsQuestionTitle": true
+}) %}
+    {{
+        onsRadios({
+            "name": "property-type",
+            "dontWrap": true,
+            "radios": [
+                {
+                    "id": "yes",
+                    "label": {
+                        "text": "Yes, I can report for this period"
+                    },
+                    "value": "yes"
+                },
+                {
+                    "id": "no",
+                    "label": {
+                        "text": "No, I need to report for a different period"
+                    },
+                    "value": "no"
+                }
+            ]
+        })
+    }}
+{% endcall %}
+
+{% from "components/button/_macro.njk" import onsButton %}
+{{
+    onsButton({
+        "text": "Save and continue",
+        "url": "q2"
+    })
+}}
+{% endblock %}
