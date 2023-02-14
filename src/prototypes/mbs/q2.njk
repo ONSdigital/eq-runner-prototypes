@@ -1,14 +1,13 @@
 ---
 group: Journeys
-title: Monthly Buisness Survey
+title: Monthly Business Survey
 layout: mbs/views/_questions
 ---
 
 {% block main %}
-
-{% from "components/radios/_macro.njk" import onsRadios %}
 {% from "components/question/_macro.njk" import onsQuestion %}
-
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/input/_macro.njk" import onsInput %}
 
 
 {% call onsQuestion({
@@ -16,28 +15,46 @@ layout: mbs/views/_questions
     "classes": "ons-u-mt-no",
     "legendIsQuestionTitle": true
 }) %}
+
+{{
+    onsPanel({
+        "body": '<p><strong>Include:</strong></p>
+<ul><li>exports</li>
+<li>payments for work in progress</li>
+<li>costs incurred and passed on to customers</li>
+<li>income from sub-contracted activities</li>
+<li>commission</li>
+<li>sales of goods purchased for resale</li>
+<li>revenue earned from other parts of the business not named, please supply at fair value</li>
+</ul>
+<p><strong>Exclude:</strong></p>
+<ul><li>VAT</li>
+<li>excise duties</li>
+<li>income from the sale of fixed capital assets</li>
+<li>grants and subsidies</li>
+<li>insurance claims</li>
+<li>interest received</li>
+</ul>'
+    })
+}}
+
     {{
-        onsRadios({
-            "name": "property-type",
-            "dontWrap": true,
-            "radios": [
-                {
-                    "id": "yes",
-                    "label": {
-                        "text": "Yes, I can report for this period"
-                    },
-                    "value": "yes"
-                },
-                {
-                    "id": "no",
-                    "label": {
-                        "text": "No, I need to report for a different period"
-                    },
-                    "value": "no"
-                }
-            ]
-        })
-    }}
+    onsInput({
+        "id": "prefixed",
+        "type": "number",
+        "width": "10",
+        "autocomplete": "off",
+        "label": {
+            "text": "Total turnover excluding VAT",
+            "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest £thousand (e.g. 56,000). Do not enter '56' for £56,000."
+        },
+        "prefix": {
+            "text": "£",
+            "title": "British pounds (GBP)",
+            "id": "annual-salary-gpb-prefix"
+        }
+    })
+}}
 {% endcall %}
 
 

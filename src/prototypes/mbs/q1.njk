@@ -1,8 +1,15 @@
 ---
 group: Journeys
-title: Monthly Buisness Survey
+title: Monthly Business Survey
 layout: mbs/views/_questions
 ---
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/q2.html"
+    }
+} %}
 
 {% block main %}
 
@@ -21,6 +28,8 @@ layout: mbs/views/_questions
             "radios": [
                 {
                     "id": "yes",
+                    "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/q2.html"},
                     "label": {
                         "text": "Yes, I can report for this period"
                     },
@@ -28,6 +37,8 @@ layout: mbs/views/_questions
                 },
                 {
                     "id": "no",
+                    "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/exit.html"},
                     "label": {
                         "text": "No, I need to report for a different period"
                     },
@@ -41,8 +52,7 @@ layout: mbs/views/_questions
 {% from "components/button/_macro.njk" import onsButton %}
 {{
     onsButton({
-        "text": "Save and continue",
-        "url": "q2"
+        "text": "Save and continue"
     })
 }}
 {% endblock %}
