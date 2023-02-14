@@ -1,0 +1,68 @@
+---
+group: Journeys
+title: Monthly Business Survey
+layout: mbs/views/_questions
+---
+
+{% block main %}
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/input/_macro.njk" import onsInput %}
+
+
+{% call onsQuestion({
+    "title": "For the period 1 May 2016 to 31 May 2016, what was ESSENTIAL ENTERPRISE LTD.'s total turnover, excluding VAT?",
+    "classes": "ons-u-mt-no",
+    "legendIsQuestionTitle": true
+}) %}
+
+{{
+    onsPanel({
+        "body": '<p><strong>Include:</strong></p>
+<ul><li>exports</li>
+<li>payments for work in progress</li>
+<li>costs incurred and passed on to customers</li>
+<li>income from sub-contracted activities</li>
+<li>commission</li>
+<li>sales of goods purchased for resale</li>
+<li>revenue earned from other parts of the business not named, please supply at fair value</li>
+</ul>
+<p><strong>Exclude:</strong></p>
+<ul><li>VAT</li>
+<li>excise duties</li>
+<li>income from the sale of fixed capital assets</li>
+<li>grants and subsidies</li>
+<li>insurance claims</li>
+<li>interest received</li>
+</ul>'
+    })
+}}
+
+    {{
+    onsInput({
+        "id": "prefixed",
+        "type": "number",
+        "width": "10",
+        "autocomplete": "off",
+        "label": {
+            "text": "Total turnover excluding VAT",
+            "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest £thousand (e.g. 56,000). Do not enter '56' for £56,000."
+        },
+        "prefix": {
+            "text": "£",
+            "title": "British pounds (GBP)",
+            "id": "annual-salary-gpb-prefix"
+        }
+    })
+}}
+{% endcall %}
+
+
+{% from "components/button/_macro.njk" import onsButton %}
+{{
+    onsButton({
+        "text": "Save and continue"
+    })
+}}
+
+{% endblock %}
