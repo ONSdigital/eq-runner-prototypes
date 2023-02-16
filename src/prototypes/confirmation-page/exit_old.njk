@@ -1,0 +1,72 @@
+---
+group: Design work
+title: Confirmation page
+layout: confirmation-page/views/_master
+---
+
+{% extends "layout/_template.njk" %}
+{% set pageConfig = {
+    "header": {
+        "title": "Example survey",
+        "signoutButton": {
+            "text": "Exit",
+            "iconType": "exit",
+            "iconPosition": "after",
+            "url": "/index"
+        },
+        "language": {
+            "languages": [
+                {
+                    "url": "#0",
+                    "ISOCode": "en",
+                    "text": "English",
+                    "current": true
+                },
+                {
+                    "url": "#0",
+                    "ISOCode": "cy",
+                    "text": "Cymraeg",
+                    "current": false
+                }
+            ]
+        }
+    },
+    "footer": {
+        "rows": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Contact us',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'Cookies and privacy',
+                        "url": '#0'
+                    }
+                ]
+            }
+        ],
+        "OGLLink": {
+            "pre": 'All content is available under the',
+            "link": 'Open Government Licence v3.0',
+            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
+            "post": ', except where otherwise stated'
+        }
+    }
+} %}
+{% block main %}
+<h1 class="ons-u-fs-xl">Your survey answers have been saved. You are now signed out.</h1>
+
+{% from "components/lists/_macro.njk" import onsList %}
+{{
+    onsList({
+        "variants": 'bare',
+        "itemsList": [
+            {
+                "url": 'index',
+                "text": 'Return to your account'
+            }
+        ]
+    })
+}}
+{% endblock %}
