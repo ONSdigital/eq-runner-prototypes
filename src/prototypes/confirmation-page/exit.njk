@@ -1,0 +1,35 @@
+---
+group: Design work
+title: Confirmation page
+layout: confirmation-page/views/_master
+---
+
+
+{% block main %}
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+<h1 class="ons-u-fs-xl">Save and sign out</h1>
+{{
+    onsPanel({
+        "type": 'success',
+        "id": 'success-id',
+        "iconType": 'check',
+        "body": 'Your progress has been saved',
+        "classes": 'ons-u-mb-xl'
+    })
+}}
+{% from "components/lists/_macro.njk" import onsList %}
+
+
+{{
+    onsList({
+        "variants": 'bare',
+        "itemsList": [
+            {
+                "url": 'index',
+                "text": 'Return to your account'
+            }
+        ]
+    })
+}}
+{% endblock %}
