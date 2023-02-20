@@ -3,7 +3,6 @@ group: Design work
 title: Confirmation page
 layout: confirmation-page/views/_master
 ---
-
 {% extends "layout/_template.njk" %}
 {% set pageConfig = {
     "header": {
@@ -53,6 +52,7 @@ layout: confirmation-page/views/_master
 } %}
 
 {% block main %}
+
 {% from "components/panel/_macro.njk" import onsPanel %}
 {{
     onsPanel({
