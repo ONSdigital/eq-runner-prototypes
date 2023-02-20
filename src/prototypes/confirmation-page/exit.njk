@@ -3,14 +3,38 @@ group: Design work
 title: Confirmation page
 layout: confirmation-page/views/_master
 ---
-
 {% extends "layout/_template.njk" %}
 {% set pageConfig = {
     "header": {
         "title": "ONS surveys"
     },
     "footer": {
+        "newTabWarning": 'The following links open in a new tab',
+        "crest": 'true',
+        "copyrightDeclaration":
+        {
+            "copyright": "Crown copyright and database rights 2020 OS 100019153.",
+            "text": "Use of address data is subject to the terms and conditions."
+        },
         "rows": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'What we do',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'Contact us',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'Accessibility',
+                        "url": '#0'
+                    }
+                ]
+            }
+        ],
+        "legal": [
             {
                 "itemsList": [
                     {
@@ -18,23 +42,17 @@ layout: confirmation-page/views/_master
                         "url": '#0'
                     },
                     {
-                        "text": 'Cookies and privacy',
+                        "text": 'Privacy and data protection',
                         "url": '#0'
                     }
                 ]
             }
-        ],
-        "OGLLink": {
-            "pre": 'All content is available under the',
-            "link": 'Open Government Licence v3.0',
-            "url": 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
-            "post": ', except where otherwise stated'
-        }
+        ]
     }
 } %}
 
 {% block main %}
-<h1>Save and sign out</h1>
+
 {% from "components/panel/_macro.njk" import onsPanel %}
 {{
     onsPanel({
@@ -42,21 +60,18 @@ layout: confirmation-page/views/_master
         "id": 'success-id',
         "iconType": 'check',
         "body": 'Your progress has been saved',
-        "classes": 'ons-u-mb-xl'
+        "classes": 'ons-u-mb-xl ons-u-fs-xl',
+        "iconSize": 'xl'
     })
 }}
 {% from "components/lists/_macro.njk" import onsList %}
 
 
-{{
-    onsList({
-        "variants": 'bare',
-        "itemsList": [
-            {
-                "url": 'index',
-                "text": 'Return to your account'
-            }
-        ]
-    })
-}}
+<h2 class="ons-u-fs-l ons-u-mt-xl">Business surveys</h2>
+<p>If you are completing a business survey, you need to <a href="#">sign in to your account</a>.</p>
+
+
+
+<h2 class="ons-u-fs-l">All other surveys</h2>
+<p>If you started your survey using an access code, you need to <a href="#">re-enter your access code</a>.</p>
 {% endblock %}
