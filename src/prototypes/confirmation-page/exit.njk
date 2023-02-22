@@ -1,6 +1,6 @@
 ---
 group: Design work
-title: Confirmation page
+title: Save and sign out confirmation
 layout: confirmation-page/views/_master
 ---
 {% extends "layout/_template.njk" %}
@@ -60,12 +60,11 @@ layout: confirmation-page/views/_master
         "id": 'success-id',
         "iconType": 'check',
         "body": 'Your progress has been saved',
-        "classes": 'ons-u-mb-xl ons-u-fs-xl',
-        "iconSize": 'xl'
+        "classes": 'ons-u-mb-xl'
     })
 }}
 {% from "components/lists/_macro.njk" import onsList %}
-
+<h1 class="ons-u-fs-xl">Save and sign out confirmation</h1>
 
 <h2 class="ons-u-fs-l ons-u-mt-xl">Business surveys</h2>
 <p>If you are completing a business survey, you need to <a href="#">sign in to your account</a>.</p>
