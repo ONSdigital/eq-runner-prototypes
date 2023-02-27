@@ -1,0 +1,108 @@
+{% extends "layout/_template.njk" %}
+{% set pageConfig = {
+    "header": {
+        "title": "PRODCOM Survey",
+        "signoutButton": {
+            "text": "Save and sign out",
+            "iconType": "exit",
+            "iconPosition": "after",
+            "url": "/index"
+        },
+        "language": {
+            "languages": [
+                {
+                    "url": "#0",
+                    "ISOCode": "en",
+                    "text": "English",
+                    "current": true
+                },
+                {
+                    "url": "#0",
+                    "ISOCode": "cy",
+                    "text": "Help",
+                    "current": false
+                },
+                {
+                    "url": "#0",
+                    "ISOCode": "en",
+                    "text": "My account",
+                    "current": false
+                },
+                {
+                    "url": "#0",
+                    "ISOCode": "en",
+                    "text": "Sign out",
+                    "current": false
+                }
+            ]
+        }
+    },
+    
+    "breadcrumbs": {
+            "ariaLabel": 'Breadcrumbs',
+            "itemsList": [
+                {
+                    "url": 'index',
+                    "text": 'Previous'
+                }
+            ]
+        },
+
+
+    "footer": {
+        "newTabWarning": 'The following links open in a new tab',
+        "crest": 'true',
+        "copyrightDeclaration":
+        {
+            "copyright": "Crown copyright and database rights 2020 OS 100019153.",
+            "text": "Use of address data is subject to the terms and conditions."
+        },
+        "rows": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'What we do',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'Contact us',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'Accessibility',
+                        "url": '#0'
+                    }
+                ]
+            }
+        ],
+        "legal": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Contact us',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'Privacy and data protection',
+                        "url": '#0'
+                    }
+                ]
+            }
+        ]
+    }
+} %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="/prototypes/confirmation-page/styles.css" />
+{% endblock %}
+
+{% block preMain %}
+{% endblock %}
+
+{% block main %}
+{% endblock %}
+
+{% block bodyEnd %}
+    <script src="/prototypes/confirmation-page/index.js"></script>
+{% endblock %}

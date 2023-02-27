@@ -1,0 +1,74 @@
+---
+group: Surveys
+title: PRODCOM survey
+layout: prodcom/views/_index
+---
+
+{% block main %}
+
+<h1 class="ons-u-fs-xl">You are completing this for ESSENTIAL ENTERPRISE LTD. (ESSENTIAL ENTERPRISE LTD.)</h1>
+
+<p>If the company details or structure have changed contact us on <a href="#">0300 1234 931</a> or <a href="#">email surveys@ons.gov.uk</a></p>
+
+<ul class="ons-list">
+  <li class="ons-list__item">You have been selected to complete the UK Manufacturer's Sales by Product (PRODCOM) Survey.</li>
+  <li class="ons-list__item">This survey collects annual data on products and is a key resource that contributes to the measure of industrial production, or manufacturers' sales, for the UK.</li>
+  <li class="ons-list__item">Products refer to goods and a small number of services, such as repair and maintenance.</li>
+  <li class="ons-list__item">You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.</li>
+  <li class="ons-list__item">You still need to complete this survey even if it does not seem relevant. All returns are important as it helps us produce better statistics.</li>
+  <li class="ons-list__item">We will treat your data securely and confidentially.</li>
+</ul>
+
+<h2 class="ons-u-fs-l ons-u-mt-l">Your response is legally required</h2>
+<p>Notice is given under Section 1 of the Statistics of Trade Act 1947.</p>
+
+{% from "components/button/_macro.njk" import onsButton %}
+{{
+    onsButton({
+        "text": "Start survey",
+        "url": "dates"
+    })
+}}
+
+
+<h2 class="ons-u-fs-l ons-u-mt-xl">Information you need</h2>
+<p>This questionnaire is divided into sections, which ask for information about:</p>
+
+{% from "components/accordion/_macro.njk" import onsAccordion %}
+
+{{
+    onsAccordion({
+        "id": "accordion",
+         "allButton": {
+            "open": "Show all",
+            "close": "Hide all"
+        },
+        "itemsList": [
+            {
+                "title": "Reporting period",
+                "content": "<p>You will be asked to report for 01 Jan 2022 to 31 Dec 2022. If you are unable to provide figures for this period, you will have the option to choose your own dates.</p>"
+            },
+            {
+                "title": "Products",
+                "content": "<p>These sections ask for the net selling value of a range of products.</p>
+                <p>Some products will be listed, and any additional products will need to be provided.</p>"
+            },
+            {
+                "title": "Other income",
+                "content": "<p>This section asks for information regarding your business's other income, if applicable.</p><p>This includes:</p> <ul class=\"ons-list\"><li class=\"ons-list__item\">merchanted goods</li><li class=\"ons-list__item\">work done</li><li class=\"ons-list__item\">waste products</li><li class=\"ons-list__item\">non-production income</li></ul>"
+            },
+            {
+                "title": "Company totals",
+                "content": "<p>This section asks for your business's total turnover.</p>"
+            }
+        ]
+    })
+}}
+
+<h2 class="ons-u-fs-l ons-u-mt-m">How we use your data</h2>
+<ul class="ons-list">
+  <li class="ons-list__item">The information you supply feeds into the National Accounts and the Producer Price Index, which is a primary measure of inflation. The statistics have a variety of uses such as policy making and assessing trends.</li>
+  <li class="ons-list__item">The statistics are classified by the Standard Industrial Classification into the manufacturing sector.</li>
+</ul>
+
+{% endblock %}
