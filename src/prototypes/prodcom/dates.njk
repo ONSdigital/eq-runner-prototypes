@@ -1,0 +1,79 @@
+---
+group: Surveys
+title: PRODCOM survey
+layout: prodcom/views/_hub
+---
+
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/details/_macro.njk" import onsDetails %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set questionTitle = "Are you able to report for the calendar year 1 Jan 2022 to 31 Dec 2022?" %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/hub.html"
+    }
+} %}
+
+{% block main %}
+    {% call onsQuestion({
+        "title": questionTitle,
+        "description": "<p>Your return should cover the calendar year 2021.</p>",
+        "guidance": {
+            "lists": [
+                {
+                    "listHeading": "Traded for part of the year?:",
+                    "itemsList": [
+                        {
+                            "text": "Please select \'No, I need to report for a different period\'"
+                        }
+                    ]
+                },
+                {
+                    "listHeading": "Cannot report for this calendar year?:",
+                    "itemsList": [
+                        {
+                            "text": "Please select \'No, I need to report for a different period\'"
+                        }
+                    ]
+                }
+            ]
+        },
+        "submitButton": true
+    }) %}
+
+        {{ onsRadios({
+        "id": "number-of-employees",
+        "name": "number-of-employees",
+        "legend": questionTitle,
+        "legendClasses": "ons-u-vh",
+        "radios": [
+            {
+                "id": "yes",
+                "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/good.html"
+                        },
+                "label": {
+                    "text": "Yes, I can report for this period"
+                },
+                "value": "yes"
+            },
+            {
+                "id": "no",
+                "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/bad.html"
+                        },
+                "label": {
+                    "text": "No, I need to report for a different period"
+                },
+                "value": "no"
+            }
+        ]
+        }) }}
+
+    {% endcall %}
+{% endblock %}
