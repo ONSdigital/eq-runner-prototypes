@@ -1,0 +1,154 @@
+---
+group: Surveys
+title: PRODCOM survey
+layout: prodcom/views/_hub
+---
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/summary/_macro.njk" import onsSummary %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <h1 class="ons-u-mt-m">Choose a section to complete</h1>
+
+    <p>Prodcom collects annual data on products. Products refer to goods and a small number of services, such as repair and maintenance. These services are classified by the Standard Industrial Classification into the manufacturing sector and therefore contribute to the measure of industrial production (or manufacturers' sales) for the UK.</p>
+
+    {{ onsSummary({
+        "hub": true,
+        "classes": "ons-u-mt-m",
+        "summaries": [
+            {
+                "groups": [
+                    {
+                        "rows": [
+                            {
+                                "rowTitle": "Period of reporting",
+                                "rowItems": [
+                                    {
+                                        "iconType": "check",
+                                        "valueList": [
+                                            {
+                                                "text": "Completed"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Changes answers",
+                                                "url": "dates"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Products",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "Not started"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Start section",
+                                                "ariaLabel": "Start Products section",
+                                                "url": "sectionAstart"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Additional products",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "Not started"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Start section",
+                                                "ariaLabel": "Start additional products section",
+                                                "url": "sectionBstart"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Other income",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "Not started"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Start section",
+                                                "ariaLabel": "Start additional products section",
+                                                "url": "sectionCstart"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Company totals",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "Not started"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Start section",
+                                                "ariaLabel": "Start additional products section",
+                                                "url": "sectionDstart"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Your comments",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "Not started"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Start section",
+                                                "ariaLabel": "Start additional products section",
+                                                "url": "sectionEstart"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }) }}
+
+    {{
+        onsButton({
+            "text": 'Continue',
+            "classes": 'ons-u-mb-m ons-u-mt-l',
+            "url": 'sectionAstart',
+            "iconType": false
+        })
+    }}
+{% endblock %}

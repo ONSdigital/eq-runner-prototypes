@@ -1,0 +1,125 @@
+---
+group: Surveys
+title: PRODCOM survey
+layout: prodcom/views/_master
+---
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "hubB"
+    }
+} %}
+
+{% block main %}
+    {% from "components/summary/_macro.njk" import onsSummary %}
+    {% from "components/button/_macro.njk" import onsButton %}
+
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xxl">
+                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section A</span>
+            Summary of products my bun
+        </h1>
+    </header>
+{{
+    onsSummary({
+        "summaries": [
+            {
+                
+                "groups": [
+                    {
+                        "groupTitle": "Esters of acetic acid",
+                        "rows": [
+                            {
+                                "rowTitle": "Value of sales",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£356,500"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "sectionA.html"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Volume of sales (Kilograms)",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "763,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "sectionA.html"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "groupTitle": "Oleic, linoleic or linolenic acids, their salts and esters",
+                        "rows": [
+                            {
+                                "rowItems": [
+                                    {
+                                        "rowTitle": "Value of sales",
+                                        "valueList": [
+                                            {
+                                                "text": "£218,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "sectionA.html"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "rowTitle": "Volume of sales (Tonnes)",
+                                        "valueList": [
+                                            {
+                                                "text": "481"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "sectionA.html"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    })
+}}
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l',
+        "url": 'hubB',
+        "iconType": false
+    })
+}}
+{% endblock %}
