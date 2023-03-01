@@ -15,34 +15,13 @@ layout: prodcom/views/_hub
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/hub.html"
+        "action":  pageInfo.rootPath + "/dates.html"
     }
 } %}
 
 {% block main %}
     {% call onsQuestion({
         "title": questionTitle,
-        "description": "<p>Your return should cover the calendar year 2021.</p>",
-        "guidance": {
-            "lists": [
-                {
-                    "listHeading": "Traded for part of the year?:",
-                    "itemsList": [
-                        {
-                            "text": "Please select \'No, I need to report for a different period\'"
-                        }
-                    ]
-                },
-                {
-                    "listHeading": "Cannot report for this calendar year?:",
-                    "itemsList": [
-                        {
-                            "text": "Please select \'No, I need to report for a different period\'"
-                        }
-                    ]
-                }
-            ]
-        },
         "submitButton": true
     }) %}
 
@@ -55,7 +34,7 @@ layout: prodcom/views/_hub
             {
                 "id": "yes",
                 "attributes": {
-                            "data-action-url": pageInfo.rootPath + "/good.html"
+                            "data-action-url": pageInfo.rootPath + "/hub.html"
                         },
                 "label": {
                     "text": "Yes, I can report for this period"
@@ -65,7 +44,7 @@ layout: prodcom/views/_hub
             {
                 "id": "no",
                 "attributes": {
-                            "data-action-url": pageInfo.rootPath + "/bad.html"
+                            "data-action-url": pageInfo.rootPath + "/dates2.html"
                         },
                 "label": {
                     "text": "No, I need to report for a different period"

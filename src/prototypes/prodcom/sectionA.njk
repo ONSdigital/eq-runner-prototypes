@@ -9,35 +9,45 @@ layout: prodcom/views/_master
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 
-{% set questionTitle = "For the calendar year 2022, what is the value and volume of esters of acetic acid?" %}
+{% set questionTitle = "For the period <em class=\"ons-highlight\">01/01/2022</em> to <em class=\"ons-highlight\">31/12/2022</em>, what was the sales value and volume of <em class=\"ons-highlight\">Limestone flux; limestone and other calcareous stone of a kind used for the manufacture of lime or cement</em>?" %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/sectionAsummary.html"
+    }
+} %}
 
 {% block main %}
     {% call onsQuestion({
-        "title": questionTitle+'<span style="display: block; color:#707071;" class="ons-u-fs-m">(commodity tariff codes 291532, 291533, 291536, 291539)</span>',
-        "description": "<p>5.  Volume of total production Figures should cover the total quantity of the goods produced during the period of the return - regardless of whether you sold them or not. This includes any          production that was incorporated into the manufacture of other products. Exclude goods produced during an earlier period even if you sold them during the period covered by this return.</p>",
+        "title": questionTitle,
+        "guidance": {
+            "lists": [
+                {
+                    "listHeading": "Excluding",
+                    "itemsList": [
+                        {
+                            "text": "crushed limestone aggregate and calcareous dimension stone"
+                        }
+                    ]
+                },
+                {
+                    "listHeading": "Including",
+                    "itemsList": [
+                        {
+                            "text": "example"
+                        }
+                    ]
+                }
+            ]
+        },
         "submitButton": true
     }) %}
 
-    {{
-    onsInput({
-        "id": "prefixed",
-        "type": "number",
-        "width": "10",
-        "autocomplete": "off",
-        "label": {
-            "text": "Value of sales"
-        },
-        "prefix": {
-            "text": "£",
-            "title": "British pounds (GBP)",
-            "id": "sales-value-gpb-prefix"
-        }
-    })
-}}
 
 {{
     onsInput({
-        "id": "number",
+        "id": "biscuits",
         "type": "number",
         "width": "10",
         "autocomplete": "off",
@@ -45,7 +55,29 @@ layout: prodcom/views/_master
             "min": 0
         },
         "label": {
-            "text": "Volume of sales (Kilogram)"
+            "text": "Value of sales",
+            "description": "Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank"
+        },
+        "prefix": {
+            "title": "British pounds (GBP)",
+            "text": "£",
+            "id": "annual-salary-gpb-prefix"
+        }
+    })
+}}
+
+{{
+    onsInput({
+        "id": "vol-sales",
+        "type": "number",
+        "width": "10",
+        "autocomplete": "off",
+        "attributes": {
+            "min": 0
+        },
+        "label": {
+            "text": "Volume of sales (Tonnes)",
+            "description": "Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank"
         }
     })
 }}
