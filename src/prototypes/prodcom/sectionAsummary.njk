@@ -7,18 +7,25 @@ layout: prodcom/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/hub.html"
+        "action":  pageInfo.rootPath + "hubB"
     }
 } %}
 
 {% block main %}
     {% from "components/summary/_macro.njk" import onsSummary %}
     {% from "components/button/_macro.njk" import onsButton %}
+
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xxl">
+                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section A</span>
+            Summary of products my bun
+        </h1>
+    </header>
 {{
     onsSummary({
         "summaries": [
             {
-                "summaryTitle": "Products",
+                
                 "groups": [
                     {
                         "groupTitle": "Esters of acetic acid",
@@ -108,9 +115,11 @@ layout: prodcom/views/_master
     })
 }}
 {{
-        onsButton({
-            "text": 'Continue',
-            "classes": 'ons-u-mt-xl'
-        })
-    }}
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l',
+        "url": 'hubB',
+        "iconType": false
+    })
+}}
 {% endblock %}

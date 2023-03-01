@@ -19,8 +19,16 @@ layout: prodcom/views/_master
 } %}
 
 {% block main %}
+
+
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xl">
+                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section A</span>
+            For the period <em class="ons-highlight">01/01/2022</em> to <em class="ons-highlight">31/12/2022</em>, what was the sales value and volume of Limestone flux; limestone and other calcareous stone of a kind used for the manufacture of lime or cement?
+        </h1>
+    </header>
+
     {% call onsQuestion({
-        "title": questionTitle,
         "guidance": {
             "lists": [
                 {
@@ -45,26 +53,16 @@ layout: prodcom/views/_master
     }) %}
 
 
-{{
-    onsInput({
-        "id": "biscuits",
-        "type": "number",
-        "width": "10",
-        "autocomplete": "off",
-        "attributes": {
-            "min": 0
-        },
-        "label": {
-            "text": "Value of sales",
-            "description": "Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank"
-        },
-        "prefix": {
-            "title": "British pounds (GBP)",
-            "text": "£",
-            "id": "annual-salary-gpb-prefix"
-        }
-    })
-}}
+<div class="ons-field">
+    <label class="ons-label ons-label--with-description" for="prefixed">Value of sales</label>
+    <span id="description-hint" class="ons-label__description  ons-input--with-description">Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank</span>
+    <span class="ons-input-type ons-input-type--prefix">
+        <span class="ons-input-type__inner">
+            <input type="text" id="prefixed" class="ons-input ons-input--text ons-input-type__input ons-input-number--w-10" aria-labelledby="annual-salary-gpb-prefix" pattern="[0-9]*" inputmode="numeric" autocomplete="off">
+            <abbr id="annual-salary-gpb-prefix" class="ons-input-type__type ons-js-input-abbr" title="British pounds (GBP)">£</abbr>
+        </span>
+    </span>
+</div>
 
 {{
     onsInput({

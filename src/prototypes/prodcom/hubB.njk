@@ -34,7 +34,7 @@ layout: prodcom/views/_hub
                                         "actions": [
                                             {
                                                 "text": "Change",
-                                                "ariaLabel": "Changes answers",
+                                                "ariaLabel": "Change answers",
                                                 "url": "dates"
                                             }
                                         ]
@@ -45,16 +45,17 @@ layout: prodcom/views/_hub
                                 "rowTitle": "Products",
                                 "rowItems": [
                                     {
+                                        "iconType": "check",
                                         "valueList": [
                                             {
-                                                "text": "Not started"
+                                                "text": "Completed"
                                             }
                                         ],
                                         "actions": [
                                             {
-                                                "text": "Start section",
-                                                "ariaLabel": "Start Products section",
-                                                "url": "sectionAstart"
+                                                "text": "Change",
+                                                "ariaLabel": "Change answers",
+                                                "url": "sectionBstart"
                                             }
                                         ]
                                     }
@@ -147,7 +148,7 @@ layout: prodcom/views/_hub
         onsButton({
             "text": 'Continue',
             "classes": 'ons-u-mb-m ons-u-mt-l',
-            "url": 'sectionAstart',
+            "url": 'sectionBstart',
             "iconType": false
         })
     }}
