@@ -1,0 +1,87 @@
+---
+group: Surveys
+title: PRODCOM survey
+layout: prodcom/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/sectionBsummary"
+    }
+} %}
+
+{% block main %}
+
+
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xl">
+                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section B</span>
+            Do you need to add any more products?
+        </h1>
+    </header>
+
+<div class="ons-summary ons-u-mb-l">
+                    <div class="ons-summary__group">
+                        <table class="ons-summary__items">
+                            <thead class="ons-u-vh">
+                            <tr>
+                                <th>Name</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody class="ons-summary__item">
+                            <tr class="ons-summary__row">
+                                <td class="ons-summary__item-title">
+                                    <div class="ons-summary__item--text" style="font-weight: bold">Supermarket</div>
+                                </td>
+                            </tr>
+                            </tbody>
+                            
+                            <tbody class="ons-summary__item">
+                            <tr class="ons-summary__row">
+                                <td class="ons-summary__item-title">
+                                    <div class="ons-summary__item--text"></div>
+                                </td>
+                                <td class="ons-summary__actions">
+    <!--                                    <a href="#0" onclick="showAlert();" class="ons-summary__button" aria-label="Change details">Change</a>-->
+    <!--                                    <span class="ons-summary__spacer"></span>-->
+                                    <a href="#0" onclick="showAlert();" class="ons-summary__button" aria-label="Remove">Remove</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                </div>
+
+                <div class="ons-input-items">
+                    <div class="ons-radios__items">
+          <span class="ons-radios__item">
+            <span class="ons-radio">
+              <input type="radio" id="yes" class="ons-radio__input ons-js-radio" value="yes" name="addMore">
+              <label class=" ons-radio__label " for="yes" id="yes-label">Yes</label>
+            </span>
+          </span>
+                        <br>
+                        <span class="ons-radios__item">
+            <span class="ons-radio">
+              <input type="radio" id="no" class="ons-radio__input ons-js-radio" value="no" name="addMore">
+              <label class=" ons-radio__label " for="no" id="no-label">No</label>
+            </span>
+          </span>
+                    </div>
+                </div>
+
+<div class="ons-u-mt-xl">
+{% from "components/button/_macro.njk" import onsButton %}
+{{
+    onsButton({
+        "text": "Save and continue"
+    })
+}}
+
+{% endblock %}
+</div>
