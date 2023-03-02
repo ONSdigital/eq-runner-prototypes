@@ -6,10 +6,10 @@ layout: example/views/_master
 {% from "components/panel/_macro.njk" import onsPanel %}
 
 {% set prevPage = "index" %}
-{% set form =  {
+{% set form = {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/summary.html"
+        "action": pageInfo.rootPath + "/summary.html"
     }
 } %}
 
