@@ -7,10 +7,10 @@ layout: example/views/_master
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% set prevPage = "age" %}
-{% set form =  {
+{% set form = {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/summary.html"
+        "action": pageInfo.rootPath + "/summary.html"
     }
 } %}
 
@@ -31,7 +31,7 @@ layout: example/views/_master
                 "text": "£"
             }
         })
-    }}    
+    }}
     {{
         onsButton({
             "text": "Save and continue",
