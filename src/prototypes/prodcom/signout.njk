@@ -1,0 +1,37 @@
+---
+group: Surveys
+title: ONS surveys
+layout: prodcom/views/_hub
+---
+
+{% block main %}
+<h1 class="ons-u-fs-xl">Sorry, you need to sign in again</h1>
+{% from "components/lists/_macro.njk" import onsList %}
+<p>This is because you have either:</p>
+{{
+    onsList({
+        "itemsList": [
+            {
+                "text": 'been inactive for 45 minutes and your session has timed out'
+            },
+            {
+                "text": 'followed a link to a page you are not signed in to'
+            },
+            {
+                "text": 'followed a link to a survey that has already been submitted'
+            }
+        ]
+    })
+}}
+
+
+<h2 class="ons-u-fs-l ons-u-mt-xl">Business surveys</h2>
+<p>If you are completing a business survey, you need to <a href="#">sign in to your account</a>.</p>
+
+
+
+<h2 class="ons-u-fs-l">All other surveys</h2>
+<p>If you started your survey using an access code, you need to <a href="#">re-enter your access code</a>.</p>
+
+
+{% endblock %}
