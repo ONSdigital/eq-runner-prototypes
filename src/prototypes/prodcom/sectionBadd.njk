@@ -1,0 +1,132 @@
+---
+group: Surveys
+title: PRODCOM survey
+layout: prodcom/views/_master
+---
+
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/details/_macro.njk" import onsDetails %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set questionTitle = "Do you need to add any more products?" %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/sectionBminor.html"
+    }
+} %}
+
+{% block main %}
+
+        <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xl">
+                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section B</span>
+            Do you need to add any more products?
+        </h1>
+    </header>
+
+
+<div class="ons-summary ons-u-mb-l">
+  <div class="ons-summary__group">
+    <div class="ons-summary__items">
+      <div class="ons-summary__item">
+        <dl class="ons-summary__row">
+          <dt class="ons-summary__item-title">
+           
+            <div class="ons-summary__item--text">
+                <h4>Example product</h4>
+                CN code:<strong> 581309721</strong><br>
+                Value of sales:<strong> £1,274,000</strong>
+            </div>
+          </dt>
+          <dd class="ons-summary__actions">
+            <a href="#0" class="ons-summary__button" aria-label="Change details for example product">Change</a>
+            <span class="ons-summary__spacer"></span>
+            <a href="#0" class="ons-summary__button" aria-label="Remove example product">Remove</a>
+          </dd>
+        </dl>
+      </div>
+
+      <div class="ons-summary__item">
+        <dl class="ons-summary__row">
+          <dt class="ons-summary__item-title">
+           
+            <div class="ons-summary__item--text">
+                <h4>Another example product with less detail</h4>
+                CN code:<strong> 581309711</strong><br>
+                Value of sales:<strong> £129,000</strong>
+            </div>
+          </dt>
+          <dd class="ons-summary__actions">
+            <a href="#0" class="ons-summary__button" aria-label="Change details for example product">Change</a>
+            <span class="ons-summary__spacer"></span>
+            <a href="#0" class="ons-summary__button" aria-label="Remove example product">Remove</a>
+          </dd>
+        </dl>
+      </div>
+
+      <div class="ons-summary__item">
+        <dl class="ons-summary__row">
+          <dt class="ons-summary__item-title">
+           
+            <div class="ons-summary__item--text">
+                <h4>Example product described in as much detail as possible using basic terminology, brand names, common usage names or brief advertising/marketing material.</h4>
+                CN code:<strong> 581309501</strong><br>
+                Value of sales:<strong> £304,000</strong>
+            </div>
+          </dt>
+          <dd class="ons-summary__actions">
+            <a href="#0" class="ons-summary__button" aria-label="Change details for example product">Change</a>
+            <span class="ons-summary__spacer"></span>
+            <a href="#0" class="ons-summary__button" aria-label="Remove example product">Remove</a>
+          </dd>
+        </dl>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+        {{ onsRadios({
+        "id": "number-of-employees",
+        "name": "number-of-employees",
+        "legend": questionTitle,
+        "legendClasses": "ons-u-vh",
+        "radios": [
+            {
+                "id": "yes",
+                "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/sectionB.html"
+                        },
+                "label": {
+                    "text": "Yes"
+                },
+                "value": "yes"
+            },
+            {
+                "id": "no",
+                "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/sectionBsummary.html"
+                        },
+                "label": {
+                    "text": "No"
+                },
+                "value": "no"
+            }
+        ]
+        }) }}
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l',
+        "url": 'sectionBminor',
+        "iconType": false
+    })
+}}
+{% endblock %}

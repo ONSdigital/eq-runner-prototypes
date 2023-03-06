@@ -7,7 +7,7 @@ layout: prodcom/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "hubB"
+        "action":  pageInfo.rootPath + "hubC"
     }
 } %}
 
@@ -17,8 +17,8 @@ layout: prodcom/views/_master
 
     <header class="ons-patternlib-page__content-header">
         <h1 class="ons-u-fs-xxl">
-                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section A</span>
-            Summary of products
+                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section B</span>
+            Summary of additional products
         </h1>
     </header>
 
@@ -30,14 +30,13 @@ layout: prodcom/views/_master
           <dt class="ons-summary__item-title">
            
             <div class="ons-summary__item--text">
-                <h4>Limestone flux; limestone and other calcareous stone of a kind used for the manufacture of lime or cement</h4>
-                Value of sales:<strong> £1,274,000</strong><br>
-                Volume of sales:<strong> 882,377 Tonnes</strong><br>
-                Total produced:<strong> 1,000,000 Tonnes</strong>
+                <h4>Example product</h4>
+                <strong>CN code:</strong> 581309721<br>
+                <strong>Value of sales:</strong> £1,274,000
             </div>
           </dt>
           <dd class="ons-summary__actions">
-            <a href="sectionA" class="ons-summary__button" aria-label="Change details for example product">Change</a>
+            <a href="#0" class="ons-summary__button" aria-label="Change details for example product">Change</a>
           </dd>
         </dl>
       </div>
@@ -47,12 +46,13 @@ layout: prodcom/views/_master
           <dt class="ons-summary__item-title">
            
             <div class="ons-summary__item--text">
-                <h4>Non-lime mortar and other cement-derived bonding agents</h4>
-                Value of sales:<strong> £274,000</strong>
+                <h4>Another example product with a bit more detail</h4>
+                <strong>CN code:</strong> 581309711<br>
+                <strong>Value of sales:</strong> £129,000
             </div>
           </dt>
           <dd class="ons-summary__actions">
-            <a href="sectionA" class="ons-summary__button" aria-label="Change details for example product">Change</a>
+            <a href="#0" class="ons-summary__button" aria-label="Change details for example product">Change</a>
           </dd>
         </dl>
       </div>
@@ -62,19 +62,33 @@ layout: prodcom/views/_master
           <dt class="ons-summary__item-title">
            
             <div class="ons-summary__item--text">
-                <h4>Oleic, linoleic or linolenic acids, their salts and esters</h4>
-                Value of sales:<strong> £218,000</strong><br>
-                Volume of sales:<strong> 3659 Kilograms</strong><br>
+                <h4>Example product described in as much detail as possible using basic terminology, brand names, common usage names or brief advertising/marketing material.</h4>
+                <strong>CN code:</strong> 581309501<br>
+                <strong>Value of sales:</strong> £304,000
             </div>
           </dt>
           <dd class="ons-summary__actions">
-            <a href="sectionA" class="ons-summary__button" aria-label="Change details for example product">Change</a>
+            <a href="#0" class="ons-summary__button" aria-label="Change details for example product">Change</a>
           </dd>
         </dl>
       </div>
 
+      <div class="ons-summary__item">
+        <dl class="ons-summary__row">
+          <dt class="ons-summary__item-title">
+           
+            <div class="ons-summary__item--text">
+                <h4>Minor Products</h4>
+                <strong>Value of sales:</strong> £14,000
+            </div>
+          </dt>
+          <dd class="ons-summary__actions">
+            <a href="sectionBminor" class="ons-summary__button" aria-label="Change details for example product">Change</a>
+          </dd>
+        </dl>
+      </div>
 
-<div class="ons-summary__item ons-summary__item--total">
+      <div class="ons-summary__item ons-summary__item--total">
                                     
                                     
 
@@ -83,7 +97,7 @@ layout: prodcom/views/_master
                                             <dt class="ons-summary__item-title">
                                                 
 
-                                                <div class="ons-summary__item--text">Total for products</div>
+                                                <div class="ons-summary__item--text">Total for additional products</div>
 
                                                 
                                                 
@@ -109,7 +123,7 @@ layout: prodcom/views/_master
     onsButton({
         "text": 'Continue',
         "classes": 'ons-u-mb-m ons-u-mt-l',
-        "url": 'hubB',
+        "url": 'hubC',
         "iconType": false
     })
 }}

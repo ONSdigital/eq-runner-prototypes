@@ -1,0 +1,153 @@
+---
+group: Surveys
+title: PRODCOM survey
+layout: prodcom/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/summary/_macro.njk" import onsSummary %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/sectionCsummary"
+    }
+} %}
+
+{% block main %}
+
+
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xl">
+                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section D</span>
+            What is your total company turnover?
+        </h1>
+    </header>
+<p>This should be the sum of all values in Section A, B and C.</p>
+
+{{
+    onsPanel({
+        "spacious": true,
+        "body": '<h4>Excluding:</h4><p>VAT, capital receipts from the disposal of assets, interest and dividends.</p>'
+    })
+}}
+
+{{
+    onsSummary({
+        "summaries": [
+            {
+                "groups": [
+                    {
+                        "rows": [
+                            {
+                                "rowTitle": "Total value of products",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£225,000.00"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "sectionAsummary"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Total value of other products",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£9,000.00"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "sectionBsummary"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Total value of other income",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£15,000.00"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "sectionCsummary"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Grand total",
+                                "total": true,
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£249,000.00"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    })
+}}
+
+{{
+    onsCheckboxes({
+        "legend": "Confirmation",
+        "classes": 'ons-u-mt-xl',
+        "name": "types",
+        "borderless": true,
+        "checkboxes": [
+            {
+                "id": "booklet",
+                "label": {
+                    "text": "I confirm that this is an accurate account of the turnover for ESSENTIAL ENTERPRISE LTD. (ESSENTIAL ENTERPRISE LTD.)"
+                },
+                "value": "booklet"
+            }
+        ]
+    })
+}}
+
+
+<div class="ons-u-mt-xl">
+
+{{
+    onsButton({
+        "text": 'Save and continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l',
+        "url": 'hubE',
+        "iconType": false
+    })
+}}
+
+</div>
+{% endblock %}

@@ -1,7 +1,7 @@
 ---
 group: Surveys
 title: PRODCOM survey
-layout: prodcom/views/_hub
+layout: prodcom/views/_master
 ---
 
 {% from "components/question/_macro.njk" import onsQuestion %}
@@ -12,10 +12,10 @@ layout: prodcom/views/_hub
 
 {% set questionTitle = "What dates will you be reporting for?" %}
 
-{% set form = {
+{% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/sectionA.html"
+        "action":  pageInfo.rootPath + "/hub"
     }
 } %}
 

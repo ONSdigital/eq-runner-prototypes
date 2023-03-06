@@ -1,0 +1,48 @@
+---
+group: Surveys
+title: PRODCOM survey
+layout: prodcom/views/_master
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/sectionC4"
+    }
+} %}
+
+{% block main %}
+
+
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xl">
+                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section C</span>
+            What is the value of sales of waste products and residues?
+        </h1>
+    </header>
+
+<div class="ons-field">
+    <label class="ons-label ons-label--with-description" for="sales-value">Value of sales</label>
+    <span id="description-hint" class="ons-label__description  ons-input--with-description">Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank</span>
+    <span class="ons-input-type ons-input-type--prefix">
+        <span class="ons-input-type__inner">
+            <input type="text" class="ons-input ons-input--text ons-input-type__input ons-input-number--w-10" aria-labelledby="annual-salary-gpb-prefix" pattern="[0-9]*" inputmode="numeric" autocomplete="off">
+            <abbr id="annual-salary-gpb-prefix" class="ons-input-type__type ons-js-input-abbr" title="British pounds (GBP)">£</abbr>
+        </span>
+    </span>
+</div>
+<div class="ons-u-mt-xl">
+
+{{
+    onsButton({
+        "text": 'Save and continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l',
+        "url": 'sectionC4',
+        "iconType": false
+    })
+}}
+
+</div>
+{% endblock %}

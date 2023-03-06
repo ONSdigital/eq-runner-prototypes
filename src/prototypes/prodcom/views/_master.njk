@@ -1,4 +1,5 @@
 {% extends "layout/_template.njk" %}
+
 {% set pageConfig = {
     "header": {
         "title": "PRODCOM Survey",
@@ -39,16 +40,15 @@
     },
     
     "breadcrumbs": {
-            "ariaLabel": 'Breadcrumbs',
-            "itemsList": [
-                {
-                    "url": 'index',
-                    "text": 'Previous'
-                }
-            ]
-        },
-
-
+        "ariaLabel": 'Breadcrumbs',
+        "itemsList": [
+            {
+                "linkClasses": 'js-previous' if prevPage else '',
+                "url": 'javascript:history.back()',
+                "text": 'Previous'
+            }
+        ]
+    },
     "footer": {
         "newTabWarning": 'The following links open in a new tab',
         "crest": 'true',

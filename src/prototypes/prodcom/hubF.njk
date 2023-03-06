@@ -9,9 +9,14 @@ layout: prodcom/views/_hub
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% block main %}
-    <h1 class="ons-u-mt-m">Choose a section to complete</h1>
+<h1 class="ons-u-mt-m">Check your answers and submit</h1>
 
-    <p>Prodcom collects annual data on products. Products refer to goods and a small number of services, such as repair and maintenance. These services are classified by the Standard Industrial Classification into the manufacturing sector and therefore contribute to the measure of industrial production (or manufacturers' sales) for the UK.</p>
+{% call onsPanel({
+        "type": 'warn'
+    })
+%}
+    You must submit this survey to complete it
+{% endcall %}
 
     {{ onsSummary({
         "hub": true,
@@ -65,15 +70,16 @@ layout: prodcom/views/_hub
                                 "rowTitle": "Additional products",
                                 "rowItems": [
                                     {
+                                        "iconType": "check",
                                         "valueList": [
                                             {
-                                                "text": "Not started"
+                                                "text": "Completed"
                                             }
                                         ],
                                         "actions": [
                                             {
-                                                "text": "Start section",
-                                                "ariaLabel": "Start additional products section",
+                                                "text": "View answers",
+                                                "ariaLabel": "View answers for additional products",
                                                 "url": "sectionBstart"
                                             }
                                         ]
@@ -84,15 +90,16 @@ layout: prodcom/views/_hub
                                 "rowTitle": "Other income",
                                 "rowItems": [
                                     {
+                                        "iconType": "check",
                                         "valueList": [
                                             {
-                                                "text": "Not started"
+                                                "text": "Completed"
                                             }
                                         ],
                                         "actions": [
                                             {
-                                                "text": "Start section",
-                                                "ariaLabel": "Start additional products section",
+                                                "text": "View answers",
+                                                "ariaLabel": "View answers for other income",
                                                 "url": "sectionCstart"
                                             }
                                         ]
@@ -103,15 +110,16 @@ layout: prodcom/views/_hub
                                 "rowTitle": "Company totals",
                                 "rowItems": [
                                     {
+                                        "iconType": "check",
                                         "valueList": [
                                             {
-                                                "text": "Not started"
+                                                "text": "Completed"
                                             }
                                         ],
                                         "actions": [
                                             {
-                                                "text": "Start section",
-                                                "ariaLabel": "Start company totals section",
+                                                "text": "View answers",
+                                                "ariaLabel": "View answers for company totals",
                                                 "url": "sectionDstart"
                                             }
                                         ]
@@ -122,15 +130,16 @@ layout: prodcom/views/_hub
                                 "rowTitle": "Your comments",
                                 "rowItems": [
                                     {
-                                        "valueList": [
+                                         "iconType": "check",
+                                         "valueList": [
                                             {
-                                                "text": "Not started"
+                                                "text": "Completed"
                                             }
                                         ],
                                         "actions": [
                                             {
-                                                "text": "Start section",
-                                                "ariaLabel": "Start additional products section",
+                                                "text": "View answers",
+                                                "ariaLabel": "View answers for your comments",
                                                 "url": "sectionEstart"
                                             }
                                         ]
@@ -146,9 +155,9 @@ layout: prodcom/views/_hub
 
     {{
         onsButton({
-            "text": 'Continue',
+            "text": 'Submit survey',
             "classes": 'ons-u-mb-m ons-u-mt-l',
-            "url": 'sectionBstart',
+            "url": 'thank-you',
             "iconType": false
         })
     }}
