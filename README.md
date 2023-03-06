@@ -66,6 +66,13 @@ version: 44.0.0
 
 If you need to add custom JavaScript to your prototype, the build system will automatically look for a file called `index.js` in your prototype. Gulp will convert your JavaScript to ES5 code. You can refer to the example folder to see how to include the JavaScript in your template.
 
+### JavaScript helpers
+If the `index.js` file is included in your prototype it also automatically imports some ready made helpers for you:
+- Questions Manager - this adds all questions and answers entered on pages into the session storage in the browser so that they can be accessed at any time for things such as piping and summaries.
+- Piping - this uses the data collected by the questions manager and pipes the answer into another page, e.g. into the wording of another question. To use it add the `.js-piped-answer` class to the element you want to pipe the answer into along with a `{x}` where in that element you want to pipe it. Then add the `data-question-to-pipe` attribute too and set it to the url of the page you want to pipe the answer from.
+- Previous Link - if you add the class `.js-previous` to a link and a `previous` variable in the url variables is set. Then the link url will be set to what the `previous` variable is set to. But this can be overridden by setting `prevPage` in the nunjucks to the name of the page you want the link to go to and the url will be populated from that.
+- Summary Manager - this will populate a summary for you based on the data collected in the questions manager. If you want a question not to appear on the summary you can add the class `.js-question-no-summary` to the form element on the question page
+
 ### Custom CSS
 
 If you need to add custom CSS to style a new component or override styling on an existing component you can create a `.scss` file in the directory of your prototype. Gulp will spit out a `.css` file named the same as any `.scss` file that isn't prefixed with an underscore. You can refer to the example folder to see how to include generated css in your template.
