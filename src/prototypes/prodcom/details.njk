@@ -1,0 +1,135 @@
+---
+group: Surveys
+title: PRODCOM survey
+layout: prodcom/views/_master
+---
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "hub"
+    }
+} %}
+
+{% block main %}
+    {% from "components/summary/_macro.njk" import onsSummary %}
+    {% from "components/button/_macro.njk" import onsButton %}
+
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xxl">
+            Contact details
+        </h1>
+    </header>
+
+<p>Where available we have included your details below. Please make any amendments by selecting 'Change'.
+{{
+    onsSummary({
+        "summaries": [
+            {
+                "groups": [
+                    {
+                        "placeholderText": 'test',
+                        "id": "turnover",
+                        "rows": [
+                            {
+                                "id": "sales-dates-row",
+                                "rowTitle": "Name of person to contact",
+                                "rowItems": [
+                                    {
+                                        "id": "sales-dates",
+                                        "valueList": [
+                                            {
+                                                "text": "Barbara Kerridge"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "detailsName"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Telephone number",
+                                "id": "sales-value-row",
+                                "rowItems": [
+                                    {
+                                        "id": "sales-value",
+                                        "valueList": [
+                                            {
+                                                "text": "02891 2164292"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "detailsPhone"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "sales-reasons-row",
+                                "rowTitle": "Fax number",
+                                "rowItems": [
+                                    {
+                                        "id": "sales-reasons",
+                                        "valueList": [
+                                            {
+                                                "text": "02891 554522"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "detailsFax"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "sales-detail-row",
+                                "rowTitle": "Web address",
+                                "rowItems": [
+                                    {
+                                        "id": "sales-detail",
+                                        "valueList": [
+                                            {
+                                                "text": ""
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "detailsWeb"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    })
+}}
+
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l',
+        "url": 'hub',
+        "iconType": false
+    })
+}}
+{% endblock %}

@@ -1,0 +1,53 @@
+---
+group: Surveys
+title: PRODCOM survey
+layout: prodcom/views/_spoke
+---
+
+{% from "components/breadcrumbs/_macro.njk" import onsBreadcrumbs %}
+    {% from "components/button/_macro.njk" import onsButton %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/sectionC"
+    }
+} %}
+
+{% block preMain %}
+{{
+    onsBreadcrumbs({
+        "ariaLabel": 'Back',
+        "itemsList": [
+            {
+                "url": 'hub',
+                "id": "back",
+                "text": 'Back',
+                "attributes": {
+                    "data-attribute": "Example attribute"
+                }
+            }
+        ]
+    })
+}}
+{% endblock %}
+
+{% block main %}
+
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xxl">
+                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section C</span>
+            Other income
+        </h1>
+    </header>
+
+    <p>No content for this.</p>
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mt-xl'
+    })
+}}
+
+{% endblock %}

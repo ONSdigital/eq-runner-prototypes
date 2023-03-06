@@ -9,7 +9,7 @@ layout: prodcom/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/sectionBadd"
+        "action":  pageInfo.rootPath + "/sectionBsummary"
     }
 } %}
 
@@ -19,26 +19,10 @@ layout: prodcom/views/_master
     <header class="ons-patternlib-page__content-header">
         <h1 class="ons-u-fs-xl">
                 <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section B</span>
-            What additional products do you have?
+            What is the total value of remaining minor products?
         </h1>
     </header>
-
-<div class="ons-panel ons-panel--info ons-panel--no-title">
-  <span class="ons-panel__assistive-text ons-u-vh">Important information: </span>
-  <div class="ons-panel__body">
-    <p>If you need to add multiple products, you can do this on the next page</p>
-  </div>
-</div>
-
-<div class="ons-field">
-  <label class="ons-label ons-label--with-description" aria-describedby="description-hint" for="textarea">Product description</label>
-  <textarea id="textarea" class="ons-input ons-input--textarea   " name="feedback" rows="8"></textarea>
-</div>
-
-<div class="ons-field">
-  <label class="ons-label" for="text">CN code (if known)</label>
-  <input type="text" id="text" class="ons-input ons-input--text ons-input-type__input" />
-</div>
+<p>Include all other products where the total sales value for each product line is less than £25,000.</p>
 
 <div class="ons-field">
     <label class="ons-label ons-label--with-description" for="sales-value">Value of sales</label>
@@ -56,7 +40,7 @@ layout: prodcom/views/_master
     onsButton({
         "text": 'Save and continue',
         "classes": 'ons-u-mb-m ons-u-mt-l',
-        "url": 'sectionBadd',
+        "url": 'sectionBsummary',
         "iconType": false
     })
 }}

@@ -9,7 +9,7 @@ layout: prodcom/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/sectionBadd"
+        "action":  pageInfo.rootPath + "/sectionCsummary"
     }
 } %}
 
@@ -18,30 +18,22 @@ layout: prodcom/views/_master
 
     <header class="ons-patternlib-page__content-header">
         <h1 class="ons-u-fs-xl">
-                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section B</span>
-            What additional products do you have?
+                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section C</span>
+            What is the total value of your non-production income?
         </h1>
     </header>
+<p>Income derived from provision of services and other non-production activities that you have not already told us about.</p>
 
-<div class="ons-panel ons-panel--info ons-panel--no-title">
-  <span class="ons-panel__assistive-text ons-u-vh">Important information: </span>
-  <div class="ons-panel__body">
-    <p>If you need to add multiple products, you can do this on the next page</p>
-  </div>
-</div>
-
-<div class="ons-field">
-  <label class="ons-label ons-label--with-description" aria-describedby="description-hint" for="textarea">Product description</label>
-  <textarea id="textarea" class="ons-input ons-input--textarea   " name="feedback" rows="8"></textarea>
-</div>
+{% from "components/panel/_macro.njk" import onsPanel %}
+{{
+    onsPanel({
+        "spacious": true,
+        "body": '<h4>Include:</h4><p>freight costs, payments for repairs, maintenance and installation of customers\' plant and equipment (where not covered in Section A), amounts received for use of patents, trade marks, copyrights, royalties, etc, technical knowledge, rent.</p>'
+    })
+}}
 
 <div class="ons-field">
-  <label class="ons-label" for="text">CN code (if known)</label>
-  <input type="text" id="text" class="ons-input ons-input--text ons-input-type__input" />
-</div>
-
-<div class="ons-field">
-    <label class="ons-label ons-label--with-description" for="sales-value">Value of sales</label>
+    <label class="ons-label ons-label--with-description" for="sales-value">Value of non-production income</label>
     <span id="description-hint" class="ons-label__description  ons-input--with-description">Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank</span>
     <span class="ons-input-type ons-input-type--prefix">
         <span class="ons-input-type__inner">
@@ -56,7 +48,7 @@ layout: prodcom/views/_master
     onsButton({
         "text": 'Save and continue',
         "classes": 'ons-u-mb-m ons-u-mt-l',
-        "url": 'sectionBadd',
+        "url": 'sectionCsummary',
         "iconType": false
     })
 }}

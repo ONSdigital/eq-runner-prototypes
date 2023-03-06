@@ -9,7 +9,7 @@ layout: prodcom/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/sectionBadd"
+        "action":  pageInfo.rootPath + "/sectionC2"
     }
 } %}
 
@@ -18,28 +18,11 @@ layout: prodcom/views/_master
 
     <header class="ons-patternlib-page__content-header">
         <h1 class="ons-u-fs-xl">
-                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section B</span>
-            What additional products do you have?
+                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section C</span>
+            What is the total value of sales of merchanted goods?
         </h1>
     </header>
-
-<div class="ons-panel ons-panel--info ons-panel--no-title">
-  <span class="ons-panel__assistive-text ons-u-vh">Important information: </span>
-  <div class="ons-panel__body">
-    <p>If you need to add multiple products, you can do this on the next page</p>
-  </div>
-</div>
-
-<div class="ons-field">
-  <label class="ons-label ons-label--with-description" aria-describedby="description-hint" for="textarea">Product description</label>
-  <textarea id="textarea" class="ons-input ons-input--textarea   " name="feedback" rows="8"></textarea>
-</div>
-
-<div class="ons-field">
-  <label class="ons-label" for="text">CN code (if known)</label>
-  <input type="text" id="text" class="ons-input ons-input--text ons-input-type__input" />
-</div>
-
+<p>(Goods purchased for resale without processing).</p>
 <div class="ons-field">
     <label class="ons-label ons-label--with-description" for="sales-value">Value of sales</label>
     <span id="description-hint" class="ons-label__description  ons-input--with-description">Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank</span>
@@ -56,7 +39,7 @@ layout: prodcom/views/_master
     onsButton({
         "text": 'Save and continue',
         "classes": 'ons-u-mb-m ons-u-mt-l',
-        "url": 'sectionBadd',
+        "url": 'sectionC2',
         "iconType": false
     })
 }}
