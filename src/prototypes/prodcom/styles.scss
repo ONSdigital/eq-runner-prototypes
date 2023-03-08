@@ -17,5 +17,7 @@ Do not remove. Required for dynamic generation of survey summary page
   border-spacing: 0;
   width: 100%;
 }
-/***********************************************************************/
-/***********************************************************************/
+
+dt.ons-summary__item-title {
+  display: none;
+}
