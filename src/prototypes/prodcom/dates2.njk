@@ -15,38 +15,38 @@ layout: prodcom/views/_master
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/hub"
+        "action":  pageInfo.rootPath + "/hub.html"
     }
 } %}
 
 {% block main %}
     {% call onsQuestion({
         "title": questionTitle,
-        "description": "<p>For example, from 31 03 2022 to 01 11 2022.</p>",
+        "description": "<p>For example, from 31 03 2022 to 01 11 2022</p>",
         "submitButton": true
     }) %}
 
 {{
     onsDateInput({
-        "id": "fromdate",
+        "id": "date",
         "legendOrLabel": "From",
         "day": {
             "label": {
                 "text": "Day"
             },
-            "name": "fromday"
+            "name": "day"
         },
         "month": {
             "label": {
                 "text": "Month"
             },
-            "name": "frommonth"
+            "name": "month"
         },
         "year": {
             "label": {
                 "text": "Year"
             },
-            "name": "fromyear"
+            "name": "year"
         }
     })
 }}

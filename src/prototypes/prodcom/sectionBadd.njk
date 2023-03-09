@@ -12,29 +12,34 @@ layout: prodcom/views/_master
 
 {% set questionTitle = "Do you need to add any more products?" %}
 
+
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/sectionBminor.html"
+        "action":  pageInfo.rootPath + "/sectionBminor"
     }
 } %}
 
+
 {% block main %}
-
-        <header class="ons-patternlib-page__content-header">
-        <h1 class="ons-u-fs-xl">
+    <div class="ons-summary">
+        <div class="ons-summary__group">
+            <h1 class="ons-u-fs-xl">
                 <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section B</span>
-            Do you need to add any more products?
-        </h1>
-    </header>
+                Summary of additional products
+            </h1>
+            <table id="turnover" class="ons-summary__items js-summary">
+            </table>
+        </div>
+    </div>
 
-
+<!-- STATIC HTML REMOVE ONCE PIPING WORKING -->
 <div class="ons-summary ons-u-mb-l">
   <div class="ons-summary__group">
     <div class="ons-summary__items">
       <div class="ons-summary__item">
         <dl class="ons-summary__row">
-          <dt class="ons-summary__item-title">
+          <dt class="ons-summary__item-title extra-flex">
            
             <div class="ons-summary__item--text">
                 <h4>Example product</h4>
@@ -52,7 +57,7 @@ layout: prodcom/views/_master
 
       <div class="ons-summary__item">
         <dl class="ons-summary__row">
-          <dt class="ons-summary__item-title">
+          <dt class="ons-summary__item-title extra-flex">
            
             <div class="ons-summary__item--text">
                 <h4>Another example product with less detail</h4>
@@ -70,7 +75,7 @@ layout: prodcom/views/_master
 
       <div class="ons-summary__item">
         <dl class="ons-summary__row">
-          <dt class="ons-summary__item-title">
+          <dt class="ons-summary__item-title extra-flex">
            
             <div class="ons-summary__item--text">
                 <h4>Example product described in as much detail as possible using basic terminology, brand names, common usage names or brief advertising/marketing material.</h4>
@@ -89,8 +94,14 @@ layout: prodcom/views/_master
     </div>
   </div>
 </div>
+<!-- // -->
 
 
+
+    <h2>{{questionTitle}}</h2>
+    {% call onsQuestion({
+        "submitButton": true
+    }) %}
 
         {{ onsRadios({
         "id": "number-of-employees",
@@ -101,7 +112,7 @@ layout: prodcom/views/_master
             {
                 "id": "yes",
                 "attributes": {
-                            "data-action-url": pageInfo.rootPath + "/sectionB.html"
+                            "data-action-url": pageInfo.rootPath + "/sectionB"
                         },
                 "label": {
                     "text": "Yes"
@@ -111,7 +122,7 @@ layout: prodcom/views/_master
             {
                 "id": "no",
                 "attributes": {
-                            "data-action-url": pageInfo.rootPath + "/sectionBsummary.html"
+                            "data-action-url": pageInfo.rootPath + "/sectionBminor"
                         },
                 "label": {
                     "text": "No"
@@ -121,12 +132,5 @@ layout: prodcom/views/_master
         ]
         }) }}
 
-{{
-    onsButton({
-        "text": 'Continue',
-        "classes": 'ons-u-mb-m ons-u-mt-l',
-        "url": 'sectionBminor',
-        "iconType": false
-    })
-}}
+    {% endcall %}
 {% endblock %}
