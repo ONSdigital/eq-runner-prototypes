@@ -15,125 +15,78 @@ layout: prodcom/views/_master
     {% from "components/summary/_macro.njk" import onsSummary %}
     {% from "components/button/_macro.njk" import onsButton %}
 
-    <header class="ons-patternlib-page__content-header">
-        <h1 class="ons-u-fs-xxl">
+<div class="ons-summary">
+  <div class="ons-summary__group">
+    <h1 class="ons-u-fs-xl">
                 <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section C</span>
             Summary of other income
         </h1>
-    </header>
-{{
-    onsSummary({
-        "summaries": [
-            {
-                "groups": [
-                    {
-                        "placeholderText": 'test',
-                        "id": "turnover",
-                        "rows": [
-                            {
-                                "id": "sales-dates-row",
-                                "rowTitle": "Merchanted goods",
-                                "rowItems": [
-                                    {
-                                        "id": "sales-dates",
-                                        "valueList": [
-                                            {
-                                                "text": "£12,000"
-                                            }
-                                        ],
-                                        "actions": [
-                                            {
-                                                "text": "Change",
-                                                "ariaLabel": "Change answer",
-                                                "url": "#0"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "rowTitle": "Work done on materials supplied by a customer",
-                                "rowItems": [
-                                    {
-                                        "id": "sales-value",
-                                        "valueList": [
-                                            {
-                                                "text": "£0"
-                                            }
-                                        ],
-                                        "actions": [
-                                            {
-                                                "text": "Change",
-                                                "ariaLabel": "Change answer",
-                                                "url": "#0"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "id": "sales-reasons-row",
-                                "rowTitle": "Waste products",
-                                "rowItems": [
-                                    {
-                                        "id": "sales-reasons",
-                                        "valueList": [
-                                            {
-                                                "text": "£0"
-                                            }
-                                        ],
-                                        "actions": [
-                                            {
-                                                "text": "Change",
-                                                "ariaLabel": "Change answer",
-                                                "url": "#0"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "id": "sales-detail-row",
-                                "rowTitle": "Non-production income",
-                                "rowItems": [
-                                    {
-                                        "id": "sales-detail",
-                                        "valueList": [
-                                            {
-                                                "text": "£418,000"
-                                            }
-                                        ],
-                                        "actions": [
-                                            {
-                                                "text": "Change",
-                                                "ariaLabel": "Change answer",
-                                                "url": "#0"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "rowTitle": "Total for other income",
-                                "total": true,
-                                "rowItems": [
-                                    {
-                                        "valueList": [
-                                            {
-                                                "text": "£430,000"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    })
-}}
-
+    <div class="ons-summary__items">
+      <div class="ons-summary__item">
+        <dl class="ons-summary__row ons-summary__row--has-values">
+          <dt class="ons-summary__item-title">
+            <div class="ons-summary__item--text">Merchanted goods</div>
+          </dt>
+          <dd class="ons-summary__values">
+            <span class="ons-summary__text">£130,000</span>
+          </dd>
+          <dd class="ons-summary__actions">
+            <a href="#0" class="ons-summary__button" aria-label="Change answer">Change</a>
+          </dd>
+        </dl>
+      </div>
+      <div class="ons-summary__item">
+        <dl class="ons-summary__row ons-summary__row--has-values">
+          <dt class="ons-summary__item-title">
+            <div class="ons-summary__item--text">Work done on materials supplied by a customer</div>
+          </dt>
+          <dd class="ons-summary__values">
+            <span class="ons-summary__text">£12,000</span>
+          </dd>
+          <dd class="ons-summary__actions">
+            <a href="#0" class="ons-summary__button" aria-label="Change answer">Change</a>
+          </dd>
+        </dl>
+      </div>
+      <div class="ons-summary__item">
+        <dl class="ons-summary__row ons-summary__row--has-values">
+          <dt class="ons-summary__item-title">
+            <div class="ons-summary__item--text">Waste products</div>
+          </dt>
+          <dd class="ons-summary__values">
+            <span class="ons-summary__text">£533,000</span>
+          </dd>
+          <dd class="ons-summary__actions">
+            <a href="#0" class="ons-summary__button" aria-label="Change answer">Change</a>
+          </dd>
+        </dl>
+      </div>
+      <div class="ons-summary__item">
+        <dl class="ons-summary__row ons-summary__row--has-values">
+          <dt class="ons-summary__item-title">
+            <div class="ons-summary__item--text">Non-production income</div>
+          </dt>
+          <dd class="ons-summary__values">
+            <span class="ons-summary__text">£5,000</span>
+          </dd>
+          <dd class="ons-summary__actions">
+            <a href="#0" class="ons-summary__button" aria-label="Change answer">Change</a>
+          </dd>
+        </dl>
+      </div>
+      <div class="ons-summary__item ons-summary__item--total">
+        <dl class="ons-summary__row ons-summary__row--has-values">
+          <dt class="ons-summary__item-title">
+            <div class="ons-summary__item--text">Section total</div>
+          </dt>
+          <dd class="ons-summary__values ons-summary__values--2">
+            <span class="ons-summary__text">£680,000.00</span>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
 
 {{
     onsButton({
