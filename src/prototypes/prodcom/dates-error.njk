@@ -4,6 +4,7 @@ title: PRODCOM survey
 layout: prodcom/views/_hub
 ---
 
+{% from "components/error/_macro.njk" import onsError %}
 {% from "components/radios/_macro.njk" import onsRadios %}
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/question/_macro.njk" import onsQuestion %}
@@ -16,16 +17,23 @@ layout: prodcom/views/_hub
 } %}
 
 {% block main %}
-
 {% call onsQuestion({
     "title": "Are you able to report for the calendar year 1 Jan 2022 to 31 Dec 2022?",
     "classes": "ons-u-mt-no",
     "legendIsQuestionTitle": true,
     "submitButton": true
 }) %}
+    
+
+    {% call onsError({
+    "text":"You need to select an option",
+    "id": "reporting-radios"
+    }) %}
+
     {{
         onsRadios({
-            "name": "property-type",
+            "name": "reporting-radios",
+            "id":"reporting-radios",
             "dontWrap": true,
             "radios": [
                 {
@@ -36,7 +44,8 @@ layout: prodcom/views/_hub
                     "label": {
                         "text": "Yes, I can report for this period"
                     },
-                    "value": "yes"
+                    "value": "yes",
+                    "error": true
                 },
                 {
                     "id": "no",
@@ -46,11 +55,14 @@ layout: prodcom/views/_hub
                     "label": {
                         "text": "No, I need to report for a different period"
                     },
-                    "value": "no"
+                    "value": "no",
+                    "error": true
                 }
             ]
         })
     }}
+{% endcall %}
+
 {% endcall %}
 
 {% endblock %}

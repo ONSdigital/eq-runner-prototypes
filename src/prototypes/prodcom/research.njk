@@ -1,0 +1,61 @@
+---
+group: Surveys
+title: PRODCOM survey
+layout: prodcom/views/_index
+---
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/signout"
+    }
+} %}
+
+{% block main %}
+
+{{
+    onsPanel({
+        "type": 'success',
+        "id": 'success-id',
+        "iconType": 'check',
+        "body": 'Your feedback has been submitted'
+    })
+}}
+
+<h1 class="ons-u-mt-m">Take part in our user research</h1>
+<p>We need your help toimprove and make sure the website works well for the people who need it. Once you've signed up, you might be asked to:</p>
+<ul>
+    <li>try out new online features</li>
+    <li>answer questions by email</li>
+    <li>talk to our researchers about how you've interacted with us</li>
+</ul>
+<p>You can reject an invitation to take part, and can unsubscribe at any time.</p>
+
+
+{{
+    onsInput({
+        "id": "name",
+        "label": {
+            "text": "Full name"
+        }
+    })
+}}
+
+{{
+    onsInput({
+        "id": "email",
+        "label": {
+            "text": "Email address"
+        }
+    })
+}}
+
+{{
+    onsButton({
+        "text": "Take part in our user research",
+        "classes": "ons-u-mt-m"
+    })
+}}
+{% endblock %}
