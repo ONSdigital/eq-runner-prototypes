@@ -1,6 +1,6 @@
 ---
 group: Surveys
-title: PRODCOM survey
+title: PRODCOM survey | products - what you need to know
 layout: prodcom/views/_spoke
 ---
 
@@ -20,7 +20,7 @@ layout: prodcom/views/_spoke
         "ariaLabel": 'Back',
         "itemsList": [
             {
-                "url": 'hub',
+                "url": 'survey-sections',
                 "id": "back",
                 "text": 'Back',
                 "attributes": {
@@ -41,31 +41,61 @@ layout: prodcom/views/_spoke
         </h1>
     </header>
 
-    <p>In this section, we are going to ask you questions about products that you have previously reported to us. If some of your products are missing or described incorrectly then give the description and value in Section B.</p>
+    <p>In this section, we will ask you questions about products you have reported on in previous surveys.</p>
+    <p>If some of your products are missing or described incorrectly, update the description and value in Section B.</p>
 
-    <h2 class="ons-u-mt-l">What you will need to know</h2>
+    <h2 class="ons-u-mt-l">Before you begin</h2>
 
 <!-- only include if detectedin spreadsheet -->
-    <p>Volume of total production. Figures should cover the total quantity of the goods produced during the period of the return - regardless of whether you sold them or not. This includes any production that was incorporated into the manufacture of other products. Exclude goods produced during an earlier period even if you sold them during the period covered by this return.</p>
+    <p>Figures should cover the total quantity of the goods produced during the period of the return - regardless of whether you sold them or not.</p>
 
 
     <div class="ons-panel ons-panel--info ons-panel--no-title ons-panel--spacious">
   <span class="ons-panel__assistive-text ons-u-vh">Important information: </span>
   <h3>Include:</h3>
     <ul>
-        <li>sales of goods of own production invoiced during the period, net of trade and other discounts, agents' commissions, allowances on returns</li>
-        <li>transfers of goods to other parts of the same organisation not covered by this return. These should be valued as if sold to an independent customer</li>
-        <li>cost of packaging materials less allowances for returnable containers</li>
-        <li>sales of goods made for you under sub-contracting/toll manufacturing arrangements, such as work carried out by other firms or outworkers on materials supplied by you</li>
-        <li>free-on-board value where goods have been exported</li>
-        <li>staged payments. Where large constructions are invoiced in stages, the sales should be included as each stage is invoiced. Volumes should be recorded on completion of the project</li>
+        <li>any production that was incorporated into the manufacture of other products</li>
+        <li>sales of goods of your company produced that were invoiced during the period</li>
+        <li>net value of trade and other discounts</li>
+        <li>agents' commissions</li>
+        <li>allowances on returns</li>
+        <li>transfers of goods to other parts of the same organisation not covered by this return (value these as if sold to an independent customer)</li>
+        <li>cost of packaging materials (minus allowances for returnable containers)</li>
+        <li>sales of goods made for you under sub-contracting or toll manufacturing arrangements (such as work carried out by other firms or outworkers on materials supplied by you)</li>
+        <li>free-on-board (FOB) value where goods have been exported
+
+{% from "components/details/_macro.njk" import onsDetails %}
+
+{{
+    onsDetails({
+        "id": "details",
+        "title": "What is the free-on-board value?",
+        "content": "<p>Free-on-board value is the value of goods at the point that the manufacturer is no longer responsible for them.</p>
+        <p>It is calculated:</p>
+        <p>Ex-factory price + other costs = FOB value</p>
+        <p>‘Other costs’ in this calculation refers to the costs incurred in placing the goods in the ship for export. For example:</p>
+        <ul>
+            <li>domestic transport costs</li>
+            <li>storage and warehousing</li>
+            <li>port handling</li>
+            <li>brokerage fees</li>
+            <li>service charges</li>
+        </ul>
+        <p>Production cost + Profit = Ex-Factory Price</p>"
+    })
+}}
+
+
+        </li>
+        <li>staged payments - where large constructions are invoiced in stages, the sales should be included as each stage is invoiced (volumes should be recorded on completion of the project)</li>
     </ul>
 
     <h3>Exclude:</h3>
     <ul>
+        <li>goods produced during an earlier period even if you sold them during the period covered by this return</li>
         <li>VAT</li>
-        <li>net proceeds from sale(s) of capital item(s)</li>
-        <li>where possible, all transport costs</li>
+        <li>net proceeds from the sale of capital items</li>
+        <li>all transport costs (where possible)</li>
     </ul>
   </div>
 

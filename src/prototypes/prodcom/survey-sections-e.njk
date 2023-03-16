@@ -1,6 +1,6 @@
 ---
 group: Surveys
-title: PRODCOM survey
+title: PRODCOM survey | survey sections
 layout: prodcom/views/_hub
 ---
 
@@ -11,9 +11,11 @@ layout: prodcom/views/_hub
 {% block main %}
     <h1 class="ons-u-mt-m">Choose a section to complete</h1>
 
-    <p>Prodcom collects annual data on products. Products refer to goods and a small number of services, such as repair and maintenance. These services are classified by the Standard Industrial Classification into the manufacturing sector and therefore contribute to the measure of industrial production (or manufacturers' sales) for the UK.</p>
+    <p>PRODCOM collects annual data on products.</p>
+    <p>'Products' refer to goods and a small number of services, such as repair and maintenance.</p>
+    <p>These services are classified as manufacturing sector services under the Standard Industrial Classification (SIC). Therefore, they contribute to the measure of industrial production and manufacturer’s sales in the UK.</p>
 
-  {{ onsSummary({
+    {{ onsSummary({
         "hub": true,
         "classes": "ons-u-mt-m",
         "summaries": [
@@ -45,15 +47,16 @@ layout: prodcom/views/_hub
                                 "rowTitle": "Products",
                                 "rowItems": [
                                     {
+                                        "iconType": "check",
                                         "valueList": [
                                             {
-                                                "text": "Not started"
+                                                "text": "Completed"
                                             }
                                         ],
                                         "actions": [
                                             {
-                                                "text": "Start section",
-                                                "ariaLabel": "Start Products section",
+                                                "text": "View answers",
+                                                "ariaLabel": "View answers for products",
                                                 "url": "sectionAstart"
                                             }
                                         ]
@@ -64,15 +67,16 @@ layout: prodcom/views/_hub
                                 "rowTitle": "Additional products",
                                 "rowItems": [
                                     {
+                                        "iconType": "check",
                                         "valueList": [
                                             {
-                                                "text": "Not started"
+                                                "text": "Completed"
                                             }
                                         ],
                                         "actions": [
                                             {
-                                                "text": "Start section",
-                                                "ariaLabel": "Start additional products section",
+                                                "text": "View answers",
+                                                "ariaLabel": "View answers for additional products",
                                                 "url": "sectionBstart"
                                             }
                                         ]
@@ -83,15 +87,16 @@ layout: prodcom/views/_hub
                                 "rowTitle": "Other income",
                                 "rowItems": [
                                     {
+                                        "iconType": "check",
                                         "valueList": [
                                             {
-                                                "text": "Not started"
+                                                "text": "Completed"
                                             }
                                         ],
                                         "actions": [
                                             {
-                                                "text": "Start section",
-                                                "ariaLabel": "Start additional products section",
+                                                "text": "View answers",
+                                                "ariaLabel": "View answers for other income",
                                                 "url": "sectionCstart"
                                             }
                                         ]
@@ -102,15 +107,16 @@ layout: prodcom/views/_hub
                                 "rowTitle": "Company totals",
                                 "rowItems": [
                                     {
+                                        "iconType": "check",
                                         "valueList": [
                                             {
-                                                "text": "Not started"
+                                                "text": "Completed"
                                             }
                                         ],
                                         "actions": [
                                             {
-                                                "text": "Start section",
-                                                "ariaLabel": "Start company totals section",
+                                                "text": "View answers",
+                                                "ariaLabel": "View answers for company totals",
                                                 "url": "sectionDstart"
                                             }
                                         ]
@@ -147,7 +153,7 @@ layout: prodcom/views/_hub
         onsButton({
             "text": 'Continue',
             "classes": 'ons-u-mb-m ons-u-mt-l',
-            "url": 'sectionAstart',
+            "url": 'sectionEstart',
             "iconType": false
         })
     }}

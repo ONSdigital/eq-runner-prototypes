@@ -8,19 +8,33 @@ layout: prodcom/views/_index
 
 <h1 class="ons-u-fs-xl">You are completing this for ESSENTIAL ENTERPRISE LTD. (ESSENTIAL ENTERPRISE LTD.)</h1>
 
-<p>If the company details or structure have changed contact us on <a href="#">0300 1234 931</a> or <a href="#">email surveys@ons.gov.uk</a></p>
-
-<ul class="ons-list">
-  <li class="ons-list__item">You have been selected to complete the UK Manufacturer's Sales by Product (PRODCOM) Survey.</li>
-  <li class="ons-list__item">This survey collects annual data on products and is a key resource that contributes to the measure of industrial production, or manufacturers' sales, for the UK.</li>
-  <li class="ons-list__item">Products refer to goods and a small number of services, such as repair and maintenance.</li>
-  <li class="ons-list__item">You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.</li>
-  <li class="ons-list__item">You still need to complete this survey even if it does not seem relevant. All returns are important as it helps us produce better statistics.</li>
-  <li class="ons-list__item">We will treat your data securely and confidentially.</li>
+<p>If your company details have changed:</p>
+<ul>
+    <li>contact us on <a href="#">0300 1234 931</a></li>
+    <li><a href="#">email surveys@ons.gov.uk</a></p></li>
 </ul>
 
-<h2 class="ons-u-fs-l ons-u-mt-l">Your response is legally required</h2>
-<p>Notice is given under Section 1 of the Statistics of Trade Act 1947.</p>
+<p>The UK Manufacturer's Sales by Product (PRODCOM) measures sales of products by UK manufacturers.</p>
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% call onsPanel({
+        "type": 'warn'
+    })
+%}
+Your response is legally required under section 1 of the <a href="#">Statistics of Trade Act 1947</a>.
+{% endcall %}
+
+<h2 class="ons-u-mt-l">Before you start</h2>
+<p>To complete the survey, you will need information on:</p>
+<ul>
+    <li>stock owned by your business (in the UK and abroad)</li>
+    <li>stock held by your business</li>
+    <li>stock in transit within the UK</li>
+</ul>
+<p>If actual figures are not available, you can provide info0rmed estimates.</p>
+
+<h2 class="ons-u-mt-l">Complete survey</h2>
 
 {% from "components/button/_macro.njk" import onsButton %}
 {{
@@ -30,8 +44,9 @@ layout: prodcom/views/_index
     })
 }}
 
+<p class="ons-u-mt-m">You may receive an automatic reminder if you submit data just before or after the return date.</p>
 
-<h2 class="ons-u-fs-l ons-u-mt-xl">Information you need</h2>
+<h2 class="ons-u-fs-l ons-u-mt-l">Information you need</h2>
 <p>This questionnaire is divided into sections, which ask for information about:</p>
 
 {% from "components/accordion/_macro.njk" import onsAccordion %}
@@ -65,10 +80,14 @@ layout: prodcom/views/_index
     })
 }}
 
-<h2 class="ons-u-fs-l ons-u-mt-m">How we use your data</h2>
-<ul class="ons-list">
-  <li class="ons-list__item">The information you supply feeds into the National Accounts and the Producer Price Index, which is a primary measure of inflation. The statistics have a variety of uses such as policy making and assessing trends.</li>
-  <li class="ons-list__item">The statistics are classified by the Standard Industrial Classification into the manufacturing sector.</li>
+<h2 class="ons-u-fs-l ons-u-mt-m">If you need help</h2>
+<p>For more information about business surveys, see <a href="#">About ONS business surveys</a>.</p>
+<p>You can call us on:
+<ul>
+    <li><a href="tel:03001234931">0300 1234 931</a> (UK)</li>
+    <li><a href="tel:+441633810495">+44 1633 810495</a> (outside of the UK)</li>
 </ul>
+<p>When you call, please enter the three-digit ID <strong>014</strong>.</p>
+<p>Er mwyn gwneud cais am ffurflen Gymraeg (to speak to someone in Welsh): <a href="tel:03001234921">0300 1234 921</a>.</p>
 
 {% endblock %}
