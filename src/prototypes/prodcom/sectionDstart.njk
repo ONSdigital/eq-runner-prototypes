@@ -1,10 +1,12 @@
 ---
 group: Surveys
 title: PRODCOM survey
-layout: prodcom/views/_main
+layout: prodcom/views/_spoke
 ---
 
+{% from "components/breadcrumbs/_macro.njk" import onsBreadcrumbs %}
 {% from "components/button/_macro.njk" import onsButton %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
 {% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
 {% from "components/summary/_macro.njk" import onsSummary %}
 {% from "components/panel/_macro.njk" import onsPanel %}
@@ -12,12 +14,29 @@ layout: prodcom/views/_main
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/sectionCsummary"
+        "action":  pageInfo.rootPath + "/survey-sections-e"
     }
 } %}
 
-{% block main %}
+{% block preMain %}
+{{
+    onsBreadcrumbs({
+        "ariaLabel": 'Back',
+        "itemsList": [
+            {
+                "url": 'survey-sections-d',
+                "id": "back",
+                "text": 'Back',
+                "attributes": {
+                    "data-attribute": "Example attribute"
+                }
+            }
+        ]
+    })
+}}
+{% endblock %}
 
+{% block main %}
 
     <header class="ons-patternlib-page__content-header">
         <h1 class="ons-u-fs-xl">
@@ -30,7 +49,12 @@ layout: prodcom/views/_main
 {{
     onsPanel({
         "spacious": true,
-        "body": '<h4>Excluding:</h4><p>VAT, capital receipts from the disposal of assets, interest and dividends.</p>'
+        "body": '<h4>Exclude:</h4>
+        <ul><li>VAT</li>
+        <li>capital receipts from the disposal of assets</li>
+        <li>interest</li>
+        <li>dividends</li>
+        </ul>'
     })
 }}
 
@@ -137,14 +161,13 @@ layout: prodcom/views/_main
     })
 }}
 
-
 <div class="ons-u-mt-xl">
 
 {{
     onsButton({
         "text": 'Save and continue',
         "classes": 'ons-u-mb-m ons-u-mt-l',
-        "url": 'hubE',
+        "url": 'survey-sections-e',
         "iconType": false
     })
 }}
