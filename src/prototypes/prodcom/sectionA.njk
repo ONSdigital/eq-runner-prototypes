@@ -27,45 +27,25 @@ layout: prodcom/views/_main
         </h1>
     </header>
 
-    {% call onsQuestion({
-        "guidance": {
-            "lists": [
-                {
-                    "listHeading": "Exclude",
-                    "itemsList": [
-                        {
-                            "text": "crushed limestone aggregate"
-                        },
-                        {
-                            "text": "calcareous dimension stone"
-                        }
-                    ]
-                },
-                {
-                    "listHeading": "Include",
-                    "itemsList": [
-                        {
-                            "text": "limestone"
-                        },
-                        {
-                            "text": "limestone flux"
-                        },
-                        {
-                            "text": "travertine"
-                        },
-                        {
-                            "text": "onyx"
-                        },
-                        {
-                            "text": "marble"
-                        }
-                    ]
-                }
-            ]
-        },
-        "submitButton": true
-    }) %}
 
+    <div class="ons-panel ons-panel--info ons-panel--no-title">
+  <span class="ons-panel__assistive-text ons-u-vh">Important information: </span>
+  <div class="ons-panel__body">
+    <h4>Exclude</h4>
+    <ul>
+    <li><em class="ons-highlight prepop">crushed limestone aggregate</em></li>
+    <li><em class="ons-highlight prepop">calcareous dimension stone</em></li>
+    </ul>
+    <h4>Include</h4>
+    <ul>
+        <li><em class="ons-highlight prepop">limestone</em></li>
+        <li><em class="ons-highlight prepop">limestone flux</em></li>
+        <li><em class="ons-highlight prepop">travertine</em></li>
+        <li><em class="ons-highlight prepop">onyx</em></li>
+        <li><em class="ons-highlight prepop">marble</em></li>
+    </ul>
+  </div>
+</div>
 
 <div class="ons-field">
     <label class="ons-label ons-label--with-description" for="sales-value">Value of sales</label>
@@ -92,6 +72,16 @@ layout: prodcom/views/_main
   <input type="text" id="text" class="ons-input ons-input--text ons-input-type__input ons-input--w-8"
     aria-describedby="description-hint" />
 </div>
-{% endcall %}
 
+<div class="ons-u-mt-xl">
+
+{{
+    onsButton({
+        "text": 'Save and continue',
+        "url": 'sectionAsummary',
+        "iconType": false
+    })
+}}
+
+</div>
 {% endblock %}
