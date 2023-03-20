@@ -4,6 +4,13 @@ title: PRODCOM survey
 layout: prodcom/views/_index
 ---
 
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/dates.html"
+    }
+} %}
+
 {% block main %}
 
 <h1 class="ons-u-fs-xl">You are completing this for ESSENTIAL ENTERPRISE LTD. (ESSENTIAL ENTERPRISE LTD.)</h1>
@@ -32,15 +39,14 @@ Your response is legally required under section 1 of the <a href="#">Statistics 
     <li>stock held by your business</li>
     <li>stock in transit within the UK</li>
 </ul>
-<p>If actual figures are not available, you can provide info0rmed estimates.</p>
+<p>If actual figures are not available, you can provide informed estimates.</p>
 
 <h2 class="ons-u-mt-l">Complete survey</h2>
 
 {% from "components/button/_macro.njk" import onsButton %}
 {{
     onsButton({
-        "text": "Start survey",
-        "url": "dates"
+        "text": "Start survey"
     })
 }}
 
@@ -79,6 +85,10 @@ Your response is legally required under section 1 of the <a href="#">Statistics 
         ]
     })
 }}
+
+<h2 class="ons-u-fs-l ons-u-mt-m">Why you have receieved this survey</h2>
+<p>YOur business has been selected from a directory of businesses in the UK which are registered fot VAT and/or PAYE or with Companies House.</p>
+<p>The information supplied feeds into the <a href="#">National Accounts</a> and the <a href="#">Producer Price Index</a>.</p>
 
 <h2 class="ons-u-fs-l ons-u-mt-m">If you need help</h2>
 <p>For more information about business surveys, see <a href="#">About ONS business surveys</a>.</p>
