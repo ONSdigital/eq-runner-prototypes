@@ -5,7 +5,8 @@ layout: prodcom/views/_spoke
 ---
 
 {% from "components/breadcrumbs/_macro.njk" import onsBreadcrumbs %}
-    {% from "components/button/_macro.njk" import onsButton %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
 
 {% set form =  {
     "method": "GET",
@@ -51,10 +52,40 @@ layout: prodcom/views/_spoke
 <p>If you are familiar with Customs and Excise CN codes (commodity tariff codes) used for exports or imports, please provide these as they can be linked directly to PRODCOM codes.</p>
 <p>Group together products with sales of less than £25,000 in the box for minor products at the end of this section.</p>
 
+<h2 class="ons-u-mt-l">Do you need to add any more products?</h2>
+{{
+        onsRadios({
+            "name": "property-type",
+            "dontWrap": true,
+            "radios": [
+                {
+                    "id": "yes",
+                    "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/sectionB"
+                        },
+                    "label": {
+                        "text": "Yes"
+                    },
+                    "value": "yes"
+                },
+                {
+                    "id": "no",
+                    "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/sectionBminor"
+                        },
+                    "label": {
+                        "text": "No"
+                    },
+                    "value": "no"
+                }
+            ]
+        })
+    }}
+
 {{
     onsButton({
         "text": 'Continue',
-        "classes": 'ons-u-mt-xl'
+        "classes": 'ons-u-mt-s'
     })
 }}
 

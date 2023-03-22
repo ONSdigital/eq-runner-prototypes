@@ -1,7 +1,8 @@
 ---
 group: Design work
 title: Save and sign out confirmation
-layout: prodcom/views/_index
+layout: prodcom/views/_social
+
 ---
 
 {% block main %}
@@ -17,9 +18,7 @@ layout: prodcom/views/_index
         "iconSize": 'xl'
     })
 }}
-{% from "components/lists/_macro.njk" import onsList %}
 
-<h2 class="ons-u-fs-l">Social surveys</h2>
-<p>As you started your survey using an access code, you need to <a href="#">re-enter your access code</a>.</p>
+<p>To resume the survey, <a href="#">re-enter your access code</a>.</p>
 
 {% endblock %}
