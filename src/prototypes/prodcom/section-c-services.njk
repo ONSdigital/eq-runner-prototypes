@@ -9,7 +9,7 @@ layout: prodcom/views/_main
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/sectionC4"
+        "action":  pageInfo.rootPath + "/section-c-summary"
     }
 } %}
 
@@ -19,12 +19,28 @@ layout: prodcom/views/_main
     <header class="ons-patternlib-page__content-header">
         <h1 class="ons-u-fs-xl">
                 <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section C</span>
-            What is the value of sales of waste products and residues?
+            What is the total value of your non-production income?
         </h1>
     </header>
+<p>Income from provision of services and other non-production activities that you have not already told us about.</p>
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+{{
+    onsPanel({
+        "spacious": true,
+        "body": '<h4>Include:</h4><ul>
+        <li>freight costs</li>
+        <li>payments for repairs</li>
+        <li>maintenance and installation of customers\' plant and equipment (where not covered in Section A)</li>
+        <li>amounts received for use of patents, trade marks, copyrights or royalties</li>
+        <li>technical knowledge</li>
+        <li>rent</li>
+        </ul>'
+    })
+}}
 
 <div class="ons-field">
-    <label class="ons-label ons-label--with-description" for="sales-value">Value of sales</label>
+    <label class="ons-label ons-label--with-description" for="sales-value">Value of non-production income</label>
     <span id="description-hint" class="ons-label__description  ons-input--with-description">Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank</span>
     <span class="ons-input-type ons-input-type--prefix">
         <span class="ons-input-type__inner">
@@ -40,7 +56,7 @@ layout: prodcom/views/_main
     onsButton({
         "text": 'Save and continue',
         "classes": 'ons-u-mb-m ons-u-mt-l',
-        "url": 'sectionC4',
+        "url": 'sectionCsummary',
         "iconType": false
     })
 }}

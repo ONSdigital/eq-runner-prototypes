@@ -1,0 +1,64 @@
+---
+group: Surveys
+title: PRODCOM survey | enter dates
+layout: prodcom/views/_main
+---
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/survey-sections"
+    }
+} %}
+{% from "components/summary/_macro.njk" import onsSummary %}
+
+{% block main %}
+
+
+<div class="ons-summary">
+  <div id="turnover" class="ons-summary__group">
+    <h2 class="ons-summary__group-title">Reporting period</h2>
+    <div class="ons-summary__items">
+      <div id="sales-dates-row" class="ons-summary__item">
+        <dl class="ons-summary__row ons-summary__row--has-values" id="sales-dates">
+          <dt class="ons-summary__item-title">
+            <div class="ons-summary__item--text">Are you able to report for the period 1 Jan 2022 to 31 Dec 2022?</div>
+          </dt>
+          <dd class="ons-summary__values">
+            <span class="ons-summary__text js-piped-answer" data-question-to-pipe="/prototypes/prodcom/dates.html">{x}</span>
+          </dd>
+          <dd class="ons-summary__actions">
+            <a href="dates" class="ons-summary__button" aria-label="Change answer">Change</a>
+          </dd>
+        </dl>
+      </div>
+      
+      <div id="sales-value-row" class="ons-summary__item">
+        <dl class="ons-summary__row ons-summary__row--has-values" id="sales-value">
+          <dt class="ons-summary__item-title">
+            <div class="ons-summary__item--text">What dates will you be reporting for?</div>
+          </dt>
+          <dd class="ons-summary__values">
+            <span class="ons-summary__text js-piped-answer" data-question-to-pipe="/prototypes/prodcom/dates-new.html">{x}</span>
+          </dd>
+          <dd class="ons-summary__actions">
+            <a href="#0" class="ons-summary__button" aria-label="Change answer">Change</a>
+          </dd>
+        </dl>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+{% from "components/button/_macro.njk" import onsButton %}
+{{
+    onsButton({
+        "text": "Continue",
+        "classes":"ons-u-mt-l"
+    })
+}}
+
+{% endblock %}

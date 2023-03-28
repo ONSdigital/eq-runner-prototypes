@@ -11,7 +11,7 @@ layout: prodcom/views/_spoke
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/sectionB"
+        "action":  pageInfo.rootPath + "/section-b"
     }
 } %}
 
@@ -52,7 +52,7 @@ layout: prodcom/views/_spoke
 <p>If you are familiar with Customs and Excise CN codes (commodity tariff codes) used for exports or imports, please provide these as they can be linked directly to PRODCOM codes.</p>
 <p>Group together products with sales of less than £25,000 in the box for minor products at the end of this section.</p>
 
-<h2 class="ons-u-mt-l">Do you need to add any more products?</h2>
+<h2 class="ons-u-mt-l">Do you need to report additional products?</h2>
 {{
         onsRadios({
             "name": "property-type",
@@ -61,7 +61,7 @@ layout: prodcom/views/_spoke
                 {
                     "id": "yes",
                     "attributes": {
-                            "data-action-url": pageInfo.rootPath + "/sectionB"
+                            "data-action-url": pageInfo.rootPath + "/section-b"
                         },
                     "label": {
                         "text": "Yes"
@@ -71,7 +71,7 @@ layout: prodcom/views/_spoke
                 {
                     "id": "no",
                     "attributes": {
-                            "data-action-url": pageInfo.rootPath + "/sectionBminor"
+                            "data-action-url": pageInfo.rootPath + "/section-b-minor"
                         },
                     "label": {
                         "text": "No"
