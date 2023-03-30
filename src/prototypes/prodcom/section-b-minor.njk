@@ -9,7 +9,7 @@ layout: prodcom/views/_main
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/sectionC4"
+        "action":  pageInfo.rootPath + "/section-b-summary"
     }
 } %}
 
@@ -18,10 +18,11 @@ layout: prodcom/views/_main
 
     <header class="ons-patternlib-page__content-header">
         <h1 class="ons-u-fs-xl">
-                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section C</span>
-            What is the value of sales of waste products and residues?
+                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section B</span>
+            What is the total value of remaining minor products?
         </h1>
     </header>
+<p>Include all other products where the total sales value for each product line is less than £25,000.</p>
 
 <div class="ons-field">
     <label class="ons-label ons-label--with-description" for="sales-value">Value of sales</label>
@@ -32,7 +33,7 @@ layout: prodcom/views/_main
             <abbr id="annual-salary-gpb-prefix" class="ons-input-type__type ons-js-input-abbr" title="British pounds (GBP)">£</abbr>
         </span>
     </span>
-    <span id="description-hint" class="ons-label__description  ons-input--with-description"><em class="ons-highlight prepop">181110001</em></span>
+    <span id="description-hint" class="ons-label__description  ons-input--with-description">581309801</span>
 </div>
 <div class="ons-u-mt-xl">
 
@@ -40,7 +41,7 @@ layout: prodcom/views/_main
     onsButton({
         "text": 'Save and continue',
         "classes": 'ons-u-mb-m ons-u-mt-l',
-        "url": 'sectionC4',
+        "url": 'section-b-summary',
         "iconType": false
     })
 }}

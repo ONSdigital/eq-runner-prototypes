@@ -22,6 +22,45 @@ layout: prodcom/views/_main
         </h1>
     </header>
 
+{% from "components/summary/_macro.njk" import onsSummary %}
+
+{{
+    onsSummary({
+        "summaries": [
+            {
+                "groups": [
+                    {
+                        "id": "turnover",
+                        "rows": [
+                            {
+                                "id": "sales-dates-row",
+                                "rowTitle": "Do you need to report additional products?",
+                                "rowItems": [
+                                    {
+                                        "id": "sales-dates",
+                                        "valueList": [
+                                            {
+                                                "text": "Yes"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-b-start"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    })
+}}
+
 <div class="ons-summary ons-u-mb-l">
   <div class="ons-summary__group">
     <div class="ons-summary__items">
@@ -36,7 +75,7 @@ layout: prodcom/views/_main
             </div>
           </dt>
           <dd class="ons-summary__actions">
-            <a href="#0" class="ons-summary__button" aria-label="Change details for example product">Change</a>
+            <a href="section-b" class="ons-summary__button" aria-label="Change details for example product">Change</a>
           </dd>
         </dl>
       </div>
@@ -52,7 +91,7 @@ layout: prodcom/views/_main
             </div>
           </dt>
           <dd class="ons-summary__actions">
-            <a href="#0" class="ons-summary__button" aria-label="Change details for example product">Change</a>
+            <a href="section-b" class="ons-summary__button" aria-label="Change details for example product">Change</a>
           </dd>
         </dl>
       </div>
@@ -68,7 +107,7 @@ layout: prodcom/views/_main
             </div>
           </dt>
           <dd class="ons-summary__actions">
-            <a href="#0" class="ons-summary__button" aria-label="Change details for example product">Change</a>
+            <a href="section-b" class="ons-summary__button" aria-label="Change details for example product">Change</a>
           </dd>
         </dl>
       </div>
@@ -83,7 +122,7 @@ layout: prodcom/views/_main
             </div>
           </dt>
           <dd class="ons-summary__actions">
-            <a href="sectionBminor" class="ons-summary__button" aria-label="Change details for example product">Change</a>
+            <a href="section-b-minor" class="ons-summary__button" aria-label="Change details for example product">Change</a>
           </dd>
         </dl>
       </div>
