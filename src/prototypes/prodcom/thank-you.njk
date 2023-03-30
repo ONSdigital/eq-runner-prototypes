@@ -51,9 +51,7 @@ layout: prodcom/views/_index
 
 <p>Your response will help decision-makers support the UK population and economy.</p>
 
-{# removed after user research
 <p>For more information, see <a href="https://www.ons.gov.uk/surveys" target="_blank" rel="noopener noreferrer">how we use this data</a>.</p>
-#}
 
 <div id="feedback" class="ons-feedback">
     <h2 class="ons-feedback__heading">
@@ -131,10 +129,11 @@ layout: prodcom/views/_index
 }}
 </div>
 
+
     <h2 data-qa="view-submitted-response-title">Get a copy of your answers</h2>
-    {#<p>We may contact you to query your answers.</p>#}
+    <p>We may contact you to query your answers.</p>
     <p class="ons-u-mb-s">
-    You can  <a href="#print" id="view-submitted-response-link">save or print your answers</a> for your records.
+    If you need a copy for your records, <a href="#print" id="view-submitted-response-link">save or print your answers</a>.
   </p>
 
 {{ onsTimeoutPanel ({
@@ -142,23 +141,11 @@ layout: prodcom/views/_index
     "redirectUrl": "signout",
     "minutesTextSingular":"minute",
     "minutesTextPlural":"minutes",
+    "sessionExpiresAt":"1",
     "secondsTextSingular":"second",
     "secondsTextPlural":"seconds",
     "countdownText":"For security, your answers will only be available to view for another",
     "nojsText": "For security, your answers will only be available to view for another 45 minutes",
     "countdownExpiredText": "You are being signed out"
 }) }}
-
-  <p>Your answers wil be processed in the next few weeks. We may contact you to query your answers via phone or secure message.</p>
-
-  <p>For more information on how we use this data.<br><a href="#">https://www.ons.gov.uk/surveys</a></p>
-
-{# 
-    <h2 data-qa="view-submitted-response-title">Your answers</h2>
-    <p>We may contact you to query your answers.</p>
-    <p class="ons-u-mb-s">
-    If you need a copy for your records, <a href="#print" id="view-submitted-response-link">save or print your answers</a>.
-  </p>
-
-#}
 {% endblock %}
