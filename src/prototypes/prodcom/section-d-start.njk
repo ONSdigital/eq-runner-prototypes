@@ -1,115 +1,135 @@
 ---
 group: Surveys
 title: PRODCOM survey
-layout: prodcom/views/_main
+layout: prodcom/views/_spoke
 ---
+
+{% from "components/breadcrumbs/_macro.njk" import onsBreadcrumbs %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/summary/_macro.njk" import onsSummary %}
+{% from "components/panel/_macro.njk" import onsPanel %}
 
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "hub"
+        "action":  pageInfo.rootPath + "/survey-sections-e"
     }
 } %}
 
+{% block preMain %}
+{{
+    onsBreadcrumbs({
+        "ariaLabel": 'Back',
+        "itemsList": [
+            {
+                "url": 'survey-sections-d',
+                "id": "back",
+                "text": 'Back',
+                "attributes": {
+                    "data-attribute": "Example attribute"
+                }
+            }
+        ]
+    })
+}}
+{% endblock %}
+
 {% block main %}
-    {% from "components/summary/_macro.njk" import onsSummary %}
-    {% from "components/button/_macro.njk" import onsButton %}
 
     <header class="ons-patternlib-page__content-header">
-        <h1 class="ons-u-fs-xxl">
-            Contact details
+        <h1 class="ons-u-fs-xl">
+                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section D</span>
+            We calculate the total company turnover to be £249,000.00. Is this correct?
         </h1>
     </header>
+<p>This should be the sum of all values in Section A, B and C.</p>
 
-<p>Where available we have included your details below. Please make any amendments by selecting 'Change'.
+{{
+    onsPanel({
+        "spacious": true,
+        "body": '<h4>Exclude:</h4>
+        <ul><li>VAT</li>
+        <li>capital receipts from the disposal of assets</li>
+        <li>interest</li>
+        <li>dividends</li>
+        </ul>'
+    })
+}}
+
 {{
     onsSummary({
         "summaries": [
             {
                 "groups": [
                     {
-                        "placeholderText": 'test',
-                        "id": "turnover",
                         "rows": [
                             {
-                                "id": "sales-dates-row",
-                                "rowTitle": "Name of person to contact",
+                                "rowTitle": "Section A: <br>Total value of products",
                                 "rowItems": [
                                     {
-                                        "id": "sales-dates",
                                         "valueList": [
                                             {
-                                                "text": "Barbara Kerridge"
+                                                "text": "£225,000.00"
                                             }
                                         ],
                                         "actions": [
                                             {
                                                 "text": "Change",
                                                 "ariaLabel": "Change answer",
-                                                "url": "detailsName"
+                                                "url": "sectionAsummary"
                                             }
                                         ]
                                     }
                                 ]
                             },
                             {
-                                "rowTitle": "Telephone number",
-                                "id": "sales-value-row",
+                                "rowTitle": "Section B: <br>Total value of additional products",
                                 "rowItems": [
                                     {
-                                        "id": "sales-value",
                                         "valueList": [
                                             {
-                                                "text": "02891 2164292"
+                                                "text": "£9,000.00"
                                             }
                                         ],
                                         "actions": [
                                             {
                                                 "text": "Change",
                                                 "ariaLabel": "Change answer",
-                                                "url": "detailsPhone"
+                                                "url": "sectionBsummary"
                                             }
                                         ]
                                     }
                                 ]
                             },
                             {
-                                "id": "sales-reasons-row",
-                                "rowTitle": "Fax number",
+                                "rowTitle": "Section C: <br>Total value of other income",
                                 "rowItems": [
                                     {
-                                        "id": "sales-reasons",
                                         "valueList": [
                                             {
-                                                "text": "02891 554522"
+                                                "text": "£15,000.00"
                                             }
                                         ],
                                         "actions": [
                                             {
                                                 "text": "Change",
                                                 "ariaLabel": "Change answer",
-                                                "url": "detailsFax"
+                                                "url": "sectionCsummary"
                                             }
                                         ]
                                     }
                                 ]
                             },
                             {
-                                "id": "sales-detail-row",
-                                "rowTitle": "Web address",
+                                "rowTitle": "Grand total",
+                                "total": true,
                                 "rowItems": [
                                     {
-                                        "id": "sales-detail",
                                         "valueList": [
                                             {
-                                                "text": ""
-                                            }
-                                        ],
-                                        "actions": [
-                                            {
-                                                "text": "Change",
-                                                "ariaLabel": "Change answer",
-                                                "url": "detailsWeb"
+                                                "text": "£249,000.00"
                                             }
                                         ]
                                     }
@@ -126,10 +146,11 @@ layout: prodcom/views/_main
 
 {{
     onsButton({
-        "text": 'Continue',
+        "text": 'Yes, I confirm these are correct',
         "classes": 'ons-u-mb-m ons-u-mt-l',
-        "url": 'hub',
+        "url": 'survey-sections-e',
         "iconType": false
     })
 }}
+
 {% endblock %}

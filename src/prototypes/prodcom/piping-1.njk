@@ -1,0 +1,92 @@
+---
+group: Surveys
+title: PRODCOM survey | enter dates
+layout: prodcom/views/_hub
+---
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/date-input/_macro.njk" import onsDateInput %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/piping-summary"
+    }
+} %}
+
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/details/_macro.njk" import onsDetails %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set questionTitle = "On 1 May 2016, what was the number of employees for Bolt and Ratchet?" %}
+
+{% block main %}
+        <h1>What is your name?</h1>
+    {{
+        onsInput({
+            "id": "first-name",
+            "name": "first-name",
+            "label": {
+                "text": "First name"
+            }
+        })
+    }}
+    {{
+        onsInput({
+            "id": "last-name",
+            "name": "last-name",
+            "label": {
+                "text": "Surname"
+            }
+        })
+    }}
+    {{
+        onsButton({
+            "text": "Save and continue",
+            "classes": "ons-u-mt-l"
+        })
+    }}
+
+    <h1>When were you born?</h1>
+
+    {{
+        onsDateInput({
+            "id": "date",
+            "legendOrLabel": "Date of birth",
+            "description": "For example, 31 3 1980",
+            "day": {
+                "label": {
+                    "text": "Day"
+                },
+                "name": "day",
+                "attributes": {
+                    "autocomplete": "bday-day"
+                }
+            },
+            "month": {
+                "label": {
+                    "text": "Month"
+                },
+                "name": "month",
+                "attributes": {
+                    "autocomplete": "bday-month"
+                }
+            },
+            "year": {
+                "label": {
+                    "text": "Year"
+                },
+                "name": "year",
+                "attributes": {
+                    "autocomplete": "bday-year"
+                }
+            }
+        })
+    }}
+    
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ site.baseUrl }}js/main.js?t={{ cacheTime }}"></script>
+{% endblock %}
