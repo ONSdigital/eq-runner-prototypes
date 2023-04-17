@@ -7,13 +7,6 @@ layout: prodcom/views/_spoke
 {% from "components/breadcrumbs/_macro.njk" import onsBreadcrumbs %}
     {% from "components/button/_macro.njk" import onsButton %}
 
-{% set form = {
-    "method": "GET",
-    "attributes": {
-        "action":  pageInfo.rootPath + "/section-a"
-    }
-} %}
-
 {% block preMain %}
 {{
     onsBreadcrumbs({
@@ -103,7 +96,9 @@ layout: prodcom/views/_spoke
 {{
     onsButton({
         "text": 'Continue',
-        "classes": 'ons-u-mt-xl'
+        "classes": 'ons-u-mb-m ons-u-mt-l',
+        "url": 'section-a-list-collector',
+        "iconType": false
     })
 }}
 
