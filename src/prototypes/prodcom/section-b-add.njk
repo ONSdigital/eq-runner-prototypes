@@ -10,9 +10,6 @@ layout: prodcom/views/_main
 {% from "components/radios/_macro.njk" import onsRadios %}
 {% from "components/button/_macro.njk" import onsButton %}
 
-{% set questionTitle = "Do you need to add any more products?" %}
-
-
 {% set form =  {
     "method": "GET",
     "attributes": {
@@ -37,41 +34,6 @@ layout: prodcom/views/_main
 <div class="ons-summary ons-u-mb-l">
   <div class="ons-summary__group">
     <div class="ons-summary__items">
-      <div class="ons-summary__item">
-        <dl class="ons-summary__row">
-          <dt class="ons-summary__item-title extra-flex">
-           
-            <div class="ons-summary__item--text">
-                <h4>Example product</h4>
-                CN code:<strong> 581309721</strong><br>
-                Value of sales:<strong> £1,274,000</strong>
-            </div>
-          </dt>
-          <dd class="ons-summary__actions">
-            <a href="#0" class="ons-summary__button" aria-label="Change details for example product">Change</a>
-            <span class="ons-summary__spacer"></span>
-            <a href="#0" class="ons-summary__button" aria-label="Remove example product">Remove</a>
-          </dd>
-        </dl>
-      </div>
-
-      <div class="ons-summary__item">
-        <dl class="ons-summary__row">
-          <dt class="ons-summary__item-title extra-flex">
-           
-            <div class="ons-summary__item--text">
-                <h4>Another example product with less detail</h4>
-                CN code:<strong> 581309711</strong><br>
-                Value of sales:<strong> £129,000</strong>
-            </div>
-          </dt>
-          <dd class="ons-summary__actions">
-            <a href="#0" class="ons-summary__button" aria-label="Change details for example product">Change</a>
-            <span class="ons-summary__spacer"></span>
-            <a href="#0" class="ons-summary__button" aria-label="Remove example product">Remove</a>
-          </dd>
-        </dl>
-      </div>
 
       <div class="ons-summary__item">
         <dl class="ons-summary__row">
@@ -96,41 +58,15 @@ layout: prodcom/views/_main
 </div>
 <!-- // -->
 
+<p><a href="section-b">Add another product to this list</a></p>
 
+{{
+    onsButton({
+        "text": "Save and continue",
+        "url": "section-b-minor",
+        "iconType": false,
+        "classes": "ons-u-mt-l"
+    })
+}}
 
-    <h2>{{questionTitle}}</h2>
-    {% call onsQuestion({
-        "submitButton": true
-    }) %}
-
-        {{ onsRadios({
-        "id": "number-of-employees",
-        "name": "number-of-employees",
-        "legend": questionTitle,
-        "legendClasses": "ons-u-vh",
-        "radios": [
-            {
-                "id": "yes",
-                "attributes": {
-                            "data-action-url": pageInfo.rootPath + "/section-b"
-                        },
-                "label": {
-                    "text": "Yes"
-                },
-                "value": "yes"
-            },
-            {
-                "id": "no",
-                "attributes": {
-                            "data-action-url": pageInfo.rootPath + "/section-b-minor"
-                        },
-                "label": {
-                    "text": "No"
-                },
-                "value": "no"
-            }
-        ]
-        }) }}
-
-    {% endcall %}
 {% endblock %}
