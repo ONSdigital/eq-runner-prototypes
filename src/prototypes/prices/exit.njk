@@ -1,0 +1,23 @@
+---
+group: Design work
+title: Save and sign out confirmation
+layout: prodcom/views/_index
+---
+
+{% block main %}
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+{{
+    onsPanel({
+        "type": 'success',
+        "id": 'success-id',
+        "iconType": 'check',
+        "body": 'Your progress has been saved',
+        "classes": 'ons-u-mb-xl ons-u-fs-xl',
+        "iconSize": 'xl'
+    })
+}}
+
+<p>To find further information or resume the survey, <a href="#">return to My Account</a>.</p>
+
+{% endblock %}

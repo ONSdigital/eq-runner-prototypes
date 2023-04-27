@@ -1,0 +1,122 @@
+---
+group: Surveys
+title: Prices
+layout: prices/views/_hub
+---
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xxl">
+            WIRE HARNESS
+        </h1>
+    </header>
+
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Specification</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Product
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Wire harness
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Description
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Other wiring sets
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Serial no
+        </dt>
+        <dd class="govuk-summary-list__value">
+          24010BR11A
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+{% from "components/date-input/_macro.njk" import onsDateInput %}
+
+{{
+    onsDateInput({
+        "id": "date",
+        "legendOrLabel": "Date of price",
+        "description": "For example, 31 3",
+        "day": {
+            "label": {
+                "text": "Day"
+            },
+            "name": "day",
+            "attributes": {
+                "autocomplete": "bday-day"
+            }
+        },
+        "month": {
+            "label": {
+                "text": "Month"
+            },
+            "name": "month",
+            "attributes": {
+                "autocomplete": "bday-month"
+            }
+        }
+    })
+}}
+
+
+{% from "components/input/_macro.njk" import onsInput %}
+{{
+    onsInput({
+        "id": "prefixed",
+        "type": "number",
+        "width": "10",
+        "autocomplete": "off",
+        "label": {
+            "text": "Price",
+            "description": "For example, 35580.77"
+        }
+    })
+}}
+
+
+
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+{{
+    onsTextarea({
+        "id": "textarea",
+        "name": "feedback",
+        "label": {
+            "text": "Comments box",
+            "description": "If the price has increased or decreased significantly from the previous price provided please give reasons"
+        }
+    })
+}}
+
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l',
+        "url": 'prices-list-collector',
+        "iconType": false
+    })
+}}
+
+{% endblock %}
