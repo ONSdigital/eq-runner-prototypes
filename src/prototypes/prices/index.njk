@@ -1,0 +1,41 @@
+---
+group: Surveys
+title: Prices
+layout: prices/views/_hub
+---
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xxl">
+            Index Numbers of Import Prices
+        </h1>
+    </header>
+
+    <p>The information you supply is used to compile the Import Price Indices (IPI), which are a series of economic indicators that measure the price movement of imported products into the UK. They help monitor and measure inflation and are used in compiling the National Accounts..</p>
+
+    <h2 class="ons-u-mt-l">Before you begin</h2>
+    <p>All items listed should be <strong>imported</strong> into the UNITED KINGDOM.</p>
+
+    <h3>Price quotes</h3>
+    <p>Please enter the price for the current month in the price column. If the price has changed significantly please give reasons. This may prevent us from contacting you again later.</p>
+
+    <h3>Price basis</h3>
+    <p>The price quoted should:</p>
+    <ul>
+        <li>be a <strong>normal import transaction price</strong>, at the time of order, i.e. after discounts and excluding VAT and agent's commission.</li>
+        <li>compare <strong>like with like each month</strong>.</li>
+        <li>be <strong>representative</strong> of current imports.</li>
+    </ul>
+
+
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l',
+        "url": 'prices-list-collector',
+        "iconType": false
+    })
+}}
+{% endblock %}

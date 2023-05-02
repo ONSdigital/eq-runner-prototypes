@@ -6,12 +6,6 @@ layout: prodcom/views/_index
 {% from "components/panel/_macro.njk" import onsPanel %}
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
-{% set form =  {
-    "method": "GET",
-    "attributes": {
-        "action":  pageInfo.rootPath + "/research-thankyou"
-    }
-} %}
 
 {% block main %}
 
@@ -34,15 +28,18 @@ layout: prodcom/views/_index
             <div class="ons-panel__body ons-svg-icon-margin--xl">
                     <h1 data-qa="title">Thank you for registering to take part in our research</h1>
     <p data-qa="guidance">
-      Your feedback will help us make sure that our website works for everyone.
+      We may contact you in the future to ask for your help to make sure that our website works for everyone.
     </p>
 
             </div>
         </div>
 
+
+<p>To save your survey answers, <a href="thank-you-2">return to the survey confirmation page</a>.</p>
+<!--
 <p>If you have other business surveys to complete, <a href="/">return to My Account</a>.</p>
 <p>If you have another social survey to complete, <a href="/">return to our website to find social surveys</a>.</p>
-
+-->
 
 
 {% endblock %}

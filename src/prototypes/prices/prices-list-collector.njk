@@ -1,0 +1,153 @@
+---
+group: Surveys
+title: Prices
+layout: prices/views/_hub
+---
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xxl">
+            WIRE HARNESS
+        </h1>
+    </header>
+<p>(Description) Other wiring sets</p>
+<p>(Serial number) 24010BR11A</p>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h3 class="govuk-summary-card__title">Terms of sale</h3>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Supplier reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Payment terms
+        </dt>
+        <dd class="govuk-summary-list__value">
+          
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Carriage
+        </dt>
+        <dd class="govuk-summary-list__value">
+          
+        </dd>
+      </div>
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Customer reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h3 class="govuk-summary-card__title">Details</h3>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Unit of sale
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Each
+        </dd>
+      </div>
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Currency
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Euro
+        </dd>
+      </div>
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Country of origin
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Morocco
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+
+{% from "components/date-input/_macro.njk" import onsDateInput %}
+
+{{
+    onsDateInput({
+        "id": "date",
+        "legendOrLabel": "Month",
+        "description": "For example, 3",
+        "month": {
+            "label": {
+                "text": "Month"
+            },
+            "name": "month",
+            "attributes": {
+                "autocomplete": "month"
+            }
+        }
+    })
+}}
+
+
+{% from "components/input/_macro.njk" import onsInput %}
+{{
+    onsInput({
+        "id": "prefixed",
+        "type": "number",
+        "width": "10",
+        "autocomplete": "off",
+        "label": {
+            "text": "Price",
+            "description": "For example, 35580.77 do not include currency symbol"
+        }
+    })
+}}
+
+
+
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+{{
+    onsTextarea({
+        "id": "textarea",
+        "name": "feedback",
+        "label": {
+            "text": "Comments box",
+            "description": "If the price has increased or decreased significantly from the previous price provided please give reasons"
+        }
+    })
+}}
+
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l',
+        "url": 'prices-list-collector',
+        "iconType": false
+    })
+}}
+
+{% endblock %}
