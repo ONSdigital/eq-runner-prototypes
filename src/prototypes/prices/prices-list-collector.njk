@@ -11,36 +11,79 @@ layout: prices/views/_hub
             WIRE HARNESS
         </h1>
     </header>
-
+<p>(Description) Other wiring sets</p>
+<p>(Serial number) 24010BR11A</p>
 
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">Specification</h2>
+    <h3 class="govuk-summary-card__title">Terms of sale</h3>
   </div>
   <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Product
+          Supplier reference
         </dt>
         <dd class="govuk-summary-list__value">
-          Wire harness
+          
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Description
+          Payment terms
         </dt>
         <dd class="govuk-summary-list__value">
-          Other wiring sets
+          
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Serial no
+          Carriage
         </dt>
         <dd class="govuk-summary-list__value">
-          24010BR11A
+          
+        </dd>
+      </div>
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Customer reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h3 class="govuk-summary-card__title">Details</h3>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Unit of sale
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Each
+        </dd>
+      </div>
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Currency
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Euro
+        </dd>
+      </div>
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Country of origin
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Morocco
         </dd>
       </div>
     </dl>
@@ -48,32 +91,20 @@ layout: prices/views/_hub
 </div>
 
 
-
-
-
 {% from "components/date-input/_macro.njk" import onsDateInput %}
 
 {{
     onsDateInput({
         "id": "date",
-        "legendOrLabel": "Date of price",
-        "description": "For example, 31 3",
-        "day": {
-            "label": {
-                "text": "Day"
-            },
-            "name": "day",
-            "attributes": {
-                "autocomplete": "bday-day"
-            }
-        },
+        "legendOrLabel": "Month",
+        "description": "For example, 3",
         "month": {
             "label": {
                 "text": "Month"
             },
             "name": "month",
             "attributes": {
-                "autocomplete": "bday-month"
+                "autocomplete": "month"
             }
         }
     })
@@ -89,7 +120,7 @@ layout: prices/views/_hub
         "autocomplete": "off",
         "label": {
             "text": "Price",
-            "description": "For example, 35580.77"
+            "description": "For example, 35580.77 do not include currency symbol"
         }
     })
 }}
