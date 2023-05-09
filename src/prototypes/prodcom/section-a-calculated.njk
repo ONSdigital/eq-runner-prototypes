@@ -1,63 +1,36 @@
 ---
 group: Surveys
 title: PRODCOM survey
-layout: prodcom/views/_spoke
+layout: prodcom/views/_main
 ---
-
-{% from "components/breadcrumbs/_macro.njk" import onsBreadcrumbs %}
-{% from "components/button/_macro.njk" import onsButton %}
-{% from "components/textarea/_macro.njk" import onsTextarea %}
-{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
-{% from "components/summary/_macro.njk" import onsSummary %}
-{% from "components/panel/_macro.njk" import onsPanel %}
 
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/survey-sections-e"
+        "action":  pageInfo.rootPath + "/section-a-summary"
     }
 } %}
 
-{% block preMain %}
-{{
-    onsBreadcrumbs({
-        "ariaLabel": 'Back',
-        "itemsList": [
-            {
-                "url": 'survey-sections-d',
-                "id": "back",
-                "text": 'Back',
-                "attributes": {
-                    "data-attribute": "Example attribute"
-                }
-            }
-        ]
-    })
-}}
-{% endblock %}
-
 {% block main %}
+    {% from "components/panel/_macro.njk" import onsPanel %}
+    {% from "components/summary/_macro.njk" import onsSummary %}
+    {% from "components/button/_macro.njk" import onsButton %}
 
     <header class="ons-patternlib-page__content-header">
         <h1 class="ons-u-fs-xl">
-                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section D</span>
-            We calculate the total company turnover to be £2,502,000.00. Is this correct?
+                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section A</span>
+            We calculate the total value of sales to be £1,766,000.00. Is this correct?
         </h1>
     </header>
-<p>This should be the sum of all values in Section A, B and C.</p>
 
 {{
     onsPanel({
-        "spacious": true,
-        "body": '<h4>Exclude:</h4>
-        <ul><li>VAT</li>
-        <li>capital receipts from the disposal of assets</li>
-        <li>interest</li>
-        <li>dividends</li>
-        </ul>'
+        "body": '<p>Please review your answers and confirm these are correct</p>',
+        "classes": 'ons-u-mb-l'
     })
 }}
 
+{% from "components/summary/_macro.njk" import onsSummary %}
 {{
     onsSummary({
         "summaries": [
@@ -66,70 +39,70 @@ layout: prodcom/views/_spoke
                     {
                         "rows": [
                             {
-                                "rowTitle": "Section A: <br>Total value of products",
+                                "rowTitle": "Limestone flux; limestone and other calcareous stone of a kind used for the manufacture of lime or cement",
                                 "rowItems": [
                                     {
                                         "valueList": [
                                             {
-                                                "text": "£1,766,000.00"
+                                                "text": "£1,274,000.00"
                                             }
                                         ],
                                         "actions": [
                                             {
                                                 "text": "Change",
                                                 "ariaLabel": "Change answer",
-                                                "url": "section-a-calculated"
+                                                "url": "section-a"
                                             }
                                         ]
                                     }
                                 ]
                             },
                             {
-                                "rowTitle": "Section B: <br>Total value of additional products",
+                                "rowTitle": "Esters of salicylic acid and their salts",
                                 "rowItems": [
                                     {
                                         "valueList": [
                                             {
-                                                "text": "£56,000.00"
+                                                "text": "£274,000.00"
                                             }
                                         ],
                                         "actions": [
                                             {
                                                 "text": "Change",
                                                 "ariaLabel": "Change answer",
-                                                "url": "section-b-calculated"
+                                                "url": "section-a-2"
                                             }
                                         ]
                                     }
                                 ]
                             },
                             {
-                                "rowTitle": "Section C: <br>Total value of other income",
+                                "rowTitle": "Oleic, linoleic or linolenic acids, their salts and esters",
                                 "rowItems": [
                                     {
                                         "valueList": [
                                             {
-                                                "text": "£680,000.00"
+                                                "text": "£218,000.00"
                                             }
                                         ],
                                         "actions": [
                                             {
                                                 "text": "Change",
                                                 "ariaLabel": "Change answer",
-                                                "url": "section-c-summary"
+                                                "url": "section-a-3"
                                             }
                                         ]
                                     }
                                 ]
                             },
                             {
-                                "rowTitle": "Grand total",
+                                "rowTitle": "Total value of sales",
                                 "total": true,
                                 "rowItems": [
                                     {
                                         "valueList": [
                                             {
-                                                "text": "£2,502,000.00"
+                                                "text": "£1,766,000.00"
                                             }
                                         ]
                                     }
@@ -147,10 +120,7 @@ layout: prodcom/views/_spoke
 {{
     onsButton({
         "text": 'Yes, I confirm these are correct',
-        "classes": 'ons-u-mb-m ons-u-mt-l',
-        "url": 'survey-sections-e',
-        "iconType": false
+        "classes": 'ons-u-mb-m ons-u-mt-l'
     })
 }}
-
 {% endblock %}

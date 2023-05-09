@@ -15,13 +15,158 @@ layout: prodcom/views/_main
     {% from "components/summary/_macro.njk" import onsSummary %}
     {% from "components/button/_macro.njk" import onsButton %}
 
-    <header class="ons-patternlib-page__content-header">
-        <h1 class="ons-u-fs-xl">
-                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section A</span>
-            Summary of products
-        </h1>
-    </header>
 
+{% from "components/summary/_macro.njk" import onsSummary %}
+
+<header class="ons-patternlib-page__content-header">
+    <h1 class="ons-u-fs-xl">
+            <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section A</span>
+        Summary of products
+    </h1>
+</header>
+
+{{
+    onsSummary({
+        "summaries": [
+            {
+                "groups": [
+                    {
+                        "groupTitle": "Limestone flux; limestone and other calcareous stone of a kind used for the manufacture of lime or cement",
+                        "rows": [
+                            {
+                                "rowTitle": "Value of sales",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£1,274,000.00"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "#0"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Volume of sales (Tonnes)",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "882,377"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "#0"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Total produced (Tonnes)",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "1,000,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "#0"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "groupTitle": "Esters of salicylic acid and their salts",
+                        "rows": [
+                            {
+                                "rowTitle": "Value of sales",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£274,000.00"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "#0"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "groupTitle": "Oleic, linoleic or linolenic acids, their salts and esters",
+                        "rows": [
+                            {
+                                "rowTitle": "Value of sales",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£218,000.00"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "#0"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Volume of sales (Kilograms)",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "3659"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "#0"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    })
+}}
+
+
+<!-- OLD LAYOUT
 <div class="ons-summary ons-u-mb-l">
   <div class="ons-summary__group">
     <div class="ons-summary__items">
@@ -75,7 +220,7 @@ layout: prodcom/views/_main
 
   </div>
 </div>
-
+-->
 {{
     onsButton({
         "text": 'Continue',
