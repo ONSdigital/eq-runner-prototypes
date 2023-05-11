@@ -15,119 +15,74 @@ layout: prodcom/views/_main
     {% from "components/summary/_macro.njk" import onsSummary %}
     {% from "components/button/_macro.njk" import onsButton %}
 
-    <header class="ons-patternlib-page__content-header">
-        <h1 class="ons-u-fs-xl">
-                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section B</span>
-            Summary of additional products
-        </h1>
-    </header>
-
-{% from "components/summary/_macro.njk" import onsSummary %}
-
-{{
-    onsSummary({
-        "summaries": [
-            {
-                "groups": [
-                    {
-                        "id": "turnover",
-                        "rows": [
-                            {
-                                "id": "sales-dates-row",
-                                "rowTitle": "Do you need to report additional products?",
-                                "rowItems": [
-                                    {
-                                        "id": "sales-dates",
-                                        "valueList": [
-                                            {
-                                                "text": "Yes"
-                                            }
-                                        ],
-                                        "actions": [
-                                            {
-                                                "text": "Change",
-                                                "ariaLabel": "Change answer",
-                                                "url": "section-b-start"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    })
-}}
-
-<div class="ons-summary ons-u-mb-l">
-  <div class="ons-summary__group">
+    <div class="ons-summary">
+  <div id="turnover" class="ons-summary__group">
+    <h1 class="ons-summary__group-title"><span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section B</span>
+            Summary of additional products</h1>
     <div class="ons-summary__items">
-      <div class="ons-summary__item">
-        <dl class="ons-summary__row">
-          <dt class="ons-summary__item-title extra-flex">
-           
-            <div class="ons-summary__item--text">
-                <h4>Example product</h4>
-                CN code: <strong>581309721</strong><br>
-                Value of sales: <strong>£1,274,000</strong>
-            </div>
+      <div id="sales-dates-row" class="ons-summary__item">
+        <dl class="ons-summary__row ons-summary__row--has-values" id="sales-dates">
+          <dt class="ons-summary__item-title">
+            <div class="ons-summary__item--text">Do you need to report additional products?</div>
           </dt>
+          <dd class="ons-summary__values">
+            <span class="ons-summary__text">Yes</span>
+          </dd>
           <dd class="ons-summary__actions">
-            <a href="section-b" class="ons-summary__button" aria-label="Change details for example product">Change</a>
+            <a href="#0" class="ons-summary__button" aria-label="Change answer">Change</a>
           </dd>
         </dl>
       </div>
+    </div>
 
-      <div class="ons-summary__item">
-        <dl class="ons-summary__row">
-          <dt class="ons-summary__item-title extra-flex">
-           
-            <div class="ons-summary__item--text">
-                <h4>Another example product with a bit more detail</h4>
-                CN code: <strong>581309711</strong><br>
-                Value of sales: <strong>£129,000</strong>
-            </div>
-          </dt>
-          <dd class="ons-summary__actions">
-            <a href="section-b" class="ons-summary__button" aria-label="Change details for example product">Change</a>
-          </dd>
-        </dl>
+    <div class="ons-summary ons-u-mb-l">
+      <div class="ons-summary__group">
+        <h3 class="ons-summary__group-title ons-u-mt-l" style="margin-bottom: 0;">Additional products</h3>
+        <div class="ons-summary__items">
+          <div class="ons-summary__item">
+            <dl class="ons-summary__row">
+              <dt class="ons-summary__item-title">
+                <div class="ons-summary__item--text">Example product described in as much detail as possible using basic terminology, brand names, common usage names or brief advertising/marketing material</div>
+              </dt>
+              <dd class="ons-summary__actions">
+                <a href="#0" class="ons-summary__button" aria-label="Change details for Barry Scott">Change</a>
+              </dd>
+            </dl>
+          </div>
+          <div class="ons-summary__item">
+            <dl class="ons-summary__row">
+              <dt class="ons-summary__item-title">
+                <div class="ons-summary__item--text">Another example product
+                </div>
+              </dt>
+              <dd class="ons-summary__actions">
+                <a href="#0" class="ons-summary__button" aria-label="Change details for Susan Gill">Change</a>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="ons-summary__link ons-u-pt-s ons-u-bt ons-u-mb-xl">
+          <a data-qa="add-item-link" href="section-b">Add another product to this list</a>
+        </div>
       </div>
+    </div>
 
-      <div class="ons-summary__item">
-        <dl class="ons-summary__row">
-          <dt class="ons-summary__item-title extra-flex">
-           
-            <div class="ons-summary__item--text">
-                <h4>Example product described in as much detail as possible using basic terminology, brand names, common usage names or brief advertising/marketing material.</h4>
-                CN code: <strong>581309501</strong><br>
-                Value of sales: <strong>£304,000</strong>
-            </div>
+    <div class="ons-summary__items">
+      <div id="sales-dates-row" class="ons-summary__item">
+        <dl class="ons-summary__row ons-summary__row--has-values" id="sales-dates">
+          <dt class="ons-summary__item-title">
+            <div class="ons-summary__item--text">What is the total value of remaining minor products?</div>
           </dt>
+          <dd class="ons-summary__values">
+            <span class="ons-summary__text">£14,000.00</span>
+          </dd>
           <dd class="ons-summary__actions">
-            <a href="section-b" class="ons-summary__button" aria-label="Change details for example product">Change</a>
+            <a href="#0" class="ons-summary__button" aria-label="Change answer">Change</a>
           </dd>
         </dl>
       </div>
+    </div>
 
-      <div class="ons-summary__item">
-        <dl class="ons-summary__row">
-          <dt class="ons-summary__item-title extra-flex">
-           
-            <div class="ons-summary__item--text">
-                <h4>Minor Products</h4>
-                Value of sales: <strong>£14,000</strong>
-            </div>
-          </dt>
-          <dd class="ons-summary__actions">
-            <a href="section-b-minor" class="ons-summary__button" aria-label="Change details for example product">Change</a>
-          </dd>
-        </dl>
-      </div>
-  </div>
-</div>
 
 {{
     onsButton({

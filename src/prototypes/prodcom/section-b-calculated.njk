@@ -1,0 +1,108 @@
+---
+group: Surveys
+title: PRODCOM survey
+layout: prodcom/views/_main
+---
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/section-b-summary"
+    }
+} %}
+
+{% block main %}
+    {% from "components/panel/_macro.njk" import onsPanel %}
+    {% from "components/summary/_macro.njk" import onsSummary %}
+    {% from "components/button/_macro.njk" import onsButton %}
+
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xl">
+                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section B</span>
+            We calculate the total value of additional product sales to be £1,766,000.00. Is this correct?
+        </h1>
+    </header>
+
+{{
+    onsPanel({
+        "body": '<p>Please review your answers and confirm these are correct</p>',
+        "classes": 'ons-u-mb-l'
+    })
+}}
+
+{% from "components/summary/_macro.njk" import onsSummary %}
+{{
+    onsSummary({
+        "summaries": [
+            {
+                "groups": [
+                    {
+                        "rows": [
+                            {
+                                "rowTitle": "Example product described in as much detail as possible using basic terminology, brand names, common usage names or brief advertising/marketing material.
+",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£301,060.00"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Minor products",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£14,000.00"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-2"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Total value of sales",
+                                "total": true,
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£315,060.00"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    })
+}}
+
+
+{{
+    onsButton({
+        "text": 'Yes, I confirm these are correct',
+        "classes": 'ons-u-mb-m ons-u-mt-l'
+    })
+}}
+{% endblock %}
