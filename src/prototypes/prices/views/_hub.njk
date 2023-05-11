@@ -90,6 +90,7 @@
 {% endblock %}
 
 {% block preMain %}
+<script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 {% endblock %}
 
 {% block main %}
@@ -97,4 +98,5 @@
 
 {% block bodyEnd %}
     <script src="/prototypes/prices/index.js"></script>
+    
 {% endblock %}

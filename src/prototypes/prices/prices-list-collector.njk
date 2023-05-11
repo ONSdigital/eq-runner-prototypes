@@ -14,84 +14,88 @@ layout: prices/views/_hub
 <p>(Description) Other wiring sets</p>
 <p>(Serial number) 24010BR11A</p>
 
-<div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
-    <h3 class="govuk-summary-card__title">Terms of sale</h3>
-  </div>
-  <div class="govuk-summary-card__content">
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Supplier reference
-        </dt>
-        <dd class="govuk-summary-list__value">
-          
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Payment terms
-        </dt>
-        <dd class="govuk-summary-list__value">
-          
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Carriage
-        </dt>
-        <dd class="govuk-summary-list__value">
-          
-        </dd>
-      </div>
-       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Customer reference
-        </dt>
-        <dd class="govuk-summary-list__value">
-          
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
-<div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
-    <h3 class="govuk-summary-card__title">Details</h3>
-  </div>
-  <div class="govuk-summary-card__content">
-    <dl class="govuk-summary-list">
-       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Unit of sale
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Each
-        </dd>
-      </div>
-       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Currency
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Euro
-        </dd>
-      </div>
-       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Country of origin
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Morocco
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Person 2"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Details known"
+      },
+      value: {
+        html: "Yes"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "whether details are known"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Relationship to lead tenant"
+      },
+      value: {
+        html: "Partner"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "relationship to lead tenant"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Age"
+      },
+      value: {
+        html: "42"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "age"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Working situation"
+      },
+      value: {
+        html: "Unable to work because of long-term sickness or disability"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "working situation"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
 
 
-{% from "components/date-input/_macro.njk" import onsDateInput %}
+{# {% from "components/date-input/_macro.njk" import onsDateInput %}
 
 {{
     onsDateInput({
@@ -148,6 +152,6 @@ layout: prices/views/_hub
         "url": 'prices-list-collector',
         "iconType": false
     })
-}}
+}} #}
 
 {% endblock %}
