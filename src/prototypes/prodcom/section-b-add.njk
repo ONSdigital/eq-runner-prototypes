@@ -23,7 +23,7 @@ layout: prodcom/views/_main
         <div class="ons-summary__group">
             <h1 class="ons-u-fs-xl">
                 <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section B</span>
-                Summary of additional products
+                Do you need to add any more additional products?
             </h1>
             <table id="turnover" class="ons-summary__items js-summary">
             </table>
@@ -42,7 +42,7 @@ layout: prodcom/views/_main
             <div class="ons-summary__item--text">
                 <h4>Example product described in as much detail as possible using basic terminology, brand names, common usage names or brief advertising/marketing material.</h4>
                 CN code:<strong> 581309501</strong><br>
-                Value of sales:<strong> £304,000</strong>
+                Value of sales:<strong> £301,060.00</strong>
             </div>
           </dt>
           <dd class="ons-summary__actions">
@@ -58,15 +58,44 @@ layout: prodcom/views/_main
 </div>
 <!-- // -->
 
+<!--
 <p><a href="section-b">Add another product to this list</a></p>
+-->
+
+{{
+        onsRadios({
+            "name": "property-type",
+            "dontWrap": true,
+            "radios": [
+                {
+                    "id": "yes",
+                    "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/section-b"
+                        },
+                    "label": {
+                        "text": "Yes"
+                    },
+                    "value": "yes"
+                },
+                {
+                    "id": "no",
+                    "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/section-b-minor"
+                        },
+                    "label": {
+                        "text": "No"
+                    },
+                    "value": "no"
+                }
+            ]
+        })
+    }}
 
 {{
     onsButton({
-        "text": "Save and continue",
-        "url": "section-b-minor",
-        "iconType": false,
-        "classes": "ons-u-mt-l"
+        "text": 'Continue',
+        "classes": 'ons-u-mt-s'
     })
 }}
-
 {% endblock %}
+
