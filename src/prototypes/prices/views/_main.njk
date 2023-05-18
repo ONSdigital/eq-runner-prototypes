@@ -95,6 +95,7 @@
 
 {% block head %}
     <link rel="stylesheet" href="/prototypes/prices/styles.css" />
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 {% endblock %}
 
 {% block preMain %}
@@ -105,4 +106,8 @@
 
 {% block bodyEnd %}
     <script src="/prototypes/prices/index.js"></script>
+    <script src="/prototypes/prices/govuk.js"></script>
+  <script>
+    window.GOVUKFrontend.initAll()
+  </script>
 {% endblock %}
