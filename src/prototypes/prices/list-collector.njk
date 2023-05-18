@@ -1,0 +1,63 @@
+---
+group: Surveys
+title: Prices
+layout: prices/views/_hub
+---
+
+{% block main %}
+    {% from "components/summary/_macro.njk" import onsSummary %}
+    {% from "components/button/_macro.njk" import onsButton %}
+    {% from "components/panel/_macro.njk" import onsPanel %}
+
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xl">
+            Product list
+        </h1>
+    </header>
+
+
+{{
+    onsPanel({
+        "body": '<p>You have previously reported the following products. Press continue to provide updated volume and value of sales information for each.</p>'
+    })
+}}
+
+
+
+{{ onsSummary({
+    "classes": "ons-u-mt-xl",
+    "summaries": [
+        {
+            "groups": [
+                {
+                    "rows": [
+                        {
+                            "rowTitle": "WIRE HARNESS",
+                            "rowItems": [
+                                {
+                                }
+                            ]
+                        },
+                        {
+                            "rowTitle": "BRAZILIAN ELLIOTS PINE PLYWOOD GRADE C+/C",
+                            "rowItems": [
+                                {
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}) }}
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l',
+        "url": 'prices-list-collector',
+        "iconType": false
+    })
+}}
+{% endblock %}
