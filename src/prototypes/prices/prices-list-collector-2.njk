@@ -14,126 +14,157 @@ layout: prices/views/_hub
 <p class="ons-u-mb-xl"><strong>Description:</strong> 2440 X 1220 X 18<br>
 <strong>Serial number:</strong> PSBEN</p>
 
-{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+<div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Terms of sale</h2></div>
 
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Terms of sale"
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "Supplier reference"
-      },
-      value: {
-        html: ""
-      },
-      actions: {
-        items: [
-          {
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Payment terms"
-      },
-      value: {
-        html: "NETT MONTHLY"
-      },
-      actions: {
-        items: [
-          {
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Carriage"
-      },
-      value: {
-        html: "DELIVERED NETT"
-      },
-      actions: {
-        items: [
-          {
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Customer reference"
-      },
-      value: {
-        html: "DCL"
-      },
-      actions: {
-        items: [
-          {
-          }
-        ]
-      }
-    }
-  ]
-}) }}
+    <div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Supplier reference
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+              
+                <a class="govuk-link" href="">
+                    </a>
+              
+            </dd>
+          
+        </div>
+      
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Payment terms
+          </dt>
+          <dd class="govuk-summary-list__value">
+            NETT MONTHLY
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+              
+                <a class="govuk-link" href="">
+                    </a>
+              
+            </dd>
+          
+        </div>
+      
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Carriage
+          </dt>
+          <dd class="govuk-summary-list__value">
+            DELIVERED NETT
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+              
+                <a class="govuk-link" href="">
+                    </a>
+              
+            </dd>
+          
+        </div>
+      
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Customer reference
+          </dt>
+          <dd class="govuk-summary-list__value">
+            DCL
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+              
+                <a class="govuk-link" href="">
+                    </a>
+              
+            </dd>
+          
+        </div>
+      
+    
+  </dl></div>
+  </div>
 
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Details</h2></div>
 
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Details"
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "Unit of sale"
-      },
-      value: {
-        html: "PER 10 M SQ"
-      },
-      actions: {
-        items: [
-          {
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Currency"
-      },
-      value: {
-        html: "POUNDS STERLING"
-      },
-      actions: {
-        items: [
-          {
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Country of origin"
-      },
-      value: {
-        html: "BRAZIL"
-      },
-      actions: {
-        items: [
-          {
-          }
-        ]
-      }
-    }
-  ]
-}) }}
+    <div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Unit of sale
+          </dt>
+          <dd class="govuk-summary-list__value">
+            PER 10 M SQ
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+              
+                <a class="govuk-link" href="">
+                    </a>
+              
+            </dd>
+          
+        </div>
+      
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Currency
+          </dt>
+          <dd class="govuk-summary-list__value">
+            POUNDS STERLING
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+              
+                <a class="govuk-link" href="">
+                    </a>
+              
+            </dd>
+          
+        </div>
+      
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Country of origin
+          </dt>
+          <dd class="govuk-summary-list__value">
+            BRAZIL
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+              
+                <a class="govuk-link" href="">
+                    </a>
+              
+            </dd>
+          
+        </div>
+      
+    
+  </dl></div>
+  </div>
+
 
 {% from "components/panel/_macro.njk" import onsPanel %}
 
