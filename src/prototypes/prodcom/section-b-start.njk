@@ -38,27 +38,9 @@ layout: prodcom/views/_spoke
 
     <header class="ons-patternlib-page__content-header">
         <h1 class="ons-u-fs-xxl">
-                <span class="ons-u-fs-m ons-u-db ons-u-mb-xs ons-u-lighter">Section B</span>
-            Additional products
+            Do you need to report additional products?
         </h1>
     </header>
-
-{{
-    onsPanel({
-        "body": '<p>Describe all products with sales worth more than £25,000 in as much detail as possible using basic terminology, include:</p>
-    <ul>
-        <li>brand names</li>
-        <li>common usage names</li>
-        <li>brief advertising or marketing material</li>
-    </ul>'
-    })
-}}
-
-
-<p class="ons-u-mt-l">If you are familiar with Customs and Excise CN codes (commodity tariff codes) used for exports or imports, please provide these as they can be linked directly to PRODCOM codes.</p>
-<p>Group together products with sales of less than £25,000 in the box for minor products at the end of this section.</p>
-
-<h2 class="ons-u-mt-l">Do you need to report additional products?</h2>
 {{
         onsRadios({
             "name": "property-type",
@@ -87,6 +69,21 @@ layout: prodcom/views/_spoke
             ]
         })
     }}
+
+{{
+    onsPanel({
+        "body": '<p>Describe all products with sales worth more than £25,000 in as much detail as possible using basic terminology, include:</p>
+    <ul>
+        <li>brand names</li>
+        <li>common usage names</li>
+        <li>brief advertising or marketing material</li>
+    </ul>'
+    })
+}}
+
+
+<p class="ons-u-mt-l">If you are familiar with Customs and Excise CN codes (commodity tariff codes) used for exports or imports, please provide these as they can be linked directly to PRODCOM codes.</p>
+<p>Group together products with sales of less than £25,000 in the box for minor products at the end of this section.</p>
 
 {{
     onsButton({
