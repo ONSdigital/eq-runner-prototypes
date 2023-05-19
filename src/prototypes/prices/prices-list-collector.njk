@@ -15,126 +15,157 @@ layout: prices/views/_hub
     <p class="ons-u-mb-xl"><strong>Description:</strong> Other wiring sets<br>
     <strong>Serial number:</strong> 24010BR11A</p>
 
-{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Terms of sale"
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "Supplier reference"
-      },
-      value: {
-        html: "21596-SEWS MOROCCO"
-      },
-      actions: {
-        items: [
-          {
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Payment terms"
-      },
-      value: {
-        html: "WITHIN 30 DAYS"
-      },
-      actions: {
-        items: [
-          {
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Carriage"
-      },
-      value: {
-        html: "DAP"
-      },
-      actions: {
-        items: [
-          {
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Customer reference"
-      },
-      value: {
-        html: ""
-      },
-      actions: {
-        items: [
-          {
-          }
-        ]
-      }
-    }
-  ]
-}) }}
+<div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Terms of sale</h2></div>
 
+    <div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Supplier reference
+          </dt>
+          <dd class="govuk-summary-list__value">
+            21596-SEWS MOROCCO
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+              
+                <a class="govuk-link" href="">
+                    </a>
+              
+            </dd>
+          
+        </div>
+      
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Payment terms
+          </dt>
+          <dd class="govuk-summary-list__value">
+            WITHIN 30 DAYS
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+              
+                <a class="govuk-link" href="">
+                    </a>
+              
+            </dd>
+          
+        </div>
+      
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Carriage
+          </dt>
+          <dd class="govuk-summary-list__value">
+            DAP
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+              
+                <a class="govuk-link" href="">
+                    </a>
+              
+            </dd>
+          
+        </div>
+      
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Customer reference
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+              
+                <a class="govuk-link" href="">
+                    </a>
+              
+            </dd>
+          
+        </div>
+      
+    
+  </dl></div>
+  </div>
 
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Details"
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "Unit of sale"
-      },
-      value: {
-        html: "EACH"
-      },
-      actions: {
-        items: [
-          {
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Currency"
-      },
-      value: {
-        html: "EURO"
-      },
-      actions: {
-        items: [
-          {
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Country of origin"
-      },
-      value: {
-        html: "MOROCCO"
-      },
-      actions: {
-        items: [
-          {
-          }
-        ]
-      }
-    }
-  ]
-}) }}
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper"><h2 class="govuk-summary-card__title">Details</h2></div>
+
+    <div class="govuk-summary-card__content">
+  <dl class="govuk-summary-list">
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Unit of sale
+          </dt>
+          <dd class="govuk-summary-list__value">
+            EACH
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+              
+                <a class="govuk-link" href="">
+                    </a>
+              
+            </dd>
+          
+        </div>
+      
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Currency
+          </dt>
+          <dd class="govuk-summary-list__value">
+            EURO
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+              
+                <a class="govuk-link" href="">
+                    </a>
+              
+            </dd>
+          
+        </div>
+      
+    
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Country of origin
+          </dt>
+          <dd class="govuk-summary-list__value">
+            MOROCCO
+          </dd>
+          
+            <dd class="govuk-summary-list__actions">
+              
+                <a class="govuk-link" href="">
+                    </a>
+              
+            </dd>
+          
+        </div>
+      
+    
+  </dl></div>
+  </div>
 
 {% from "components/panel/_macro.njk" import onsPanel %}
 
