@@ -28,43 +28,67 @@ layout: prices/views/_hub
         You must submit this questionnaire  to complete it
     {% endcall %}
 
-<div class="ons-summary ons-u-mb-l">
-  <div class="ons-summary__group">
-    <div class="ons-summary__items">
-      <div class="ons-summary__item">
-        <dl class="ons-summary__row">
-          <dt class="ons-summary__item-title extra-flex">
-           
-            <div class="ons-summary__item--text">
-                <h4>WIRE HARNESS</h4>
-                Month:<strong> 6</strong><br>
-                Price:<strong> 8,560.00</strong>
-            </div>
-          </dt>
-          <dd class="ons-summary__actions">
-            <a href="prices-list-collector" class="ons-summary__button" aria-label="Change details for example product">Change</a>
-          </dd>
-        </dl>
-      </div>
 
-      <div class="ons-summary__item">
-        <dl class="ons-summary__row">
-          <dt class="ons-summary__item-title extra-flex">
-           
-            <div class="ons-summary__item--text">
-                <h4>BRAZILIAN ELLIOTS PINE PLYWOOD GRADE C+/C</h4>
-                Month:<strong> 6</strong><br>
-                Price:<strong> 2,018.77</strong>
-            </div>
-          </dt>
-          <dd class="ons-summary__actions">
-            <a href="prices-list-collector-2" class="ons-summary__button" aria-label="Change details for example product">Change</a>
-          </dd>
-        </dl>
-      </div>
+{% from "components/summary/_macro.njk" import onsSummary %}
 
-  </div>
-</div>
+{{
+    onsSummary({
+        "summaries": [
+            {
+                "groups": [
+                    {
+                        "placeholderText": 'test',
+                        "id": "turnover",
+                        "rows": [
+                            {
+                                "id": "sales-dates-row",
+                                "rowTitle": "For the period of May 2023, what was the price of WIRE HARNESS?",
+                                "rowItems": [
+                                    {
+                                        "id": "sales-dates",
+                                        "valueList": [
+                                            {
+                                                "text": "39.00"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "prices"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "For the period of May 2023, what was the price of BRAZILIAN ELLIOTS PINE PLYWOOD GRADE C+/C?",
+                                "id": "sales-value-row",
+                                "rowItems": [
+                                    {
+                                        "id": "sales-value",
+                                        "valueList": [
+                                            {
+                                                "text": "200.99"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "prices-2"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    })
+}}
 
 <p>By submitting this questionnaire you are confirming that, to the best of your knowledge and belief, the details provided are correct.</p>
 {{

@@ -1,0 +1,97 @@
+---
+group: Surveys
+title: Prices
+layout: prices/views/_hub
+---
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xxl">
+            For the period of <em class="ons-highlight">May 2023</em>, what was the price of BRAZILIAN ELLIOTS PINE PLYWOOD GRADE C+/C?
+        </h1>
+    </header>
+
+
+    {% from "components/lists/_macro.njk" import onsList %}
+<p>We have the following information relating to this product:</p>
+{{
+    onsList({
+        "itemsList": [
+            {
+                "text": '<strong>Description:</strong> 2440 X 1220 X 18'
+            },
+            {
+                "text": '<strong>serial number:</strong> PSBEN'
+            },
+            {
+                "text": '<strong>Payment terms:</strong> NETT MONTHLY'
+            },
+            {
+                "text": '<strong>Carriage:</strong> DELIVERED NETT'
+            },
+            {
+                "text": '<strong>Customer reference:</strong> DCL'
+            },
+            {
+                "text": '<strong>Unit of sale:</strong> PER 10 M SQ'
+            },
+            {
+                "text": '<strong>Currency:</strong> POUNDS STERLING'
+            },
+            {
+                "text": '<strong>Country of origin:</strong> BRAZIL'
+            }
+        ]
+    })
+}}
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{{
+    onsPanel({
+        "body": '<p>If any of the information relating to this item has changed, write any amendments in the comments box</p>'
+    })
+}}
+
+
+{% from "components/input/_macro.njk" import onsInput %}
+{{
+    onsInput({
+        "id": "prefixed",
+        "type": "number",
+        "width": "10",
+        "autocomplete": "off",
+        "label": {
+            "text": "Price",
+            "description": "For example, 35580.77 do not include currency symbol"
+        }
+    })
+}}
+
+
+
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+{{
+    onsTextarea({
+        "id": "textarea",
+        "name": "feedback",
+        "label": {
+            "text": "Comments box",
+            "description": "If the price has increased or decreased significantly from the previous price provided please give reasons"
+        }
+    })
+}}
+
+
+{{
+    onsButton({
+        "text": 'Save and continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l',
+        "url": 'summary',
+        "iconType": false
+    })
+}}
+
+{% endblock %}
