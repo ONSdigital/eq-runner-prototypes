@@ -2,7 +2,7 @@
 
 {% set pageConfig = {
     "header": {
-        "title": "PRODCOM Survey",
+        "title": "Monthly Survey for Index Numbers of Import Prices - Price Quotation Return",
         "signoutButton": {
             "text": "Save and sign out",
             "iconType": "exit",
@@ -38,13 +38,13 @@
             ]
         }
     },
-    
+
     "breadcrumbs": {
         "ariaLabel": 'Breadcrumbs',
         "itemsList": [
             {
                 "linkClasses": 'js-previous' if prevPage else '',
-                "url": 'javascript:history.back()',
+                "url": pageInfo.rootPath + "/" + prevPage + '.html',
                 "text": 'Previous'
             }
         ]
@@ -92,10 +92,8 @@
     }
 } %}
 
-
 {% block head %}
     <link rel="stylesheet" href="/prototypes/prices/styles.css" />
-    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 {% endblock %}
 
 {% block preMain %}
@@ -106,8 +104,4 @@
 
 {% block bodyEnd %}
     <script src="/prototypes/prices/index.js"></script>
-    <script src="/prototypes/prices/govuk.js"></script>
-  <script>
-    window.GOVUKFrontend.initAll()
-  </script>
 {% endblock %}

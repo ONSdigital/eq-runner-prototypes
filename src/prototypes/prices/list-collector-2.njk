@@ -1,20 +1,22 @@
 ---
-group: Surveys
+group: Prototypes
 title: Prices
-layout: prices/views/_hub
+layout: prices/views/_main
 ---
+{% from "components/summary/_macro.njk" import onsSummary %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set prevPage = "index" %}
+{% set form = {
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.rootPath + "/prices-2.html"
+    }
+} %}
 
 {% block main %}
-    {% from "components/summary/_macro.njk" import onsSummary %}
-    {% from "components/button/_macro.njk" import onsButton %}
-    {% from "components/panel/_macro.njk" import onsPanel %}
-
-    <header class="ons-patternlib-page__content-header">
-        <h1 class="ons-u-fs-xl">
-            Product list
-        </h1>
-    </header>
-
+    <h1 class="ons-u-fs-xl">Product list</h1>
 
 {{
     onsPanel({
@@ -56,9 +58,7 @@ layout: prices/views/_hub
 {{
     onsButton({
         "text": 'Continue',
-        "classes": 'ons-u-mb-m ons-u-mt-l',
-        "url": 'prices-2',
-        "iconType": false
+        "classes": 'ons-u-mb-m ons-u-mt-l'
     })
 }}
 {% endblock %}

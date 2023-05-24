@@ -1,7 +1,7 @@
 ---
-group: Surveys
+group: Prototypes
 title: Prices
-layout: prices/views/_hub
+layout: prices/views/_main
 ---
 {% from "components/button/_macro.njk" import onsButton %}
 
@@ -28,15 +28,12 @@ layout: prices/views/_hub
         <li>be <strong>representative</strong> of current imports.</li>
     </ul>
 
-
-
-{{
-    onsButton({
-        "text": 'Continue',
-        "classes": 'ons-u-mb-m ons-u-mt-l',
-        "url": 'list-collector',
-        "iconType": false
-    })
-}}
+    {{
+        onsButton({
+            "text": "Start",
+            "iconType": false,
+            "classes": "ons-u-mt-l",
+            "url": pageInfo.rootPath + "/list-collector.html"
+        })
+    }}
 {% endblock %}
-

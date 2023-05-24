@@ -1,17 +1,21 @@
 ---
-group: Surveys
+group: Prototypes
 title: Prices
-layout: prices/views/_hub
+layout: prices/views/_main
 ---
+{% from "components/date-input/_macro.njk" import onsDateInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 
-{% block main %}
-    <header class="ons-patternlib-page__content-header">
-        <h1 class="ons-u-fs-xxl">
-            For the period of <em class="ons-highlight">May 2023</em>, what was the price of BRAZILIAN ELLIOTS PINE PLYWOOD GRADE C+/C?
-        </h1>
-    </header>
+{% set prevPage = "prices" %}
+{% set form = {
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.rootPath + "/summary.html"
+    }
+} %}
 
+{% block main %}
+<h1 class="ons-u-fs-xxl">For the period of <em class="ons-highlight">May 2023</em>, what was the price of BRAZILIAN ELLIOTS PINE PLYWOOD GRADE C+/C?</h1>
 
     {% from "components/lists/_macro.njk" import onsList %}
 <p>We have the following information relating to this product:</p>
@@ -58,7 +62,7 @@ layout: prices/views/_hub
 {% from "components/input/_macro.njk" import onsInput %}
 {{
     onsInput({
-        "id": "prefixed",
+        "id": "prefixed2",
         "type": "number",
         "width": "10",
         "autocomplete": "off",
@@ -75,8 +79,8 @@ layout: prices/views/_hub
 
 {{
     onsTextarea({
-        "id": "textarea",
-        "name": "feedback",
+        "id": "textarea2",
+        "name": "feedback2",
         "label": {
             "text": "Comments box",
             "description": "If the price has increased or decreased significantly from the previous price provided please give reasons"
@@ -84,14 +88,10 @@ layout: prices/views/_hub
     })
 }}
 
-
-{{
-    onsButton({
-        "text": 'Save and continue',
-        "classes": 'ons-u-mb-m ons-u-mt-l',
-        "url": 'summary',
-        "iconType": false
-    })
-}}
-
+    {{
+        onsButton({
+            "text": "Save and continue",
+            "classes": "ons-u-mt-l"
+        })
+    }}
 {% endblock %}

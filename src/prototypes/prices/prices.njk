@@ -1,16 +1,20 @@
 ---
-group: Surveys
+group: Prototypes
 title: Prices
-layout: prices/views/_hub
+layout: prices/views/_main
 ---
+{% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 
-{% block main %}
-    <header class="ons-patternlib-page__content-header">
-        <h1 class="ons-u-fs-xxl">For the period of <em class="ons-highlight">May 2023</em>, what was the price of WIRE HARNESS?
-        </h1>
-    </header>
+{% set form = {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/list-collector-2.html"
+    }
+} %}
 
+{% block main %}
+<h1 class="ons-u-fs-xxl">For the period of <em class="ons-highlight">May 2023</em>, what was the price of WIRE HARNESS?</h1>
 {% from "components/lists/_macro.njk" import onsList %}
 <p>We have the following information relating to this product:</p>
 {{
@@ -43,7 +47,6 @@ layout: prices/views/_hub
         ]
     })
 }}
-
 {% from "components/panel/_macro.njk" import onsPanel %}
 
 {{
@@ -81,15 +84,10 @@ layout: prices/views/_hub
         }
     })
 }}
-
-
-{{
-    onsButton({
-        "text": 'Save and continue',
-        "classes": 'ons-u-mb-m ons-u-mt-l',
-        "url": 'list-collector-2',
-        "iconType": false
-    })
-}}
-
+    {{
+        onsButton({
+            "text": "Save and continue",
+            "classes": "ons-u-mt-l"
+        })
+    }}
 {% endblock %}

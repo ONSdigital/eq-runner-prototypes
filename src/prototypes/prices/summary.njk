@@ -1,102 +1,39 @@
 ---
-group: Surveys
-title: Prices
-layout: prices/views/_hub
+group: Prototypes
+layout: prices/views/_main
 ---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/panel/_macro.njk" import onsPanel %}
 
-{% set form =  {
+{% set prevPage = "prices-2" %}
+{% set form = {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "thank-you"
+        "action": pageInfo.rootPath + "/summary.html"
     }
 } %}
 
 {% block main %}
-    {% from "components/summary/_macro.njk" import onsSummary %}
-    {% from "components/button/_macro.njk" import onsButton %}
-    {% from "components/panel/_macro.njk" import onsPanel %}
-
-    <header class="ons-patternlib-page__content-header">
-        <h1 class="ons-u-fs-xl">
-            Submit prices
-        </h1>
-    </header>
-        {% call onsPanel({
+    <h1>Submit questionnaire</h1>
+    {% call onsPanel({
             "type": "warn"
         })
     %}
-        You must submit this questionnaire  to complete it
+        You must submit this questionnaire to complete it
     {% endcall %}
 
+    <div class="ons-summary">
+        <div class="ons-summary__group">
+            <table id="turnover" class="ons-summary__items js-summary">
+            </table>
+        </div>
+    </div>
 
-{% from "components/summary/_macro.njk" import onsSummary %}
+    <p class="ons-u-mt-l">By submitting this questionnaire you are confirming that, to the best of your knowledge and belief, the details provided are correct.</p>
 
-{{
-    onsSummary({
-        "summaries": [
-            {
-                "groups": [
-                    {
-                        "placeholderText": 'test',
-                        "id": "turnover",
-                        "rows": [
-                            {
-                                "id": "sales-dates-row",
-                                "rowTitle": "For the period of May 2023, what was the price of WIRE HARNESS?",
-                                "rowItems": [
-                                    {
-                                        "id": "sales-dates",
-                                        "valueList": [
-                                            {
-                                                "text": "39.00"
-                                            }
-                                        ],
-                                        "actions": [
-                                            {
-                                                "text": "Change",
-                                                "ariaLabel": "Change answer",
-                                                "url": "prices"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "rowTitle": "For the period of May 2023, what was the price of BRAZILIAN ELLIOTS PINE PLYWOOD GRADE C+/C?",
-                                "id": "sales-value-row",
-                                "rowItems": [
-                                    {
-                                        "id": "sales-value",
-                                        "valueList": [
-                                            {
-                                                "text": "200.99"
-                                            }
-                                        ],
-                                        "actions": [
-                                            {
-                                                "text": "Change",
-                                                "ariaLabel": "Change answer",
-                                                "url": "prices-2"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    })
-}}
-
-<p>By submitting this questionnaire you are confirming that, to the best of your knowledge and belief, the details provided are correct.</p>
-{{
-    onsButton({
-        "text": 'Submit questionnaire',
-        "classes": 'ons-u-mb-m ons-u-mt-l',
-        "url": 'thank-you',
-        "iconType": false
-    })
-}}
+    {{
+        onsButton({
+            "text": 'Submit study'
+        })
+    }}
 {% endblock %}
