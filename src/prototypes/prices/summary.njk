@@ -1,7 +1,9 @@
 ---
 group: Prototypes
+title: Prices
 layout: prices/views/_main
 ---
+
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/panel/_macro.njk" import onsPanel %}
 
@@ -9,7 +11,7 @@ layout: prices/views/_main
 {% set form = {
     "method": "GET",
     "attributes": {
-        "action": pageInfo.rootPath + "/summary.html"
+        "action": pageInfo.rootPath + "/thank-you.html"
     }
 } %}
 
@@ -33,7 +35,7 @@ layout: prices/views/_main
 
     {{
         onsButton({
-            "text": 'Submit study'
+            "text": 'Submit questionnaire'
         })
     }}
 {% endblock %}

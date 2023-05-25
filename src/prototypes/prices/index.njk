@@ -3,18 +3,36 @@ group: Prototypes
 title: Prices
 layout: prices/views/_main
 ---
-{% from "components/button/_macro.njk" import onsButton %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/list-collector.html"
+    }
+} %}
 
 {% block main %}
-    <header class="ons-patternlib-page__content-header">
-        <h1 class="ons-u-fs-xxl">
-            Index Numbers of Import Prices
-        </h1>
-    </header>
 
-    <p>The information you supply is used to compile the Import Price Indices (IPI), which are a series of economic indicators that measure the price movement of imported products into the UK. They help monitor and measure inflation and are used in compiling the National Accounts..</p>
+<h1 class="ons-u-fs-xl">You are completing this for ESSENTIAL ENTERPRISE LTD. (ESSENTIAL ENTERPRISE LTD.)</h1>
 
-    <h2 class="ons-u-mt-l">Before you begin</h2>
+<p>If your company details have changed:</p>
+<ul>
+    <li>contact us on <a href="#">0300 1234 931</a></li>
+    <li><a href="#">email surveys@ons.gov.uk</a></p></li>
+</ul>
+
+ <p>The information you supply is used to compile the Import Price Indices (IPI), which are a series of economic indicators that measure the price movement of imported products into the UK. They help monitor and measure inflation and are used in compiling the National Accounts..</p>
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% call onsPanel({
+        "type": 'warn'
+    })
+%}
+Your response is legally required under section 1 of the <a href="#">Statistics of Trade Act 1947</a>.
+{% endcall %}
+
+<h2 class="ons-u-mt-l">Before you start</h2>
     <p>All items listed should be <strong>imported</strong> into the UNITED KINGDOM.</p>
 
     <h3>Price quotes</h3>
@@ -28,12 +46,30 @@ layout: prices/views/_main
         <li>be <strong>representative</strong> of current imports.</li>
     </ul>
 
-    {{
-        onsButton({
-            "text": "Continue",
-            "iconType": false,
-            "classes": "ons-u-mt-l",
-            "url": pageInfo.rootPath + "/list-collector.html"
-        })
-    }}
+<h2 class="ons-u-mt-l">Complete survey</h2>
+
+{% from "components/button/_macro.njk" import onsButton %}
+{{
+    onsButton({
+        "text": "Start survey"
+    })
+}}
+
+<p class="ons-u-mt-m">You may receive an automatic reminder if you submit data just before or after the return date.</p>
+
+
+<h2 class="ons-u-fs-l ons-u-mt-m">Why you have receieved this survey</h2>
+<p>YOur business has been selected from a directory of businesses in the UK which are registered fot VAT and/or PAYE or with Companies House.</p>
+<p>The information supplied feeds into the <a href="#">National Accounts</a> and the <a href="#">Producer Price Index</a>.</p>
+
+<h2 class="ons-u-fs-l ons-u-mt-m">If you need help</h2>
+<p>For more information about business surveys, see <a href="#">About ONS business surveys</a>.</p>
+<p>You can call us on:
+<ul>
+    <li><a href="tel:03001234931">0300 1234 931</a> (UK)</li>
+    <li><a href="tel:+441633810495">+44 1633 810495</a> (outside of the UK)</li>
+</ul>
+<p>When you call, please enter the three-digit ID <strong>014</strong>.</p>
+<p>Er mwyn gwneud cais am ffurflen Gymraeg (to speak to someone in Welsh): <a href="tel:03001234921">0300 1234 921</a>.</p>
+
 {% endblock %}
