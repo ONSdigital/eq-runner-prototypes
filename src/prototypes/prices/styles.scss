@@ -4,7 +4,6 @@ Update the version in the path below to the version being used
 @import '../../../node_modules/@ons/design-system/scss/vars/_index.scss';
 @import '../../../node_modules/@ons/design-system/scss/helpers/_index.scss';
 @import '../../../node_modules/@ons/design-system/scss/utilities/_index.scss';
-@import '../../../node_modules/govuk-frontend/govuk/all.scss';
 
 /***********************************************************************
 Do not remove. Required for dynamic generation of survey summary page
@@ -20,13 +19,3 @@ Do not remove. Required for dynamic generation of survey summary page
 }
 /***********************************************************************/
 /***********************************************************************/
-
-.govuk-summary-card {
-  h2.govuk-summary-card__title {
-    font-family: "OpenSans","Helvetica Neue",arial,sans-serif;
-  }
-  dl.govuk-summary-list {
-    font-family: "OpenSans","Helvetica Neue",arial,sans-serif;
-    font-size: 18px;
-  }
-}

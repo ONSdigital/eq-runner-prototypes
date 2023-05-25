@@ -1,78 +1,39 @@
 ---
-group: Surveys
-title: Prices
-layout: prices/views/_hub
+group: Prototypes
+layout: prices/views/_main
 ---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/panel/_macro.njk" import onsPanel %}
 
-{% set form =  {
+{% set prevPage = "prices-2" %}
+{% set form = {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "thank-you"
+        "action": pageInfo.rootPath + "/summary.html"
     }
 } %}
 
 {% block main %}
-    {% from "components/summary/_macro.njk" import onsSummary %}
-    {% from "components/button/_macro.njk" import onsButton %}
-    {% from "components/panel/_macro.njk" import onsPanel %}
-
-    <header class="ons-patternlib-page__content-header">
-        <h1 class="ons-u-fs-xl">
-            Submit prices
-        </h1>
-    </header>
-        {% call onsPanel({
+    <h1>Submit questionnaire</h1>
+    {% call onsPanel({
             "type": "warn"
         })
     %}
-        You must submit this questionnaire  to complete it
+        You must submit this questionnaire to complete it
     {% endcall %}
 
-<div class="ons-summary ons-u-mb-l">
-  <div class="ons-summary__group">
-    <div class="ons-summary__items">
-      <div class="ons-summary__item">
-        <dl class="ons-summary__row">
-          <dt class="ons-summary__item-title extra-flex">
-           
-            <div class="ons-summary__item--text">
-                <h4>WIRE HARNESS</h4>
-                Month:<strong> 6</strong><br>
-                Price:<strong> 8,560.00</strong>
-            </div>
-          </dt>
-          <dd class="ons-summary__actions">
-            <a href="prices-list-collector" class="ons-summary__button" aria-label="Change details for example product">Change</a>
-          </dd>
-        </dl>
-      </div>
+    <div class="ons-summary">
+        <div class="ons-summary__group">
+            <table id="turnover" class="ons-summary__items js-summary">
+            </table>
+        </div>
+    </div>
 
-      <div class="ons-summary__item">
-        <dl class="ons-summary__row">
-          <dt class="ons-summary__item-title extra-flex">
-           
-            <div class="ons-summary__item--text">
-                <h4>BRAZILIAN ELLIOTS PINE PLYWOOD GRADE C+/C</h4>
-                Month:<strong> 6</strong><br>
-                Price:<strong> 2,018.77</strong>
-            </div>
-          </dt>
-          <dd class="ons-summary__actions">
-            <a href="prices-list-collector-2" class="ons-summary__button" aria-label="Change details for example product">Change</a>
-          </dd>
-        </dl>
-      </div>
+    <p class="ons-u-mt-l">By submitting this questionnaire you are confirming that, to the best of your knowledge and belief, the details provided are correct.</p>
 
-  </div>
-</div>
-
-<p>By submitting this questionnaire you are confirming that, to the best of your knowledge and belief, the details provided are correct.</p>
-{{
-    onsButton({
-        "text": 'Submit questionnaire',
-        "classes": 'ons-u-mb-m ons-u-mt-l',
-        "url": 'thank-you',
-        "iconType": false
-    })
-}}
+    {{
+        onsButton({
+            "text": 'Submit study'
+        })
+    }}
 {% endblock %}
