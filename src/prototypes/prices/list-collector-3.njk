@@ -11,7 +11,7 @@ layout: prices/views/_main
 {% set form = {
     "method": "GET",
     "attributes": {
-        "action": pageInfo.rootPath + "/prices-2.html"
+        "action": pageInfo.rootPath + "/summary.html"
     }
 } %}
 
@@ -36,6 +36,7 @@ layout: prices/views/_main
                             "rowTitle": "BRAZILIAN ELLIOTS PINE PLYWOOD GRADE C+/C",
                             "rowItems": [
                                 {
+                                    "iconType": "check"
                                 }
                             ]
                         }
@@ -46,7 +47,7 @@ layout: prices/views/_main
     ]
 }) }}
 
-<p>You have previously reported these products. Press continue to provide updated price information for each.</p>
+<p>Press continue to view a summary of your responses.</p>
 
 {{
     onsButton({
