@@ -16,10 +16,13 @@ layout: prices/views/_main
 {% block main %}
 <h1 class="ons-u-fs-xxl">For the period of <em class="ons-highlight">May 2023</em>, what was the price of WIRE HARNESS?</h1>
 {% from "components/lists/_macro.njk" import onsList %}
-<p>We have the following information relating to this product:</p>
+<p>We have the following information relating to this item:</p>
 {{
     onsList({
         "itemsList": [
+            {
+                "text": '<strong>Item number:</strong> 8293110203'
+            },
             {
                 "text": '<strong>Description:</strong> Other wiring sets'
             },

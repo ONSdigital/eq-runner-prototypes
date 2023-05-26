@@ -55,7 +55,7 @@ layout: prodcom/views/_main
     <span id="description-hint" class="ons-label__description  ons-input--with-description">(181110001) Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank.</span>
     <span class="ons-input-type ons-input-type--prefix">
         <span class="ons-input-type__inner">
-            <input type="text" class="ons-input ons-input--text ons-input-type__input ons-input-number--w-10" aria-labelledby="annual-salary-gpb-prefix" pattern="[0-9]*" inputmode="numeric" autocomplete="off">
+            <input type="text" id="value-1" name="value-1"  class="ons-input ons-input--text ons-input-type__input ons-input-number--w-10" aria-labelledby="annual-salary-gpb-prefix" pattern="[0-9]*" inputmode="numeric" autocomplete="off">
             <abbr id="annual-salary-gpb-prefix" class="ons-input-type__type ons-js-input-abbr" title="British pounds (GBP)">£</abbr>
         </span>
     </span>
@@ -65,14 +65,14 @@ layout: prodcom/views/_main
 <div class="ons-field">
   <label class="ons-label ons-label--with-description" aria-describedby="description-hint" for="text">Volume of sales (Tonnes</em>)</label>
   <span id="description-hint" class="ons-label__description  ons-input--with-description">(181110002) Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank.</span>
-  <input type="text" id="text" class="ons-input ons-input--text ons-input-type__input ons-input--w-8"
+  <input type="text" id="volume-1" name="volume-1" class="ons-input ons-input--text ons-input-type__input ons-input--w-8"
     aria-describedby="description-hint" />
 </div>
 
 <div class="ons-field">
   <label class="ons-label ons-label--with-description" aria-describedby="description-hint" for="text">Total volume produced (Tonnes</em>)</label>
   <span id="description-hint" class="ons-label__description  ons-input--with-description">(181110005) Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank.</span>
-  <input type="text" id="text" class="ons-input ons-input--text ons-input-type__input ons-input--w-8"
+  <input type="text" id="volume-total-1" name="volume-total-1" class="ons-input ons-input--text ons-input-type__input ons-input--w-8"
     aria-describedby="description-hint" />
     
 </div>
