@@ -15,42 +15,23 @@ layout: prices/views/_main
 
 {% block main %}
 <h1 class="ons-u-fs-xxl">For the period of <em class="ons-highlight">May 2023</em>, what was the price of WIRE HARNESS?</h1>
-{% from "components/lists/_macro.njk" import onsList %}
-<p>We have the following information relating to this product:</p>
-{{
-    onsList({
-        "itemsList": [
-            {
-                "text": '<strong>Description:</strong> Other wiring sets'
-            },
-            {
-                "text": '<strong>Serial number:</strong> 24010BR11A'
-            },
-            {
-                "text": '<strong>Supplier reference:</strong> 21596-SEWS MOROCCO'
-            },
-            {
-                "text": '<strong>Payment terms:</strong> WITHIN 30 DAYS'
-            },
-            {
-                "text": '<strong>Carriage:</strong> DAP'
-            },
-            {
-                "text": '<strong>Unit of sale:</strong> EACH'
-            },
-            {
-                "text": '<strong>Currency:</strong> EURO'
-            },
-            {
-                "text": '<strong>Country of origin:</strong> MOROCCO'
-            }
-        ]
-    })
-}}
+
+<p>We have the following information relating to this item:</p>
+<p><strong>Item number:</strong> 8293110203</p>
+<p><strong>Description:</strong> Other wiring sets</p>
+<p><strong>Serial number:</strong> 24010BR11A</p>
+<p><strong>Supplier reference:</strong> 21596-SEWS MOROCCO</p>
+<p><strong>Payment terms:</strong> WITHIN 30 DAYS</p>
+<p><strong>Carriage:</strong> DAP</p>
+<p><strong>Unit of sale:</strong> EACH</p>
+<p><strong>Currency:</strong> EURO</p>
+<p><strong>Country of origin:</strong> MOROCCO</p>
+
 {% from "components/panel/_macro.njk" import onsPanel %}
 
 {{
     onsPanel({
+        "classes": "ons-u-mt-l",
         "body": '<p>If any of the information relating to this item has changed, write any amendments in the comments box</p>'
     })
 }}

@@ -18,16 +18,8 @@ layout: prices/views/_main
 {% block main %}
     <h1 class="ons-u-fs-xl">Product list</h1>
 
-{{
-    onsPanel({
-        "body": '<p>You have previously reported the following products. Press continue to provide updated volume and value of sales information for each.</p>'
-    })
-}}
-
-
-
 {{ onsSummary({
-    "classes": "ons-u-mt-xl",
+    "classes": "ons-u-mb-xl",
     "summaries": [
         {
             "groups": [
@@ -53,6 +45,8 @@ layout: prices/views/_main
         }
     ]
 }) }}
+
+<p>You have previously reported these products. Press continue to provide updated price information for each.</p>
 
 {{
     onsButton({
