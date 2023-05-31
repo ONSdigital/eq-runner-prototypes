@@ -1,0 +1,534 @@
+---
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
+---
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "survey-sections-d-alt"
+    }
+} %}
+
+{% block main %}
+    {% from "components/summary/_macro.njk" import onsSummary %}
+    {% from "components/button/_macro.njk" import onsButton %}
+
+
+{% from "components/summary/_macro.njk" import onsSummary %}
+
+<header class="ons-patternlib-page__content-header">
+    <h1 class="ons-u-fs-xl">
+        Summary of products
+    </h1>
+</header>
+
+{{
+    onsSummary({
+        "summaries": [
+            {
+                "groups": [
+
+                    {
+                        "groupTitle": "Crude rape, colza or mustard oil and their fractions",
+                        "rows": [
+                            {
+                                "rowTitle": "Value of sales",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£1,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Volume of sales (Kilograms)",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "1000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+
+                    {
+                        "groupTitle": "Crude vegetable oils",
+                        "rows": [
+                            {
+                                "rowTitle": "Value of sales",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£1,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-2"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Volume of sales (Kilograms)",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "1000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-2"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+
+                    {
+                        "groupTitle": "Oil-cake and other solid residues resulting from the extraction of soya-bean oil",
+                        "rows": [
+                            {
+                                "rowTitle": "Value of sales",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£1,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-3"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Volume of sales (Tonnes)",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "1000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-3"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+
+                    {
+                        "groupTitle": "Oil-cake and other solid residues resulting from the extraction of rape or colza seed fats or oils",
+                        "rows": [
+                            {
+                                "rowTitle": "Value of sales",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£1,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-4"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Volume of sales (Kilograms)",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "1000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-4"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+
+                    {
+                        "groupTitle": "Refined soya-bean oil and its fractions",
+                        "rows": [
+                            {
+                                "rowTitle": "Value of sales",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£2,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-5-alt"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Volume of sales (Kilograms)",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "1000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-5-alt"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+
+                    {
+                        "groupTitle": "Refined sunflower-seed and safflower oil and their fractions",
+                        "rows": [
+                            {
+                                "rowTitle": "Value of sales",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£1,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-6"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Volume of sales (Kilograms)",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "1000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-6"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+
+                    {
+                        "groupTitle": "Refined rape, colza or mustard oil and their fractions",
+                        "rows": [
+                            {
+                                "rowTitle": "Value of sales",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£1,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-7"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Volume of sales (Kilograms)",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "1000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-7"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+
+                    {
+                        "groupTitle": "Wheat gluten",
+                        "rows": [
+                            {
+                                "rowTitle": "Value of sales",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£1,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-8"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Volume of sales (Kilograms)",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "1000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-8"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+
+                    {
+                        "groupTitle": "Glucose and glucose syrup",
+                        "rows": [
+                            {
+                                "rowTitle": "Value of sales",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£1,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-9"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Volume of sales (Kilograms)",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "1000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-9"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+
+                    {
+                        "groupTitle": "Residues of starch manufacture and similar residues",
+                        "rows": [
+                            {
+                                "rowTitle": "Value of sales",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£1,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-10"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Volume of sales (Kilograms)",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "1000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-10"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+
+                    {
+                        "groupTitle": "Undenatured ethyl alcohol of an alocoholic strength by volume of 80% or more",
+                        "rows": [
+                            {
+                                "rowTitle": "Value of sales",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£1,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-11"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Volume of sales (Litre)",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "1000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-11"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+
+
+
+                ]
+            }
+        ]
+    })
+}}
+
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l',
+        "url": 'survey-sections-d-alt',
+        "iconType": false
+    })
+}}
+{% endblock %}
