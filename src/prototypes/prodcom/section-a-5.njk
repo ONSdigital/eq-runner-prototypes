@@ -12,7 +12,7 @@ layout: prodcom/views/_index
 {% set form =  {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/section-a-list-collector-4"
+        "action":  pageInfo.rootPath + "/section-a-list-collector-6"
     }
 } %}
 
@@ -20,10 +20,20 @@ layout: prodcom/views/_index
 
 <div class="ons-question ons-u-mb-l">
     <h1 id="question-title" class="ons-question__title">
-            For the period 1 January 2022 to 31 December 2022, what was the sales value and volume of Oil-cake and other solid residues resulting from the extraction of soya-bean oil?</h1>
+            For the period 1 January 2022 to 31 December 2022, what was the sales value and volume of Refined soya-bean oil and its fractions?</h1>
     <div class="ons-question__description ons-u-mb-m">
-        <p>(CN 2304)</p>
+        <p>(CN 150790)</p>
     </div>
+</div>
+
+<div class="ons-panel ons-panel--info ons-panel--no-title">
+  <span class="o521ns-panel__assistive-text ons-u-vh">Important information: </span>
+  <div class="ons-panel__body">
+    <h4>Exclude</h4>
+    <ul>
+        <li>chemically modified</li>
+    </ul>
+  </div>
 </div>
 
 {{
@@ -34,7 +44,7 @@ layout: prodcom/views/_index
         "autocomplete": "off",
         "label": {
             "text": "Value of sales",
-            "description": "(104141301) Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank"
+            "description": "(10415001) Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank"
         },
         "prefix": {
             "title": "British pounds (GBP)",
@@ -45,8 +55,8 @@ layout: prodcom/views/_index
 }}
 
 <div class="ons-field">
-  <label class="ons-label ons-label--with-description" aria-describedby="description-hint" for="text">Volume of sales (Tonnes)</label>
-  <span id="description-hint" class="ons-label__description  ons-input--with-description">(104141302) Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank.</span>
+  <label class="ons-label ons-label--with-description" aria-describedby="description-hint" for="text">Volume of sales (Kilogram)</label>
+  <span id="description-hint" class="ons-label__description  ons-input--with-description">(104151002) Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank.</span>
   <input type="text" id="volume-1" name="volume-1" class="ons-input ons-input--text ons-input-type__input ons-input--w-8"
     aria-describedby="description-hint" />
 </div>

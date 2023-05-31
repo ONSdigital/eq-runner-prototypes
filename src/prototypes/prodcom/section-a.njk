@@ -1,7 +1,7 @@
 ---
-group: Surveys
-title: PRODCOM survey
-layout: prodcom/views/_main
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
 ---
 
 {% from "components/question/_macro.njk" import onsQuestion %}
@@ -9,7 +9,6 @@ layout: prodcom/views/_main
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 
-{% set questionTitle = "For the period <em class=\"ons-highlight\">01/01/2022</em> to <em class=\"ons-highlight\">31/12/2022</em>, what was the sales value and volume of <em class=\"ons-highlight\">Limestone flux; limestone and other calcareous stone of a kind used for the manufacture of lime or cement</em>?" %}
 {% set form =  {
     "method": "GET",
     "attributes": {
@@ -21,60 +20,35 @@ layout: prodcom/views/_main
 
 <div class="ons-question ons-u-mb-l">
     <h1 id="question-title" class="ons-question__title">
-            For the period <em class="ons-highlight">1 January 2022</em> to <em class="ons-highlight">31 December 2022</em>, what was the sales value and volume of <em class="ons-highlight">Limestone flux; limestone and other calcareous stone of a kind used for the manufacture of lime or cement</em>?</h1>
+            For the period 1 January 2022 to 31 December 2022, what was the sales value and volume of Crude rape, colza or mustard oil and their fractions EXCLUDING: - chemically modified?</h1>
     <div class="ons-question__description ons-u-mb-m">
-        <p>(CN 2521)</p>
+        <p>(CN 1514110 + 15141190 + 15149110 + 15149190)</p>
     </div>
 </div>
 
-<div class="ons-panel ons-panel--info ons-panel--no-title">
-  <span class="o521ns-panel__assistive-text ons-u-vh">Important information: </span>
-  <div class="ons-panel__body">
-  <h4>Include</h4>
-    <ul>
-        <li>limestone</li>
-        <li>limestone flux</li>
-        <li>travertine</li>
-        <li>onyx</li>
-        <li>marble</li>
-    </ul>
-    <h4>Exclude</h4>
-    <ul>
-    <li>crushed limestone aggregate</li>
-    <li>calcareous dimension stone</li>
-    </ul>
-  </div>
-</div>
-
- <div class="ons-question__description ons-u-mb-m ons-u-mt-m">
-    <p>Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank.</p>
-</div>
+{{
+    onsInput({
+        "id": "prefixed",
+        "type": "number",
+        "width": "10",
+        "autocomplete": "off",
+        "label": {
+            "text": "Value of sales",
+            "description": "(181110001) Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank"
+        },
+        "prefix": {
+            "title": "British pounds (GBP)",
+            "text": "£",
+            "id": "value-of-sales"
+        }
+    })
+}}
 
 <div class="ons-field">
-    <label class="ons-label ons-label--with-description" for="sales-value">Value of sales</label>
-    <span id="description-hint" class="ons-label__description  ons-input--with-description">(181110001) Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank.</span>
-    <span class="ons-input-type ons-input-type--prefix">
-        <span class="ons-input-type__inner">
-            <input type="text" id="value-1" name="value-1"  class="ons-input ons-input--text ons-input-type__input ons-input-number--w-10" aria-labelledby="annual-salary-gpb-prefix" pattern="[0-9]*" inputmode="numeric" autocomplete="off">
-            <abbr id="annual-salary-gpb-prefix" class="ons-input-type__type ons-js-input-abbr" title="British pounds (GBP)">£</abbr>
-        </span>
-    </span>
-</div>
-
-
-<div class="ons-field">
-  <label class="ons-label ons-label--with-description" aria-describedby="description-hint" for="text">Volume of sales (Tonnes</em>)</label>
+  <label class="ons-label ons-label--with-description" aria-describedby="description-hint" for="text">Volume of sales (Tonnes)</label>
   <span id="description-hint" class="ons-label__description  ons-input--with-description">(181110002) Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank.</span>
   <input type="text" id="volume-1" name="volume-1" class="ons-input ons-input--text ons-input-type__input ons-input--w-8"
     aria-describedby="description-hint" />
-</div>
-
-<div class="ons-field">
-  <label class="ons-label ons-label--with-description" aria-describedby="description-hint" for="text">Total volume produced (Tonnes</em>)</label>
-  <span id="description-hint" class="ons-label__description  ons-input--with-description">(181110005) Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank.</span>
-  <input type="text" id="volume-total-1" name="volume-total-1" class="ons-input ons-input--text ons-input-type__input ons-input--w-8"
-    aria-describedby="description-hint" />
-    
 </div>
 
 <div class="ons-u-mt-xl">
