@@ -1,7 +1,7 @@
 ---
-group: Surveys
-title: PRODCOM survey
-layout: prodcom/views/_main
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
 ---
 
 {% from "components/question/_macro.njk" import onsQuestion %}
@@ -9,7 +9,6 @@ layout: prodcom/views/_main
 {% from "components/input/_macro.njk" import onsInput %}
 {% from "components/button/_macro.njk" import onsButton %}
 
-{% set questionTitle = "For the period <em class=\"ons-highlight\">01/01/2022</em> to <em class=\"ons-highlight\">31/12/2022</em>, what was the sales value and volume of <em class=\"ons-highlight\">Limestone flux; limestone and other calcareous stone of a kind used for the manufacture of lime or cement</em>?" %}
 {% set form =  {
     "method": "GET",
     "attributes": {
@@ -21,35 +20,50 @@ layout: prodcom/views/_main
 
 <div class="ons-question ons-u-mb-l">
     <h1 id="question-title" class="ons-question__title">
-            For the period <em class="ons-highlight">1 January 2022</em> to <em class="ons-highlight">31 December 2022</em>, what was the sales value of <em class="ons-highlight">esters of salicylic acid and their salts</em>?</h1>
+            For the period 1 January 2022 to 31 December 2022, what was the sales value and volume of Crude vegetable oils?</h1>
     <div class="ons-question__description ons-u-mb-m">
-        <p>(CN 291823)</p>
+        <p>(CN 15071010 + 15071090 + 15122110 + 15122190 + 15131310 + 15131191 + 15131199 + 15132110 + 15132130 + 15132190 + 151511 + 15155011 + 15155019 + 15159021 + 15159029 + 15159040 + 15159059)</p>
     </div>
 </div>
 
 <div class="ons-panel ons-panel--info ons-panel--no-title">
-  <span class="ons-panel__assistive-text ons-u-vh">Important information: </span>
+  <span class="o521ns-panel__assistive-text ons-u-vh">Important information: </span>
   <div class="ons-panel__body">
     <h4>Exclude</h4>
     <ul>
-    <li>of O-Acetylsalicylic acid </li>
+        <li>palm oil</li>
+        <li>rape, colza or mustard oil</li>
+        <li>sunflower seed of safflower oil</li>
+        <li>olive oil</li>
+        <li>groundnut oil</li>
+        <li>chemically modified oils</li>
     </ul>
   </div>
 </div>
 
- <div class="ons-question__description ons-u-mb-m ons-u-mt-m">
-    <p>Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank.</p>
-</div>
+{{
+    onsInput({
+        "id": "prefixed",
+        "type": "number",
+        "width": "10",
+        "autocomplete": "off",
+        "label": {
+            "text": "Value of sales",
+            "description": "(104129101) Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank"
+        },
+        "prefix": {
+            "title": "British pounds (GBP)",
+            "text": "£",
+            "id": "value-of-sales"
+        }
+    })
+}}
 
 <div class="ons-field">
-    <label class="ons-label ons-label--with-description" for="sales-value">Value of sales</label>
-    <span id="description-hint" class="ons-label__description  ons-input--with-description">Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank. (181200031)</span>
-    <span class="ons-input-type ons-input-type--prefix">
-        <span class="ons-input-type__inner">
-            <input type="text" class="ons-input ons-input--text ons-input-type__input ons-input-number--w-10" aria-labelledby="annual-salary-gpb-prefix" pattern="[0-9]*" inputmode="numeric" autocomplete="off">
-            <abbr id="annual-salary-gpb-prefix" class="ons-input-type__type ons-js-input-abbr" title="British pounds (GBP)">£</abbr>
-        </span>
-    </span>
+  <label class="ons-label ons-label--with-description" aria-describedby="description-hint" for="text">Volume of sales (Kilogram)</label>
+  <span id="description-hint" class="ons-label__description  ons-input--with-description">(104129102) Please provide your figures rounded to the nearest whole number. Enter '0', rather than leave blank.</span>
+  <input type="text" id="volume-1" name="volume-1" class="ons-input ons-input--text ons-input-type__input ons-input--w-8"
+    aria-describedby="description-hint" />
 </div>
 
 <div class="ons-u-mt-xl">

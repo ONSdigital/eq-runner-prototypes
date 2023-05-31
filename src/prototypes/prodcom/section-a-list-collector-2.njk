@@ -1,38 +1,28 @@
 ---
-group: Surveys
-title: PRODCOM survey
-layout: prodcom/views/_main
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
 ---
 
-{% block main %}
-    {% from "components/summary/_macro.njk" import onsSummary %}
-    {% from "components/button/_macro.njk" import onsButton %}
-    {% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/summary/_macro.njk" import onsSummary %}
+{% from "components/button/_macro.njk" import onsButton %}
 
+{% block main %}
     <header class="ons-patternlib-page__content-header">
         <h1 class="ons-u-fs-xl">
             Products
         </h1>
     </header>
 
-
-{{
-    onsPanel({
-        "body": '<p>You have previously reported the following products. Press continue to provide updated volume and value of sales information for each.</p>'
-    })
-}}
-
-
-
 {{ onsSummary({
-    "classes": "ons-u-mt-xl",
+    "classes": "ons-u-mb-xl",
     "summaries": [
         {
             "groups": [
                 {
                     "rows": [
                         {
-                            "rowTitle": "Limestone flux; limestone and other calcareous stone of a kind used for the manufacture of lime or cement",
+                            "rowTitle": "Crude rape, colza or mustard oil and their fractions",
                             "rowItems": [
                                 {
                                     "iconType": "check"
@@ -40,14 +30,70 @@ layout: prodcom/views/_main
                             ]
                         },
                         {
-                            "rowTitle": "Esters of salicylic acid and their salts",
+                            "rowTitle": "Crude vegetable oils",
                             "rowItems": [
                                 {
                                 }
                             ]
                         },
                         {
-                            "rowTitle": "Oleic, linoleic or linolenic acids, their salts and esters",
+                            "rowTitle": "Oil-cake and other solid residues resulting from the extraction of soya-bean oil",
+                            "rowItems": [
+                                {
+                                }
+                            ]
+                        },
+                        {
+                            "rowTitle": "Oil-cake and other solid residues resulting from the extraction of rape or colza seed fats or oils",
+                            "rowItems": [
+                                {
+                                }
+                            ]
+                        },
+                        {
+                            "rowTitle": "Refined soya-bean oil and its fractions",
+                            "rowItems": [
+                                {
+                                }
+                            ]
+                        },
+                        {
+                            "rowTitle": "Refined sunflower-seed and safflower oil and their fractions",
+                            "rowItems": [
+                                {
+                                }
+                            ]
+                        },
+                                                {
+                            "rowTitle": "Refined rape, colza or mustard oil and their fractions",
+                            "rowItems": [
+                                {
+                                }
+                            ]
+                        },
+                        {
+                            "rowTitle": "wheat gluten prepared for use as a glue or as a glazing or dressing for the textile industry",
+                            "rowItems": [
+                                {
+                                }
+                            ]
+                        },
+                        {
+                            "rowTitle": "Glucose and glucose syrup",
+                            "rowItems": [
+                                {
+                                }
+                            ]
+                        },
+                        {
+                            "rowTitle": "Residues of starch manufacture and similar residues",
+                            "rowItems": [
+                                {
+                                }
+                            ]
+                        },
+                        {
+                            "rowTitle": "Undenatured ethyl alcohol of an alocoholic strength by volume of 80% or more",
                             "rowItems": [
                                 {
                                 }
@@ -59,6 +105,8 @@ layout: prodcom/views/_main
         }
     ]
 }) }}
+
+<p>You have previously reported these products. Press continue to provide updated volume and value of sales information for each.</p>
 
 {{
     onsButton({
