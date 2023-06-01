@@ -4,10 +4,10 @@ title: PRODCOM (June 2nd)
 layout: prodcom/views/_index
 ---
 
-{% set form =  {
+{% set form = {
     "method": "GET",
     "attributes": {
-        "action":  pageInfo.rootPath + "/survey-sections"
+        "action": pageInfo.rootPath + "/survey-sections"
     }
 } %}
 {% from "components/summary/_macro.njk" import onsSummary %}
@@ -31,7 +31,7 @@ layout: prodcom/views/_index
           </dd>
         </dl>
       </div>
- <!--     
+ <!--
       <div id="sales-value-row" class="ons-summary__item">
         <dl class="ons-summary__row ons-summary__row--has-values" id="sales-value">
           <dt class="ons-summary__item-title">
