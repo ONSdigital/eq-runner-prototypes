@@ -33,28 +33,7 @@ Your response is legally required under section 1 of the <a href="#">Statistics 
 {% endcall %}
 
 <h2 class="ons-u-mt-l">Before you start</h2>
-<p>To complete the survey, you will need information on:</p>
-<ul>
-    <li>stock owned by your business (in the UK and abroad)</li>
-    <li>stock held by your business</li>
-    <li>stock in transit within the UK</li>
-</ul>
-<p>If actual figures are not available, you can provide informed estimates.</p>
-
-<h2 class="ons-u-mt-l">Complete survey</h2>
-
-{% from "components/button/_macro.njk" import onsButton %}
-{{
-    onsButton({
-        "text": "Start survey"
-    })
-}}
-
-<p class="ons-u-mt-m">You may receive an automatic reminder if you submit data just before or after the return date.</p>
-
-<h2 class="ons-u-fs-l ons-u-mt-l">Information you need</h2>
-<p>This questionnaire is divided into sections, which ask for information about:</p>
-
+<p>You will need information on:</p>
 {% from "components/accordion/_macro.njk" import onsAccordion %}
 
 {{
@@ -85,6 +64,18 @@ Your response is legally required under section 1 of the <a href="#">Statistics 
         ]
     })
 }}
+<p>If actual figures are not available, you can provide informed estimates.</p>
+
+<h2 class="ons-u-mt-l">Complete survey</h2>
+
+{% from "components/button/_macro.njk" import onsButton %}
+{{
+    onsButton({
+        "text": "Start survey"
+    })
+}}
+
+<p class="ons-u-mt-m">You may receive an automatic reminder if you submit data just before or after the return date.</p>
 
 <h2 class="ons-u-fs-l ons-u-mt-m">Why you have receieved this survey</h2>
 <p>YOur business has been selected from a directory of businesses in the UK which are registered fot VAT and/or PAYE or with Companies House.</p>
