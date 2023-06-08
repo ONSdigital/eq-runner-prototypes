@@ -21,7 +21,7 @@ layout: prices/views/_main
     <li><a href="#">email surveys@ons.gov.uk</a></p></li>
 </ul>
 
- <p>The information you supply is used to compile the Import Price Indices (IPI), which are a series of economic indicators that measure the price movement of imported products into the UK. They help monitor and measure inflation and are used in compiling the National Accounts..</p>
+ <p>The information you supply contributes to the Import Price Indices (IPI), which measure the price movement of imported products into the UK and measures inflation.</p>
 
 {% from "components/panel/_macro.njk" import onsPanel %}
 
@@ -33,20 +33,35 @@ Your response is legally required under section 1 of the <a href="#">Statistics 
 {% endcall %}
 
 <h2 class="ons-u-mt-l">Before you start</h2>
-    <p>All items listed should be <strong>imported</strong> into the UNITED KINGDOM.</p>
 
-    <h3>Price quotes</h3>
-    <p>Please enter the price for the current month in the price column. If the price has changed significantly please give reasons. This may prevent us from contacting you again later.</p>
+{% from "components/panel/_macro.njk" import onsPanel %}
 
-    <h3>Price basis</h3>
-    <p>The price quoted should:</p>
-    <ul>
-        <li>be a <strong>normal import transaction price</strong>, at the time of order, i.e. after discounts and excluding VAT and agent's commission.</li>
-        <li>compare <strong>like with like each month</strong>.</li>
-        <li>be <strong>representative</strong> of current imports.</li>
-    </ul>
+{{
+    onsPanel({
+        "body": '<p>Only provide information on items <strong>imported</strong> into the <strong>United Kingdom (UK)</strong></p>'
+    })
+}}
 
-<h2 class="ons-u-mt-l">Complete survey</h2>
+{% from "components/details/_macro.njk" import onsDetails %}
+{{
+    onsDetails({
+        "classes": "ons-u-mt-m",
+        "id": "prices",
+        "title": "How to enter price quotes",
+        "content": "<p>Enter the price for the current month in the price column.</p>
+<p>The price quoted should:</p>
+<ul>
+<li>be a <strong>normal import transaction price</strong>, at the time of order after discounts and excluding VAT and agent's commission</li>
+<li>compare product prices <strong>like for like each month</strong></li>
+<li>be <strong>representative</strong> of current imports</li>
+</ul>
+<p>If the price has changed significantly please give reasons. This may prevent us from contacting you again later.</p>
+"
+    })
+}}
+
+
+<h2 class="ons-u-mt-l">Begin survey</h2>
 
 {% from "components/button/_macro.njk" import onsButton %}
 {{
