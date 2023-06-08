@@ -33,10 +33,27 @@ layout: prices/views/_main
 {{
     onsPanel({
         "classes":"ons-u-mt-l",
-        "body": '<p>If any of the information relating to this item has changed, write any amendments in the comments box</p>'
+        "body": '<p>If any of the information relating to this item has changed, provide details in the comments box</p>'
     })
 }}
 
+{% from "components/details/_macro.njk" import onsDetails %}
+{{
+    onsDetails({
+        "classes": "ons-u-mt-m ons-u-mb-m",
+        "id": "prices",
+        "title": "How to enter price quotes",
+        "content": "<p>Enter the price for the current month in the price column.</p>
+<p>The price quoted should:</p>
+<ul>
+<li>be a <strong>normal import transaction price</strong>, at the time of order after discounts and excluding VAT and agent's commission</li>
+<li>compare product prices <strong>like for like each month</strong></li>
+<li>be <strong>representative</strong> of current imports</li>
+</ul>
+<p>If the price has changed significantly please give reasons. This may prevent us from contacting you again later.</p>
+"
+    })
+}}
 
 {% from "components/input/_macro.njk" import onsInput %}
 {{
