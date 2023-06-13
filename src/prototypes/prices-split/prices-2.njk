@@ -1,0 +1,81 @@
+---
+group: Prototypes
+title: Prices (split questions)
+layout: prices-split/views/_main
+---
+{% from "components/date-input/_macro.njk" import onsDateInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set prevPage = "prices" %}
+{% set form = {
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.rootPath + "/list-collector-3.html"
+    }
+} %}
+
+{% block main %}
+<h1 class="ons-u-fs-xxl">For the period of May 2023, what was the price of BRAZILIAN ELLIOTS PINE PLYWOOD GRADE C+/C?</h1>
+
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{{
+    onsPanel({
+        "classes":"ons-u-mt-l",
+        "body": '<p>If the price has changed significantly from the last price you provided, explain this change</p>'
+    })
+}}
+
+
+{% from "components/details/_macro.njk" import onsDetails %}
+
+{{
+    onsDetails({
+        "id": "details",
+        "title": "How to enter price quotes",
+        "content": "<p>Enter the price for the current month in the price column.</p><p>The price quoted should:</p>
+        <ul><li>be a <strong>normal import transaction price</strong>, at the time of order after discounts and excluding VAT and agent's commission</li>
+        <li>compare product prices <strong>like for like each month</strong></li>
+        <li>be <strong>representative</strong> of current imports</li>
+        </ul>
+        <p>If the price has changed significantly please give reasons. This may prevent us from contacting you again later.</p>
+",
+        "classes": "ons-u-mb-l ons-u-mt-l"
+    })
+}}
+
+{% from "components/input/_macro.njk" import onsInput %}
+{{
+    onsInput({
+        "id": "prefixed2",
+        "width": "10",
+        "autocomplete": "off",
+        "label": {
+            "text": "Price",
+            "description": "For example, 35580.77 do not include currency symbol"
+        }
+    })
+}}
+
+
+
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+{{
+    onsTextarea({
+        "id": "textarea2",
+        "name": "feedback2",
+        "label": {
+            "text": "Comments"
+        }
+    })
+}}
+
+    {{
+        onsButton({
+            "text": "Save and continue",
+            "classes": "ons-u-mt-l"
+        })
+    }}
+{% endblock %}
