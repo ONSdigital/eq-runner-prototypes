@@ -1,0 +1,65 @@
+---
+group: Prototypes
+title: Prices (split questions)
+layout: prices-split/views/_main
+---
+{% from "components/date-input/_macro.njk" import onsDateInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set prevPage = "prices" %}
+{% set form = {
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.rootPath + "/prices-2.html"
+    }
+} %}
+
+{% block main %}
+<h1 class="ons-u-fs-xxl">Is the following information relating to BRAZILIAN ELLIOTS PINE PLYWOOD GRADE C+/C correct?</h1>
+
+<p><strong>Item number:</strong> 8162112291</p>
+<p><strong>Description:</strong> 2440 X 1220 X 18</p>
+<p><strong>Serial number:</strong> PSBEN</p>
+<p><strong>Payment terms:</strong> NETT MONTHLY</p>
+<p><strong>Carriage:</strong> DELIVERED NETT</p>
+<p><strong>Customer reference:</strong> DCL</p>
+<p><strong>Unit of sale:</strong> PER 10 M SQ</p>
+<p><strong>Currency:</strong> POUNDS STERLING</p>
+<p class="ons-u-mb-xl"><strong>Country of origin:</strong> BRAZIL</p>
+
+<div class="ons-question ons-u-mb-l ons-u-mt-no">
+  <div class="ons-question__answer ons-u-mb-m">
+    <fieldset class="ons-fieldset">
+      <div class="ons-input-items">
+        <div class="ons-radios__items">
+          <span class="ons-radios__item">
+            <span class="ons-radio">
+              <input type="radio" id="yes" class="ons-radio__input ons-js-radio" value="yes" name="gender-identity">
+              <label class=" ons-radio__label " for="yes" id="yes-label">Yes</label>
+            </span>
+          </span>
+          <br>
+          <span class="ons-radios__item">
+            <span class="ons-radio">
+              <input type="radio" id="no" class="ons-radio__input ons-js-radio ons-js-other" value="no"
+                name="gender-identity">
+              <label class=" ons-radio__label " for="no" id="no-label">No</label>
+              <span class="ons-radio__other ons-radio__other--open" id="no-other-wrap">
+                <label class="ons-label ons-u-fw-n" for="no-textbox" id="no-textbox-label">If any of the information relating to this item has changed, provide amendments</label>
+                <textarea id="textarea" class="ons-input ons-input--textarea   " name="feedback" rows="8"></textarea>
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+    {{
+        onsButton({
+            "text": "Save and continue",
+            "classes": "ons-u-mt-l"
+        })
+    }}
+{% endblock %}

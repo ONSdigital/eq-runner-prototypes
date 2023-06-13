@@ -1,0 +1,41 @@
+---
+group: Prototypes
+title: Prices (split questions)
+layout: prices-split/views/_main
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set prevPage = "prices-2" %}
+{% set form = {
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.rootPath + "/thank-you.html"
+    }
+} %}
+
+{% block main %}
+    <h1>Submit questionnaire</h1>
+    {% call onsPanel({
+            "type": "warn"
+        })
+    %}
+        You must submit this questionnaire to complete it
+    {% endcall %}
+
+    <div class="ons-summary">
+        <div class="ons-summary__group">
+            <table id="turnover" class="ons-summary__items js-summary">
+            </table>
+        </div>
+    </div>
+
+    <p class="ons-u-mt-l">By submitting this questionnaire you are confirming that, to the best of your knowledge and belief, the details provided are correct.</p>
+
+    {{
+        onsButton({
+            "text": 'Submit questionnaire'
+        })
+    }}
+{% endblock %}
