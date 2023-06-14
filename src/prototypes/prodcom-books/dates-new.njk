@@ -1,0 +1,81 @@
+---
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
+---
+
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/details/_macro.njk" import onsDetails %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/date-input/_macro.njk" import onsDateInput %}
+
+{% set questionTitle = "What dates will you be reporting for?" %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/dates-summary"
+    }
+} %}
+
+{% block main %}
+    {% call onsQuestion({
+        "title": questionTitle,
+        "description": "<p>For example, from 31 03 2022 to 01 11 2022</p>",
+        "submitButton": true
+    }) %}
+
+{{
+    onsDateInput({
+        "id": "date",
+        "legendOrLabel": "From",
+        "day": {
+            "label": {
+                "text": "Day"
+            },
+            "name": "day"
+        },
+        "month": {
+            "label": {
+                "text": "Month"
+            },
+            "name": "month"
+        },
+        "year": {
+            "label": {
+                "text": "Year"
+            },
+            "name": "year"
+        }
+    })
+}}
+
+{{
+    onsDateInput({
+        "id": "todate",
+        "legendOrLabel": "To",
+        "day": {
+            "label": {
+                "text": "Day"
+            },
+            "name": "today"
+        },
+        "month": {
+            "label": {
+                "text": "Month"
+            },
+            "name": "tomonth"
+        },
+        "year": {
+            "label": {
+                "text": "Year"
+            },
+            "name": "toyear"
+        }
+    })
+}}
+
+
+    {% endcall %}
+{% endblock %}

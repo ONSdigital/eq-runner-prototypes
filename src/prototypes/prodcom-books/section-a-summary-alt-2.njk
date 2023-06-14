@@ -1,0 +1,98 @@
+---
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
+---
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "survey-sections-d-alt"
+    }
+} %}
+
+{% block main %}
+    {% from "components/summary/_macro.njk" import onsSummary %}
+    {% from "components/button/_macro.njk" import onsButton %}
+
+
+{% from "components/summary/_macro.njk" import onsSummary %}
+
+<header class="ons-patternlib-page__content-header">
+    <h1 class="ons-u-fs-xl">
+        Summary of products
+    </h1>
+</header>
+
+{{
+    onsSummary({
+        "summaries": [
+            {
+                "groups": [
+
+                    {
+                        "groupTitle": "Printing of books, brochures, leaflets and similar printed matter",
+                        "rows": [
+                            {
+                                "rowTitle": "Value of sales",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£2,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-alt"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+
+                    {
+                        "groupTitle": "Printing of trade advertising material and the like on paper based products",
+                        "rows": [
+                            {
+                                "rowTitle": "Value of sales",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£1,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-2"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+
+                ]
+            }
+        ]
+    })
+}}
+
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l',
+        "url": 'survey-sections-d-alt',
+        "iconType": false
+    })
+}}
+{% endblock %}

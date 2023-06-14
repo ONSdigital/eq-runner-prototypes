@@ -1,0 +1,61 @@
+---
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/section-c-summary"
+    }
+} %}
+
+{% block main %}
+
+
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xl">
+            What is the total value of your non-production income?
+        </h1>
+    </header>
+<p>Income from provision of services and other non-production activities that you have not already told us about.</p>
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+{{
+    onsPanel({
+        "spacious": true,
+        "body": '<h4>Include:</h4><ul>
+        <li>freight costs</li>
+        <li>payments for repairs</li>
+        <li>maintenance and installation of customers\' plant and equipment (where not covered in Section A)</li>
+        <li>amounts received for use of patents, trade marks, copyrights or royalties</li>
+        <li>technical knowledge</li>
+        <li>rent</li>
+        </ul>'
+    })
+}}
+
+<div class="ons-field">
+    <label class="ons-label ons-label--with-description" for="sales-value">Value of non-production income</label>
+    <span id="description-hint" class="ons-label__description  ons-input--with-description">If exact figures are not available, enter a value to the nearest thousand. For example, 56,000.</span>
+    <span class="ons-input-type ons-input-type--prefix">
+        <span class="ons-input-type__inner">
+            <input type="text" class="ons-input ons-input--text ons-input-type__input ons-input-number--w-10" aria-labelledby="annual-salary-gpb-prefix" pattern="[0-9]*" inputmode="numeric" autocomplete="off">
+            <abbr id="annual-salary-gpb-prefix" class="ons-input-type__type ons-js-input-abbr" title="British pounds (GBP)">£</abbr>
+        </span>
+    </span>
+</div>
+<div class="ons-u-mt-xl">
+
+{{
+    onsButton({
+        "text": 'Save and continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l'
+    })
+}}
+
+</div>
+{% endblock %}

@@ -1,0 +1,98 @@
+---
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
+---
+
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/details/_macro.njk" import onsDetails %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/section-b-minor"
+    }
+} %}
+
+
+{% block main %}
+    <div class="ons-summary">
+        <div class="ons-summary__group">
+            <h1 class="ons-u-fs-xl">
+                Do you need to add any more additional products?
+            </h1>
+            <table id="turnover" class="ons-summary__items js-summary">
+            </table>
+        </div>
+    </div>
+
+<!-- STATIC HTML REMOVE ONCE PIPING WORKING -->
+<div class="ons-summary ons-u-mb-l">
+  <div class="ons-summary__group">
+    <div class="ons-summary__items">
+
+      <div class="ons-summary__item">
+        <dl class="ons-summary__row">
+          <dt class="ons-summary__item-title extra-flex">
+           
+            <div class="ons-summary__item--text">
+                Telephone directories
+            </div>
+          </dt>
+          <dd class="ons-summary__actions">
+            <a href="#0" class="ons-summary__button" aria-label="Change details for example product">Change</a>
+            <span class="ons-summary__spacer"></span>
+            <a href="#0" class="ons-summary__button" aria-label="Remove example product">Remove</a>
+          </dd>
+        </dl>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- // -->
+
+<!--
+<p><a href="section-b">Add another product to this list</a></p>
+-->
+
+{{
+        onsRadios({
+            "name": "property-type",
+            "dontWrap": true,
+            "radios": [
+                {
+                    "id": "yes",
+                    "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/section-b"
+                        },
+                    "label": {
+                        "text": "Yes"
+                    },
+                    "value": "yes"
+                },
+                {
+                    "id": "no",
+                    "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/section-b-minor"
+                        },
+                    "label": {
+                        "text": "No"
+                    },
+                    "value": "no"
+                }
+            ]
+        })
+    }}
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mt-s'
+    })
+}}
+{% endblock %}
+

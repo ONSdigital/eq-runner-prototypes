@@ -1,0 +1,46 @@
+---
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
+---
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+
+<div aria-labelledby="alert" role="alert" tabindex="-1" autofocus="autofocus" class="ons-panel ons-panel--success ons-panel--no-title ons-u-mb-m">
+
+
+
+ 
+                    <span id="alert" class="ons-panel__assistive-text ons-u-vh">Completed: </span>
+
+                <span class="ons-panel__icon ons-u-fs-xl">
+                    
+
+        <svg class="ons-svg-icon ons-svg-icon--xl" viewBox="0 0 13 10" xmlns="http://www.w3.org/2000/svg" focusable="false" fill="currentColor">
+            <path d="M14.35,3.9l-.71-.71a.5.5,0,0,0-.71,0h0L5.79,10.34,3.07,7.61a.51.51,0,0,0-.71,0l-.71.71a.51.51,0,0,0,0,.71l3.78,3.78a.5.5,0,0,0,.71,0h0L14.35,4.6A.5.5,0,0,0,14.35,3.9Z" transform="translate(-1.51 -3.04)"></path>
+        </svg>
+
+                </span>
+
+            <div class="ons-panel__body ons-svg-icon-margin--xl">
+                    <h1 data-qa="title">Thank you for registering to take part in our research</h1>
+    <p data-qa="guidance">
+      We may contact you in the future to ask for your help to make sure that our website works for everyone.
+    </p>
+
+            </div>
+        </div>
+
+
+<p>To save your survey answers, <a href="thank-you-2">return to the survey confirmation page</a>.</p>
+<!--
+<p>If you have other business surveys to complete, <a href="/">return to My Account</a>.</p>
+<p>If you have another social survey to complete, <a href="/">return to our website to find social surveys</a>.</p>
+-->
+
+
+{% endblock %}

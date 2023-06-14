@@ -1,0 +1,72 @@
+---
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
+---
+
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/section-a-calculated-alt"
+    }
+} %}
+
+{% block main %}
+
+<div class="ons-question ons-u-mb-l">
+    <h1 id="question-title" class="ons-question__title">
+            For the period 1 January 2022 to 31 December 2022, what was the sales value of printing of books, brochures, leaflets and similar printed matter?</h1>
+    <div class="ons-question__description ons-u-mb-m">
+        <p>(CN 181200021)</p>
+    </div>
+</div>
+
+<div class="ons-panel ons-panel--info ons-panel--no-title">
+  <span class="o521ns-panel__assistive-text ons-u-vh">Important information: </span>
+  <div class="ons-panel__body">
+    <h4>Exclude:</h4>
+    <ul>
+        <li>in single sheets</li>
+        <li>children's picture and colouring books</li>
+        <li>music</li>
+        <li>dictionaries and encyclopaedias</li>
+        <li>atlases and charts</li>
+        <li>commercial catalogues  - printing of annual business reports and accounts</li>
+    </ul>
+    </ul>
+  </div>
+</div>
+
+{{
+    onsInput({
+        "id": "prefixed",
+        "type": "number",
+        "width": "10",
+        "autocomplete": "off",
+        "label": {
+            "text": "Value of sales",
+            "description": "(181110001) If exact figures are not available, enter a value to the nearest thousand. For example, 56,000."
+        },
+        "prefix": {
+            "title": "British pounds (GBP)",
+            "text": "£",
+            "id": "value-of-sales"
+        }
+    })
+}}
+
+<div class="ons-u-mt-xl">
+
+{{
+    onsButton({
+        "text": 'Save and continue'
+    })
+}}
+
+</div>
+{% endblock %}

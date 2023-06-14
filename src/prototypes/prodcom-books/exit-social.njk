@@ -1,0 +1,23 @@
+---
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
+---
+
+{% block main %}
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+{{
+    onsPanel({
+        "type": 'success',
+        "id": 'success-id',
+        "iconType": 'check',
+        "body": 'Your progress has been saved',
+        "classes": 'ons-u-mb-xl ons-u-fs-xl',
+        "iconSize": 'xl'
+    })
+}}
+
+<p>To resume the survey, <a href="#">re-enter your access code</a>.</p>
+
+{% endblock %}

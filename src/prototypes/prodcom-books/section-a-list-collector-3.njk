@@ -1,0 +1,57 @@
+---
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
+---
+
+{% from "components/summary/_macro.njk" import onsSummary %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xl">
+            Products
+        </h1>
+    </header>
+
+{{ onsSummary({
+    "classes": "ons-u-mb-xl",
+    "summaries": [
+        {
+            "groups": [
+                {
+                    "rows": [
+                         {
+                            "rowTitle": "Printing of books, brochures, leaflets and similar printed matter",
+                            "rowItems": [
+                                {
+                                    "iconType": "check"
+                                }
+                            ]
+                        },
+                        {
+                            "rowTitle": "Printing of trade advertising material and the like on paper based products",
+                            "rowItems": [
+                                {
+                                    "iconType": "check"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}) }}
+
+<p>You have previously reported these products. Press continue to provide updated volume and value of sales information for each.</p>
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l',
+        "url": 'section-a-calculated',
+        "iconType": false
+    })
+}}
+{% endblock %}
