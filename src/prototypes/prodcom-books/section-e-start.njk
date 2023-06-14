@@ -1,0 +1,71 @@
+---
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
+---
+
+{% from "components/breadcrumbs/_macro.njk" import onsBreadcrumbs %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/survey-sections-f"
+    }
+} %}
+
+{% block preMain %}
+{{
+    onsBreadcrumbs({
+        "ariaLabel": 'Back',
+        "itemsList": [
+            {
+                "url": 'survey-sections-e',
+                "id": "back",
+                "text": 'Back',
+                "attributes": {
+                    "data-attribute": "Example attribute"
+                }
+            }
+        ]
+    })
+}}
+{% endblock %}
+
+{% block main %}
+
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xl">
+            Please explain any changes in your figures from the previous return, if applicable
+        </h1>
+    </header>
+
+    <p>If you provide comments we are less likely to contact you with data queries.</p>
+
+{{
+    onsTextarea({
+        "id": "textarea-char-limit",
+        "name": "feedback-limited",
+        "width": "30",
+        "label": {
+            "text": "Comments"
+        },
+        "charCheckLimit": {
+            "limit": 2000,
+            "charCountSingular": "You have {x} character remaining",
+            "charCountPlural": "You have {x} characters remaining"
+        }
+    })
+}}
+
+{{
+    onsButton({
+        "text": 'Save and continue',
+        "classes": 'ons-u-mt-xl'
+    })
+}}
+
+
+
+{% endblock %}

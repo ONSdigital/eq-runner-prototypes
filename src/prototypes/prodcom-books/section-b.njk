@@ -1,0 +1,70 @@
+---
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
+---
+
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/section-b-add"
+    }
+} %}
+
+{% block main %}
+
+
+<header class="ons-patternlib-page__content-header">
+    <h1 class="ons-u-fs-xl">
+        What additional products do you have?
+    </h1>
+</header>
+
+<div class="ons-panel ons-panel--info ons-panel--no-title">
+  <span class="ons-panel__assistive-text ons-u-vh">Important information: </span>
+  <div class="ons-panel__body">
+    <p>If you need to add multiple products, you can do this on the next page</p>
+  </div>
+</div>
+
+<div class="ons-field">
+  <label class="ons-label ons-label--with-description" aria-describedby="description-hint" for="textarea">Product description</label>
+  <textarea id="textarea" class="ons-input ons-input--textarea   " name="feedback" rows="8"></textarea>
+</div>
+
+<div class="ons-field">
+  <label class="ons-label" for="text">CN code (if known)</label>
+  <input type="text" id="text" class="ons-input ons-input--text ons-input-type__input" />
+</div>
+
+<div class="ons-question__description ons-u-mt-m ons-u-mb-s">
+    <p>If you do not know the exact amount enter a value to the nearest thousand. For example, 56,000.</p>
+</div>
+
+<div class="ons-field">
+    <label class="ons-label ons-label--with-description" for="sales-value">Value of sales</label>
+    <span id="description-hint" class="ons-label__description  ons-input--with-description">If exact figures are not available, enter a value to the nearest thousand. For example, 56,000.</span>
+    <!--<span id="description-hint" class="ons-label__description  ons-input--with-description">581309701</span>-->
+    <span class="ons-input-type ons-input-type--prefix">
+        <span class="ons-input-type__inner">
+            <input type="text" class="ons-input ons-input--text ons-input-type__input ons-input-number--w-10" aria-labelledby="annual-salary-gpb-prefix" pattern="[0-9]*" inputmode="numeric" autocomplete="off">
+            <abbr id="annual-salary-gpb-prefix" class="ons-input-type__type ons-js-input-abbr" title="British pounds (GBP)">£</abbr>
+        </span>
+    </span>
+    
+</div>
+<div class="ons-u-mt-xl">
+
+{{
+    onsButton({
+        "text": 'Save and continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l',
+        "url": 'section-b-add',
+        "iconType": false
+    })
+}}
+
+</div>
+{% endblock %}

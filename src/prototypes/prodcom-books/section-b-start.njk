@@ -1,0 +1,95 @@
+---
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
+---
+
+{% from "components/breadcrumbs/_macro.njk" import onsBreadcrumbs %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/section-b"
+    }
+} %}
+
+{% block preMain %}
+{{
+    onsBreadcrumbs({
+        "ariaLabel": 'Back',
+        "itemsList": [
+            {
+                "url": 'survey-sections-b',
+                "id": "back",
+                "text": 'Back',
+                "attributes": {
+                    "data-attribute": "Example attribute"
+                }
+            }
+        ]
+    })
+}}
+{% endblock %}
+
+{% block main %}
+
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xxl">
+            Do you need to report additional products?
+        </h1>
+    </header>
+{{
+        onsRadios({
+            "name": "property-type",
+            "dontWrap": true,
+            "radios": [
+                {
+                    "id": "yes",
+                    "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/section-b"
+                        },
+                    "label": {
+                        "text": "Yes"
+                    },
+                    "value": "yes"
+                },
+                {
+                    "id": "no",
+                    "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/section-b-minor"
+                        },
+                    "label": {
+                        "text": "No"
+                    },
+                    "value": "no"
+                }
+            ]
+        })
+    }}
+
+{{
+    onsPanel({
+        "body": '<p>Describe all products with sales worth more than £25,000 in as much detail as possible using basic terminology, include:</p>
+    <ul>
+        <li>brand names</li>
+        <li>common usage names</li>
+        <li>brief advertising or marketing material</li>
+    </ul>'
+    })
+}}
+
+
+<p class="ons-u-mt-l">If you are familiar with Customs and Excise CN codes (commodity tariff codes) used for exports or imports, please provide these as they can be linked directly to PRODCOM codes.</p>
+<p>Group together products with sales of less than £25,000 in the box for minor products at the end of this section.</p>
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mt-s'
+    })
+}}
+
+{% endblock %}

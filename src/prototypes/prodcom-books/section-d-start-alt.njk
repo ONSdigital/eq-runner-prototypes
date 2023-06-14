@@ -1,0 +1,155 @@
+---
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
+---
+
+{% from "components/breadcrumbs/_macro.njk" import onsBreadcrumbs %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/summary/_macro.njk" import onsSummary %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/survey-sections-e"
+    }
+} %}
+
+{% block preMain %}
+{{
+    onsBreadcrumbs({
+        "ariaLabel": 'Back',
+        "itemsList": [
+            {
+                "url": 'survey-sections-d',
+                "id": "back",
+                "text": 'Back',
+                "attributes": {
+                    "data-attribute": "Example attribute"
+                }
+            }
+        ]
+    })
+}}
+{% endblock %}
+
+{% block main %}
+
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xl">
+            We calculate the total company turnover to be £29,000. Is this correct?
+        </h1>
+    </header>
+<p>This should be the sum of all values in Products, Additional Products, and Other Income sections.</p>
+
+{{
+    onsPanel({
+        "spacious": true,
+        "body": '<h4>Exclude:</h4>
+        <ul><li>VAT</li>
+        <li>capital receipts from the disposal of assets</li>
+        <li>interest</li>
+        <li>dividends</li>
+        </ul>'
+    })
+}}
+
+{{
+    onsSummary({
+        "summaries": [
+            {
+                "groups": [
+                    {
+                        "rows": [
+                            {
+                                "rowTitle": "Total value of products",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£3,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-a-calculated"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Total value of additional products",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£26,000"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-b-calculated"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Total value of other income",
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£0"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "ariaLabel": "Change answer",
+                                                "url": "section-c-summary"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "rowTitle": "Grand total",
+                                "total": true,
+                                "rowItems": [
+                                    {
+                                        "valueList": [
+                                            {
+                                                "text": "£29,000"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    })
+}}
+
+
+{{
+    onsButton({
+        "text": 'Yes, I confirm these are correct',
+        "classes": 'ons-u-mb-m ons-u-mt-l',
+        "url": 'survey-sections-e',
+        "iconType": false
+    })
+}}
+
+{% endblock %}

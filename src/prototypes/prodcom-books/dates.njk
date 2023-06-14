@@ -1,0 +1,56 @@
+---
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
+---
+
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/question/_macro.njk" import onsQuestion %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/dates-error"
+    }
+} %}
+
+{% block main %}
+
+{% call onsQuestion({
+    "title": "Are you able to report for the period 1 Jan 2022 to 31 Dec 2022?",
+    "classes": "ons-u-mt-no",
+    "legendIsQuestionTitle": true,
+    "submitButton": true
+}) %}
+    {{
+        onsRadios({
+            "name": "property-type",
+            "dontWrap": true,
+            "radios": [
+                {
+                    "id": "yes",
+                    "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/dates-summary"
+                        },
+                    "label": {
+                        "text": "Yes, I can report for this period"
+                    },
+                    "value": "Yes, I can report for this period"
+                },
+                {
+                    "id": "no",
+                    "attributes": {
+                            "data-action-url": pageInfo.rootPath + "/dates-new"
+                        },
+                    "label": {
+                        "text": "No, I need to report for a different period"
+                    },
+                    "value": "No, I need to report for a different period"
+                }
+            ]
+        })
+    }}
+{% endcall %}
+
+{% endblock %}

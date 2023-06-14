@@ -1,0 +1,59 @@
+---
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
+---
+
+{% from "components/breadcrumbs/_macro.njk" import onsBreadcrumbs %}
+    {% from "components/button/_macro.njk" import onsButton %}
+
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/section-c"
+    }
+} %}
+
+{% block preMain %}
+{{
+    onsBreadcrumbs({
+        "ariaLabel": 'Back',
+        "itemsList": [
+            {
+                "url": 'survey-sections-c',
+                "id": "back",
+                "text": 'Back',
+                "attributes": {
+                    "data-attribute": "Example attribute"
+                }
+            }
+        ]
+    })
+}}
+{% endblock %}
+
+{% block main %}
+
+    <header class="ons-patternlib-page__content-header">
+        <h1 class="ons-u-fs-xxl">
+            Other income
+        </h1>
+    </header>
+
+    <p>Include information on income from other sources, For example:</p>
+    <ul>
+        <li>merchanted goods</li>
+        <li>materials supplied by a customer</li>
+        <li>waste products and residue</li>
+        <li>other non-production income</li>
+    </ul>
+
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mt-xl'
+    })
+}}
+
+{% endblock %}

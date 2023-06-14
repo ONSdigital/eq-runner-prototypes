@@ -1,0 +1,62 @@
+---
+group: Prototypes
+title: PRODCOM (June 2nd)
+layout: prodcom/views/_index
+---
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/research-thankyou"
+    }
+} %}
+
+{% block main %}
+
+{{
+    onsPanel({
+        "type": 'success',
+        "id": 'success-id',
+        "iconType": 'check',
+        "body": 'Your feedback has been submitted'
+    })
+}}
+
+<h1 class="ons-u-mt-m">Take part in our user research</h1>
+<p>We need your help to improve our website. Once you have signed up, you may be asked to:</p>
+    <ul>
+        <li>try out new online features</li>
+        <li>answer questions by email</li>
+        <li>talk to our researchers about how you interact with us</li>
+    </ul>
+<p>You can reject an invitation or unsubscribe at any time.</p>
+<p>For more information, see <a href="https://www.ons.gov.uk/aboutus/transparencyandgovernance/dataprotection" target="_blank" rel="noopener noreferrer">our data protection statement</a>.</p>
+
+{{
+    onsInput({
+        "id": "name",
+        "label": {
+            "text": "Full name"
+        }
+    })
+}}
+
+{{
+    onsInput({
+        "id": "email",
+        "label": {
+            "text": "Email address"
+        }
+    })
+}}
+
+{{
+    onsButton({
+        "text": "Take part in our user research",
+        "classes": "ons-u-mt-m"
+    })
+}}
+{% endblock %}
