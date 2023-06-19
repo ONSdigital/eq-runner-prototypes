@@ -29,6 +29,17 @@ layout: prodcom/views/_index
   </div>
 </div>
 
+{% from "components/input/_macro.njk" import onsInput %}
+{{
+    onsInput({
+        "id": "text",
+        "label": {
+            "text": "Product name"
+        }
+    })
+}}
+
+
 <div class="ons-field">
   <label class="ons-label ons-label--with-description" aria-describedby="description-hint" for="textarea">Product description</label>
   <textarea id="textarea" class="ons-input ons-input--textarea   " name="feedback" rows="8"></textarea>
@@ -37,10 +48,6 @@ layout: prodcom/views/_index
 <div class="ons-field">
   <label class="ons-label" for="text">CN code (if known)</label>
   <input type="text" id="text" class="ons-input ons-input--text ons-input-type__input" />
-</div>
-
-<div class="ons-question__description ons-u-mt-m ons-u-mb-s">
-    <p>If you do not know the exact amount enter a value to the nearest thousand. For example, 56,000.</p>
 </div>
 
 <div class="ons-field">
