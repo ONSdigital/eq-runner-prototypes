@@ -1,0 +1,179 @@
+---
+group: Prototypes
+title: Long List (checkboxes)
+layout: long-list-checkboxes/views/_main
+---
+
+{% set prevPage = "hub-complete" %}
+{% set form = {
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.rootPath + "/submit.html"
+    }
+} %}
+
+{% from "components/summary/_macro.njk" import onsSummary %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% block main %}
+
+{{
+    onsSummary({
+        "summaries": [
+            {
+                "groups": [
+                    {
+                        "placeholderText": 'test',
+                        "id": "turnover",
+                        "groupTitle": "Summary",
+                        "rows": [
+                            {
+                                "id": "sales-dates-row",
+                                "rowTitle": "What was your expenditure on forestry, logging and related products and services?",
+                                "rowItems": [
+                                    {
+                                        "id": "sales-dates",
+                                        "valueList": [
+                                            {
+                                                "text": "£1000.00"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "url": "question"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "sales-dates-row",
+                                "rowTitle": "What was your expenditure on metal ores, iron, non-ferrous metal, uranium and thorium, copper, nickel, aluminium, lead, zinc and tin ores?",
+                                "rowItems": [
+                                    {
+                                        "id": "sales-dates",
+                                        "valueList": [
+                                            {
+                                                "text": "£1000.00"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "url": "question"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "sales-dates-row",
+                                "rowTitle": "What was your expenditure on wood and products of wood and cork, except furniture; articles of straw and plaiting materials?",
+                                "rowItems": [
+                                    {
+                                        "id": "sales-dates",
+                                        "valueList": [
+                                            {
+                                                "text": "£1000.00"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "url": "question"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "sales-dates-row",
+                                "rowTitle": "What was your expenditure on basic, precious, non-ferrous metals and casting services?",
+                                "rowItems": [
+                                    {
+                                        "id": "sales-dates",
+                                        "valueList": [
+                                            {
+                                                "text": "£1000.00"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "url": "question"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "sales-dates-row",
+                                "rowTitle": "What was your expenditure on furniture; office, shop and kitchen furniture, upholstering and finishing services of new furniture and parts of furniture?",
+                                "rowItems": [
+                                    {
+                                        "id": "sales-dates",
+                                        "valueList": [
+                                            {
+                                                "text": "£1000.00"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "url": "question"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "sales-dates-row",
+                                "rowTitle": "What was your expenditure on real estate services on a fee or contract basis?",
+                                "rowItems": [
+                                    {
+                                        "id": "sales-dates",
+                                        "valueList": [
+                                            {
+                                                "text": "£1000.00"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "url": "question"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "total": true,
+                                "rowItems": [
+                                    {
+                                        "rowTitle": "Grand total",
+                                        "valueList": [
+                                            {
+                                                "text": "£6,000.00"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                            
+                        ]
+                    }
+                ]
+            }
+        ]
+    })
+}}
+
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l'
+    })
+}}
+
+{% endblock %}
