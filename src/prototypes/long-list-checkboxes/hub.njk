@@ -1,0 +1,58 @@
+---
+group: Prototypes
+title: Long List (checkboxes)
+layout: long-list-checkboxes/views/_main
+---
+
+{% set prevPage = "index" %}
+{% set form = {
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.rootPath + "/question.html"
+    }
+} %}
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% block main %}
+    <h1 class="ons-u-fs-xl">Service list</h1>
+
+
+<script>
+var myArray = ["0200 - Forestry, logging and related products and services",
+    "0700 - Metal ores, iron, non-ferrous metal, uranium and thorium, copper, nickel, aluminium, lead, zinc and tin ores",
+    "1600 - Wood and products of wood and cork, except furniture; articles of straw and plaiting materials",
+    "2498 - Basic, precious, non-ferrous metals and casting services",
+    "3100 - Furniture; office, shop and kitchen furniture, upholstering and finishing services of new furniture and parts of furniture",
+    "6830 - Real estate services on a fee or contract basis"];
+var selectedServices = myArray;
+document.write(`<div class="ons-summary ons-u-mb-l">
+  <div class="ons-summary__group">
+    <div class="ons-summary__items">`)
+for (var i = 0 ; i < selectedServices.length ; i++){
+    document.write(`
+      <div class="ons-summary__item">
+        <dl class="ons-summary__row">
+          <dt class="ons-summary__item-title">
+            <div class="ons-summary__item--text">${selectedServices[i]}</div>
+          </dt>
+        </dl>
+      </div>`)
+};
+document.write(`</div>
+    <div class="ons-summary__link ons-u-pt-s ons-u-bt ons-u-mb-xl">
+      <a data-qa="add-item-link" href="index">Modify this list</a>
+    </div>
+  </div>
+</div>`)
+</script>
+
+<p>Some content here about answering questions about each item. </p>
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l'
+    })
+}}
+
+{% endblock %}

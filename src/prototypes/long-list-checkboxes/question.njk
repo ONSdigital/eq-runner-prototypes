@@ -1,0 +1,47 @@
+---
+group: Prototypes
+title: Long List (checkboxes)
+layout: long-list-checkboxes/views/_main
+---
+
+{% set prevPage = "hub" %}
+{% set form = {
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.rootPath + "/hub-complete.html"
+    }
+} %}
+
+{% from "components/button/_macro.njk" import onsButton %}
+{% block main %}
+    <h1 class="ons-u-fs-xl">What was your expenditure on forestry, logging and related products and services?</h1>
+
+
+{% from "components/input/_macro.njk" import onsInput %}
+{{
+    onsInput({
+        "id": "prefixed",
+        "type": "number",
+        "width": "8",
+        "autocomplete": "off",
+        "label": {
+            "text": "To the nearest thousand pounds"
+        },
+        "prefix": {
+            "title": "British pounds (GBP)",
+            "text": "£",
+            "id": "annual-salary-gpb-prefix"
+        }
+    })
+}}
+
+
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l'
+    })
+}}
+
+{% endblock %}

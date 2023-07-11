@@ -1,0 +1,398 @@
+---
+group: Prototypes
+title: Long List (checkboxes)
+layout: long-list-checkboxes/views/_main
+---
+
+{% set prevPage = "index" %}
+{% set form = {
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.rootPath + "/hub.html"
+    }
+} %}
+
+{% block main %}
+
+
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% call onsQuestion({
+    "title": "For the reporting period, which other service did your business purchase?",
+    "legendIsQuestionTitle": true,
+    "classes": "ons-u-mt-no"
+}) %}
+    {{
+        onsCheckboxes({
+            "checkboxesLabel": "Select all that apply",
+            "dontWrap": true,
+            "name": "services",
+            "checkboxes": [
+                {
+                    "id": "1",
+                    "label": {
+                        "text": "0100 - Agriculture, hunting and related products and services; plants, planting material, animal husbandry and trapping services"
+                    },
+                    "value": "0100 - Agriculture, hunting and related products and services; plants, planting material, animal husbandry and trapping services"
+                },
+                {
+                    "id": "2",
+                    "label": {
+                        "text": "0200 - Forestry, logging and related products and services"
+                    },
+                    "value": "0200 - Forestry, logging and related products and services"
+                },
+                {
+                    "id": "3",
+                    "label": {
+                        "text": "0300 - Fish and other fishing products, aquaculture products, support services to fishing"
+                    },
+                    "value": "0300 - Fish and other fishing products, aquaculture products, support services to fishing"
+                },
+                {
+                    "id": "4",
+                    "label": {
+                        "text": "0700 - Metal ores, iron, non-ferrous metal, uranium and thorium, copper, nickel, aluminium, lead, zinc and tin ores"
+                    },
+                    "value": "0700 - Metal ores, iron, non-ferrous metal, uranium and thorium, copper, nickel, aluminium, lead, zinc and tin ores"
+                },
+                {
+                    "id": "5",
+                    "label": {
+                        "text": "0800 - Mining and quarrying products; ornamental and building stone, gravel, sand and clays, precious and semi-precious stones"
+                    },
+                    "value": "0800 - Mining and quarrying products; ornamental and building stone, gravel, sand and clays, precious and semi-precious stones"
+                },
+                {
+                    "id": "6",
+                    "label": {
+                        "text": "0900 - Mining support services"
+                    },
+                    "value": "0900 - Mining support services"
+                },
+                {
+                    "id": "7",
+                    "label": {
+                        "text": "1090 - Prepared animal feeds"
+                    },
+                    "value": "1090 - Prepared animal feeds"
+                },
+                {
+                    "id": "8",
+                    "label": {
+                        "text": "1300 - Textile articles; carpets and rugs; preparation services of natural textile fibres; textile finishing services"
+                    },
+                    "value": "1300 - Textile articles; carpets and rugs; preparation services of natural textile fibres; textile finishing services"
+                },
+                {
+                    "id": "9",
+                    "label": {
+                        "text": "1500 - Footwear and leather products"
+                    },
+                    "value": "1500 - Footwear and leather products"
+                },
+                {
+                    "id": "10",
+                    "label": {
+                        "text": "1600 - Wood and products of wood and cork, except furniture; articles of straw and plaiting materials"
+                    },
+                    "value": "1600 - Wood and products of wood and cork, except furniture; articles of straw and plaiting materials"
+                },
+                {
+                    "id": "11",
+                    "label": {
+                        "text": "1800 - Printing and reproduction services of recorded media"
+                    },
+                    "value": "1800 - Printing and reproduction services of recorded media"
+                },
+                {
+                    "id": "12",
+                    "label": {
+                        "text": "2096 - Petrochemicals; organic basic chemicals, plastics in primary form, synthetic rubber and man-made fibres
+                "
+                    },
+                    "value": "2096 - Petrochemicals; organic basic chemicals, plastics in primary form, synthetic rubber and man-made fibres"
+                },
+                {
+                    "id": "13",
+                    "label": {
+                        "text": "2300 - Glass, clay, porcelain, ceramic and refractory products"
+                    },
+                    "value": "2300 - Glass, clay, porcelain, ceramic and refractory products"
+                },
+                {
+                    "id": "14",
+                    "label": {
+                        "text": "2399 - Cement, plaster and concrete"
+                    },
+                    "value": "2399 - Cement, plaster and concrete"
+                },
+                {
+                    "id": "15",
+                    "label": {
+                        "text": "2498 - Basic, precious, non-ferrous metals and casting services"
+                    },
+                    "value": "2498 - Basic, precious, non-ferrous metals and casting services"
+                },
+                {
+                    "id": "16",
+                    "label": {
+                        "text": "2499 - Basic iron, steel and ferro-alloys including tubes, pipes, hollow fittingsand other products of the first processing of steel"
+                    },
+                    "value": "2499 - Basic iron, steel and ferro-alloys including tubes, pipes, hollow fittingsand other products of the first processing of steel"
+                },
+                {
+                    "id": "17",
+                    "label": {
+                        "text": "2540 - Weapons and ammunition"
+                    },
+                    "value": "2540 - Weapons and ammunition"
+                },
+                {
+                    "id": "18",
+                    "label": {
+                        "text": "2700 - Electrical equipment, electric motors, generators,"
+                    },
+                    "value": "2700 - Electrical equipment, electric motors, generators,"
+                },
+                {
+                    "id": "19",
+                    "label": {
+                        "text": "2800 - Machinery and equipment"
+                    },
+                    "value": "2800 - Machinery and equipment"
+                },
+                {
+                    "id": "20",
+                    "label": {
+                        "text": "3010 - Boats, ships and floating structures"
+                    },
+                    "value": "3010 - Boats, ships and floating structures"
+                },
+                {
+                    "id": "21",
+                    "label": {
+                        "text": "3020 - Railway locomotives and rolling stock"
+                    },
+                    "value": "3020 - Railway locomotives and rolling stock"
+                },
+                {
+                    "id": "22",
+                    "label": {
+                        "text": "3030 - Aircraft, spacecraft and related machinery"
+                    },
+                    "value": "3030 - Aircraft, spacecraft and related machinery"
+                },
+                {
+                    "id": "23",
+                    "label": {
+                        "text": "3040 - Military fighting vehicles"
+                    },
+                    "value": "3040 - Military fighting vehicles"
+                },
+                {
+                    "id": "24",
+                    "label": {
+                        "text": "3091 - Motorcycles, bicycles and carriages"
+                    },
+                    "value": "3091 - Motorcycles, bicycles and carriages"
+                },
+                {
+                    "id": "25",
+                    "label": {
+                        "text": "3100 - Furniture; office, shop and kitchen furniture, upholstering and finishing services of new furniture and parts of furniture"
+                    },
+                    "value": "3100 - Furniture; office, shop and kitchen furniture, upholstering and finishing services of new furniture and parts of furniture"
+                },
+                {
+                    "id": "26",
+                    "label": {
+                        "text": "3293 - Toys, games and musical instruments"
+                    },
+                    "value": "3293 - Toys, games and musical instruments"
+                },
+                {
+                    "id": "27",
+                    "label": {
+                        "text": "3295 - Jewellery and decorative goods"
+                    },
+                    "value": "3295 - Jewellery and decorative goods"
+                },
+                {
+                    "id": "28",
+                    "label": {
+                        "text": "3315 - Repair and maintenance services of"
+                    },
+                    "value": "3315 - Repair and maintenance services of"
+                },
+                {
+                    "id": "29",
+                    "label": {
+                        "text": "4200 - Construction and construction works for civil engineering; roads,"
+                    },
+                    "value": "4200 - Construction and construction works for civil engineering; roads,"
+                },
+                {
+                    "id": "30",
+                    "label": {
+                        "text": "4300 - Specialised construction, demolition and site preparation;"
+                    },
+                    "value": "4300 - Specialised construction, demolition and site preparation;"
+                },
+                {
+                    "id": "31",
+                    "label": {
+                        "text": "4999 - Passenger and freight rail transport services"
+                    },
+                    "value": "4999 - Passenger and freight rail transport services"
+                },
+                {
+                    "id": "32",
+                    "label": {
+                        "text": "5000 - Water transport services"
+                    },
+                    "value": "5000 - Water transport services"
+                },
+                {
+                    "id": "33",
+                    "label": {
+                        "text": "5100 - Air transport services"
+                    },
+                    "value": "5100 - Air transport services"
+                },
+                {
+                    "id": "34",
+                    "label": {
+                        "text": "5800 - Publishing services of books, newspapers, journals, advertising"
+                    },
+                    "value": "5800 - Publishing services of books, newspapers, journals, advertising"
+                },
+                {
+                    "id": "35",
+                    "label": {
+                        "text": "5900 - Motion pictures, video and television programme production"
+                    },
+                    "value": "5900 - Motion pictures, video and television programme production"
+                },
+                {
+                    "id": "36",
+                    "label": {
+                        "text": "6000 - Programming and broadcasting services"
+                    },
+                    "value": "6000 - Programming and broadcasting services"
+                },
+                {
+                    "id": "37",
+                    "label": {
+                        "text": "6300 - Information services; data processing, web hosting and IT"
+                    },
+                    "value": "6300 - Information services; data processing, web hosting and IT"
+                },
+                {
+                    "id": "38",
+                    "label": {
+                        "text": "6600 - Support services to financial and insurance activities"
+                    },
+                    "value": "6600 - Support services to financial and insurance activities"
+                },
+                {
+                    "id": "39",
+                    "label": {
+                        "text": "6830 - Real estate services on a fee or contract basis"
+                    },
+                    "value": "6830 - Real estate services on a fee or contract basis"
+                },
+                {
+                    "id": "40",
+                    "label": {
+                        "text": "6899 - Renting, buying or selling of land and buildings"
+                    },
+                    "value": "6899 - Renting, buying or selling of land and buildings"
+                },
+                {
+                    "id": "41",
+                    "label": {
+                        "text": "7000 - Head office and management consulting services"
+                    },
+                    "value": "7000 - Head office and management consulting services"
+                },
+                {
+                    "id": "42",
+                    "label": {
+                        "text": "7200 - Scientific research and development services"
+                    },
+                    "value": "7200 - Scientific research and development services"
+                },
+                {
+                    "id": "43",
+                    "label": {
+                        "text": "7900 - Travel agency, tour operator and other"
+                    },
+                    "value": "7900 - Travel agency, tour operator and other"
+                },
+                {
+                    "id": "44",
+                    "label": {
+                        "text": "8000 - Security and investigation services"
+                    },
+                    "value": "8000 - Security and investigation services"
+                },
+                {
+                    "id": "45",
+                    "label": {
+                        "text": "8100 - Buildings and landscape services"
+                    },
+                    "value": "8100 - Buildings and landscape services"
+                },
+                {
+                    "id": "46",
+                    "label": {
+                        "text": "8200 - Office administration, office support and other"
+                    },
+                    "value": "8200 - Office administration, office support and other"
+                },
+                {
+                    "id": "47",
+                    "label": {
+                        "text": "9400 - Membership organisation services"
+                    },
+                    "value": "9400 - Membership organisation services"
+                },
+                {
+                    "id": "48",
+                    "label": {
+                        "text": "9500 - Repair services of computers, personal and household goods"
+                    },
+                    "value": "9500 - Repair services of computers, personal and household goods"
+                },
+                {
+                    "id": "49",
+                    "label": {
+                        "text": "9600 - Personal services, dry cleaning and laundry, hairdressing and beauty,"
+                    },
+                    "value": "9600 - Personal services, dry cleaning and laundry, hairdressing and beauty,"
+                }
+            ]
+        })
+    }}
+{% endcall %}
+
+<script>
+    var array = []
+var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+
+for (var i = 0; i < checkboxes.length; i++) {
+  array.push(checkboxes[i].value)
+}
+</script>
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l'
+    })
+}}
+
+{% endblock %}
