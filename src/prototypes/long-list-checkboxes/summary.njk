@@ -8,7 +8,7 @@ layout: long-list-checkboxes/views/_main
 {% set form = {
     "method": "GET",
     "attributes": {
-        "action": pageInfo.rootPath + "/submit.html"
+        "action": pageInfo.rootPath + "/summary.html"
     }
 } %}
 
@@ -16,158 +16,45 @@ layout: long-list-checkboxes/views/_main
 {% from "components/button/_macro.njk" import onsButton %}
 {% block main %}
 
-{{
-    onsSummary({
-        "summaries": [
-            {
-                "groups": [
-                    {
-                        "placeholderText": 'test',
-                        "id": "turnover",
-                        "groupTitle": "Summary",
-                        "rows": [
-                            {
-                                "id": "sales-dates-row",
-                                "rowTitle": "What was your expenditure on forestry, logging and related products and services?",
-                                "rowItems": [
-                                    {
-                                        "id": "sales-dates",
-                                        "valueList": [
-                                            {
-                                                "text": "£1000.00"
-                                            }
-                                        ],
-                                        "actions": [
-                                            {
-                                                "text": "Change",
-                                                "url": "question"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "id": "sales-dates-row",
-                                "rowTitle": "What was your expenditure on metal ores, iron, non-ferrous metal, uranium and thorium, copper, nickel, aluminium, lead, zinc and tin ores?",
-                                "rowItems": [
-                                    {
-                                        "id": "sales-dates",
-                                        "valueList": [
-                                            {
-                                                "text": "£1000.00"
-                                            }
-                                        ],
-                                        "actions": [
-                                            {
-                                                "text": "Change",
-                                                "url": "question"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "id": "sales-dates-row",
-                                "rowTitle": "What was your expenditure on wood and products of wood and cork, except furniture; articles of straw and plaiting materials?",
-                                "rowItems": [
-                                    {
-                                        "id": "sales-dates",
-                                        "valueList": [
-                                            {
-                                                "text": "£1000.00"
-                                            }
-                                        ],
-                                        "actions": [
-                                            {
-                                                "text": "Change",
-                                                "url": "question"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "id": "sales-dates-row",
-                                "rowTitle": "What was your expenditure on basic, precious, non-ferrous metals and casting services?",
-                                "rowItems": [
-                                    {
-                                        "id": "sales-dates",
-                                        "valueList": [
-                                            {
-                                                "text": "£1000.00"
-                                            }
-                                        ],
-                                        "actions": [
-                                            {
-                                                "text": "Change",
-                                                "url": "question"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "id": "sales-dates-row",
-                                "rowTitle": "What was your expenditure on furniture; office, shop and kitchen furniture, upholstering and finishing services of new furniture and parts of furniture?",
-                                "rowItems": [
-                                    {
-                                        "id": "sales-dates",
-                                        "valueList": [
-                                            {
-                                                "text": "£1000.00"
-                                            }
-                                        ],
-                                        "actions": [
-                                            {
-                                                "text": "Change",
-                                                "url": "question"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "id": "sales-dates-row",
-                                "rowTitle": "What was your expenditure on real estate services on a fee or contract basis?",
-                                "rowItems": [
-                                    {
-                                        "id": "sales-dates",
-                                        "valueList": [
-                                            {
-                                                "text": "£1000.00"
-                                            }
-                                        ],
-                                        "actions": [
-                                            {
-                                                "text": "Change",
-                                                "url": "question"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "total": true,
-                                "rowItems": [
-                                    {
-                                        "rowTitle": "Grand total",
-                                        "valueList": [
-                                            {
-                                                "text": "£6,000.00"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                            
-                        ]
-                    }
-                ]
-            }
-        ]
-    })
-}}
+<script>
+  var results=localStorage.getItem("ddvalue");
+  results=results.split(",");
+  var selectedServices = results;
 
+document.write(`<div class="ons-summary">
+  <div class="ons-summary__group">
+    <h2 class="ons-summary__group-title">Summary</h2>
+    <div class="ons-summary__items">`)
+for (var i = 0 ; i < selectedServices.length ; i++){
+    document.write(`
+      <div class="ons-summary__item">
+        <dl class="ons-summary__row ons-summary__row--has-values">
+          <dt class="ons-summary__item-title">
+            <div class="ons-summary__item--text">${selectedServices[i]}</div>
+          </dt>
+          <dd class="ons-summary__values">
+            <span class="ons-summary__text">£1,000.00</span>
+          </dd>
+          <dd class="ons-summary__actions">
+            <a href="question" class="ons-summary__button">Change<span class="ons-u-vh">answer for </span></a>
+          </dd>
+        </dl>
+      </div>`)
+};
+document.write(`<div class="ons-summary__item ons-summary__item--total">
+        <dl class="ons-summary__row ons-summary__row--has-values">
+          <dt class="ons-summary__item-title">
+            <div class="ons-summary__item--text">Grand total</div>
+          </dt>
+          <dd class="ons-summary__values ons-summary__values--2">
+            <span class="ons-summary__text">£123,000.00</span>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>`)
+</script>
 
 {{
     onsButton({

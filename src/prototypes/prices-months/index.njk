@@ -1,0 +1,89 @@
+---
+group: Prototypes
+title: Prices (multiple months)
+layout: prices-months/views/_main
+---
+
+{% set form = {
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.rootPath + "/list-collector.html"
+    }
+} %}
+
+{% block main %}
+
+<h1 class="ons-u-fs-xl">You are completing this for ESSENTIAL ENTERPRISE LTD. (ESSENTIAL ENTERPRISE LTD.)</h1>
+
+<p>If your company details have changed:</p>
+<ul>
+    <li>contact us on <a href="#">0300 1234 931</a></li>
+    <li><a href="#">email surveys@ons.gov.uk</a></p></li>
+</ul>
+
+ <p>The information you supply contributes to the Import Price Indices (IPI), which measure the price movement of imported products into the UK and measures inflation.</p>
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% call onsPanel({
+        "type": 'warn'
+    })
+%}
+Your response is legally required under section 1 of the <a href="#">Statistics of Trade Act 1947</a>.
+{% endcall %}
+
+<h2 class="ons-u-mt-l">Before you start</h2>
+
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{{
+    onsPanel({
+        "body": '<p>Only provide information on items <strong>imported</strong> into the <strong>United Kingdom (UK)</strong></p>'
+    })
+}}
+
+
+{% from "components/details/_macro.njk" import onsDetails %}
+
+{{
+    onsDetails({
+        "id": "details",
+        "title": "How to enter price quotes",
+        "content": "<p>Enter the price for the current month in the price column.</p><p>The price quoted should:</p>
+        <ul><li>be a <strong>normal import transaction price</strong>, at the time of order after discounts and excluding VAT and agent's commission</li>
+        <li>compare product prices <strong>like for like each month</strong></li>
+        <li>be <strong>representative</strong> of current imports</li>
+        </ul>
+        <p>If the price has changed significantly please give reasons. This may prevent us from contacting you again later.</p>
+",
+        "classes": "ons-u-mb-l ons-u-mt-l"
+    })
+}}
+
+<h2 class="ons-u-mt-l">Begin survey</h2>
+
+{% from "components/button/_macro.njk" import onsButton %}
+{{
+    onsButton({
+        "text": "Start survey"
+    })
+}}
+
+<p class="ons-u-mt-m">You may receive an automatic reminder if you submit data just before or after the return date.</p>
+
+
+<h2 class="ons-u-fs-l ons-u-mt-m">Why you have receieved this survey</h2>
+<p>Your business has been selected from a directory of businesses in the UK which are registered for VAT, PAYE, or with Companies House.</p>
+<p>The information supplied feeds into the <a href="#">National Accounts</a> and the <a href="#">Producer Price Index</a>.</p>
+
+<h2 class="ons-u-fs-l ons-u-mt-m">If you need help</h2>
+<p>For more information about business surveys, see <a href="#">About ONS business surveys</a>.</p>
+<p>You can call us on:
+<ul>
+    <li><a href="tel:03001234931">0300 1234 931</a> (UK)</li>
+    <li><a href="tel:+441633810495">+44 1633 810495</a> (outside of the UK)</li>
+</ul>
+<p>When you call, please enter the three-digit ID <strong>014</strong>.</p>
+<p>Er mwyn gwneud cais am ffurflen Gymraeg (to speak to someone in Welsh): <a href="tel:03001234921">0300 1234 921</a>.</p>
+
+{% endblock %}

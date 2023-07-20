@@ -14,17 +14,14 @@ layout: long-list-checkboxes/views/_main
 
 {% from "components/button/_macro.njk" import onsButton %}
 {% block main %}
-    <h1 class="ons-u-fs-xl">Service list</h1>
+    <h1 class="ons-u-fs-xl">Product list</h1>
 
 
 <script>
-var myArray = ["0200 - Forestry, logging and related products and services",
-    "0700 - Metal ores, iron, non-ferrous metal, uranium and thorium, copper, nickel, aluminium, lead, zinc and tin ores",
-    "1600 - Wood and products of wood and cork, except furniture; articles of straw and plaiting materials",
-    "2498 - Basic, precious, non-ferrous metals and casting services",
-    "3100 - Furniture; office, shop and kitchen furniture, upholstering and finishing services of new furniture and parts of furniture",
-    "6830 - Real estate services on a fee or contract basis"];
-var selectedServices = myArray;
+  var results=localStorage.getItem("ddvalue");
+  results=results.split(",");
+
+var selectedServices = results;
 document.write(`<div class="ons-summary ons-u-mb-l">
   <div class="ons-summary__group">
     <div class="ons-summary__items">`)
@@ -48,6 +45,9 @@ document.write(`</div>
   </div>
 </div>`)
 </script>
+
+<p>There will be a follow up question for each item in the list.</p>
+<p>Once you have answered all of the follow up questions, continue to the next section of the survey.</p>
 
 {{
     onsButton({
