@@ -1,0 +1,73 @@
+---
+group: Examples
+title: Stacking error page
+layout: error/views/_master
+---
+{% set prevPage = "index" %}
+
+{% block main %}
+<div aria-labelledby="alert" role="alert" tabindex="-1" class="ons-panel ons-panel--error">
+  <div class="ons-panel__header">
+    <h2 id="alert" data-qa="error-header" class="ons-panel__title ons-u-fs-r--b">There are 2 problems with your answer
+    </h2>
+  </div>
+  <div class="ons-panel__body">
+    <ol class="ons-list">
+      <li class="ons-list__item">
+        <a href="#error-1" class="ons-list__link ons-js-inpagelink">Enter a number more than or equal to
+          -1000</a>
+      </li>
+      <li class="ons-list__item">
+        <a href="#error-2" class="ons-list__link ons-js-inpagelink">Enter a number rounded to 2 decimal places</a>
+      </li>
+      <li class="ons-list__item">
+        <a href="#error-3" class="ons-list__link ons-js-inpagelink">Enter a number</a>
+      </li>
+    </ol>
+  </div>
+</div>
+
+    <h1 class="ons-u-mt-s">Set the minimum and maximum used for future questions</h1>
+
+    <div class="ons-panel ons-panel--error ons-panel--no-title">
+  <span class="ons-panel__assistive-text ons-u-vh">Error: </span>
+  <div class="ons-panel__body">
+    <p class="ons-panel__error">
+      <strong id="error-1">Enter a number more than or equal to
+          -1000</strong><br>
+      <strong id="error-2">Enter a number rounded to 2 decimal places</strong>
+    </p>
+    <div class="ons-field">
+      <label class="ons-label ons-label--with-description" for="number">Minimum value</label>
+      <span id="description-hint" class="ons-label__description  ons-input--with-description">Example description hint
+    text</span>
+      <input type="text" id="number"
+        class="ons-input ons-input--text ons-input-type__input ons-input--error ons-input-number--w-5" pattern="[0-9]*"
+        inputmode="numeric" min value="-9999999"/>
+    </div>
+  </div>
+</div>
+
+<div class="ons-panel ons-panel--error ons-panel--no-title">
+  <span class="ons-panel__assistive-text ons-u-vh">Error: </span>
+  <div class="ons-panel__body">
+    <p class="ons-panel__error">
+      <strong id="error-3">Enter a number</strong>
+    </p>
+    <div class="ons-field">
+      <label class="ons-label ons-label--with-description" for="number">Maximum value</label>
+      <span id="description-hint" class="ons-label__description  ons-input--with-description">Example description hint
+    text</span>
+      <input type="text" id="number"
+        class="ons-input ons-input--text ons-input-type__input ons-input--error ons-input-number--w-5" pattern="[0-9]*"
+        inputmode="numeric" min />
+    </div>
+  </div>
+</div>
+
+<button type="submit" class="ons-btn ons-u-mt-xl">
+  <span class="ons-btn__inner"><span class="ons-btn__text">Save and continue</span>
+  </span>
+</button>
+
+{% endblock %}
