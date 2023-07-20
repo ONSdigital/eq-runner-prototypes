@@ -32,11 +32,16 @@ layout: error/views/_master
     <div class="ons-panel ons-panel--error ons-panel--no-title">
   <span class="ons-panel__assistive-text ons-u-vh">Error: </span>
   <div class="ons-panel__body">
-    <p class="ons-panel__error">
-      <strong id="error-1">Enter a number more than or equal to
-          -1000</strong><br>
-      <strong id="error-2">Enter a number rounded to 2 decimal places</strong>
-    </p>
+    
+    <ul class="ons-list ons-list--bare">
+      <li class="ons-list__item ons-panel__error">
+        <strong id="error-1">Enter a number more than or equal to -1000</strong>
+      </li>
+      <li class="ons-list__item ons-panel__error">
+        <strong id="error-2">Enter a number rounded to 2 decimal places</strong>
+      </li>
+    </ul>
+
     <div class="ons-field">
       <label class="ons-label ons-label--with-description" for="number">Minimum value</label>
       <span id="description-hint" class="ons-label__description  ons-input--with-description">Example description hint
@@ -51,9 +56,11 @@ layout: error/views/_master
 <div class="ons-panel ons-panel--error ons-panel--no-title">
   <span class="ons-panel__assistive-text ons-u-vh">Error: </span>
   <div class="ons-panel__body">
-    <p class="ons-panel__error">
-      <strong id="error-3">Enter a number</strong>
-    </p>
+    <ul class="ons-list ons-list--bare">
+      <li class="ons-list__item ons-panel__error">
+        <strong id="error-3">Enter a number</strong>
+      </li>
+    </ul>
     <div class="ons-field">
       <label class="ons-label ons-label--with-description" for="number">Maximum value</label>
       <span id="description-hint" class="ons-label__description  ons-input--with-description">Example description hint
