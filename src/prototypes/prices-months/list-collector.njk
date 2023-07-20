@@ -1,0 +1,58 @@
+---
+group: Prototypes
+title: Prices (multiple months)
+layout: prices-months/views/_main
+---
+{% from "components/summary/_macro.njk" import onsSummary %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set prevPage = "index" %}
+{% set form = {
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.rootPath + "/information.html"
+    }
+} %}
+
+{% block main %}
+    <h1 class="ons-u-fs-xl">Product list</h1>
+
+{{ onsSummary({
+    "classes": "ons-u-mb-xl",
+    "summaries": [
+        {
+            "groups": [
+                {
+                    "rows": [
+                        {
+                            "rowTitle": "WIRE HARNESS",
+                            "rowItems": [
+                                {
+                                }
+                            ]
+                        },
+                        {
+                            "rowTitle": "BRAZILIAN ELLIOTS PINE PLYWOOD GRADE C+/C",
+                            "rowItems": [
+                                {
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}) }}
+
+<p>You have previously reported these products.</p>
+<p>In this survey, you will be able to provide updated information about their price.</p>
+
+{{
+    onsButton({
+        "text": 'Continue',
+        "classes": 'ons-u-mb-m ons-u-mt-l'
+    })
+}}
+{% endblock %}

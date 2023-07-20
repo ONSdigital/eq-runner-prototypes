@@ -14,8 +14,13 @@ layout: long-list-checkboxes/views/_main
 
 {% from "components/button/_macro.njk" import onsButton %}
 {% block main %}
-    <h1 class="ons-u-fs-xl">What was your expenditure on forestry, logging and related products and services?</h1>
 
+<script>
+var results=localStorage.getItem("ddvalue");
+results=results.split(",");
+var first = results[0].toLowerCase();
+document.write(`<h1 class="ons-u-fs-xl">What was your expenditure on ${first}?</h1>`)
+</script>
 
 {% from "components/input/_macro.njk" import onsInput %}
 {{

@@ -1,0 +1,63 @@
+---
+group: Prototypes
+title: Prices (multiple months)
+layout: prices-months/views/_main
+---
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set prevPage = "list-collector" %}
+{% set form = {
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.rootPath + "/prices.html"
+    }
+} %}
+
+{% block main %}
+<h1 class="ons-u-fs-xxl">Is the following information relating to WIRE HARNESS correct?</h1>
+<p><strong>Description:</strong> OTHER WIRING SETS</p>
+<p><strong>Serial number:</strong> 24010BR11A</p>
+<p><strong>Supplier reference:</strong> NOT PROVIDED</p>
+<p><strong>Payment terms:</strong> WITHIN 30 DAYS</p>
+<p><strong>Carriage:</strong> DAP</p>
+<p><strong>Unit of sale:</strong> EACH</p>
+<p><strong>Currency:</strong> EURO</p>
+<p class="ons-u-mb-xl"><strong>Country of origin:</strong> MOROCCO</p>
+
+<div class="ons-question ons-u-mb-l ons-u-mt-no">
+  <div class="ons-question__answer ons-u-mb-m">
+    <fieldset class="ons-fieldset">
+      <div class="ons-input-items">
+        <div class="ons-radios__items">
+          <span class="ons-radios__item">
+            <span class="ons-radio">
+              <input type="radio" id="yes" class="ons-radio__input ons-js-radio" value="yes" name="correct-info">
+              <label class=" ons-radio__label " for="yes" id="yes-label">Yes</label>
+            </span>
+          </span>
+          <br>
+          <span class="ons-radios__item">
+            <span class="ons-radio">
+              <input type="radio" id="no" class="ons-radio__input ons-js-radio ons-js-other" value="no"
+                name="correct-info">
+              <label class=" ons-radio__label " for="no" id="no-label">No</label>
+              <span class="ons-radio__other ons-radio__other--open" id="no-other-wrap">
+                <label class="ons-label ons-u-fw-n" for="no-textbox" id="no-textbox-label">If any of the information relating to this item has changed, provide amendments</label>
+                <textarea id="textarea" class="ons-input ons-input--textarea" name="feedback" rows="8"></textarea>
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+    {{
+        onsButton({
+            "text": "Save and continue",
+            "classes": "ons-u-mt-l"
+        })
+    }}
+{% endblock %}

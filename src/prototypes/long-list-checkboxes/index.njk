@@ -20,7 +20,7 @@ layout: long-list-checkboxes/views/_main
 {% from "components/button/_macro.njk" import onsButton %}
 
 {% call onsQuestion({
-    "title": "For the reporting period, which other service did your business purchase?",
+    "title": "Which of the following goods or services have you purchased during the last month?",
     "legendIsQuestionTitle": true,
     "classes": "ons-u-mt-no"
 }) %}
@@ -32,367 +32,307 @@ layout: long-list-checkboxes/views/_main
             "checkboxes": [
                 {
                     "id": "1",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "0100 - Agriculture, hunting and related products and services; plants, planting material, animal husbandry and trapping services"
+                        "text": "Blackout roller blinds (including vertical and roman blinds)"
                     },
-                    "value": "0100 - Agriculture, hunting and related products and services; plants, planting material, animal husbandry and trapping services"
+                    "value": "Blackout roller blinds (including vertical and roman blinds)"
                 },
                 {
                     "id": "2",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "0200 - Forestry, logging and related products and services"
+                        "text": "Ottomans and storage trunks"
                     },
-                    "value": "0200 - Forestry, logging and related products and services"
+                    "value": "Ottomans and storage trunks"
                 },
                 {
                     "id": "3",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "0300 - Fish and other fishing products, aquaculture products, support services to fishing"
+                        "text": "Outdoor dining and picnic sets"
                     },
-                    "value": "0300 - Fish and other fishing products, aquaculture products, support services to fishing"
+                    "value": "Outdoor dining and picnic sets"
                 },
                 {
                     "id": "4",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "0700 - Metal ores, iron, non-ferrous metal, uranium and thorium, copper, nickel, aluminium, lead, zinc and tin ores"
+                        "text": "Garden furniture (including parasols and bases)"
                     },
-                    "value": "0700 - Metal ores, iron, non-ferrous metal, uranium and thorium, copper, nickel, aluminium, lead, zinc and tin ores"
+                    "value": "Garden furniture (including parasols and bases)"
                 },
                 {
                     "id": "5",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "0800 - Mining and quarrying products; ornamental and building stone, gravel, sand and clays, precious and semi-precious stones"
+                        "text": "Garden entertaining (including BBQ’s, pizza ovens, chimineas and firepits)"
                     },
-                    "value": "0800 - Mining and quarrying products; ornamental and building stone, gravel, sand and clays, precious and semi-precious stones"
+                    "value": "Garden entertaining (including BBQ’s&#44; pizza ovens&#44; chimineas and firepits)"
                 },
                 {
                     "id": "6",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "0900 - Mining support services"
+                        "text": "Indoor and outdoor LED lights and lightbulbs"
                     },
-                    "value": "0900 - Mining support services"
+                    "value": "Indoor and outdoor LED lights and lightbulbs"
                 },
                 {
                     "id": "7",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "1090 - Prepared animal feeds"
+                        "text": "Kitchen appliances (including kettles, cookers, fridge/freezers, microwaves)"
                     },
-                    "value": "1090 - Prepared animal feeds"
+                    "value": "Kitchen appliances (including kettles&#44; cookers&#44; fridge/freezers&#44; microwaves)"
                 },
                 {
                     "id": "8",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "1300 - Textile articles; carpets and rugs; preparation services of natural textile fibres; textile finishing services"
+                        "text": "Home entertainment (including tv’s, radio’s, smart speakers, surround sound, cinema systems)"
                     },
-                    "value": "1300 - Textile articles; carpets and rugs; preparation services of natural textile fibres; textile finishing services"
+                    "value": "Home entertainment (including tv’s&#44; radio’s&#44; smart speakers&#44; surround sound&#44; cinema systems)"
                 },
                 {
                     "id": "9",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "1500 - Footwear and leather products"
+                        "text": "TV Subscription services"
                     },
-                    "value": "1500 - Footwear and leather products"
+                    "value": "TV Subscription services"
                 },
                 {
                     "id": "10",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "1600 - Wood and products of wood and cork, except furniture; articles of straw and plaiting materials"
+                        "text": "Motor vehicles (including motorcycles, motorhomes)"
                     },
-                    "value": "1600 - Wood and products of wood and cork, except furniture; articles of straw and plaiting materials"
+                    "value": "Motor vehicles (including motorcycles&#44; motorhomes)"
                 },
                 {
                     "id": "11",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "1800 - Printing and reproduction services of recorded media"
+                        "text": "Children’s clothing"
                     },
-                    "value": "1800 - Printing and reproduction services of recorded media"
+                    "value": "Children’s clothing"
                 },
                 {
                     "id": "12",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "2096 - Petrochemicals; organic basic chemicals, plastics in primary form, synthetic rubber and man-made fibres
-                "
+                        "text": "Real estate (including mortgage and rental costs)"
                     },
-                    "value": "2096 - Petrochemicals; organic basic chemicals, plastics in primary form, synthetic rubber and man-made fibres"
+                    "value": "Real estate (including mortgage and rental costs)"
                 },
                 {
                     "id": "13",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "2300 - Glass, clay, porcelain, ceramic and refractory products"
+                        "text": "Safety workwear (including boilersuits, footwear, safety glasses, protective gloves and harnesses)"
                     },
-                    "value": "2300 - Glass, clay, porcelain, ceramic and refractory products"
+                    "value": "Safety workwear (including boilersuits&#44; footwear&#44; safety glasses&#44; protective gloves and harnesses)"
                 },
                 {
                     "id": "14",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "2399 - Cement, plaster and concrete"
+                        "text": "Dehumidifiers, extractor fans and air conditioning systems"
                     },
-                    "value": "2399 - Cement, plaster and concrete"
+                    "value": "Dehumidifiers, extractor fans and air conditioning systems"
                 },
                 {
                     "id": "15",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "2498 - Basic, precious, non-ferrous metals and casting services"
+                        "text": "Power tools (including drills, saws, angle grinders, nail guns and planers)"
                     },
-                    "value": "2498 - Basic, precious, non-ferrous metals and casting services"
+                    "value": "Power tools (including drills&#44; saws&#44; angle grinders&#44; nail guns and planers)"
                 },
                 {
                     "id": "16",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "2499 - Basic iron, steel and ferro-alloys including tubes, pipes, hollow fittingsand other products of the first processing of steel"
+                        "text": "Showering furniture (including electric, mixer and power showers, trays and enclosures)"
                     },
-                    "value": "2499 - Basic iron, steel and ferro-alloys including tubes, pipes, hollow fittingsand other products of the first processing of steel"
+                    "value": "Showering furniture (including electric&#44; mixer and power showers&#44; trays and enclosures)"
                 },
                 {
                     "id": "17",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "2540 - Weapons and ammunition"
+                        "text": "Women’s clothing"
                     },
-                    "value": "2540 - Weapons and ammunition"
+                    "value": "Women’s clothing"
                 },
                 {
                     "id": "18",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "2700 - Electrical equipment, electric motors, generators,"
+                        "text": "Laundry and utility (including clothes airers and lines, irons and boards, and laundry baskets)"
                     },
-                    "value": "2700 - Electrical equipment, electric motors, generators,"
+                    "value": "Laundry and utility (including clothes airers and lines&#44; irons and boards&#44; and laundry baskets)"
                 },
                 {
                     "id": "19",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "2800 - Machinery and equipment"
+                        "text": "Fires, stoves and heaters (including fire surrounds, electric and oil heaters)"
                     },
-                    "value": "2800 - Machinery and equipment"
+                    "value": "Fires, stoves and heaters (including fire surrounds&#44; electric and oil heaters)"
                 },
                 {
                     "id": "20",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "3010 - Boats, ships and floating structures"
+                        "text": "Garden playhouses, swings and trampolines"
                     },
-                    "value": "3010 - Boats, ships and floating structures"
+                    "value": "Garden playhouses&#44; swings and trampolines"
                 },
                 {
                     "id": "21",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "3020 - Railway locomotives and rolling stock"
+                        "text": "Indoor gym equipment"
                     },
-                    "value": "3020 - Railway locomotives and rolling stock"
+                    "value": "Indoor gym equipment"
                 },
                 {
                     "id": "22",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "3030 - Aircraft, spacecraft and related machinery"
+                        "text": "Men’s clothing"
                     },
-                    "value": "3030 - Aircraft, spacecraft and related machinery"
+                    "value": "Men’s clothing"
                 },
                 {
                     "id": "23",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "3040 - Military fighting vehicles"
+                        "text": "Segways and electric scooters"
                     },
-                    "value": "3040 - Military fighting vehicles"
+                    "value": "Segways and electric scooters"
                 },
                 {
                     "id": "24",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "3091 - Motorcycles, bicycles and carriages"
+                        "text": "Home security systems (including smoke and carbon monoxide alarms)"
                     },
-                    "value": "3091 - Motorcycles, bicycles and carriages"
+                    "value": "Home security systems (including smoke and carbon monoxide alarms)"
                 },
                 {
                     "id": "25",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "3100 - Furniture; office, shop and kitchen furniture, upholstering and finishing services of new furniture and parts of furniture"
+                        "text": "Shelving systems, units and storage cubes or baskets"
                     },
-                    "value": "3100 - Furniture; office, shop and kitchen furniture, upholstering and finishing services of new furniture and parts of furniture"
+                    "value": "Shelving systems&#44; units and storage cubes or baskets"
                 },
                 {
                     "id": "26",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "3293 - Toys, games and musical instruments"
+                        "text": "Artificial flowers and plants"
                     },
-                    "value": "3293 - Toys, games and musical instruments"
+                    "value": "Artificial flowers and plants"
                 },
                 {
                     "id": "27",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "3295 - Jewellery and decorative goods"
+                        "text": "Fruit storage (including pitaya boxes)"
                     },
-                    "value": "3295 - Jewellery and decorative goods"
+                    "value": "Fruit storage (including pitaya boxes)"
                 },
                 {
                     "id": "28",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "3315 - Repair and maintenance services of"
+                        "text": "Mobile telephone contract payments"
                     },
-                    "value": "3315 - Repair and maintenance services of"
+                    "value": "Mobile telephone contract payments"
                 },
                 {
                     "id": "29",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "4200 - Construction and construction works for civil engineering; roads,"
+                        "text": "Travel suitcases, bags"
                     },
-                    "value": "4200 - Construction and construction works for civil engineering; roads,"
+                    "value": "Travel suitcases&#44; bags"
                 },
                 {
                     "id": "30",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "4300 - Specialised construction, demolition and site preparation;"
+                        "text": "Sofas, armchairs, chairs and stools"
                     },
-                    "value": "4300 - Specialised construction, demolition and site preparation;"
+                    "value": "Sofas&#44; armchairs&#44; chairs and stools"
                 },
                 {
                     "id": "31",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "4999 - Passenger and freight rail transport services"
+                        "text": "Table and desklamps (excluding ceiling and wall lights)"
                     },
-                    "value": "4999 - Passenger and freight rail transport services"
+                    "value": "Table and desklamps (excluding ceiling and wall lights)"
                 },
                 {
                     "id": "32",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "5000 - Water transport services"
+                        "text": "Paint and wallpaper"
                     },
-                    "value": "5000 - Water transport services"
+                    "value": "Paint and wallpaper"
                 },
                 {
                     "id": "33",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "5100 - Air transport services"
+                        "text": "Made to measure curtains and blinds"
                     },
-                    "value": "5100 - Air transport services"
+                    "value": "Made to measure curtains and blinds"
                 },
                 {
                     "id": "34",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "5800 - Publishing services of books, newspapers, journals, advertising"
+                        "text": "Tablecloths, table mats and coasters"
                     },
-                    "value": "5800 - Publishing services of books, newspapers, journals, advertising"
+                    "value": "Tablecloths&#44; table mats and coasters"
                 },
                 {
                     "id": "35",
+                    "name":"inputCheck",
                     "label": {
-                        "text": "5900 - Motion pictures, video and television programme production"
+                        "text": "Workbenches, trestles (including workbenches with lockable cupboards)"
                     },
-                    "value": "5900 - Motion pictures, video and television programme production"
-                },
-                {
-                    "id": "36",
-                    "label": {
-                        "text": "6000 - Programming and broadcasting services"
-                    },
-                    "value": "6000 - Programming and broadcasting services"
-                },
-                {
-                    "id": "37",
-                    "label": {
-                        "text": "6300 - Information services; data processing, web hosting and IT"
-                    },
-                    "value": "6300 - Information services; data processing, web hosting and IT"
-                },
-                {
-                    "id": "38",
-                    "label": {
-                        "text": "6600 - Support services to financial and insurance activities"
-                    },
-                    "value": "6600 - Support services to financial and insurance activities"
-                },
-                {
-                    "id": "39",
-                    "label": {
-                        "text": "6830 - Real estate services on a fee or contract basis"
-                    },
-                    "value": "6830 - Real estate services on a fee or contract basis"
-                },
-                {
-                    "id": "40",
-                    "label": {
-                        "text": "6899 - Renting, buying or selling of land and buildings"
-                    },
-                    "value": "6899 - Renting, buying or selling of land and buildings"
-                },
-                {
-                    "id": "41",
-                    "label": {
-                        "text": "7000 - Head office and management consulting services"
-                    },
-                    "value": "7000 - Head office and management consulting services"
-                },
-                {
-                    "id": "42",
-                    "label": {
-                        "text": "7200 - Scientific research and development services"
-                    },
-                    "value": "7200 - Scientific research and development services"
-                },
-                {
-                    "id": "43",
-                    "label": {
-                        "text": "7900 - Travel agency, tour operator and other"
-                    },
-                    "value": "7900 - Travel agency, tour operator and other"
-                },
-                {
-                    "id": "44",
-                    "label": {
-                        "text": "8000 - Security and investigation services"
-                    },
-                    "value": "8000 - Security and investigation services"
-                },
-                {
-                    "id": "45",
-                    "label": {
-                        "text": "8100 - Buildings and landscape services"
-                    },
-                    "value": "8100 - Buildings and landscape services"
-                },
-                {
-                    "id": "46",
-                    "label": {
-                        "text": "8200 - Office administration, office support and other"
-                    },
-                    "value": "8200 - Office administration, office support and other"
-                },
-                {
-                    "id": "47",
-                    "label": {
-                        "text": "9400 - Membership organisation services"
-                    },
-                    "value": "9400 - Membership organisation services"
-                },
-                {
-                    "id": "48",
-                    "label": {
-                        "text": "9500 - Repair services of computers, personal and household goods"
-                    },
-                    "value": "9500 - Repair services of computers, personal and household goods"
-                },
-                {
-                    "id": "49",
-                    "label": {
-                        "text": "9600 - Personal services, dry cleaning and laundry, hairdressing and beauty,"
-                    },
-                    "value": "9600 - Personal services, dry cleaning and laundry, hairdressing and beauty,"
+                    "value": "Workbenches&#44; trestles (including workbenches with lockable cupboards)"
                 }
             ]
         })
     }}
 {% endcall %}
 
-<script>
-    var array = []
-var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+<button type="submit" class="ons-btn" onclick="printChecked()"/>
+  <span class="ons-btn__inner"><span class="ons-btn__text">Save and continue</span>
+  </span>
+</button>
 
-for (var i = 0; i < checkboxes.length; i++) {
-  array.push(checkboxes[i].value)
-}
-</script>
+{% endblock %}
 
-{{
-    onsButton({
-        "text": 'Continue',
-        "classes": 'ons-u-mb-m ons-u-mt-l'
-    })
-}}
-
+{% block scripts %}
+   <script type="text/javascript">
+      function printChecked() {
+         var items = document.getElementsByName("inputCheck");
+         var arr=[];
+         for (var i = 0; i < items.length; i++) {
+            if (items[i].type == "checkbox" && items[i].checked == true){
+               arr.push(items[i].value);
+            }
+         }
+         localStorage.setItem("ddvalue", arr);
+      }
+   </script>
 {% endblock %}
