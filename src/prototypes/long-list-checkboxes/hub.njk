@@ -16,12 +16,20 @@ layout: long-list-checkboxes/views/_main
 
 {{
     onsBreadcrumbs({
+<<<<<<< HEAD
         "ariaLabel": 'Previous',
+=======
+        "ariaLabel": 'Back',
+>>>>>>> 31f0a02 (long list checkboxes minus change functionality)
         "itemsList": [
             {
                 "url": '/prototypes/long-list-checkboxes/index.html',
                 "id": "backlink",
+<<<<<<< HEAD
                 "text": 'Previous',
+=======
+                "text": 'Back',
+>>>>>>> 31f0a02 (long list checkboxes minus change functionality)
                 "attributes": {
                     "data-attribute": "Example attribute"
                 }
@@ -43,12 +51,18 @@ layout: long-list-checkboxes/views/_main
     }}
 
 <script>
+<<<<<<< HEAD
 var results = localStorage.getItem("ddvalue");
 if (results) {
+=======
+  var results = localStorage.getItem("ddvalue");
+  if (results) {
+>>>>>>> 31f0a02 (long list checkboxes minus change functionality)
     // Parse the JSON if there's data
     results = JSON.parse(results);
 
     document.write(`<div class="ons-summary ons-u-mb-l">
+<<<<<<< HEAD
         <div class="ons-summary__group">
             <div class="ons-summary__items">`);
 
@@ -82,16 +96,41 @@ if (results) {
                     </div>`);
             }
         }
+=======
+      <div class="ons-summary__group">
+        <div class="ons-summary__items">`);
+    
+    for (var i = 0; i < results.length; i++) {
+      // Check if the current result is an array
+      if (Array.isArray(results[i])) {
+        document.write(`
+          <div class="ons-summary__item">
+            <dl class="ons-summary__row">
+              <dt class="ons-summary__item-title">
+                <div class="ons-summary__item--text">${results[i][0]}</div>
+              </dt>
+            </dl>
+          </div>`);
+      }
+>>>>>>> 31f0a02 (long list checkboxes minus change functionality)
     }
 
     document.write(`</div>
         <div class="ons-summary__link ons-u-pt-s ons-u-bt ons-u-mb-xl">
+<<<<<<< HEAD
             <a data-qa="add-item-link" href="index">Modify this list</a>
         </div>
     </div>
 </div>`);
 }
 
+=======
+          <a data-qa="add-item-link" href="index">Modify this list</a>
+        </div>
+      </div>
+    </div>`);
+  }
+>>>>>>> 31f0a02 (long list checkboxes minus change functionality)
 </script>
 
 

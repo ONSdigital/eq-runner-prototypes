@@ -16,12 +16,20 @@ layout: long-list-checkboxes/views/_main
 
 {{
     onsBreadcrumbs({
+<<<<<<< HEAD
         "ariaLabel": 'Previous',
+=======
+        "ariaLabel": 'Back',
+>>>>>>> 31f0a02 (long list checkboxes minus change functionality)
         "itemsList": [
             {
                 "url": '/',
                 "id": "backlink",
+<<<<<<< HEAD
                 "text": 'Previous',
+=======
+                "text": 'Back',
+>>>>>>> 31f0a02 (long list checkboxes minus change functionality)
                 "attributes": {
                     "data-attribute": "Example attribute"
                 }
@@ -345,6 +353,7 @@ layout: long-list-checkboxes/views/_main
 
 {% block scripts %}
 <script>
+<<<<<<< HEAD
     // Function to merge two arrays of checkbox selections
     function mergeCheckboxSelections(existingSelections, newSelections) {
         var mergedSelections = {};
@@ -418,9 +427,41 @@ layout: long-list-checkboxes/views/_main
         localStorage.setItem("ddvalue", JSON.stringify(mergedSelections));
 
         document.forms["myForm"].action = "/prototypes/long-list-checkboxes/hub.html";
+=======
+    var storedValue = localStorage.getItem("ddvalue");
+
+    if (storedValue) {
+        var parsedValue = JSON.parse(storedValue);
+
+        for (var i = 0; i < parsedValue.length; i++) {
+        var checkbox = document.querySelector('input[name="inputCheck"][value="' + parsedValue[i][0] + '"]');
+
+        if (checkbox) {
+            checkbox.checked = true;
+        }
+        }
+    }
+    
+    function printChecked() {
+    console.log('testing');
+    var items = document.getElementsByName("inputCheck");
+    var arr = [];
+
+    for (var i = 0; i < items.length; i++) {
+        if (items[i].type == "checkbox" && items[i].checked == true) {
+        arr.push([items[i].value]);  // Wrap the value in an array
+        }
+    }
+
+    localStorage.setItem("ddvalue", JSON.stringify(arr));
+    document.forms["myForm"].action = "/prototypes/long-list-checkboxes/hub.html";
+>>>>>>> 31f0a02 (long list checkboxes minus change functionality)
     }
 </script>
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 31f0a02 (long list checkboxes minus change functionality)
 {% endblock %}
