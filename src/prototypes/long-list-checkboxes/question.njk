@@ -85,8 +85,21 @@ layout: long-list-checkboxes/views/_main
         const numberOfItems = parsedValue.length;
         const numberOfItemsStr = numberOfItems.toString();
 
-        // Update the question to include the list item
-        document.getElementById('listItemHighlighted').textContent = firstItem;
+        // Check if the referring URL includes "hub-complete"
+        if (previousURL.includes("hub-complete")) {
+            currentIndex = numberOfItems - 1;
+
+            // Set the value of the input with id "expenditure"
+            const lastExpenditureValue = parsedValue[currentIndex][1];
+            if (lastExpenditureValue !== undefined) {
+                document.getElementById('expenditure').value = lastExpenditureValue;
+                document.getElementById('listItemHighlighted').textContent = parsedValue[currentIndex][0];
+            }
+        }
+        else{
+            // Update the question to include the list item
+            document.getElementById('listItemHighlighted').textContent = firstItem;
+        }
         
         // Update the progress indicator
         if(currentIndex != 0 ){
