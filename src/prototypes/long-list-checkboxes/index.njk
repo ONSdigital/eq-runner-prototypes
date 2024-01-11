@@ -8,9 +8,29 @@ layout: long-list-checkboxes/views/_main
 {% set form = {
     "method": "GET",
     "attributes": {
-        "action": pageInfo.rootPath + "/hub.html"
+        "action": "/prototypes/long-list-checkboxes/hub.html"
     }
 } %}
+
+{% block preMain %}
+
+{{
+    onsBreadcrumbs({
+        "ariaLabel": 'Back',
+        "itemsList": [
+            {
+                "url": '/',
+                "id": "backlink",
+                "text": 'Back',
+                "attributes": {
+                    "data-attribute": "Example attribute"
+                }
+            }
+        ]
+    })
+}}
+
+{% endblock %}
 
 {% block main %}
 
@@ -18,6 +38,7 @@ layout: long-list-checkboxes/views/_main
 {% from "components/question/_macro.njk" import onsQuestion %}
 {% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
 {% from "components/button/_macro.njk" import onsButton %}
+
 
 {% call onsQuestion({
     "title": "Which of the following goods or services have you purchased during the last month?",
@@ -106,9 +127,9 @@ layout: long-list-checkboxes/views/_main
                     "id": "10",
                     "name":"inputCheck",
                     "label": {
-                        "text": "Motor vehicles (including motorcycles, motorhomes)"
+                        "text": "Motor vehicles (including motorcycles and motorhomes)"
                     },
-                    "value": "Motor vehicles (including motorcycles&#44; motorhomes)"
+                    "value": "Motor vehicles (including motorcycles and motorhomes)"
                 },
                 {
                     "id": "11",
@@ -140,7 +161,7 @@ layout: long-list-checkboxes/views/_main
                     "label": {
                         "text": "Dehumidifiers, extractor fans and air conditioning systems"
                     },
-                    "value": "Dehumidifiers, extractor fans and air conditioning systems"
+                    "value": "Dehumidifiers&#44; extractor fans and air conditioning systems"
                 },
                 {
                     "id": "15",
@@ -180,7 +201,7 @@ layout: long-list-checkboxes/views/_main
                     "label": {
                         "text": "Fires, stoves and heaters (including fire surrounds, electric and oil heaters)"
                     },
-                    "value": "Fires, stoves and heaters (including fire surrounds&#44; electric and oil heaters)"
+                    "value": "Fires&#44; stoves and heaters (including fire surrounds&#44; electric and oil heaters)"
                 },
                 {
                     "id": "20",
@@ -323,16 +344,36 @@ layout: long-list-checkboxes/views/_main
 {% endblock %}
 
 {% block scripts %}
-   <script type="text/javascript">
-      function printChecked() {
-         var items = document.getElementsByName("inputCheck");
-         var arr=[];
-         for (var i = 0; i < items.length; i++) {
-            if (items[i].type == "checkbox" && items[i].checked == true){
-               arr.push(items[i].value);
-            }
-         }
-         localStorage.setItem("ddvalue", arr);
-      }
-   </script>
+<script>
+    var storedValue = localStorage.getItem("ddvalue");
+
+    if (storedValue) {
+        var parsedValue = JSON.parse(storedValue);
+
+        for (var i = 0; i < parsedValue.length; i++) {
+        var checkbox = document.querySelector('input[name="inputCheck"][value="' + parsedValue[i][0] + '"]');
+
+        if (checkbox) {
+            checkbox.checked = true;
+        }
+        }
+    }
+    
+    function printChecked() {
+    console.log('testing');
+    var items = document.getElementsByName("inputCheck");
+    var arr = [];
+
+    for (var i = 0; i < items.length; i++) {
+        if (items[i].type == "checkbox" && items[i].checked == true) {
+        arr.push([items[i].value]);  // Wrap the value in an array
+        }
+    }
+
+    localStorage.setItem("ddvalue", JSON.stringify(arr));
+    document.forms["myForm"].action = "/prototypes/long-list-checkboxes/hub.html";
+    }
+</script>
+
+
 {% endblock %}

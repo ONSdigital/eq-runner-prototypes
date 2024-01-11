@@ -5,27 +5,38 @@ layout: long-list-checkboxes/views/_main
 ---
 
 {% set prevPage = "hub" %}
-{% set form = {
-    "method": "GET",
-    "attributes": {
-        "action": pageInfo.rootPath + "/hub-complete.html"
-    }
-} %}
 
-{% from "components/button/_macro.njk" import onsButton %}
+{% block preMain %}
+
+{{
+    onsBreadcrumbs({
+        "ariaLabel": 'Back',
+        "itemsList": [
+            {
+                "url": "#",
+                "id": "backlink",
+                "text": 'Back',
+                "attributes": {
+                    "data-attribute": "Example attribute",
+                    "onclick": "previousQuestion(); this.blur();"
+                }
+            }
+        ]
+    })
+}}
+
+{% endblock %}
+
 {% block main %}
 
-<script>
-var results=localStorage.getItem("ddvalue");
-results=results.split(",");
-var first = results[0].toLowerCase();
-document.write(`<h1 class="ons-u-fs-xl">What was your expenditure on ${first}?</h1>`)
-</script>
+<h1 class="ons-u-fs-xl">
+    What was your expenditure on <strong id="listItemHighlighted" class="ons-highlight"></strong>?
+</h1>
 
 {% from "components/input/_macro.njk" import onsInput %}
 {{
     onsInput({
-        "id": "prefixed",
+        "id": "expenditure",
         "type": "number",
         "width": "8",
         "autocomplete": "off",
@@ -44,9 +55,112 @@ document.write(`<h1 class="ons-u-fs-xl">What was your expenditure on ${first}?</
 
 {{
     onsButton({
-        "text": 'Continue',
-        "classes": 'ons-u-mb-m ons-u-mt-l'
+        "text": 'Save and continue',
+        "classes": 'ons-u-mb-l ons-u-mt-l',
+        "attributes": {
+                        "onclick": "nextQuestion(); this.blur();"
+                    }
     })
 }}
+
+<p id="progressIndicator"></p>
+
+{% endblock %}
+
+{% block bodyEnd %}
+
+<script>
+    const previousURL = document.referrer;
+        var currentIndex = 0;
+        // Step 1: Retrieve the stored string from localStorage
+        const storedValue = localStorage.getItem('ddvalue');
+
+        // Step 2: Parse the string into a JavaScript object
+        const parsedValue = JSON.parse(storedValue);
+
+        // Step 3: Access the first value from the nested arrays
+        const firstItem = parsedValue[0][0].includes('&#44;') ? parsedValue[0][0].replace(/&#44;/g, ',') : parsedValue[0][0];
+
+        //Step 4: Find out the number of items
+        const numberOfItems = parsedValue.length;
+        const numberOfItemsStr = numberOfItems.toString();
+
+        // Update the question to include the list item
+        document.getElementById('listItemHighlighted').textContent = firstItem;
+        
+        // Update the progress indicator
+        if(currentIndex != 0 ){
+            var completedIndex = currentIndex + 1;
+            document.getElementById('progressIndicator').textContent = completedIndex + ' of ' + numberOfItemsStr + ' goods and services completed';
+        }
+
+    
+
+        function nextQuestion() {
+            if (currentIndex < numberOfItems - 1) {
+                currentIndex++;
+
+                console.log(currentIndex);
+
+                // Get the current item and its value
+                const currentItem = parsedValue[currentIndex][0];
+                console.log(currentItem);
+                const expenditureValue = document.getElementById('expenditure').value;
+
+                // Update parsedValue to include the expenditure value
+                parsedValue[currentIndex - 1][1] = expenditureValue;
+
+                // Update localStorage to store the updated parsedValue
+                localStorage.setItem("ddvalue", JSON.stringify(parsedValue));
+
+                // Update the displayed item and progress indicator
+                const nextItem = currentItem.includes('&#44;') ? currentItem.replace(/&#44;/g, ',') : currentItem;
+                document.getElementById('listItemHighlighted').textContent = nextItem;
+                document.getElementById('progressIndicator').textContent = currentIndex + ' of ' + numberOfItemsStr + ' goods and services completed';
+
+                document.getElementById('expenditure').value = '';
+            } else {
+
+                currentIndex++;
+
+                console.log(currentIndex);
+
+                const expenditureValue = document.getElementById('expenditure').value;
+
+                // Update parsedValue to include the expenditure value
+                parsedValue[currentIndex - 1][1] = expenditureValue;
+
+                // Update localStorage to store the updated parsedValue
+                localStorage.setItem("ddvalue", JSON.stringify(parsedValue));
+
+                // Optionally handle end of questions or loop back to the first question
+                console.log('End of questions');
+                window.location.href = '/prototypes/long-list-checkboxes/hub-complete.html';
+            }
+        }
+
+
+    function previousQuestion() {
+        if (currentIndex > 0) { // Check if not already at the first question
+            currentIndex--;
+            const currentItem = parsedValue[currentIndex][0];
+            const previousItem = currentItem.includes('&#44;') ? currentItem.replace(/&#44;/g, ',') : currentItem;
+            document.getElementById('listItemHighlighted').textContent = previousItem;
+            if(currentIndex != 0 ){
+                document.getElementById('progressIndicator').textContent = currentIndex + ' of ' + numberOfItemsStr + ' goods and services completed';        } else {
+            }
+            if(currentIndex == 0){
+                document.getElementById('progressIndicator').textContent = '';
+            }
+        } else {
+            // Optionally handle going to the last question or display a message
+            console.log('Go back to Hub');
+            window.location.href = '/prototypes/long-list-checkboxes/hub.html'; 
+        }
+    }
+
+    
+
+</script>
 
 {% endblock %}
