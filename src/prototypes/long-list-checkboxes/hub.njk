@@ -12,43 +12,73 @@ layout: long-list-checkboxes/views/_main
     }
 } %}
 
-{% from "components/button/_macro.njk" import onsButton %}
+{% block preMain %}
+
+{{
+    onsBreadcrumbs({
+        "ariaLabel": 'Back',
+        "itemsList": [
+            {
+                "url": '/prototypes/long-list-checkboxes/index.html',
+                "id": "backlink",
+                "text": 'Back',
+                "attributes": {
+                    "data-attribute": "Example attribute"
+                }
+            }
+        ]
+    })
+}}
+
+{% endblock %}
+
 {% block main %}
-    <h1 class="ons-u-fs-xl">Product list</h1>
+    <h1 class="ons-u-fs-xl">Goods and services you have purchased in the last month</h1>
+
+    {{
+        onsPanel({
+            "body": '<p>Follow-up questions will inquire about the <strong>expenditure</strong> for each good and service.</p>',
+            "classes": 'ons-u-mb-m'
+        })
+    }}
 
 <script>
-  var results=localStorage.getItem("ddvalue");
-  results=results.split(",");
+  var results = localStorage.getItem("ddvalue");
+  if (results) {
+    // Parse the JSON if there's data
+    results = JSON.parse(results);
 
-var selectedServices = results;
-document.write(`<div class="ons-summary ons-u-mb-l">
-  <div class="ons-summary__group">
-    <div class="ons-summary__items">`)
-for (var i = 0 ; i < selectedServices.length ; i++){
-    document.write(`
-      <div class="ons-summary__item">
-        <dl class="ons-summary__row">
-          <dt class="ons-summary__item-title">
-            <div class="ons-summary__item--text">${selectedServices[i]}</div>
-          </dt>
-        </dl>
-      </div>`)
-};
-document.write(`</div>
-    <div class="ons-summary__link ons-u-pt-s ons-u-bt ons-u-mb-xl">
-      <a data-qa="add-item-link" href="index">Modify this list</a>
-    </div>
-  </div>
-</div>`)
+    document.write(`<div class="ons-summary ons-u-mb-l">
+      <div class="ons-summary__group">
+        <div class="ons-summary__items">`);
+    
+    for (var i = 0; i < results.length; i++) {
+      // Check if the current result is an array
+      if (Array.isArray(results[i])) {
+        document.write(`
+          <div class="ons-summary__item">
+            <dl class="ons-summary__row">
+              <dt class="ons-summary__item-title">
+                <div class="ons-summary__item--text">${results[i][0]}</div>
+              </dt>
+            </dl>
+          </div>`);
+      }
+    }
+
+    document.write(`</div>
+        <div class="ons-summary__link ons-u-pt-s ons-u-bt ons-u-mb-xl">
+          <a data-qa="add-item-link" href="index">Modify this list</a>
+        </div>
+      </div>
+    </div>`);
+  }
 </script>
 
-<p>There will be a follow up question for each item in the list.</p>
-<p>Once you have answered all of the follow up questions, continue to the next section of the survey.</p>
 
 {{
     onsButton({
-        "text": 'Continue',
-        "classes": 'ons-u-mb-m ons-u-mt-l'
+        "text": 'Continue'
     })
 }}
 
