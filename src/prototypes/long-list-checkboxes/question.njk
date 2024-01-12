@@ -79,15 +79,26 @@ const parsedValue = JSON.parse(storedValue);
 const numberOfItems = parsedValue.length;
 const numberOfItemsStr = numberOfItems.toString();
 
-// If the referring URL includes "hub.html", find the first index with undefined parsedValue[i][1]
-if (previousURL.includes("hub.html")) {
-    while (currentIndex < numberOfItems - 1 && parsedValue[currentIndex][1] !== undefined) {
-        currentIndex++;
-    }
-} else if (previousURL.includes("hub-complete.html")) {
-    // If coming from hub-complete.html, set the currentIndex to the last item
+// If the referring URL includes "hub-complete.html", set currentIndex to the last item
+if (previousURL.includes("hub-complete.html")) {
     currentIndex = numberOfItems - 1;
-    document.getElementById('expenditure').value = parsedValue[currentIndex][1] 
+    document.getElementById('expenditure').value = parsedValue[currentIndex][1];
+}
+// If the referring URL includes "hub.html", find the first index with undefined parsedValue[i][1]
+else if (previousURL.includes("hub.html")) {
+    let found = false;
+    for (let i = 0; i < numberOfItems; i++) {
+        if (parsedValue[i][1] === undefined) {
+            currentIndex = i;
+            found = true;
+            break;
+        }
+    }
+    if (!found) {
+        // If all items have parsedValue[i][1], start from the beginning and add parsedValue[1][1] to the input
+        currentIndex = 0;
+        document.getElementById('expenditure').value = parsedValue[currentIndex][1];
+    }
 }
 
 // Access the first value from the nested arrays
@@ -138,9 +149,6 @@ function nextQuestion() {
         currentIndex + ' of ' + numberOfItemsStr + ' goods and services completed';
 }
 
-
-
-
 function previousQuestion() {
     if (currentIndex > 0) {
         currentIndex--;
@@ -152,14 +160,8 @@ function previousQuestion() {
         // Update the displayed item
         document.getElementById('listItemHighlighted').textContent = previousItem;
 
-        // Check if there is a value in parsedValue[currentIndex][1]
-        const storedExpenditureValue = parsedValue[currentIndex][1];
-        if (storedExpenditureValue !== undefined) {
-            // Set the value of the input with id "expenditure"
-            document.getElementById('expenditure').value = storedExpenditureValue;
-        } else {
-            document.getElementById('expenditure').value = '';
-        }
+        // Set the value of the input with id "expenditure" to parsedValue[i][1] or ''
+        document.getElementById('expenditure').value = parsedValue[currentIndex][1] || '';
 
         // Update the progress indicator
         if (currentIndex !== 0) {
@@ -173,7 +175,6 @@ function previousQuestion() {
         window.location.href = '/prototypes/long-list-checkboxes/hub.html';
     }
 }
-
 
     
 
