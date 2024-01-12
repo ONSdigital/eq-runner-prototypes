@@ -70,6 +70,7 @@ layout: long-list-checkboxes/views/_main
 {% block bodyEnd %}
 
 <script>
+
 const previousURL = document.referrer;
 var currentIndex = 0;
 const storedValue = localStorage.getItem('ddvalue');
@@ -109,9 +110,20 @@ const firstItem = currentIndex < numberOfItems ? parsedValue[currentIndex][0].in
 document.getElementById('listItemHighlighted').textContent = firstItem;
 
 // Update the progress indicator
-if (currentIndex !== 0) {
-    var completedIndex = currentIndex + 1;
-    document.getElementById('progressIndicator').textContent = completedIndex + ' of ' + numberOfItemsStr + ' goods and services completed';
+updateProgressIndicator();
+
+function updateProgressIndicator() {
+    // Count the number of parsedValue[i][1] that are not undefined
+    const completedCount = parsedValue.filter(item => item[1] !== undefined).length;
+
+    // Update the progress indicator textContent
+    if (completedCount > 0) {
+        document.getElementById('progressIndicator').textContent =
+            completedCount + ' of ' + numberOfItemsStr + ' goods and services completed';
+        document.getElementById('progressIndicator').style.display = 'block';
+    } else {
+        document.getElementById('progressIndicator').style.display = 'none';
+    }
 }
 
 function nextQuestion() {
@@ -145,8 +157,7 @@ function nextQuestion() {
     document.getElementById('expenditure').value = parsedValue[currentIndex][1] || '';
 
     document.getElementById('listItemHighlighted').textContent = nextItem;
-    document.getElementById('progressIndicator').textContent =
-        currentIndex + ' of ' + numberOfItemsStr + ' goods and services completed';
+    updateProgressIndicator();
 }
 
 function previousQuestion() {
@@ -164,11 +175,7 @@ function previousQuestion() {
         document.getElementById('expenditure').value = parsedValue[currentIndex][1] || '';
 
         // Update the progress indicator
-        if (currentIndex !== 0) {
-            document.getElementById('progressIndicator').textContent = currentIndex + ' of ' + numberOfItemsStr + ' goods and services completed';
-        } else {
-            document.getElementById('progressIndicator').textContent = '';
-        }
+        updateProgressIndicator();
     } else {
         // Optionally handle going to the last question or display a message
         console.log('Go back to Hub');
@@ -176,7 +183,6 @@ function previousQuestion() {
     }
 }
 
-    
 
 </script>
 
