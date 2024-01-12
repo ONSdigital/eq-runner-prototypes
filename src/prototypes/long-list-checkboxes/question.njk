@@ -109,68 +109,92 @@ layout: long-list-checkboxes/views/_main
 
     
 
-        function nextQuestion() {
-            if (currentIndex < numberOfItems - 1) {
-                currentIndex++;
+function nextQuestion() {
+    if (currentIndex < numberOfItems - 1) {
+        // Get the current item and its value
+        const currentItem = parsedValue[currentIndex][0];
 
-                console.log(currentIndex);
+        // Get the updated value from the "expenditure" input
+        const expenditureValue = document.getElementById('expenditure').value;
 
-                // Get the current item and its value
-                const currentItem = parsedValue[currentIndex][0];
-                console.log(currentItem);
-                const expenditureValue = document.getElementById('expenditure').value;
+        // Update parsedValue to include the expenditure value
+        parsedValue[currentIndex][1] = expenditureValue;
 
-                // Update parsedValue to include the expenditure value
-                parsedValue[currentIndex - 1][1] = expenditureValue;
+        // Update localStorage to store the updated parsedValue
+        localStorage.setItem("ddvalue", JSON.stringify(parsedValue));
 
-                // Update localStorage to store the updated parsedValue
-                localStorage.setItem("ddvalue", JSON.stringify(parsedValue));
+        currentIndex++;
 
-                // Update the displayed item and progress indicator
-                const nextItem = currentItem.includes('&#44;') ? currentItem.replace(/&#44;/g, ',') : currentItem;
-                document.getElementById('listItemHighlighted').textContent = nextItem;
-                document.getElementById('progressIndicator').textContent = currentIndex + ' of ' + numberOfItemsStr + ' goods and services completed';
+        // Update the displayed item and progress indicator
+        const nextItem = parsedValue[currentIndex][0].includes('&#44;')
+            ? parsedValue[currentIndex][0].replace(/&#44;/g, ',')
+            : parsedValue[currentIndex][0];
 
-                document.getElementById('expenditure').value = '';
-            } else {
-
-                currentIndex++;
-
-                console.log(currentIndex);
-
-                const expenditureValue = document.getElementById('expenditure').value;
-
-                // Update parsedValue to include the expenditure value
-                parsedValue[currentIndex - 1][1] = expenditureValue;
-
-                // Update localStorage to store the updated parsedValue
-                localStorage.setItem("ddvalue", JSON.stringify(parsedValue));
-
-                // Optionally handle end of questions or loop back to the first question
-                console.log('End of questions');
-                window.location.href = '/prototypes/long-list-checkboxes/hub-complete.html';
-            }
+        if(parsedValue[currentIndex][1]){
+            document.getElementById('expenditure').value = parsedValue[currentIndex][1];
+        }
+        else{
+            document.getElementById('expenditure').value = '';
         }
 
+        document.getElementById('listItemHighlighted').textContent = nextItem;
+        document.getElementById('progressIndicator').textContent =
+            currentIndex + ' of ' + numberOfItemsStr + ' goods and services completed';
+    } else {
+        // Handle end of questions or loop back to the first question
+        console.log('End of questions');
+        
+        // Get the current item and its value
+        const currentItem = parsedValue[currentIndex][0];
 
-    function previousQuestion() {
-        if (currentIndex > 0) { // Check if not already at the first question
-            currentIndex--;
-            const currentItem = parsedValue[currentIndex][0];
-            const previousItem = currentItem.includes('&#44;') ? currentItem.replace(/&#44;/g, ',') : currentItem;
-            document.getElementById('listItemHighlighted').textContent = previousItem;
-            if(currentIndex != 0 ){
-                document.getElementById('progressIndicator').textContent = currentIndex + ' of ' + numberOfItemsStr + ' goods and services completed';        } else {
-            }
-            if(currentIndex == 0){
-                document.getElementById('progressIndicator').textContent = '';
-            }
-        } else {
-            // Optionally handle going to the last question or display a message
-            console.log('Go back to Hub');
-            window.location.href = '/prototypes/long-list-checkboxes/hub.html'; 
-        }
+        // Get the updated value from the "expenditure" input
+        const expenditureValue = document.getElementById('expenditure').value;
+
+        // Update parsedValue to include the expenditure value
+        parsedValue[currentIndex][1] = expenditureValue;
+
+        // Update localStorage to store the updated parsedValue
+        localStorage.setItem("ddvalue", JSON.stringify(parsedValue));
+        window.location.href = '/prototypes/long-list-checkboxes/hub-complete.html';
     }
+}
+
+
+
+
+function previousQuestion() {
+    if (currentIndex > 0) {
+        currentIndex--;
+
+        // Get the current item and its value
+        const currentItem = parsedValue[currentIndex][0];
+        const previousItem = currentItem.includes('&#44;') ? currentItem.replace(/&#44;/g, ',') : currentItem;
+
+        // Update the displayed item
+        document.getElementById('listItemHighlighted').textContent = previousItem;
+
+        // Check if there is a value in parsedValue[currentIndex][1]
+        const storedExpenditureValue = parsedValue[currentIndex][1];
+        if (storedExpenditureValue !== undefined) {
+            // Set the value of the input with id "expenditure"
+            document.getElementById('expenditure').value = storedExpenditureValue;
+        } else {
+            document.getElementById('expenditure').value = '';
+        }
+
+        // Update the progress indicator
+        if (currentIndex !== 0) {
+            document.getElementById('progressIndicator').textContent = currentIndex + ' of ' + numberOfItemsStr + ' goods and services completed';
+        } else {
+            document.getElementById('progressIndicator').textContent = '';
+        }
+    } else {
+        // Optionally handle going to the last question or display a message
+        console.log('Go back to Hub');
+        window.location.href = '/prototypes/long-list-checkboxes/hub.html';
+    }
+}
+
 
     
 
