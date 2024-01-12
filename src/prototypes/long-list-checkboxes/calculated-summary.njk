@@ -53,17 +53,20 @@ layout: long-list-checkboxes/views/_main
       <div class="ons-summary__items">`);
 
   for (var i = 0; i < parsedValue.length; i++) {
+    const itemName = parsedValue[i][0];
+    const itemValue = parsedValue[i][1];
+
     document.write(`
         <div class="ons-summary__item">
           <dl class="ons-summary__row ons-summary__row--has-values">
             <dt class="ons-summary__item-title">
-              <div class="ons-summary__item--text">${parsedValue[i][0]}</div>
+              <div class="ons-summary__item--text">${itemName}</div>
             </dt>
             <dd class="ons-summary__values">
-              <span class="ons-summary__text">£${parsedValue[i][1]}</span>
+              <span class="ons-summary__text">£${itemValue}</span>
             </dd>
             <dd class="ons-summary__actions">
-              <a href="question" class="ons-summary__button">Change<span class="ons-u-vh">answer for ${parsedValue[i][0]}</span></a>
+              <a href="#" class="ons-summary__button" onclick="changeLink(${i})">Change<span class="ons-u-vh">answer for ${itemName}</span></a>
             </dd>
           </dl>
         </div>`);
@@ -84,12 +87,21 @@ layout: long-list-checkboxes/views/_main
   </div>`);
 </script>
 
-
 {{
     onsButton({
         "text": 'Yes, I confirm this is correct',
         "classes": 'ons-u-mb-m ons-u-mt-l'
     })
 }}
+
+<script>
+  function changeLink(index) {
+    // Store the clicked index in localStorage
+    localStorage.setItem('changeLink', index);
+
+    // Redirect to "question.html"
+    window.location.href = 'question.html';
+  }
+</script>
 
 {% endblock %}
