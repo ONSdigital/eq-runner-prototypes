@@ -34,7 +34,7 @@ layout: long-list-checkboxes/views/_main
 {% endblock %}
 
 {% block main %}
-    <h1 class="ons-u-fs-xl">You have told us the expenditure of 8 categories of goods or services. Do you need to add anymore?</h1>
+    <h1 class="ons-u-fs-xl">You have told us the expenditure of <span id="ItemsCount"></span> categories of goods or services. Do you need to add anymore?</h1>
 
 
 <script>
@@ -79,5 +79,20 @@ layout: long-list-checkboxes/views/_main
         "text": 'Continue'
     })
 }}
+
+{% endblock %}
+
+{% block bodyEnd %}
+<script>
+
+
+// Find the number of items
+const numberOfItems = parsedValue.length;
+const numberOfItemsStr = numberOfItems.toString();
+
+document.getElementById('ItemsCount').textContent = numberOfItemsStr;
+
+</script>
+
 
 {% endblock %}
