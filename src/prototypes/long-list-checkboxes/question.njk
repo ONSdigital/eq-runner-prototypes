@@ -80,6 +80,18 @@ const parsedValue = JSON.parse(storedValue);
 const numberOfItems = parsedValue.length;
 const numberOfItemsStr = numberOfItems.toString();
 
+// If the referring URL includes "calculated-summary.html", set currentIndex and update input value
+if (previousURL.includes("calculated-summary.html")) {
+    const changeLinkIndex = localStorage.getItem('changeLink');
+    currentIndex = parseInt(changeLinkIndex, 10);
+
+    // Update the value of input with id='expenditure'
+    document.getElementById('expenditure').value = parsedValue[currentIndex][1];
+
+    // Update the textContent of id="listItemHighlighted"
+    document.getElementById('listItemHighlighted').textContent = parsedValue[currentIndex][0];
+}
+
 // If the referring URL includes "hub-complete.html", set currentIndex to the last item
 if (previousURL.includes("hub-complete.html")) {
     currentIndex = numberOfItems - 1;
@@ -139,6 +151,13 @@ function nextQuestion() {
     // Update localStorage to store the updated parsedValue
     localStorage.setItem("ddvalue", JSON.stringify(parsedValue));
 
+    // If coming from calculated-summary.html, update localStorage and redirect
+    if (previousURL.includes("calculated-summary.html")) {
+        localStorage.setItem("ddvalue", JSON.stringify(parsedValue));
+        window.location.href = '/prototypes/long-list-checkboxes/calculated-summary.html';
+        return;
+    }
+
     // Move to the next index
     currentIndex++;
 
@@ -162,6 +181,13 @@ function nextQuestion() {
 
 function previousQuestion() {
     if (currentIndex > 0) {
+
+        // If coming from calculated-summary.html, update localStorage and redirect
+        if (previousURL.includes("calculated-summary.html")) {
+            window.location.href = '/prototypes/long-list-checkboxes/calculated-summary.html';
+            return;
+        }
+
         currentIndex--;
 
         // Get the current item and its value
