@@ -70,106 +70,74 @@ layout: long-list-checkboxes/views/_main
 {% block bodyEnd %}
 
 <script>
-    const previousURL = document.referrer;
-    var currentIndex = 0;
-    
-    // Retrieve the stored string from localStorage
-    const storedValue = localStorage.getItem('ddvalue');
-    
-    // Parse the string into a JavaScript object
-    const parsedValue = JSON.parse(storedValue);
+const previousURL = document.referrer;
+var currentIndex = 0;
+const storedValue = localStorage.getItem('ddvalue');
+const parsedValue = JSON.parse(storedValue);
 
-    // Define the number of items
-    const numberOfItems = parsedValue.length;
-    const numberOfItemsStr = numberOfItems.toString();
+// Find the number of items
+const numberOfItems = parsedValue.length;
+const numberOfItemsStr = numberOfItems.toString();
 
-    // Find the first index with undefined parsedValue[i][1]
+// If the referring URL includes "hub.html", find the first index with undefined parsedValue[i][1]
+if (previousURL.includes("hub.html")) {
     while (currentIndex < numberOfItems - 1 && parsedValue[currentIndex][1] !== undefined) {
         currentIndex++;
     }
+} else if (previousURL.includes("hub-complete.html")) {
+    // If coming from hub-complete.html, set the currentIndex to the last item
+    currentIndex = numberOfItems - 1;
+    document.getElementById('expenditure').value = parsedValue[currentIndex][1] 
+}
 
-    // Access the first value from the nested arrays
-    const firstItem = currentIndex < numberOfItems ? parsedValue[currentIndex][0].includes('&#44;')
-        ? parsedValue[currentIndex][0].replace(/&#44;/g, ',') : parsedValue[currentIndex][0] : '';
+// Access the first value from the nested arrays
+const firstItem = currentIndex < numberOfItems ? parsedValue[currentIndex][0].includes('&#44;')
+    ? parsedValue[currentIndex][0].replace(/&#44;/g, ',') : parsedValue[currentIndex][0] : '';
 
-    // Check if the referring URL includes "hub-complete"
-    if (previousURL.includes("hub-complete")) {
-        currentIndex = numberOfItems - 1;
+// Update the question to include the list item
+document.getElementById('listItemHighlighted').textContent = firstItem;
 
-        // Set the value of the input with id "expenditure"
-        const lastExpenditureValue = parsedValue[currentIndex][1];
-        if (lastExpenditureValue !== undefined) {
-            document.getElementById('expenditure').value = lastExpenditureValue;
-            document.getElementById('listItemHighlighted').textContent = parsedValue[currentIndex][0];
-        }
-    } else {
-        // Update the question to include the list item
-        document.getElementById('listItemHighlighted').textContent = firstItem;
-    }
-
-    // Update the progress indicator
-    if (currentIndex !== 0) {
-        var completedIndex = currentIndex + 1;
-        document.getElementById('progressIndicator').textContent = completedIndex + ' of ' + numberOfItemsStr + ' goods and services completed';
-    }
-
-    
+// Update the progress indicator
+if (currentIndex !== 0) {
+    var completedIndex = currentIndex + 1;
+    document.getElementById('progressIndicator').textContent = completedIndex + ' of ' + numberOfItemsStr + ' goods and services completed';
+}
 
 function nextQuestion() {
-    // Find the next index with undefined parsedValue[i][1]
-    while (currentIndex < numberOfItems - 1 && parsedValue[currentIndex][1] !== undefined) {
-        currentIndex++;
-    }
+    // Get the current item and its value
+    const currentItem = parsedValue[currentIndex][0];
 
-    if (currentIndex < numberOfItems - 1) {
-        // Get the current item and its value
-        const currentItem = parsedValue[currentIndex][0];
+    // Get the updated value from the "expenditure" input
+    const expenditureValue = document.getElementById('expenditure').value;
 
-        // Get the updated value from the "expenditure" input
-        const expenditureValue = document.getElementById('expenditure').value;
+    // Update parsedValue to include the expenditure value
+    parsedValue[currentIndex][1] = expenditureValue;
 
-        // Update parsedValue to include the expenditure value
-        parsedValue[currentIndex][1] = expenditureValue;
+    // Update localStorage to store the updated parsedValue
+    localStorage.setItem("ddvalue", JSON.stringify(parsedValue));
 
-        // Update localStorage to store the updated parsedValue
-        localStorage.setItem("ddvalue", JSON.stringify(parsedValue));
+    // Move to the next index
+    currentIndex++;
 
-        // Move to the next index
-        currentIndex++;
-
-        // Update the displayed item and progress indicator
-        const nextItem = parsedValue[currentIndex][0].includes('&#44;')
-            ? parsedValue[currentIndex][0].replace(/&#44;/g, ',')
-            : parsedValue[currentIndex][0];
-
-        // Set the value of the input with id "expenditure" if parsedValue[i][1] exists
-        if (parsedValue[currentIndex][1]) {
-            document.getElementById('expenditure').value = parsedValue[currentIndex][1];
-        } else {
-            document.getElementById('expenditure').value = '';
-        }
-
-        document.getElementById('listItemHighlighted').textContent = nextItem;
-        document.getElementById('progressIndicator').textContent =
-            currentIndex + ' of ' + numberOfItemsStr + ' goods and services completed';
-    } else {
-        // Handle end of questions or loop back to the first question
-        console.log('End of questions');
-
-        // Get the current item and its value
-        const currentItem = parsedValue[currentIndex][0];
-
-        // Get the updated value from the "expenditure" input
-        const expenditureValue = document.getElementById('expenditure').value;
-
-        // Update parsedValue to include the expenditure value
-        parsedValue[currentIndex][1] = expenditureValue;
-
-        // Update localStorage to store the updated parsedValue
-        localStorage.setItem("ddvalue", JSON.stringify(parsedValue));
+    // If we reached the last item, go to hub-complete.html
+    if (currentIndex === numberOfItems) {
         window.location.href = '/prototypes/long-list-checkboxes/hub-complete.html';
+        return;
     }
+
+    // Update the displayed item and progress indicator
+    const nextItem = parsedValue[currentIndex][0].includes('&#44;')
+        ? parsedValue[currentIndex][0].replace(/&#44;/g, ',')
+        : parsedValue[currentIndex][0];
+
+    // Set the value of the input with id "expenditure" to parsedValue[i][1] or ''
+    document.getElementById('expenditure').value = parsedValue[currentIndex][1] || '';
+
+    document.getElementById('listItemHighlighted').textContent = nextItem;
+    document.getElementById('progressIndicator').textContent =
+        currentIndex + ' of ' + numberOfItemsStr + ' goods and services completed';
 }
+
 
 
 
