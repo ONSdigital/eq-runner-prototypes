@@ -345,35 +345,82 @@ layout: long-list-checkboxes/views/_main
 
 {% block scripts %}
 <script>
+    // Function to merge two arrays of checkbox selections
+    function mergeCheckboxSelections(existingSelections, newSelections) {
+        var mergedSelections = {};
+
+        // Add existing selections to the merged object
+        for (var i = 0; i < existingSelections.length; i++) {
+            mergedSelections[existingSelections[i][0]] = existingSelections[i][1];
+        }
+
+        // Update or add new selections to the merged object
+        for (var i = 0; i < newSelections.length; i++) {
+            var checkboxValue = newSelections[i][0];
+            var expenditureValue = existingSelections.find(x => x[0] === checkboxValue)?.[1] || null;
+            mergedSelections[checkboxValue] = expenditureValue;
+        }
+
+        // Remove unchecked checkboxes from the merged object only if the checkbox is explicitly unchecked
+        for (var i = 0; i < existingSelections.length; i++) {
+            var checkboxValue = existingSelections[i][0];
+            var isChecked = newSelections.some(x => x[0] === checkboxValue && x[1] !== undefined);
+            if (!isChecked) {
+                delete mergedSelections[checkboxValue];
+            }
+        }
+
+        // Convert the merged object back to an array
+        var result = [];
+        for (var key in mergedSelections) {
+            if (mergedSelections.hasOwnProperty(key)) {
+                result.push([key, mergedSelections[key]]);
+            }
+        }
+
+        return result;
+    }
+
+    // Load existing checkbox selections from local storage
     var storedValue = localStorage.getItem("ddvalue");
+    var existingSelections = [];
 
     if (storedValue) {
-        var parsedValue = JSON.parse(storedValue);
+        existingSelections = JSON.parse(storedValue);
 
-        for (var i = 0; i < parsedValue.length; i++) {
-        var checkbox = document.querySelector('input[name="inputCheck"][value="' + parsedValue[i][0] + '"]');
-
-        if (checkbox) {
-            checkbox.checked = true;
-        }
+        // Update checkboxes based on existing selections
+        for (var i = 0; i < existingSelections.length; i++) {
+            var checkbox = document.querySelector('input[name="inputCheck"][value="' + existingSelections[i][0] + '"]');
+            if (checkbox) {
+                checkbox.checked = true;
+            }
         }
     }
 
     function printChecked() {
-    console.log('testing');
-    var items = document.getElementsByName("inputCheck");
-    var arr = [];
+        console.log('testing');
+        var items = document.getElementsByName("inputCheck");
+        var newSelections = [];
 
-    for (var i = 0; i < items.length; i++) {
-        if (items[i].type == "checkbox" && items[i].checked == true) {
-        arr.push([items[i].value]);  // Wrap the value in an array
+        // Gather newly checked checkboxes
+        for (var i = 0; i < items.length; i++) {
+            if (items[i].type == "checkbox" && items[i].checked == true) {
+                var checkboxValue = items[i].value;
+                var expenditureValue = existingSelections.find(x => x[0] === checkboxValue)?.[1] || null;
+                newSelections.push([checkboxValue, expenditureValue]);
+            }
         }
-    }
 
-    localStorage.setItem("ddvalue", JSON.stringify(arr));
-    document.forms["myForm"].action = "/prototypes/long-list-checkboxes/hub.html";
+        // Merge existing and new selections
+        var mergedSelections = mergeCheckboxSelections(existingSelections, newSelections);
+
+        // Update local storage with merged selections
+        localStorage.setItem("ddvalue", JSON.stringify(mergedSelections));
+
+        document.forms["myForm"].action = "/prototypes/long-list-checkboxes/hub.html";
     }
 </script>
+
 
 
 {% endblock %}
