@@ -101,7 +101,7 @@ if (previousURL.includes("hub-complete.html")) {
 else if (previousURL.includes("hub.html")) {
     let found = false;
     for (let i = 0; i < numberOfItems; i++) {
-        if (parsedValue[i][1] === undefined) {
+        if (parsedValue[i][1] === null) {
             currentIndex = i;
             found = true;
             break;
@@ -126,7 +126,7 @@ updateProgressIndicator();
 
 function updateProgressIndicator() {
     // Count the number of parsedValue[i][1] that are not undefined
-    const completedCount = parsedValue.filter(item => item[1] !== undefined).length;
+    const completedCount = parsedValue.filter(item => item[1] !== null).length;
 
     // Update the progress indicator textContent
     if (completedCount > 0) {

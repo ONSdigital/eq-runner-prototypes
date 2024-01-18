@@ -1,0 +1,129 @@
+---
+group: Prototypes
+title: Long List (checkboxes)
+layout: long-list-checkboxes/views/_main
+---
+
+{% set prevPage = "index" %}
+{% set form = {
+    "method": "GET",
+    "attributes": {
+        "action": "/prototypes/long-list-checkboxes/hub.html"
+    }
+} %}
+
+{% block preMain %}
+
+{{
+    onsBreadcrumbs({
+        "ariaLabel": 'Previous',
+        "itemsList": [
+            {
+                "url": '/',
+                "id": "backlink",
+                "text": 'Previous',
+                "attributes": {
+                    "data-attribute": "Example attribute"
+                }
+            }
+        ]
+    })
+}}
+
+{% endblock %}
+
+{% block main %}
+
+
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/checkboxes/_macro.njk" import onsCheckboxes %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+
+{% call onsQuestion({
+    "title": "Which categories of goods or services have you purchased during the last month?",
+    "legendIsQuestionTitle": true,
+    "classes": "ons-u-mt-no"
+}) %}
+    {{
+        onsCheckboxes({
+            "checkboxesLabel": "Select all that apply",
+            "dontWrap": true,
+            "name": "services",
+            "checkboxes": [
+                {
+                    "id": "1",
+                    "name":"inputCheck",
+                    "label": {
+                        "text": "Home furnishings and decor"
+                    },
+                    "value": "Home furnishings and decor"
+                },
+                {
+                    "id": "2",
+                    "name":"inputCheck",
+                    "label": {
+                        "text": "Outdoor living and leisure"
+                    },
+                    "value": "Outdoor living and leisure"
+                },
+                {
+                    "id": "3",
+                    "name":"inputCheck",
+                    "label": {
+                        "text": "Home electronics and entertainment"
+                    },
+                    "value": "Home electronics and entertainment"
+                },
+                {
+                    "id": "4",
+                    "name":"inputCheck",
+                    "label": {
+                        "text": "Apparel, accessories, and safety gear"
+                    },
+                    "value": "Apparel, accessories, and safety gear"
+                },
+                {
+                    "id": "5",
+                    "name":"inputCheck",
+                    "label": {
+                        "text": "Real estate and housing costs"
+                    },
+                    "value": "Real estate and housing costs"
+                },
+                {
+                    "id": "6",
+                    "name":"inputCheck",
+                    "label": {
+                        "text": "DIY tools and equipment"
+                    },
+                    "value": "DIY tools and equipment"
+                },
+                {
+                    "id": "7",
+                    "name":"inputCheck",
+                    "label": {
+                        "text": "Electric mobility"
+                    },
+                    "value": "Electric mobility"
+                }
+            ]
+        })
+    }}
+{% endcall %}
+
+<button type="submit" class="ons-btn" onclick="printChecked()"/>
+  <span class="ons-btn__inner"><span class="ons-btn__text">Save and continue</span>
+  </span>
+</button>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+</script>
+
+
+
+{% endblock %}
