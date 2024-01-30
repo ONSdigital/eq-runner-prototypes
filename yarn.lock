@@ -345,7 +345,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@ons/design-system@^67.0.5":
+"@ons/design-system@^67.0.6":
   version "67.0.6"
   resolved "https://registry.yarnpkg.com/@ons/design-system/-/design-system-67.0.6.tgz#12f1130326acb342bfd8dc122fa06d9f525852f8"
   integrity sha512-VU8VAt3bqE2FqnGzspdeA7JcbaaDgk7/dKmUFWuNCJCz0MfUx0fa8QKaZwSuuPwcumbzgt0SnS4BIkTIkWVJkQ==
@@ -5354,15 +5354,6 @@ readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable
     safe-buffer "~5.1.1"
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
-
-readable-stream@^3.6.2:
-  version "3.6.2"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.6.2.tgz#56a9b36ea965c00c5a93ef31eb111a0f11056967"
-  integrity sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==
-  dependencies:
-    inherits "^2.0.3"
-    string_decoder "^1.1.1"
-    util-deprecate "^1.0.1"
 
 readdirp@^2.2.1:
   version "2.2.1"
