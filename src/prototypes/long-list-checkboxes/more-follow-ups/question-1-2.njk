@@ -1,0 +1,138 @@
+---
+group: Prototypes
+title: Long List (checkboxes)
+layout: long-list-checkboxes/views/_main
+---
+
+{% set prevPage = "hub" %}
+
+{% block preMain %}
+
+{{
+    onsBreadcrumbs({
+        "ariaLabel": 'Previous',
+        "itemsList": [
+            {
+                "url": "/prototypes/long-list-checkboxes/more-follow-ups/question-1-1.html",
+                "id": "backlink",
+                "text": 'Previous',
+                "attributes": {
+                    "data-attribute": "Example attribute",
+                    "onclick": "previousQuestion(); this.blur();"
+                }
+            }
+        ]
+    })
+}}
+
+{% endblock %}
+
+{% block main %}
+
+<span class="ons-u-d ons-u-fs-m" style="color: #707071;">Question 2 of 3</span>
+<span class="ons-u-db ons-u-mb-s ons-u-fs-m ons-u-fw-n"  style="color: #707071;" id="item"></span>
+
+<h1 class="ons-u-fs-xl">
+    Was this expenditure more or less than you expected to pay for <strong id="listItemHighlighted" class="ons-highlight"></strong>?
+</h1>
+
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{{
+        onsRadios({
+            "name": "property-type",
+            "id": "expectation",
+            "dontWrap": true,
+            "radios": [
+                {
+                    "id": "more",
+                    "label": {
+                        "text": "More than I expected to pay"
+                    },
+                    "value": "more"
+                },
+                {
+                    "id": "less",
+                    "label": {
+                        "text": "Less than I expected to pay"
+                    },
+                    "value": "less"
+                }
+            ]
+        })
+    }}
+
+
+
+{{
+    onsButton({
+        "text": 'Save and continue',
+        "classes": 'ons-u-mb-l ons-u-mt-l',
+        "attributes": {
+                "onclick": "nextQuestion();"
+            }
+    })
+}}
+
+<p id="progressIndicator"></p>
+
+
+{% endblock %}
+
+{% block bodyEnd %}
+
+<script>
+
+var results = localStorage.getItem("ddvalue");
+// Parse the JSON if there's data
+console.log('there\'s results');
+results = JSON.parse(results);
+// Replace commas in each item of the array
+for (var i = 0; i < results.length; i++) {
+    results[i] = results[i].replace(/&#44;/g, ',');
+}
+document.getElementById('listItemHighlighted').textContent = results[0];
+document.getElementById('item').textContent = results[0];
+
+if (localStorage.getItem('q12') !== undefined && localStorage.getItem('q12') != null){
+    var q12Entered = localStorage.getItem('q12');
+    document.getElementById(q12Entered).checked = true;
+}
+
+function nextQuestion(){
+
+    // Get all radio buttons with the name "property-type"
+    var radioButtons = document.getElementsByName("property-type");
+
+    // Loop through the radio buttons to find the selected one
+    for (var i = 0; i < radioButtons.length; i++) {
+        if (radioButtons[i].checked) {
+            // The value of the selected radio button
+            var selectedValue = radioButtons[i].value;
+
+            // You can now use the selectedValue as needed
+            console.log("Selected Value:", selectedValue);
+
+            // For example, you can compare it to specific values
+            if (selectedValue === "more") {
+                console.log("More than expected");
+                localStorage.setItem('q12', 'more');
+            } else if (selectedValue === "less") {
+                console.log("Less than expected");
+                localStorage.setItem('q12', 'less');
+
+            }
+
+            // Break the loop since you found the selected radio button
+            break;
+        }
+    }
+    window.location.href = '/prototypes/long-list-checkboxes/more-follow-ups/question-1-3.html';
+
+
+}
+
+
+</script>
+
+{% endblock %}

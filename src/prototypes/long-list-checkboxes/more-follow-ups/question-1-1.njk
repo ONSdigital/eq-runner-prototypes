@@ -1,0 +1,105 @@
+---
+group: Prototypes
+title: Long List (checkboxes)
+layout: long-list-checkboxes/views/_main
+---
+
+{% set prevPage = "hub" %}
+
+{% block preMain %}
+
+{{
+    onsBreadcrumbs({
+        "ariaLabel": 'Previous',
+        "itemsList": [
+            {
+                "url": "/prototypes/long-list-checkboxes/more-follow-ups/hub.html",
+                "id": "backlink",
+                "text": 'Previous',
+                "attributes": {
+                    "data-attribute": "Example attribute",
+                    "onclick": "previousQuestion(); this.blur();"
+                }
+            }
+        ]
+    })
+}}
+
+{% endblock %}
+
+{% block main %}
+
+
+<span class="ons-u-d ons-u-fs-m" style="color: #707071;">Question 1 of 3</span>
+<span class="ons-u-db ons-u-mb-s ons-u-fs-m ons-u-fw-n"  style="color: #707071;" id="item"></span>
+
+<h1 class="ons-u-fs-xl">
+    What was your expenditure on <strong id="listItemHighlighted" class="ons-highlight"></strong>?
+</h1>
+
+{% from "components/input/_macro.njk" import onsInput %}
+{{
+    onsInput({
+        "id": "expenditure",
+        "type": "number",
+        "width": "8",
+        "autocomplete": "off",
+        "label": {
+            "text": "To the nearest pound"
+        },
+        "prefix": {
+            "title": "British pounds (GBP)",
+            "text": "£",
+            "id": "annual-salary-gpb-prefix"
+        }
+    })
+}}
+
+
+
+{{
+    onsButton({
+        "text": 'Save and continue',
+        "classes": 'ons-u-mb-l ons-u-mt-l',
+        "attributes": {
+                "onclick": "nextQuestion();"
+            }
+    })
+}}
+
+<p id="progressIndicator"></p>
+
+
+{% endblock %}
+
+{% block bodyEnd %}
+
+<script>
+
+var results = localStorage.getItem("ddvalue");
+// Parse the JSON if there's data
+console.log('there\'s results');
+results = JSON.parse(results);
+// Replace commas in each item of the array
+for (var i = 0; i < results.length; i++) {
+    results[i] = results[i].replace(/&#44;/g, ',');
+}
+document.getElementById('listItemHighlighted').textContent = results[0];
+document.getElementById('item').textContent = results[0];
+
+if (localStorage.getItem('q11') != undefined && localStorage.getItem('q11') != null){
+    var q11Entered = localStorage.getItem('q11')
+    document.getElementById('expenditure').value = q11Entered
+}
+
+function nextQuestion(){
+    var q11 = document.getElementById('expenditure').value;
+    localStorage.setItem('q11', q11);
+    window.location.href = '/prototypes/long-list-checkboxes/more-follow-ups/question-1-2.html';
+
+}
+
+
+</script>
+
+{% endblock %}
