@@ -33,6 +33,8 @@ layout: long-list-checkboxes/views/_main
 {% endblock %}
 
 {% block main %}
+
+<form action="/prototypes/long-list-checkboxes/question.html">
     <h1 class="ons-u-fs-xl">Goods and services you have purchased in the last month</h1>
 
     {{
@@ -62,7 +64,7 @@ if (results) {
                         <dl class="ons-summary__row">
                             <dt class="ons-summary__item-title">
                                 <span class="ons-summary__item-title-icon ons-summary__item-title-icon--check">
-                                    <svg class="ons-svg-icon" viewBox="0 0 13 10" xmlns="http://www.w3.org/2000/svg" focusable="false" fill="currentColor">
+                                    <svg class="ons-svg-icon" viewBox="0 0 13 10" xmlns="http://www.w3.org/2000/svg" focusable="false" fill="currentColor" style="width: 18px; color: #0f8243">
                                         <path d="M14.35,3.9l-.71-.71a.5.5,0,0,0-.71,0h0L5.79,10.34,3.07,7.61a.51.51,0,0,0-.71,0l-.71.71a.51.51,0,0,0,0,.71l3.78,3.78a.5.5,0,0,0,.71,0h0L14.35,4.6A.5.5,0,0,0,14.35,3.9Z" transform="translate(-1.51 -3.04)"></path>
                                     </svg>
                                 </span>
@@ -100,5 +102,7 @@ if (results) {
         "text": 'Continue'
     })
 }}
+
+</form>
 
 {% endblock %}

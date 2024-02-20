@@ -1,0 +1,101 @@
+---
+group: Prototypes
+title: Long List (checkboxes)
+layout: long-list-checkboxes/views/_main
+---
+
+{% set prevPage = "index" %}
+{% set form = {
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.rootPath + "/question.html"
+    }
+} %}
+
+{% block preMain %}
+
+{{
+    onsBreadcrumbs({
+        "ariaLabel": 'Previous',
+        "itemsList": [
+            {
+                "url": '/prototypes/long-list-checkboxes/more-follow-ups/question-4-3.html',
+                "id": "backlink",
+                "text": 'Previous',
+                "attributes": {
+                    "data-attribute": "Example attribute"
+                }
+            }
+        ]
+    })
+}}
+
+{% endblock %}
+
+{% block main %}
+
+<form action="/prototypes/long-list-checkboxes/more-follow-ups/question-1-1.html">
+    <h1 class="ons-u-fs-xl">You have provided information for 4 categories of goods or services.</h1>
+
+<script>
+var results = localStorage.getItem("ddvalue");
+if (results) {
+    // Parse the JSON if there's data
+    console.log('theres results');
+    results = JSON.parse(results);
+    console.log(results);
+
+    document.write(`<div class="ons-summary ons-u-mb-l">
+        <div class="ons-summary__group">
+            <div class="ons-summary__items">`);
+
+    for (var i = 0; i < results.length; i++) {
+        // Check if the current result is an array
+        if (results[i]) {
+            console.log('new result');
+            document.write(`
+                <div class="ons-summary__item">
+                    <dl class="ons-summary__row">
+                        <dt class="ons-summary__item-title">
+                          <span class="ons-summary__item-title-icon ons-summary__item-title-icon--check">
+                            <svg class="ons-svg-icon" viewBox="0 0 13 10" xmlns="http://www.w3.org/2000/svg" focusable="false" fill="currentColor"  style="width: 18px; color: #0f8243">
+                              <path d="M14.35,3.9l-.71-.71a.5.5,0,0,0-.71,0h0L5.79,10.34,3.07,7.61a.51.51,0,0,0-.71,0l-.71.71a.51.51,0,0,0,0,.71l3.78,3.78a.5.5,0,0,0,.71,0h0L14.35,4.6A.5.5,0,0,0,14.35,3.9Z" transform="translate(-1.51 -3.04)"></path>
+                            </svg>
+                          </span>
+                        <div class="ons-summary__item--text ons-summary__item-title--text">
+                        ${results[i]}
+                        </div>
+                        </dt>
+                    </dl>
+                </div>`);
+        }
+    }
+
+    document.write(`</div>
+        <div class="ons-summary__link ons-u-pt-s ons-u-bt ons-u-mb-xl">
+            <a data-qa="add-item-link" href="#" id="Modify">Modify this list</a>
+        </div>
+    </div>
+</div>`);
+}
+
+</script>
+
+
+
+
+
+{{
+    onsButton({
+        "text": 'Continue'
+    })
+}}
+
+</form>
+
+{% endblock %}
+
+{% block scripts %}
+
+
+{% endblock %}
