@@ -1,0 +1,537 @@
+---
+group: Prototypes
+title: BERD Preview
+layout: abs/views/_index
+---
+
+
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/accordion/_macro.njk" import onsAccordion %}
+
+{% block main %}
+<div class="ons-col-8@m">
+<h2>Preview of the questions you may be asked in this survey</h2>
+<div class="ons-panel ons-panel--info ons-panel--no-title">
+    <span class="ons-u-vh">Important information: </span>
+    <div class="ons-panel__body">
+        <p>To answer these questions you need to <a href="../start">start survey</a></p>
+    </div>
+</div>
+
+        <br>
+        <p>You may not have to answer all of these questions. The questions you see will depend on the answers you provide.</p>
+
+<br>
+
+
+
+<!--NEW BUILD-->
+<div id="accordion-example" class="ons-accordion">
+  <button type="button"
+    class="ons-btn ons-accordion__toggle-all ons-u-mb-s ons-btn--secondary ons-btn--small"
+    data-close-all="Hide all" data-group="accordion-example">
+    <span class="ons-btn__inner ons-accordion__toggle-all-inner"><span class="ons-btn__text">Show all</span>
+    </span>
+  </button>
+  <div id="accordion-example-1" class="ons-details ons-js-details ons-details--accordion"
+    data-group="accordion-example">
+    <div class="ons-details__heading ons-js-details-heading" role="button">
+      <h2 class="ons-details__title">Reporting period</h2>
+      <span class="ons-details__icon">
+        <svg class="ons-icon" viewBox="0 0 8 13" xmlns="http://www.w3.org/2000/svg" focusable="false"
+          fill="currentColor">
+          <path
+            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+            transform="translate(-5.02 -1.59)" />
+        </svg></span>
+    </div>
+    <div id="accordion-example-1-content" class="ons-details__content ons-js-details-content">
+      <div class="ons-summary__group">
+                    <table class="ons-summary__items">
+                        <thead class="ons-u-vh">
+                        <tr>
+                            <th>Question</th>
+                        </tr>
+                        </thead>
+
+
+                        <tbody class="ons-summary__item">
+                        <tr class="ons-summary__row ons-summary__row--has-values">
+                            <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                                <div class="ons-summary__item--text ons-u-fs-m">Are you able to report figures for the period 1 May 2020 to
+                                    31 May 2021?
+                                </div>
+                                <br>
+                                <p>Your return should cover the calendar year 2021.</p>
+                                <div class="ons-panel ons-panel--info ons-panel--no-title">
+                                    <div class="ons-panel__body">
+                                    <p><strong>Traded for part of the year?</strong></p>
+
+                                    <p>Please select 'No, I need to report for a different period'</p>
+
+                                    <p><strong>Cannot report for this calendar year?</strong></p>
+
+                                    <p>Please select 'No, I need to report for a different period'</p>
+                                    </div>
+                                </div>
+                                <br>
+                                <p>You can answer with the following options:</p>
+                                <ul>
+                                    <li>Yes, I can report for this period</li>
+                                    <li>No, I need to report for a different period</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tbody class="ons-summary__item">
+
+                        <tr class="ons-summary__row ons-summary__row--has-values">
+                            <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                                <div class="ons-summary__item--text ons-u-fs-m">For the reporting period, did your business undertake any in-house R&D?</div>
+                                <br>
+                                <div class="ons-text-indent">
+                                    <p><strong>What we mean by 'in-house R&D'</strong></p>
+                                    <p>This refers to the total cost of capital and non-capital expenditure carried out by your business in the UK, regardless of the source of funds or their treatment within your business's accounts.</p>
+                                  </div>
+                                <div class="ons-panel ons-panel--info ons-panel--no-title">
+                                    <div class="ons-panel__body">
+                                    <p><strong>Include</strong></p>
+
+                                    <ul>
+                                        <li>all gross expenditure, for example, salaries, overtime payments, bonuses, redundancies, commissions, holiday pay, National Insurance and pension scheme contributions</li>
+                                        <li>all gross capital expenditure on fixed assets used in R&D</li>
+                                    
+                                    </ul>
+
+                                    <p>You can answer with the following options:</p>
+                                
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
+  </div>
+  <div id="accordion-example-2" class="ons-details ons-js-details ons-details--accordion"
+    data-group="accordion-example">
+    <div class="ons-details__heading ons-js-details-heading" role="button">
+      <h2 class="ons-details__title">In-house R&D</h2>
+      <span class="ons-details__icon">
+        <svg class="ons-icon" viewBox="0 0 8 13" xmlns="http://www.w3.org/2000/svg" focusable="false"
+          fill="currentColor">
+          <path
+            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+            transform="translate(-5.02 -1.59)" />
+        </svg></span>
+    </div>
+    <div id="accordion-example-2-content" class="ons-details__content ons-js-details-content">
+      <div class="ons-summary__group">
+                    <table class="ons-summary__items">
+                        <thead class="ons-u-vh">
+                        <tr>
+                            <th>Question</th>
+                            <th>Guidance</th>
+                        </tr>
+                        </thead>
+
+
+                        <tbody class="ons-summary__item">
+                        <tr class="ons-summary__row ons-summary__row--has-values">
+                            <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                                <div class="ons-summary__item--text ons-u-fs-m">For the period 1 May 2016 to 31 May 2016, what was <strong class="ons-highlight">ESSENTIAL ENTERPRISE LTD.'s</strong> total in-house expenditure on R&D? your business's total turnover?</div>
+                                <br>
+                                
+                                <div class="ons-panel ons-panel--info ons-panel--no-title">
+                                    <div class="ons-panel__body">
+                                        <p><strong>Include:</strong></p>
+                                        <ul class="u-fs-r">
+                                            <li>the total cost of R&D carried out within your business in the UK, regardless of the source of funding</li>
+                                            <li>R&D expenditure figures regardless of whether tax credits have been claimed</li>
+                                        </ul>
+                                        
+                                    </div>
+                                </div>
+                                <br>
+                                <p><strong>Civil Research and Development</strong></p>
+                                <p>Enter a value to the nearest £thousand (e.g. 56,000). Do not enter ‘56’ for £56,000.</p>
+<br>
+                                <p><strong>Defence Research and Development</strong></p>
+                                <p>Enter a value to the nearest £thousand (e.g. 56,000). Do not enter ‘56’ for £56,000.</p>
+                                <br>
+                                <div class="ons-text-indent">
+                                    <p><strong>What we mean by 'defence R&D'</strong></p>
+                                    <p>This refers to all R&D carried out primarily for defence or military reasons, even if civil use is made of it at a later date.</p>
+                                  </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                        
+                        <tbody class="ons-summary__item">
+                        <tr class="ons-summary__row ons-summary__row--has-values">
+                            <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                                <div class="ons-summary__item--text ons-u-fs-m">In relation to the total expenditure on in-house R&D, has your business submitted, or does it intend to submit, a claim for R&D tax credits?</div>
+                                <br>
+                                
+                                <br>
+                                <p>You can answer with the following options:</p>
+                                <ul>
+                                    <li>Yes</li>
+                                    <li>No</li>
+                                </ul>
+
+                            </td>
+                        </tr>
+                        </tbody>
+                        
+                    </table>
+
+                </div>
+    </div>
+  </div>
+  <div id="accordion-example-3" class="ons-details ons-js-details ons-details--accordion"
+    data-group="accordion-example">
+    <div class="ons-details__heading ons-js-details-heading" role="button">
+      <h2 class="ons-details__title">Purchase of R&D conducted outside the business</h2>
+      <span class="ons-details__icon">
+        <svg class="ons-icon" viewBox="0 0 8 13" xmlns="http://www.w3.org/2000/svg" focusable="false"
+          fill="currentColor">
+          <path
+            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+            transform="translate(-5.02 -1.59)" />
+        </svg></span>
+    </div>
+    <div id="accordion-example-3-content" class="ons-details__content ons-js-details-content">
+      <div class="ons-summary__group">
+                    <table class="ons-summary__items">
+                        <thead class="ons-u-vh">
+                        <tr>
+                            <th>Question</th>
+                            <th>Guidance</th>
+                        </tr>
+                        </thead>
+
+
+                        <tbody class="ons-summary__item">
+
+                        <tr
+                                class="ons-summary__row ons-summary__row--has-values">
+                                <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                                <div class="ons-summary__item--text ons-u-fs-m">For the period 1 May 2016 to 31 May 2016, did ESSENTIAL ENTERPRISE LTD. purchase any R&D conducted outside the business?
+                                </div>
+                                <br>
+                                
+                                <br>
+                                <p>You can answer with the following options:</p>
+                                <ul>
+                                    <li>Yes</li>
+                                    <li>No</li>
+                                </ul>
+
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tbody class="ons-summary__item">
+
+                        <tr
+                                class="ons-summary__row ons-summary__row--has-values">
+                                <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                                <div class="ons-summary__item--text ons-u-fs-m">For the reporting period, how much R&D conducted outside the business did you purchase?</div>
+                                <br>
+                                <p><strong>Civil Research and Development</strong></p>
+                                <p>Enter a value to the nearest £thousand (e.g. 56,000). Do not enter ‘56’ for £56,000.</p>
+<br>
+                                <p><strong>Defence Research and Development</strong></p>
+                                <p>Enter a value to the nearest £thousand (e.g. 56,000). Do not enter ‘56’ for £56,000.</p>
+                                <br>
+                                <div class="ons-text-indent">
+                                    <p><strong>What we mean by 'defence R&D'</strong></p>
+                                    <p>This refers to all R&D carried out primarily for defence or military reasons, even if civil use is made of it at a later date.</p>
+                                  </div>
+                                
+
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <tbody class="ons-summary__item">
+                        <tr class="ons-summary__row ons-summary__row--has-values">
+                            <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                                <div class="ons-summary__item--text ons-u-fs-m">In relation to the total expenditure on purchased R&D, has your business submitted, or does it intend to submit, a claim for R&D tax credits?</div>
+                                <br>
+                                
+                                <br>
+                                <p>You can answer with the following options:</p>
+                                <ul>
+                                    <li>Yes</li>
+                                    <li>No</li>
+                                </ul>
+
+                            </td>
+                        </tr>
+                        </tbody>
+
+                </div>
+    </div>
+  </div>
+
+
+<div id="accordion-example-4" class="ons-details ons-js-details ons-details--accordion"
+    data-group="accordion-example">
+    <div class="ons-details__heading ons-js-details-heading" role="button">
+      <h2 class="ons-details__title">Number of employees working on R&D</h2>
+      <span class="ons-details__icon">
+        <svg class="ons-icon" viewBox="0 0 8 13" xmlns="http://www.w3.org/2000/svg" focusable="false"
+          fill="currentColor">
+          <path
+            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+            transform="translate(-5.02 -1.59)" />
+        </svg></span>
+    </div>
+    <div id="accordion-example-4-content" class="ons-details__content ons-js-details-content">
+      <div class="ons-summary__group">
+                    <table class="ons-summary__items">
+                        <thead class="ons-u-vh">
+                        <tr>
+                            <th>Question</th>
+                            <th>Guidance</th>
+                        </tr>
+                        </thead>
+
+
+                        <tbody class="ons-summary__item">
+
+                        <tr
+                                class="ons-summary__row ons-summary__row--has-values">
+                                <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+
+                                <div class="ons-summary__item--text ons-u-fs-m">On 1 December 2022, how many employees worked on R&D?</div>
+                                <br>
+                                <div class="ons-text-indent">
+                                    <p><strong>What we mean by 'employees'</strong></p>
+                                    <p>An employee is anyone aged 16 or over that your organisation directly pays from its payroll, in return for carrying out a full time or part-time job or being on a training scheme. Each employee should have a contract of employment.</p>
+                                  </div>
+                                  <br>
+                                <div class="ons-panel ons-panel--info ons-panel--no-title">
+                                    <div class="ons-panel__body">
+                                        <p><strong>Include:</strong></p>
+
+                                        <ul class="u-fs-r">
+                                            <li>all workers paid directly from this business's payroll(s)</li>
+                                            <li>those temporarily absent but still being paid, for example, on maternity or paternity leave</li>
+                                        </ul>
+
+                                        <p><strong>Exclude:</strong></p>
+
+                                        <ul class="u-fs-r">
+                                            <li>agency workers and contractors paid directly from the agency payroll or contractor company</li>
+                                            <li>voluntary workers</li>
+                                            <li>self-employed workers</li>
+                                            <li>former employees only receiving a pension</li>
+                                            <li>working owners who are not paid directly from this business's payroll(s)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <br>
+                                <p><strong>Number of employees</strong></p>
+                                <p>Enter a value </p>
+                            </td>
+                        </tr>
+                        </tbody>
+
+                        <tbody class="ons-summary__item">
+                            <tr class="ons-summary__row ons-summary__row--has-values">
+                                <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                                    <div class="ons-summary__item--text ons-u-fs-m">For the period 1 May 2016 to 31 May 2016, how many full-time equivalent employees worked on R&D?</div>
+                                    <br>
+                                    
+                                    <div class="ons-text-indent">
+                                        <p><strong>What we mean by 'full-time equivalent'</strong></p>
+                                        <p>One full-time equivalent (FTE) may be thought as one person-year.
+                                            For example, a person who normally spends 30% of their time on R&D and the rest on other activities should be considered as 0.3 FTE.
+                                            Similarly, if a full-time R&D worker is employed at an R&D unit for only six months, this results in the FTE of 0.5.</p>
+                                      </div>
+                                      <br>
+                                      <div class="ons-panel ons-panel--info ons-panel--no-title">
+                                        <div class="ons-panel__body">
+                                            <p><strong>Include:</strong></p>
+    
+                                            <ul class="u-fs-r">
+                                                <li>all workers paid directly from this business's payroll(s)</li>
+                                                <li>those temporarily absent but still being paid, for example, on maternity or paternity leave</li>
+                                            </ul>
+    
+                                            <p><strong>Exclude:</strong></p>
+    
+                                            <ul class="u-fs-r">
+                                                <li>agency workers and contractors paid directly from the agency payroll or contractor company</li>
+                                                <li>voluntary workers</li>
+                                                <li>self-employed workers</li>
+                                                <li>former employees only receiving a pension</li>
+                                                <li>working owners who are not paid directly from this business's payroll(s)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+<br>
+                                    <p><strong>Civil Research and Development</strong></p>
+                                    <p>Enter a value </p>
+
+                                    <p><strong>Defence Research and Development</strong></p>
+                                    <p>Enter a value </p>
+                                </td>
+                            </tr>
+                            </tbody>
+                    </table>
+</div>
+                </div>
+                </div>
+  
+  <div id="accordion-example-5" class="ons-details ons-js-details ons-details--accordion"
+    data-group="accordion-example">
+    <div class="ons-details__heading ons-js-details-heading" role="button">
+      <h2 class="ons-details__title">Workplace information</h2>
+      <span class="ons-details__icon">
+        <svg class="ons-icon" viewBox="0 0 8 13" xmlns="http://www.w3.org/2000/svg" focusable="false"
+          fill="currentColor">
+          <path
+            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+            transform="translate(-5.02 -1.59)" />
+        </svg></span>
+    </div>
+    <div id="accordion-example-5-content" class="ons-details__content ons-js-details-content" style="border: 5px #206095 solid;">
+      <div class="ons-summary__group">
+                    <table class="ons-summary__items">
+                        <thead class="ons-u-vh">
+                        <tr>
+                            <th>Question</th>
+                            <th>Guidance</th>
+                        </tr>
+                        </thead>
+
+                        <tbody class="ons-summary__item">
+                            <div class="ons-question__instruction ons-u-mb-no" style="background-color: #206095;color: white; border:none;">
+                                <p><strong>This question will repeat until all postcodes are added</strong></p>
+                                <p>You will be asked to add all the postcodes of the additional workplaces where in-house R&D is performed. If you need to add multiple services you will be given the opportunity to add them in.</p>
+                            </div>
+                            <tr class="ons-summary__row ons-summary__row--has-values">
+                                <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                                    <div class="ons-summary__item--text ons-u-fs-m">What is the postcode of the workplace where in-house R&D is performed?</div>
+                                    <br>
+                                    <p>If required, additional workplaces can be added in the next question.
+                                    </p>
+                                    
+                                    <br>
+                                    <p><strong>Postcode of workplace where in-house R&D is performed</strong></p>
+                                    <p>Enter a valid postcode</p>
+                                </td>
+                            </tr>
+                            
+                            </tbody>
+                            </tbody>
+
+                            <tbody class="ons-summary__item">
+
+                                <tr class="ons-summary__row ons-summary__row--has-values">
+                                    <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">        
+                                        <div class="ons-summary__item--text ons-u-fs-m">Does your business have any other workplaces where in-house R&D is performed?</div>
+                                        <br>
+                                        
+                                        <br>
+                                        <p><strong>You can answer with the following options:</strong></p>
+                                        <ul>
+                                            <li>Yes</li>
+                                            <li>No</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                </tbody>
+                    </table>
+
+                </div>
+    </div>
+  </div>
+
+  <div id="accordion-example-6" class="ons-details ons-js-details ons-details--accordion"
+    data-group="accordion-example">
+    <div class="ons-details__heading ons-js-details-heading" role="button">
+      <h2 class="ons-details__title">Comments</h2>
+      <span class="ons-details__icon">
+        <svg class="ons-icon" viewBox="0 0 8 13" xmlns="http://www.w3.org/2000/svg" focusable="false"
+          fill="currentColor">
+          <path
+            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+            transform="translate(-5.02 -1.59)" />
+        </svg></span>
+    </div>
+    <div id="accordion-example-6-content" class="ons-details__content ons-js-details-content" >
+      <div class="ons-summary__group">
+                    <table class="ons-summary__items">
+                        <thead class="ons-u-vh">
+                        <tr>
+                            <th>Question</th>
+                            <th>Guidance</th>
+                        </tr>
+                        </thead>
+
+                        <tbody class="ons-summary__item">
+
+                        <tr
+                                class="ons-summary__row ons-summary__row--has-values">
+                            <td class="ons-summary__item-title">
+
+                                <div class="ons-summary__item--text ons-u-fs-m">Please provide any further details that will help us understand your figures and tell an industry story</div>
+                                <br>
+                                <p>Explain any changes in your figures from your previous return, if applicable. If you provide comments, we are less likely to contact you with data queries.</p>
+                                <div class="ons-panel ons-panel--info ons-panel--no-title">
+                                    <div class="ons-panel__body">
+                                        <p><strong>Please include details of:</strong></p>
+
+                                        <ul class="u-fs-r">
+                                            <li>any zero figures</li>
+                                        </ul>
+
+                                        <p>Any significant impacts upon your data resulting from changes to your business. For example:</p>
+
+                                        <ul class="u-fs-r">
+                                            <li>changes to your business structure</li>
+                                            <li>type of activity undertaken</li>
+                                        </ul>
+
+                                        <p>Changes in the accounting approaches you have taken. For example:</p>
+                                        <ul class="u-fs-r">
+                                            <li>change of accounting standard such as IFRS</li>
+                                            <li>regulatory changes</li>
+                                        </ul>
+                                        <p>Any significant changes upon your data as a result of the coronavirus (COVID-19) pandemic.</p>
+                                    </div>
+                                </div>
+                                <br>
+                                <p><strong>Comments</strong></p>
+                                <p>2000 characters can be added.</p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+    </div>
+  </div>
+<br>
+  
+
+<!--NEW BUILD END-->
+
+<div class="app-back-to-top">
+    <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#main-content">
+        <svg focusable="false" style="margin-right: 10px" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+        </svg> Back to top
+    </a>
+</div></div>
+
+    
+</div>
+</div>
+{% endblock %}
