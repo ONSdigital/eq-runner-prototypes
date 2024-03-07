@@ -1,13 +1,13 @@
 ---
 group: Prototypes
-title: Long List - Only £
+title: Long List linear with nav
 layout: long-list-checkboxes/views/_main
 ---
 
 
 {% block preMain %}
 
-<form name="myForm" action="/prototypes/long-list-checkboxes/hub.html">
+<form name="myForm" action="/prototypes/long-list-checkboxes/linear-with/hub.html">
 
 {{
     onsBreadcrumbs({
@@ -414,7 +414,7 @@ layout: long-list-checkboxes/views/_main
         // Update local storage with merged selections
         localStorage.setItem("ddvalue", JSON.stringify(mergedSelections));
 
-        document.forms["myForm"].action = "/prototypes/long-list-checkboxes/hub.html";
+        document.forms["myForm"].action = "/prototypes/long-list-checkboxes/linear-with/hub.html";
     }
 </script>
 

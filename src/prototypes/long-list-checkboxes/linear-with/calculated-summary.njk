@@ -1,0 +1,107 @@
+---
+group: Prototypes
+title: Long List (checkboxes)
+layout: long-list-checkboxes/views/_main
+---
+
+{% set prevPage = "hub-complete" %}
+{% set form = {
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.rootPath + "/summary.html"
+    }
+} %}
+
+{% block preMain %}
+
+{{
+    onsBreadcrumbs({
+        "ariaLabel": 'Previous',
+        "itemsList": [
+            {
+                "url": '/prototypes/long-list-checkboxes/hub-complete.html',
+                "id": "backlink",
+                "text": 'Previous',
+                "attributes": {
+                    "data-attribute": "Example attribute"
+                }
+            }
+        ]
+    })
+}}
+
+{% endblock %}
+
+{% block main %}
+
+<script>
+  // Step 1: Retrieve the stored string from localStorage
+  const storedValue = localStorage.getItem('ddvalue');
+
+  // Step 2: Parse the string into a JavaScript object
+  const parsedValue = JSON.parse(storedValue);
+
+  // Calculate the sum of parsedValue[i][1]
+  let grandTotal = 0;
+  for (var i = 0; i < parsedValue.length; i++) {
+    grandTotal += parseFloat(parsedValue[i][1]) || 0; // Convert to float and handle NaN
+  }
+
+  document.write(`<div class="ons-summary">
+    <div class="ons-summary__group">
+      <h2 class="ons-summary__group-title">We calculate the total expenditure to be £${grandTotal}. Is this correct?</h2>
+      <div class="ons-summary__items">`);
+
+  for (var i = 0; i < parsedValue.length; i++) {
+    const itemName = parsedValue[i][0];
+    const itemValue = parsedValue[i][1];
+
+    document.write(`
+        <div class="ons-summary__item">
+          <dl class="ons-summary__row ons-summary__row--has-values">
+            <dt class="ons-summary__item-title">
+              <div class="ons-summary__item--text">${itemName}</div>
+            </dt>
+            <dd class="ons-summary__values">
+              <span class="ons-summary__text">£${itemValue}</span>
+            </dd>
+            <dd class="ons-summary__actions">
+              <a href="#" class="ons-summary__button" onclick="changeLink(${i})">Change<span class="ons-u-vh">answer for ${itemName}</span></a>
+            </dd>
+          </dl>
+        </div>`);
+  }
+
+  document.write(`<div class="ons-summary__item ons-summary__item--total">
+          <dl class="ons-summary__row ons-summary__row--has-values">
+            <dt class="ons-summary__item-title">
+              <div class="ons-summary__item--text">Grand total</div>
+            </dt>
+            <dd class="ons-summary__values ons-summary__values--2">
+              <span class="ons-summary__text">£${grandTotal}</span>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>`);
+</script>
+
+{{
+    onsButton({
+        "text": 'Yes, I confirm this is correct',
+        "classes": 'ons-u-mb-m ons-u-mt-l'
+    })
+}}
+
+<script>
+  function changeLink(index) {
+    // Store the clicked index in localStorage
+    localStorage.setItem('changeLink', index);
+
+    // Redirect to "question.html"
+    window.location.href = 'question.html';
+  }
+</script>
+
+{% endblock %}
