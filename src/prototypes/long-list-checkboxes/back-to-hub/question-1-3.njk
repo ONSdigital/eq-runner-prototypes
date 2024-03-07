@@ -1,0 +1,98 @@
+---
+group: Prototypes
+title: Long List (checkboxes)
+layout: long-list-checkboxes/views/_main
+---
+
+{% set prevPage = "hub" %}
+
+{% block preMain %}
+{{
+    onsBreadcrumbs({
+        "ariaLabel": 'Previous',
+        "itemsList": [
+            {
+                "url": "/prototypes/long-list-checkboxes/back-to-hub/question-1-2.html",
+                "id": "backlink",
+                "text": 'Previous',
+                "attributes": {
+                    "data-attribute": "Example attribute",
+                    "onclick": "previousQuestion(); this.blur();"
+                }
+            }
+        ]
+    })
+}}
+{% endblock %}
+
+{% block main %}
+<h1 class="ons-u-fs-xl">
+    Were you satisfied with the goods or services you purchased for <strong id="listItemHighlighted" class="ons-highlight"></strong>?
+</h1>
+
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{{
+    onsRadios({
+        "name": "property-type",
+        "dontWrap": true,
+        "radios": [
+            {
+                "id": "yes",
+                "label": {
+                    "text": "Yes, I was satisfied"
+                },
+                "value": "yes"
+            },
+            {
+                "id": "no",
+                "label": {
+                    "text": "No, I was not satisfied"
+                },
+                "value": "no"
+            }
+        ]
+    })
+}}
+{{
+    onsButton({
+        "text": 'Save and continue',
+        "classes": 'ons-u-mb-l ons-u-mt-l',
+        "attributes": {
+            "onclick": "nextQuestion();"
+        }
+    })
+}}
+<script>
+    // Initialize current position
+    var currentPosition = 0;
+
+    var results = localStorage.getItem("ddvalue");
+    // Parse the JSON if there's data
+    if (results) {
+        console.log('there\'s results');
+        try {
+            results = JSON.parse(results);
+            // Replace commas in each item of the array
+            for (var i = 0; i < results.length; i++) {
+                results[i] = results[i].replace(/&#44;/g, ',');
+            }
+            document.getElementById('listItemHighlighted').textContent = results[currentPosition];
+        } catch (error) {
+            console.error('Error parsing JSON:', error);
+        }
+    }
+
+    // Function to handle "Save and continue" button click
+    function nextQuestion() {
+        var selectedValue = document.querySelector('input[name="property-type"]:checked').value;
+        localStorage.setItem('q13_' + currentPosition, selectedValue);
+        window.location.href = '/prototypes/long-list-checkboxes/back-to-hub/hub-complete-1.html';
+    }
+</script>
+
+
+
+
+    
+{% endblock %}

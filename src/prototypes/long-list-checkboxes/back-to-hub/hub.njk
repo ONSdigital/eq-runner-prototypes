@@ -1,0 +1,125 @@
+---
+group: Prototypes
+title: Long List (checkboxes)
+layout: long-list-checkboxes/views/_main
+---
+
+{% set prevPage = "index" %}
+{% set form = {
+    "method": "GET",
+    "attributes": {
+        "action": pageInfo.rootPath + "/question.html"
+    }
+} %}
+
+{% block preMain %}
+
+{{
+    onsBreadcrumbs({
+        "ariaLabel": 'Previous',
+        "itemsList": [
+            {
+                "url": '/prototypes/long-list-checkboxes/more-follow-ups/index.html',
+                "id": "backlink",
+                "text": 'Previous',
+                "attributes": {
+                    "data-attribute": "Example attribute"
+                }
+            }
+        ]
+    })
+}}
+
+{% endblock %}
+
+{% block main %}
+
+<form action="/prototypes/long-list-checkboxes/back-to-hub/question-1-1.html">
+    <h1 class="ons-u-fs-xl">Goods and services you have purchased in the last month</h1>
+
+    {{
+        onsPanel({
+            "body": '<p>You will have the opportunity to amend your list at the send of this section.</p>',
+            "classes": 'ons-u-mb-m'
+        })
+    }}
+    <div class="ons-summary ons-u-mb-l">
+        <div class="ons-summary__group">
+            <div class="ons-summary__items">
+                <!-- Items will be dynamically added here -->
+            </div>
+           
+        </div>
+    </div>
+   <script>
+    // Initialize current position
+    var currentPosition = 0;
+
+    // Function to update the view with the current item
+    function updateView() {
+        var results = localStorage.getItem("ddvalue");
+
+        if (results) {
+            // Parse the JSON if there's data
+            results = JSON.parse(results);
+
+            // Clear existing content
+            var hubList = document.querySelector('.ons-summary__items');
+            if (hubList) {
+                hubList.innerHTML = '';
+            }
+
+            // Add items to the view
+            for (var i = 0; i < results.length; i++) {
+                var item = results[i];
+                var listItem = document.createElement('div');
+                listItem.className = 'ons-summary__item';
+                listItem.innerHTML = `
+                    <dl class="ons-summary__row">
+                        <dt class="ons-summary__item-title">
+                            ${item}
+                        </dt>
+                    </dl>`;
+                hubList.appendChild(listItem);
+
+                // Check if satisfaction response is already stored for this item
+                var satisfactionResponse = localStorage.getItem('q13_' + i);
+                if (satisfactionResponse === 'yes') {
+                    var tickMark = document.createElement('span');
+                    tickMark.className = 'ons-summary__item-title-icon ons-summary__item-title-icon--check';
+                    tickMark.innerHTML = `
+                        <svg class="ons-svg-icon" viewBox="0 0 13 10" xmlns="http://www.w3.org/2000/svg" focusable="false" fill="currentColor" style="width: 18px; color: #0f8243">
+                            <path d="M14.35,3.9l-.71-.71a.5.5,0,0,0-.71,0h0L5.79,10.34,3.07,7.61a.51.51,0,0,0-.71,0l-.71.71a.51.51,0,0,0,0,.71l3.78,3.78a.5.5,0,0,0,.71,0h0L14.35,4.6A.5.5,0,0,0,14.35,3.9Z" transform="translate(-1.51 -3.04)"></path>
+                        </svg>`;
+                    listItem.querySelector('.ons-summary__item-title').appendChild(tickMark);
+                    // Add padding-left: 2em; to the ons-summary__item-title class
+                    listItem.querySelector('.ons-summary__item-title').style.paddingLeft = '2em';
+                }
+            }
+        }
+    }
+
+    // Update view on page load
+    updateView();
+</script>
+
+    
+    
+    
+    
+
+
+{{
+    onsButton({
+        "text": 'Continue'
+    })
+}}
+
+</form>
+
+{% endblock %}
+
+{% block scripts %}
+
+
+{% endblock %}

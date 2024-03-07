@@ -1,0 +1,102 @@
+{% extends "layout/_template.njk" %}
+
+{% from "components/breadcrumbs/_macro.njk" import onsBreadcrumbs %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% set pageConfig = {
+    "pageColClasses": "8",
+    "header": {
+        "title": "Business Purchases Survey",
+        "signoutButton": {
+            "text": "Save and sign out",
+            "iconType": "exit",
+            "iconPosition": "after",
+            "url": "exit"
+        },
+        "language": {
+            "languages": [
+                {
+                    "url": "#0",
+                    "ISOCode": "en",
+                    "text": "English",
+                    "current": true
+                },
+                {
+                    "url": "#0",
+                    "ISOCode": "cy",
+                    "text": "Help",
+                    "current": false
+                },
+                {
+                    "url": "#0",
+                    "ISOCode": "en",
+                    "text": "My account",
+                    "current": false
+                },
+                {
+                    "url": "exit",
+                    "ISOCode": "en",
+                    "text": "Sign out",
+                    "current": false
+                }
+            ]
+        }
+    },
+
+    "footer": {
+        "newTabWarning": 'The following links open in a new tab',
+        "crest": 'true',
+        "copyrightDeclaration":
+        {
+            "copyright": "Crown copyright and database rights 2020 OS 100019153.",
+            "text": "Use of address data is subject to the terms and conditions."
+        },
+        "rows": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'What we do',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'Contact us',
+                        "url": '/'
+                    },
+                    {
+                        "text": 'Accessibility',
+                        "url": '#0'
+                    }
+                ]
+            }
+        ],
+        "legal": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Cookies',
+                        "url": '#0'
+                    },
+                    {
+                        "text": 'Privacy and data protection',
+                        "url": '#0'
+                    }
+                ]
+            }
+        ]
+    }
+} %}
+
+{% block head %}
+    <link rel="stylesheet" href="/prototypes/example/styles.css" />
+{% endblock %}
+
+{% block preMain %}
+{% endblock %}
+
+{% block main %}
+{% endblock %}
+
+{% block bodyEnd %}
+    <script src="/prototypes/example/js/index.js"></script>
+{% endblock %}

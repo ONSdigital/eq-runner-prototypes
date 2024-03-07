@@ -1,0 +1,152 @@
+---
+group: Prototypes
+title: Long List (checkboxes)
+layout: long-list-checkboxes/views/_main
+---
+{% from "components/timeout-panel/_macro.njk" import onsTimeoutPanel %}
+{% from "components/textarea/_macro.njk" import onsTextarea %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% set form =  {
+    "method": "GET",
+    "attributes": {
+        "action":  pageInfo.rootPath + "/research"
+    }
+} %}
+
+
+{% block main %}
+<div aria-labelledby="alert" role="alert" tabindex="-1" autofocus="autofocus" class="ons-panel ons-panel--success ons-panel--no-title ons-u-mb-m">
+
+
+
+ 
+                    <span id="alert" class="ons-panel__assistive-text ons-u-vh">Completed: </span>
+
+                <span class="ons-panel__icon ons-u-fs-xl">
+                    
+
+        <svg class="ons-svg-icon ons-svg-icon--xl" viewBox="0 0 13 10" xmlns="http://www.w3.org/2000/svg" focusable="false" fill="currentColor">
+            <path d="M14.35,3.9l-.71-.71a.5.5,0,0,0-.71,0h0L5.79,10.34,3.07,7.61a.51.51,0,0,0-.71,0l-.71.71a.51.51,0,0,0,0,.71l3.78,3.78a.5.5,0,0,0,.71,0h0L14.35,4.6A.5.5,0,0,0,14.35,3.9Z" transform="translate(-1.51 -3.04)"></path>
+        </svg>
+
+                </span>
+
+            <div class="ons-panel__body ons-svg-icon-margin--xl">
+                    <h1 data-qa="title">Thank you for completing the Business Survey</h1>
+    <p data-qa="guidance">
+      Your answers have been submitted for <span>ESSENTIAL ENTERPRISE LTD.</span> (ESSENTIAL ENTERPRISE LTD.)
+    </p>
+      <dl class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf">
+          <dt class="ons-metadata__term ons-grid__col ons-col-5@m">Submitted on:</dt>
+            <dd class="ons-metadata__value ons-grid__col ons-col-7@m">16 June 2023 at 15:01</dd>
+          <dt class="ons-metadata__term ons-grid__col ons-col-5@m">Submission reference:</dt>
+            <dd class="ons-metadata__value ons-grid__col ons-col-7@m">556E - A2F1 - 7B95 - 41FF</dd>
+  </dl>
+
+
+            </div>
+        </div>
+
+<p>Your response will help decision-makers support the UK population and economy.</p>
+
+<p>For more information, see <a href="https://www.ons.gov.uk/aboutus/transparencyandgovernance/dataprotection" target="_blank" rel="noopener noreferrer">our privacy statement</a>.</p>
+
+
+    <h2 data-qa="view-submitted-response-title">Get a copy of your answers</h2>
+    <p>We may contact you to query your answers.</p>
+    <p class="ons-u-mb-s">
+    If you need a copy for your records, <a href="#print" id="view-submitted-response-link">save or print your answers</a>.
+  </p>
+
+{{ onsTimeoutPanel ({
+    "id": "countdown",
+    "redirectUrl": "signout",
+    "minutesTextSingular":"minute",
+    "minutesTextPlural":"minutes",
+    "sessionExpiresAt":"1",
+    "secondsTextSingular":"second",
+    "secondsTextPlural":"seconds",
+    "countdownText":"For security, your answers will only be available to view for another",
+    "nojsText": "For security, your answers will only be available to view for another 45 minutes",
+    "countdownExpiredText": "You are being signed out"
+}) }}
+
+
+<div id="feedback" class="ons-feedback">
+    <h2 class="ons-feedback__heading">
+        Give feedback about this service
+    </h2>
+    
+
+<h4 class="ons-u-mt-m">How easy or difficult was it to use this service?</h4>
+    {{
+        onsRadios({
+            "name": "ease-of-use",
+            "dontWrap": true,
+            "radios": [
+                {
+                    "id": "5",
+                    "label": {
+                        "text": "Very easy"
+                    },
+                    "value": "veasy"
+                },
+                {
+                    "id": "4",
+                    "label": {
+                        "text": "Easy"
+                    },
+                    "value": "easy"
+                },
+                {
+                    "id": "3",
+                    "label": {
+                        "text": "Neutral"
+                    },
+                    "value": "neutral"
+                },
+                {
+                    "id": "2",
+                    "label": {
+                        "text": "Difficult"
+                    },
+                    "value": "difficult"
+                },
+                {
+                    "id": "1",
+                    "label": {
+                        "text": "Very difficult"
+                    },
+                    "value": "vdifficult"
+                }
+            ]
+        })
+    }}
+
+
+{{
+    onsTextarea({
+        "id": "textarea",
+        "name": "feedback",
+        "label": {
+            "text": "Enter your feedback",
+            "description": "Do not include confidential information, such as your contact details"
+        },
+        "charCheckLimit": {
+            "limit": 1000,
+            "charCountSingular": "You have {x} character remaining",
+            "charCountPlural": "You have {x} characters remaining"
+        }
+    })
+}}
+
+{{
+    onsButton({
+        "text": "Send feedback",
+        "classes": "ons-u-mt-m"
+    })
+}}
+</div>
+
+{% endblock %}
