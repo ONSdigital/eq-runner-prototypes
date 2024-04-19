@@ -4,15 +4,101 @@ title: Example prototype
 layout: example/views/_master
 ---
 {% from "components/button/_macro.njk" import onsButton %}
-
 {% block main %}
-    <h1>Start example prototype</h1>
-    <p>This example prototype contains three question pages and a summary.</p>
-    {{
-        onsButton({
-            "text": "Start",
-            "classes": "ons-u-mt-l",
-            "url": pageInfo.rootPath + "/name.html"
-        })
-    }}
+<div class="ons-grid__col ons-col-9@l">
+
+<style>@import url("https://use.typekit.net/xsw3eyb.css");
+
+    .brand-example {
+        font-family: ff-dax-pro;
+    }
+
+    .brand-example .ons-u-fw-r {
+        font-weight: 400;
+    }
+
+    .brand-example .ons-u-fw-m {
+        font-weight: 600;
+    }
+
+    .brand-example .ons-u-fw-b {
+        font-weight: 700;
+    }
+
+    .brand-example h1 {
+        letter-spacing: -0.01rem;
+    }
+
+    .brand-example__typeface-item {
+        font-size: 1rem;
+        text-align: left;
+        margin-bottom: 0.5rem;
+        width: 20%;
+    }
+
+    @media (min-width: 500px) {
+        .brand-example__typeface-item {
+            width: 11.11%;
+        }
+    }</style>
+
+
+    <h1 class="brand-example">Dax Pro</h1>
+   
+    {% from "components/table/_macro.njk" import onsTable %}
+
+{{
+    onsTable({
+        "tableClasses": "brand-example",
+        "ths": [
+            {
+                "value": "Font Style"
+            },
+           
+            {
+                "value": "Weight"
+            }
+        ],
+        "trs": [
+            {
+                "tds": [
+                    {
+                        "value": "Dax Pro Regular",
+                        "tdClasses": "ons-u-fw-r"
+                    },
+                    {
+                        "value": "400",
+                        "tdClasses": "ons-u-fw-r"
+                    }
+                ]
+            },
+            {
+                "tds": [
+                    {
+                        "value": "Dax Pro Medium",
+                        "tdClasses": "ons-u-fw-m"
+                    },
+                    {
+                        "value": "600",
+                        "tdClasses": "ons-u-fw-m"
+                    }
+                ]
+            },
+            {
+                "tds": [
+                    {
+                        "value": "Dax Pro Bold",
+                        "tdClasses": "ons-u-fw-b"
+                    },
+                    {
+                        "value": "700",
+                        "tdClasses": "ons-u-fw-b"
+                    }
+                ]
+            }
+        ]
+    })
+}}
+</div>
 {% endblock %}
+

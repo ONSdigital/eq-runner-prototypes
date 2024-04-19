@@ -10,6 +10,13 @@ layout: abs/views/_index
 {% from "components/accordion/_macro.njk" import onsAccordion %}
 
 {% block main %}
+
+<style>
+.looping{
+    background-color: #206095;color: white; border:none;
+}
+
+</style>
 <div class="ons-col-8@m">
 <h2>Preview of the questions you may be asked in this survey</h2>
 <div class="ons-panel ons-panel--info ons-panel--no-title">
@@ -88,24 +95,17 @@ layout: abs/views/_index
 
                         <tr class="ons-summary__row ons-summary__row--has-values">
                             <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
-                                <div class="ons-summary__item--text ons-u-fs-m">For the reporting period, did your business undertake any in-house R&D?</div>
-                                <br>
-                                <div class="ons-text-indent">
-                                    <p><strong>What we mean by 'in-house R&D'</strong></p>
-                                    <p>This refers to the total cost of capital and non-capital expenditure carried out by your business in the UK, regardless of the source of funds or their treatment within your business's accounts.</p>
-                                  </div>
-                                <div class="ons-panel ons-panel--info ons-panel--no-title">
-                                    <div class="ons-panel__body">
-                                    <p><strong>Include</strong></p>
-
-                                    <ul>
-                                        <li>all gross expenditure, for example, salaries, overtime payments, bonuses, redundancies, commissions, holiday pay, National Insurance and pension scheme contributions</li>
-                                        <li>all gross capital expenditure on fixed assets used in R&D</li>
-                                    
-                                    </ul>
-
-                                    <p>You can answer with the following options:</p>
+                                <div class="ons-summary__item--text ons-u-fs-m">What are the dates you are reporting for?</div>
+                      
                                 
+                                
+                            </div>
+                                <br>
+                                    <p>You will be asked to enter a date range</p>
+                                    <ul>
+                                        <li>Date from</li>
+                                        <li>Date to</li>
+                                    </ul>
                             </td>
                         </tr>
                         </tbody>
@@ -114,143 +114,171 @@ layout: abs/views/_index
             </div>
     </div>
   </div>
-  <div id="accordion-example-2" class="ons-details ons-js-details ons-details--accordion"
-    data-group="accordion-example">
-    <div class="ons-details__heading ons-js-details-heading" role="button">
-      <h2 class="ons-details__title">Expenditure</h2>
-      <span class="ons-details__icon">
-        <svg class="ons-icon" viewBox="0 0 8 13" xmlns="http://www.w3.org/2000/svg" focusable="false"
-          fill="currentColor">
-          <path
-            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-            transform="translate(-5.02 -1.59)" />
-        </svg></span>
-    </div>
-            <div id="accordion-example-2-content" class="ons-details__content ons-js-details-content">
-                <div style="border: 5px #206095 solid;">
-                <div class="ons-summary__group">
-                    <table class="ons-summary__items">
-                        <thead class="ons-u-vh">
+  
+    <!--HOME IMPRO-->
+    <div id="accordion-example-3" class="ons-details ons-js-details ons-details--accordion" data-group="accordion-example">
+        <div class="ons-details__heading ons-js-details-heading" role="button">
+            <h2 class="ons-details__title">Home Improvements</h2>
+            <span class="ons-details__icon">
+                <svg class="ons-icon" viewBox="0 0 8 13" xmlns="http://www.w3.org/2000/svg" focusable="false" fill="currentColor">
+                    <path d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z" transform="translate(-5.02 -1.59)" />
+                </svg>
+            </span>
+        </div>
+        <div id="accordion-example-2-content" class="ons-details__content ons-js-details-content">
+            <div class="ons-summary__group">
+                <table class="ons-summary__items">
+                    <thead class="ons-u-vh">
                         <tr>
                             <th>Question</th>
                             <th>Guidance</th>
                         </tr>
-                        </thead>
+                    </thead>
+                    <tbody class="ons-summary__item">
+                        <tr class="ons-summary__row ons-summary__row--has-values">
+                            <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                                <div class="ons-summary__item--text ons-u-fs-m">Did you carry out any home improvements during the period [Start date] to [End date]?</div>
+                                <br>
+                                <div class="ons-panel ons-panel--info ons-panel--no-title ons-u-mb-l">
+                                    <span class="ons-u-vh">Important information: </span>
+                                    <div class="ons-panel__body">
+                                        <p>You will be asked about what types of home improvement you carried out. If you need to add multiple improvements, you will be given the opportunity to add them.</p>
+                                    </div>
+                                </div>
+                                <p>You can answer with the following options:</p>
+                                <ul>
+                                    <li>Yes, I carried out home improvements</li>
+                                    <li>No, I didn't carry out home improvements</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <div style="border: 5px #206095 solid; display: block;">
+                    <table class="ons-summary__items">
                         <tbody class="ons-summary__item">
-                            <tr class="ons-summary__row ons-summary__row--has-values">
-                                <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
-                                    <div class="ons-summary__item--text ons-u-fs-m">Was there any expenditure on any other services?</div>
-                                    <br>
-                                    <p>You can answer with the following options:</p>
-                                    <ul>
-                                        <li>Yes</li>
-                                        <li>No</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </tbody>
-                        
-                        <tbody class="ons-summary__item">
-                            <div class="ons-question__instruction ons-u-mb-no" style="background-color: #206095;color: white; border:none;">
-                                <p><strong>This question will repeat until all services are added</strong></p>
-                                <p>You will be asked to add all the services of the additional workplaces you had expenditure on. If you need to add multiple services you will be given the opportunity to add them.</p>
+                            <div class="ons-question__instruction ons-u-mb-no looping" >
+                                <p><strong>This section will repeat until all [Linked collection list] are added</strong></p>
+                                <p>If you need to add multiple [Linked collection list] you will be given the opportunity to add them.</p>
                             </div>
                             <tr class="ons-summary__row ons-summary__row--has-values">
                                 <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
-                                    <div class="ons-summary__item--text ons-u-fs-m">What was the other service you had expenditure on?</div>
+                                    <div class="ons-summary__item--text ons-u-fs-m">What home improvement have you carried out during the period [Start Date] to [End date]?</div>
                                     <br>
-                                    
-                                    <p>If you need to add multiple services, you can do this on a later page.</p>
-                                    
-                                    <br>
+                                    <p>Select an item from the list provided:</p>
                                     <ul>
-                                        <li>Blackout roller blinds (including vertical and roman blinds)</li>
-                                        <li>Ottomans and storage trunks</li>
-                                        <li>Outdoor dining and picnic sets</li>
-                                        <li>Garden furniture (including parasols and bases)</li>
-                                        <li>Garden entertaining (including BBQ’s, pizza ovens, chimineas, and firepits)</li>
-                                        <li>Indoor and outdoor LED lights and lightbulbs</li>
-                                        <li>Kitchen appliances (including kettles, cookers, fridge/freezers, microwaves)</li>
-                                        <li>Home entertainment (including TV’s, radio’s, smart speakers, surround sound, cinema systems)</li>
-                                        <li>TV Subscription services</li>
-                                        <li>Motor vehicles (including motorcycles and motorhomes)</li>
-                                        <li>Children’s clothing</li>
-                                        <li>Real estate (including mortgage and rental costs)</li>
-                                        <li>Safety workwear (including boilersuits, footwear, safety glasses, protective gloves, and harnesses)</li>
-                                        <li>Dehumidifiers, extractor fans, and air conditioning systems</li>
-                                        <li>Power tools (including drills, saws, angle grinders, nail guns, and planers)</li>
-                                        <li>Showering furniture (including electric, mixer, and power showers, trays, and enclosures)</li>
-                                        <li>Women’s clothing</li>
-                                        <li>Laundry and utility (including clothes airers and lines, irons and boards, and laundry baskets)</li>
-                                        <li>Fires, stoves, and heaters (including fire surrounds, electric, and oil heaters)</li>
-                                        <li>Garden playhouses, swings, and trampolines</li>
-                                        <li>Indoor gym equipment</li>
-                                        <li>Men’s clothing</li>
-                                        <li>Segways and electric scooters</li>
-                                        <li>Home security systems (including smoke and carbon monoxide alarms)</li>
-                                        <li>Shelving systems, units, and storage cubes or baskets</li>
-                                        <li>Artificial flowers and plants</li>
-                                        <li>Fruit storage (including pitaya boxes)</li>
-                                        <li>Mobile telephone contract payments</li>
-                                        <li>Travel suitcases, bags</li>
-                                        <li>Sofas, armchairs, chairs, and stools</li>
-                                        <li>Table and desk lamps (excluding ceiling and wall lights)</li>
-                                        <li>Paint and wallpaper</li>
-                                        <li>Made-to-measure curtains and blinds</li>
-                                        <li>Tablecloths, table mats, and coasters</li>
-                                        <li>Workbenches, trestles (including workbenches with lockable cupboards)</li>
-                                    </ul>
-
+                                        <li>Home Improvement 1</li>
+                                        <li>Home Improvement 2</li>
+                                        <li>Home Improvement 3</li>
+                                        <li>Home Improvement 4</li>
+                                        <li>Home Improvement 5</li>
+                                        <li>Home Improvement 6</li>
+                                        <li>Home Improvement 7</li>
+                                    </ul>                                    <br>
                                 </td>
                             </tr>
                         </tbody>
-
                         <tbody class="ons-summary__item">
                             <tr class="ons-summary__row ons-summary__row--has-values">
                                 <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
-                                    <div class="ons-summary__item--text ons-u-fs-m">What was your expenditure on head office and management consulting services?</div>
+                                    <div class="ons-summary__item--text ons-u-fs-m">During the reporting period [Start Date] to [End date], how much did you spend on [answer]?</div>
                                     <br>
-                                    <p><strong>Amount spent on head office and management consulting services</strong></p>
-                                    <p>Enter a value to the nearest £ (e.g. 56,000). Do not enter ‘56’ for £56,000.</p>
+                                    <p>Amount spent on home improvement</p>
+                                    <ul>
+                                        <li>Enter a value between 0 and 6</li>
+                                    </ul>                                    <br>
                                 </td>
                             </tr>
                         </tbody>
-                        
                         <tbody class="ons-summary__item">
                             <tr class="ons-summary__row ons-summary__row--has-values">
                                 <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
-                                    <div class="ons-summary__item--text ons-u-fs-m">Do you need to add any other service you have had expenditure on?</div>
+                                    <div class="ons-summary__item--text ons-u-fs-m">If any time was spent working on [answer], who carried out the work?</div>
+                                    <br>
+                                    <p>You can answer with the following options:</p>
+                                    <ul>
+                                        <li>Myself</li>
+                                        <li>Unpaid other parties</li>
+                                        <li>Paid other parties</li>
+                                    </ul>                                    <br>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody class="ons-summary__item">
+                            <tr class="ons-summary__row ons-summary__row--has-values">
+                                <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                                    <div class="ons-summary__item--text ons-u-fs-m">Do you need to add any other home improvements?</div>
                                     <br>
                                     <p>You can answer with the following options:</p>
                                     <ul>
                                         <li>Yes</li>
                                         <li>No</li>
-                                    </ul>
+                                    </ul>                                    <br>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+                <br>
+            <table class="ons-summary__items">
                 <tbody class="ons-summary__item">
-                        <tr class="ons-summary__row ons-summary__row--has-values">
-                            <div class="ons-panel ons-panel--info ons-panel--no-title" style="border: none;">
+                    <tr class="ons-summary__row ons-summary__row--has-values">
+                        <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                            <div class="ons-summary__item--text ons-u-fs-m">During the period [Start Date] to [End Date], how much did you spend on other home improvements not previously added?</div>                            
+                            <br>
+
+                            <p>If you did not spend any money on other home improvements then enter 0.</p>
+                            <div class="ons-panel ons-panel--info ons-panel--no-title">
+                                <span class="ons-u-vh">Important information: </span>
                                 <div class="ons-panel__body">
-                                    <p><strong>We will calculate the total expenditure on your chosen services and ask you to confirm this amount</strong></p>
-                                    <p>If you need to change anything you will be given the chance to amend</p>
+                                    <p>Include anything that could be removed from the residence.
+                                        For example, soft furnishings, kitchen appliances, electrical equipment</p>
                                 </div>
                             </div>
-                        </tr>
-                </tbody> 
+                            <br>
+                            <p>Amount spent on other home improvements:</p>
+                            <ul>
+                                <li>Enter a value between 0 and 6. For example, 2 to allow numbers such as 1.11</li>
+                                
+                            </ul>                                   
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody class="ons-summary__item">
+                    <tr class="ons-summary__row ons-summary__row--has-values">
+                        <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                            <div class="ons-summary__item--text ons-u-fs-m">We calculate the total you have spent on home improvements to be [total]. Is this correct?</div>                            
+                            <br>
+                            <p>If you need to change anything you will be given the chance to amend.</p>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody class="ons-summary__item">
+                    <tr class="ons-summary__row ons-summary__row--has-values">
+                        <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                            <div class="ons-summary__item--text ons-u-fs-m">Are you planning on carrying out home improvements in the next 12 months?</div>                            
+                            <br>
+                            <p>You can answer with the following options:</p>
+                            <ul>
+                                <li>Yes, I am planning to carry out future home improvements</li>
+                                <li>No, I am not planning on carrying out future home improvements</li>
+                            </ul>                         
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             </div>
-                
-                
         </div>
-  </div>
+    </div>
+    
+    
+    <!--HP END-->
 
   <div id="accordion-example-3" class="ons-details ons-js-details ons-details--accordion"
     data-group="accordion-example">
     <div class="ons-details__heading ons-js-details-heading" role="button">
-      <h2 class="ons-details__title">Supermarkets</h2>
+      <h2 class="ons-details__title">Supermarket shopping </h2>
       <span class="ons-details__icon">
         <svg class="ons-icon" viewBox="0 0 8 13" xmlns="http://www.w3.org/2000/svg" focusable="false"
           fill="currentColor">
@@ -260,7 +288,6 @@ layout: abs/views/_index
         </svg></span>
     </div>
             <div id="accordion-example-2-content" class="ons-details__content ons-js-details-content">
-                <div style="border: 5px #206095 solid;">
                 <div class="ons-summary__group">
                     <table class="ons-summary__items">
                         <thead class="ons-u-vh">
@@ -272,25 +299,42 @@ layout: abs/views/_index
                         <tbody class="ons-summary__item">
                             <tr class="ons-summary__row ons-summary__row--has-values">
                                 <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
-                                    <div class="ons-summary__item--text ons-u-fs-m">Which supermarkets do you use for your weekly shopping?</div>
+                                    <div class="ons-summary__item--text ons-u-fs-m">Do you shop at supermarkets?</div>
                                     <br>
                                     <div class="ons-panel ons-panel--info ons-panel--no-title">
                                         <span class="ons-u-vh">Important information: </span>
                                         <div class="ons-panel__body">
-                                            <p>If you need to add multiple supermarkets, you can do this on the next page</p>
+                                            <p>If you need to add multiple supermarkets, you will be able to add them on later pages</p>
                                         </div>
                                     </div>
                                     <br>                                    
                                     <p>Enter a value</p>
+                                    <ul>
+                                        <li>Yes</li>
+                                        <li>No</li>
+                                    </ul>
                                 </td>
                             </tr>
                         </tbody>
+                        </table>
                         
+                        <div style="border: 5px #206095 solid;">
+                            <table class="ons-summary__items">
                         <tbody class="ons-summary__item">
                             <div class="ons-question__instruction ons-u-mb-no" style="background-color: #206095;color: white; border:none;">
-                                <p><strong>This question will repeat until all supermarkets are added</strong></p>
-                                <p>You will be asked to add all the supermarkets you use to do your weekly shopping. If you need to add multiple supermarkets you will be given the opportunity to add them.</p>
+                                <p><strong>This question will repeat until all [Linked collection list] are added</strong></p>
+                                <p>You will be asked to add all [Linked collection list]. If you need to add multiple [Linked collection list] you will be given the opportunity to add them.</p>
                             </div>
+                            <tr class="ons-summary__row ons-summary__row--has-values">
+                                <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                                    <div class="ons-summary__item--text ons-u-fs-m">What supermarket do you shop at?</div>
+                                    <br>
+                                    <p>Enter a value</p>
+                                    <br>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody class="ons-summary__item">
                             <tr class="ons-summary__row ons-summary__row--has-values">
                                 <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
                                     <div class="ons-summary__item--text ons-u-fs-m">Do you need to add any more supermarkets?</div>
@@ -303,25 +347,62 @@ layout: abs/views/_index
                                 </td>
                             </tr>
                         </tbody>
+                        </table>
+                        </div>
+                        <table class="ons-summary__items">
 
-                        
-                        
-                        
-                    </table>
-                </div>
+                    <tbody class="ons-summary__item">
+                        <tr class="ons-summary__row ons-summary__row--has-values">
+                            <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                                <div class="ons-summary__item--text ons-u-fs-m">What percentage of your shopping do you do at each supermarket?</div>
+                                <br>
+                                <p>Percentage of shopping at [Name of supermarket]</p>
+                                <ul>
+                                    <li>Enter a value between 0 and 6. For example, 2 to allow numbers such as 1.11</li>
+                                </ul>                                    
+                                <br>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody class="ons-summary__item">
+                        <tr class="ons-summary__row ons-summary__row--has-values">
+                            <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                                <div class="ons-summary__item--text ons-u-fs-m">Do you shop at local convenience shops?</div>
+                                <br>
+                                <p>You can answer with the following options:</p>
+                                <ul>
+                                    <li>Yes</li>
+                                    <li>No</li>
+                                </ul>                                    
+                                <br>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody class="ons-summary__item">
+                        <tr class="ons-summary__row ons-summary__row--has-values">
+                            <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
+                                <div class="ons-summary__item--text ons-u-fs-m">How often do you use local convenience shops?</div>
+                                <br>
+                                <p>You can answer with the following options:</p>
+                                <ul>
+                                    <li>Daily</li>
+                                    <li>Less than daily but more than once a week</li>
+                                    <li>Once a week</li>
+                                    <li>Less than weekly but more than once a month</li>
+                                    <li>Once a month</li>
+                                    <li>Less than Less than monthly</li>
+
+                                </ul>                                    
+                                <br>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
                 
             </div>
-            <br>
-                <tbody class="ons-summary__item">
-                            <tr class="ons-summary__row ons-summary__row--has-values">
-                                <td class="ons-summary__item-title ons-u-pb-no ons-u-pr-s ons-u-pl-s">
-                                    <div class="ons-summary__item--text ons-u-fs-m">What percentage of your shopping do you do at each of the following supermarkets?</div>
-                                    <br>
-                                    <p><strong>Percentage of shopping carried out at your chosen supermarket</strong></p>
-                                    <p>Enter a value between 1 and 100</p>
-                                </td>
-                            </tr>
-                        </tbody>
+
+                
                 
         </div>
   </div>
