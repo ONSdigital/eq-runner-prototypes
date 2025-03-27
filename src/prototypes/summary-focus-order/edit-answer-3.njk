@@ -1,0 +1,41 @@
+---
+group: Prototypes
+title: Summary Focus Order
+layout: summary-focus-order/views/_main
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{% block main %}
+        {{
+            onsRadios({
+                "name": "spend-type",
+                "borderless": true,
+                "legend": "Was this spend online or in-store?",
+                "radios": [
+                    {
+                        "id": "online",
+                        "label": {
+                            "text": "Online"
+                        },
+                        "value": "online"
+                    },
+                    {
+                        "id": "instore",
+                        "checked": true,
+                        "label": {
+                            "text": "In-store"
+                        },
+                        "value": "instore"
+                    }
+                ]
+            })
+        }}
+        {{
+            onsButton({
+                "text": "Save",
+                "classes": "ons-u-mt-l",
+                "url": pageInfo.rootPath + "/summary-4.html"
+            })
+        }}
+{% endblock %}

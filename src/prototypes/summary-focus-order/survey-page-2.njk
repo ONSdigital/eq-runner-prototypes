@@ -1,0 +1,72 @@
+---
+group: Prototypes
+title: Summary Focus Order
+layout: summary-focus-order/views/_main
+---
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/question/_macro.njk" import onsQuestion %}
+
+{% block main %}
+        {%
+            call onsQuestion({
+                "title": "Utilities & Bills Spend"
+            })
+        %}
+        {{
+            onsInput({
+                    "id": "total-spend",
+                    "type": "number",
+                    "width": "6",
+                    "autocomplete": "off",
+                    "label": {
+                        "text": "How much did you spend on utilities and bills in the last month?"
+                    },
+                    "prefix": {
+                        "title": "British pounds (GBP)",
+                        "text": "£",
+                        "id": "grocery-spend-gpb-prefix"
+                    }
+            })
+        }}
+        {{
+            onsRadios({
+                "name": "spend-frequency",
+                "borderless": true,
+                "legend": "How regularly do you pay for your utilities and bills?",
+                "radios": [
+                    {
+                        "id": "weekly",
+                        "label": {
+                            "text": "Weekly"
+                        },
+                        "value": "weekly"
+                    },
+                    {
+                        "id": "2weeks",
+                        "label": {
+                            "text": "Every 2 weeks"
+                        },
+                        "value": "2weeks"
+                    },
+                    {
+                        "id": "monthly",
+                        "label": {
+                            "text": "Monthly"
+                        },
+                        "value": "monthly"
+                    }
+                ]
+            })
+        }}
+    {% endcall %}
+
+{{
+    onsButton({
+        "text": "Save and continue",
+        "classes": "ons-u-mt-l",
+        "url": pageInfo.rootPath + "/summary-1.html"
+    })
+}}
+{% endblock %}

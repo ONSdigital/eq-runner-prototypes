@@ -1,0 +1,55 @@
+---
+group: Prototypes
+title: Summary Focus Order
+layout: summary-focus-order/views/_main
+---
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+
+{% block main %}
+               {{
+            onsRadios({
+                "name": "spend-frequency",
+                "borderless": true,
+                "legend": "How often did you grocery shop last month?",
+                "radios": [
+                    {
+                        "id": "daily",
+                        "label": {
+                            "text": "Daily"
+                        },
+                        "value": "daily"
+                    },
+                    {
+                        "id": "weekly",
+                        "checked": true,
+                        "label": {
+                            "text": "Weekly"
+                        },
+                        "value": "weekly"
+                    },
+                    {
+                        "id": "2weeks",
+                        "label": {
+                            "text": "Every 2 weeks"
+                        },
+                        "value": "2weeks"
+                    },
+                    {
+                        "id": "monthly",
+                        "label": {
+                            "text": "Monthly"
+                        },
+                        "value": "monthly"
+                    }
+                ]
+            })
+        }}
+        {{
+            onsButton({
+                "text": "Save",
+                "classes": "ons-u-mt-l",
+                "url": pageInfo.rootPath + "/summary-3.html"
+            })
+        }}
+{% endblock %}
