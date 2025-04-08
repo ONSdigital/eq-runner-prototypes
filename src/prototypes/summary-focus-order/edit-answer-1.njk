@@ -5,11 +5,23 @@ layout: summary-focus-order/views/_main
 ---
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/input/_macro.njk" import onsInput %}
+{% from "components/breadcrumbs/_macro.njk" import onsBreadcrumbs %}
 
 {% block main %}
+    {{
+        onsBreadcrumbs({
+            "ariaLabel": 'Breadcrumbs',
+            "itemsList": [
+                {
+                    "url": 'summary-4.html',
+                    "text": 'Back'
+                }
+            ]
+        })
+    }}
         {{
             onsInput({
-                    "id": "total-spend",
+                    "id": "edit-total-spend",
                     "type": "number",
                     "width": "6",
                     "autocomplete": "off",
