@@ -1,0 +1,229 @@
+---
+group: Prototypes
+title: Summary Focus Order
+layout: summary-focus-order/views/_main
+---
+{% from "components/summary/_macro.njk" import onsSummary %}
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+{{
+    onsSummary({
+        "summaries": [
+            {
+                "title": "Regular Spending",
+                "groups": [
+                    {
+                        "placeholderText": 'test',
+                        "id": "grocery-spending",
+                        "title": "Groceries",
+                        "rows": [
+                            {
+                                "id": "grocery-spend-row",
+                                "title": "How much did you spend on grocery shopping in the last month?",
+                                "itemsList": [
+                                    {
+                                        "id": "grocery-spend",
+                                        "valueList": [
+                                            {
+                                                "text": "£160"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "visuallyHiddenText": "Change answer"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "grocery-spend-frequency-row",
+                                "title": "How often did you grocery shop last month?",
+                                "itemsList": [
+                                    {
+                                        "id": "grocery-spend-frequency",
+                                        "valueList": [
+                                            {
+                                                "text": "Weekly"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "visuallyHiddenText": "Change answer"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "grocery-spend-type-row",
+                                "title": "Was this spend online or in-store?",
+                                "itemsList": [
+                                    {
+                                        "id": "grocery-spend-type",
+                                        "valueList": [
+                                            {
+                                                "text": "In-store"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "visuallyHiddenText": "Change answer"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "placeholderText": 'test',
+                        "id": "other-spending",
+                        "title": "Clothing and Non-food Items",
+                        "rows": [
+                            {
+                                "id": "other-spend-row",
+                                "title": "How much did you spend on clothing items in the last month?",
+                                "itemsList": [
+                                    {
+                                        "id": "other-spend",
+                                        "valueList": [
+                                            {
+                                                "text": "£165"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "visuallyHiddenText": "Change answer"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "other-spend-frequency-row",
+                                "title": "How regularly do you spend money on clothing or non-food items?",
+                                "itemsList": [
+                                    {
+                                        "id": "other-spend-type",
+                                        "valueList": [
+                                            {
+                                                "text": "Monthly"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "visuallyHiddenText": "Change answer"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },                            
+                            {
+                                "id": "other-spend-row2",
+                                "title": "How much did you spend on non-food items in the last month?",
+                                "itemsList": [
+                                    {
+                                        "id": "other-spend2",
+                                        "valueList": [
+                                            {
+                                                "text": "£75"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "visuallyHiddenText": "Change answer"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },                            
+                            {
+                                "id": "other-spend-frequency-row2",
+                                "title": "How regularly do you spend money on non-food items?",
+                                "itemsList": [
+                                    {
+                                        "id": "other-spend-type2",
+                                        "valueList": [
+                                            {
+                                                "text": "Monthly"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "visuallyHiddenText": "Change answer"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "placeholderText": 'test',
+                        "id": "utility-spending",
+                        "title": "Utility & Bills",
+                        "rows": [
+                            {
+                                "id": "utility-spend-row",
+                                "title": "How much did you spend on utilities and bills in the last month?",
+                                "itemsList": [
+                                    {
+                                        "id": "grocery-spend",
+                                        "valueList": [
+                                            {
+                                                "text": "£270"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "visuallyHiddenText": "Change answer",
+                                                "url": "/prototypes/summary-focus-order/edit-answer-4.html"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "utility-spend-frequency-row",
+                                "title": "How regularly do you pay for your utilities and bills?",
+                                "itemsList": [
+                                    {
+                                        "id": "grocery-spend-type",
+                                        "valueList": [
+                                            {
+                                                "text": "Monthly"
+                                            }
+                                        ],
+                                        "actions": [
+                                            {
+                                                "text": "Change",
+                                                "visuallyHiddenText": "Change answer"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    })
+}}
+{{
+    onsButton({
+        "text": "Yes, I confirm this is correct",
+        "url": pageInfo.rootPath + "/survey-complete.html"
+    })
+}}
+{% endblock %}

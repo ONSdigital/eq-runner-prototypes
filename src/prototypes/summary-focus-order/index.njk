@@ -1,0 +1,18 @@
+---
+group: Prototypes
+title: Summary Focus Order
+layout: summary-focus-order/views/_main
+---
+{% from "components/button/_macro.njk" import onsButton %}
+
+{% block main %}
+    <h1>Regular Spending</h1>
+    <p>The following questions will cover your regular spending habits, specifically over the last month.</p>
+    {{
+        onsButton({
+            "text": "Start",
+            "classes": "ons-u-mt-l",
+            "url": pageInfo.rootPath + "/survey-page-1.html"
+        })
+    }}
+{% endblock %}
