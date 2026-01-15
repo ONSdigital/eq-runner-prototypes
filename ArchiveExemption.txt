@@ -1,0 +1,3 @@
+This repository should be exempt from archiving due to the way it is used.
+It is used to create prototypes for eQ when needed which is not ongoing but is used as and when testing of a new feature or pattern is needed.
+Also the designers that use this repo quite often create prototypes on branches that don't go on and then get merged into the main branch.
