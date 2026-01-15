@@ -1,0 +1,55 @@
+---
+group: Prototypes
+title: Summary Focus Order
+layout: summary-focus-order/views/_main
+---
+{% from "components/panel/_macro.njk" import onsPanel %}
+{% from "components/feedback/_macro.njk" import onsFeedback %}
+{%
+    set pageConfig = {
+        "header": {
+            "title": "Regular Spending Survey"
+        },
+        "footer": {
+            "rows": [
+                {
+                    "itemsList": [
+                        {
+                            "text": "Accessibility",
+                            "url": "#0"
+                        },
+                        {
+                            "text": "Privacy",
+                            "url": "#0"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+%}
+
+{% block main %}
+    <div class="ons-page__body">
+        {%
+            call onsPanel({
+                "variant": 'success',
+                "id": 'success-id',
+                "iconType": 'check',
+                "iconSize": "l"
+            })
+        %}
+            <h2>Thank you for completing the Regular Spending survey</h2>
+            <p>Your answers have been submitted. We really appreciate your time on this.</p>
+        {% endcall %}
+
+        {%
+            call onsPanel({
+                "variant": 'bare',
+                "iconType": 'lock'
+            })
+        %}
+            <p>Your personal information is protected by law and will be kept confidential</p>
+        {% endcall %}
+    </div>
+{% endblock %}

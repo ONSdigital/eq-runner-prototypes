@@ -1,0 +1,114 @@
+---
+group: Prototypes
+title: Summary Focus Order
+layout: summary-focus-order/views/_main
+---
+{% from "components/input/_macro.njk" import onsInput %}
+{% from "components/button/_macro.njk" import onsButton %}
+{% from "components/radios/_macro.njk" import onsRadios %}
+{% from "components/question/_macro.njk" import onsQuestion %}
+{% from "components/breadcrumbs/_macro.njk" import onsBreadcrumbs %}
+
+{% block main %}
+    {{
+        onsBreadcrumbs({
+            "ariaLabel": 'Breadcrumbs',
+            "itemsList": [
+                {
+                    "url": 'index.html',
+                    "text": 'Previous'
+                }
+            ]
+        })
+    }}
+        {%
+            call onsQuestion({
+                "title": "Grocery Spend"
+            })
+        %}
+        {{
+            onsInput({
+                    "id": "total-spend",
+                    "type": "number",
+                    "width": "6",
+                    "autocomplete": "off",
+                    "label": {
+                        "text": "How much did you spend on grocery shopping in the last month?"
+                    },
+                    "prefix": {
+                        "title": "British pounds (GBP)",
+                        "text": "£",
+                        "id": "grocery-spend-gpb-prefix"
+                    }
+            })
+        }}
+        {{
+            onsRadios({
+                "name": "spend-frequency",
+                "borderless": true,
+                "legend": "How often did you grocery shop last month?",
+                "radios": [
+                    {
+                        "id": "daily",
+                        "label": {
+                            "text": "Daily"
+                        },
+                        "value": "daily"
+                    },
+                    {
+                        "id": "weekly",
+                        "label": {
+                            "text": "Weekly"
+                        },
+                        "value": "weekly"
+                    },
+                    {
+                        "id": "2weeks",
+                        "label": {
+                            "text": "Every 2 weeks"
+                        },
+                        "value": "2weeks"
+                    },
+                    {
+                        "id": "monthly",
+                        "label": {
+                            "text": "Monthly"
+                        },
+                        "value": "monthly"
+                    }
+                ]
+            })
+        }}
+        {{
+            onsRadios({
+                "name": "spend-type",
+                "borderless": true,
+                "legend": "Was this spend online or in-store?",
+                "radios": [
+                    {
+                        "id": "online",
+                        "label": {
+                            "text": "Online"
+                        },
+                        "value": "online"
+                    },
+                    {
+                        "id": "instore",
+                        "label": {
+                            "text": "In-store"
+                        },
+                        "value": "instore"
+                    }
+                ]
+            })
+        }}
+    {% endcall %}
+
+{{
+    onsButton({
+        "text": "Save and continue",
+        "classes": "ons-u-mt-l",
+        "url": pageInfo.rootPath + "/survey-page-2.html"
+    })
+}}
+{% endblock %}
