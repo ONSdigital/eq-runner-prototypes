@@ -18,5 +18,9 @@
     "@ons/prototype-kit": "https://github.com/ONSdigital/prototype-kit#v1.0.15",
     "govuk-frontend": "^4.6.0",
     "gulp": "^4.0.2"
-  }
+  },
+  "resolutions": {
+  "browserify": "17.0.1",
+  "crypto-browserify": "3.12.1"
+}
 }
