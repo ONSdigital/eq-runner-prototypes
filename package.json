@@ -27,8 +27,9 @@
     "@ons/prototype-kit/postcss": "8.5.18",
     "@ons/prototype-kit/brace-expansion": "^5.0.9",
     "@ons/prototype-kit/front-matter/js-yaml": "3.15.0",
-    "@ons/prototype-kit/browser-sync/socket.io/engine.io": "6.6.7",
-    "ws": "8.21.0"
+    "engine.io": "6.6.7",
+    "ws": "8.21.0",
+    "@ons/prototype-kit/postcss-url/minimatch": "3.1.4"
 
   }
 }
