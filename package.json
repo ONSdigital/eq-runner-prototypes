@@ -25,6 +25,7 @@
     "sha.js": "2.4.12",
     "pbkdf2": "3.1.6",
     "@ons/prototype-kit/postcss": "8.5.18",
-    "@ons/prototype-kit/brace-expansion": "^5.0.9"
+    "@ons/prototype-kit/brace-expansion": "^5.0.9",
+    "@ons/prototype-kit/front-matter/js-yaml": "3.15.0"
   }
 }
