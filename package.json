@@ -32,7 +32,8 @@
     "@ons/prototype-kit/postcss-url/minimatch": "3.1.4",
     "qs": "^6.15.2",
     "bn.js": "^5.2.5",
-    "micromatch": "^4.0.8"
+    "micromatch": "^4.0.8",
+    "braces": "^3.0.3"
 
   }
 }
