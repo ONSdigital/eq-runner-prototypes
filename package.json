@@ -30,7 +30,8 @@
     "engine.io": "^6.6.7",
     "ws": "^8.21.0",
     "@ons/prototype-kit/postcss-url/minimatch": "3.1.4",
-    "qs": "^6.15.2"
+    "qs": "^6.15.2",
+    "bn.js": "^5.2.5"
 
 
   }
