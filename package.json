@@ -29,7 +29,7 @@
     "@ons/prototype-kit/front-matter/js-yaml": "3.15.0",
     "engine.io": "^6.6.7",
     "ws": "^8.21.0",
-    "@ons/prototype-kit/postcss-url/minimatch": "3.1.4",
+    "minimatch": "^10.2.1",
     "qs": "^6.15.2",
     "bn.js": "^5.2.5",
     "micromatch": "^4.0.8",
