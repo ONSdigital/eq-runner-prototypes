@@ -20,9 +20,20 @@
     "gulp": "^4.0.2"
   },
   "resolutions": {
-  "browserify": "17.0.1",
-  "crypto-browserify": "3.12.1",
-  "sha.js": "2.4.12",
-  "pbkdf2": "3.1.6"
+    "browserify": "^17.0.1",
+    "crypto-browserify": "^3.12.1",
+    "sha.js": "^2.4.12",
+    "pbkdf2": "^3.1.6",
+    "@ons/prototype-kit/postcss": "^8.5.18",
+    "@ons/prototype-kit/brace-expansion": "^5.0.9",
+    "engine.io": "^6.6.7",
+    "ws": "^8.21.0",
+    "minimatch": "^10.2.1",
+    "qs": "^6.15.2",
+    "bn.js": "^5.2.5",
+    "micromatch": "^4.0.8",
+    "braces": "^3.0.3",
+    "immutable": "^4.3.9"
+
   }
 }
