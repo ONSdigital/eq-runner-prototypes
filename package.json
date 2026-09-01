@@ -16,7 +16,7 @@
   "dependencies": {
     "@ons/design-system": "^67.0.6",
     "@ons/prototype-kit": "https://github.com/ONSdigital/prototype-kit#v1.0.15",
-    "govuk-frontend": "^4.6.0",
+    "govuk-frontend": "^6.5.0",
     "gulp": "^4.0.2"
   },
   "resolutions": {
