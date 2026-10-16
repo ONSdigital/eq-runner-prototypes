@@ -23,7 +23,7 @@
     "browserify": "^17.0.1",
     "crypto-browserify": "^3.12.1",
     "sha.js": "^2.4.12",
-    "pbkdf2": "^3.1.6",
+    "pbkdf2": "^3.1.7",
     "@ons/prototype-kit/postcss": "^8.5.18",
     "@ons/prototype-kit/brace-expansion": "^5.0.9",
     "engine.io": "^6.6.7",
